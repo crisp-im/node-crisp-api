@@ -9,7 +9,7 @@
 
 
 ```js
-var Crisp = require("../lib/crisp");
+var Crisp = require("node-crisp-api");
 var ClispClient  = new Crisp();
 ```
 
