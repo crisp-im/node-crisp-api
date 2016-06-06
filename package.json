@@ -2,7 +2,7 @@
   "name": "node-crisp-api",
   "version": "1.0.0",
   "description": "Crisp API Node Wrapper",
-  "main": "index.js",
+  "main": "lib/crisp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
