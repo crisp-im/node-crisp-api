@@ -86,8 +86,10 @@ ClispClient.userSession.loginWithEmail(
     * `create(params)`
     * `delete(websiteId)`
   * websiteSettings
-    * `get()`
+    * `get(websiteId)`
     * `update(websiteId)`
+  * websiteStats
+    * `get(websiteId)`
   * websiteConversations
     * `getList(websiteId, page)`
     * `getOne(websiteId, sessionId)`
