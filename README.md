@@ -59,14 +59,6 @@ ClispClient.userSession.loginWithEmail(
 });
 ```
 
-When you are logged you can then use the Crisp API
-
-```js
-ClispClient.userProfile.get().then(function(myProfile) {
-  console.log("Hello" + myProfile.first_name);
-});
-```
-
 ### Available resources & methods
 
 *Where you see `params` it is a plain JavaScript object, e.g. `{ email: 'foo@example.com' }`*
@@ -84,7 +76,7 @@ ClispClient.userProfile.get().then(function(myProfile) {
     * `update(params)`
   * userProfile
     * `get()`
-  * `update(params)`
+    * `update(params)`
   * userSchedule
     * `get()`
     * `update(params)`
@@ -93,13 +85,16 @@ ClispClient.userProfile.get().then(function(myProfile) {
   * website
     * `create(params)`
     * `delete(websiteId)`
+  * websiteSettings
+    * `get()`
+    * `update(websiteId)`
   * websiteConversations
     * `getList(websiteId, page)`
     * `getOne(websiteId, sessionId)`
     * `sendTextMessage(websiteId, sessionId, text)`
     * `setState(websiteId, sessionId, state)`
     * `setEmail(websiteId, sessionId, email)`
-    * `setEmail(websiteId, sessionId, nickname)`
+    * `setNickname(websiteId, sessionId, nickname)`
     * `setBlock(websiteId, sessionId, blocked)`
     * `deleteOne(websiteId, sessionId)`
     * `acknowledgeMessages(websiteId, sessionId, fingerprints)`
