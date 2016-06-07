@@ -103,6 +103,7 @@ ClispClient.userSession.loginWithEmail(
     * `getOne(websiteId, operatorId)`
     * `deleteOne(websiteId, operatorId)`
     * `createOne(websiteId, parameters)`
+    * `updateOne(websiteId, operatorId, parameters)`
 
 ### Available events
 
