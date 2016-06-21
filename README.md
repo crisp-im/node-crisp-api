@@ -93,10 +93,12 @@ ClispClient.userSession.loginWithEmail(
   * websiteConversations
     * `getList(websiteId, page)`
     * `getOne(websiteId, sessionId)`
+    * `initiateOne(websiteId, sessionId)`
     * `sendTextMessage(websiteId, sessionId, text)`
     * `setState(websiteId, sessionId, state)`
     * `setEmail(websiteId, sessionId, email)`
     * `setNickname(websiteId, sessionId, nickname)`
+    * `setTags(websiteId, sessionId, tags)`
     * `setBlock(websiteId, sessionId, blocked)`
     * `deleteOne(websiteId, sessionId)`
     * `acknowledgeMessages(websiteId, sessionId, fingerprints)`
@@ -116,7 +118,7 @@ ClispClient.userSession.loginWithEmail(
   * `message:acknowledge:read:received` Message is read from operator
   * `message:acknowledge:delivered` Message is delivered
   * `session:update_availability` Visitor is now online or offline
-  * `session:request:initiatedy` You tried to initiate a message to someone
+  * `session:request:initiated` You tried to initiate a message to someone
   * `session:set_email` Email is updated
   * `session:set_nickname` Nickname is updated
   * `session:set_avatar` Avatar is updated
