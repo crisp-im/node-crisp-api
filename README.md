@@ -5,6 +5,11 @@
 `npm install --save node-crisp-api`
 
 
+## API Docs
+
+The full API documentation is available at: [docs.crisp.im/api/](https://docs.crisp.im/api/)
+
+
 ## API Overview
 
 
