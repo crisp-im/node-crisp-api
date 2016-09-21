@@ -13,13 +13,13 @@
 
 ```js
 var Crisp = require("node-crisp-api");
-var ClispClient  = new Crisp();
+var CrispClient  = new Crisp();
 ```
 
 To use Crisp, first, you have to login
 
 ```js
-ClispClient.userSession.loginWithEmail(
+CrispClient.userSession.loginWithEmail(
   "youraccount@gmail.com",
   "your_password"
 )
@@ -31,7 +31,7 @@ ClispClient.userSession.loginWithEmail(
 When you are logged you can then use the Crisp API
 
 ```js
-ClispClient.userProfile.get().then(function(myProfile) {
+CrispClient.userProfile.get().then(function(myProfile) {
   console.log("Hello" + myProfile.first_name);
 });
 ```
@@ -41,19 +41,19 @@ ClispClient.userProfile.get().then(function(myProfile) {
 
 ```js
 var Crisp = require("node-crisp-api");
-var ClispClient  = new Crisp();
+var CrispClient  = new Crisp();
 ```
 
 To use Crisp, first, you have to login
 
 ```js
-ClispClient.userSession.loginWithEmail(
+CrispClient.userSession.loginWithEmail(
   "youraccount@gmail.com",
   "your_password"
 )
 .then(function() {
-  ClispClient.on("message:send", function(message) {
-    ClispClient.websiteConversations.sendTextMessage(
+  CrispClient.on("message:send", function(message) {
+    CrispClient.websiteConversations.sendTextMessage(
       message.website_id,
       message.session_id,
       "I'm a bot"
