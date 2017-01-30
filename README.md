@@ -98,12 +98,12 @@ CrispClient.userSession.loginWithEmail(
   * websiteConversations
     * `getList(websiteId, page)`
     * `getOne(websiteId, sessionId)`
+    * `getMeta(websiteId, sessionId)`
+    * `create(websiteId)`
     * `initiateOne(websiteId, sessionId)`
     * `sendTextMessage(websiteId, sessionId, text)`
     * `setState(websiteId, sessionId, state)`
-    * `setEmail(websiteId, sessionId, email)`
-    * `setNickname(websiteId, sessionId, nickname)`
-    * `setTags(websiteId, sessionId, tags)`
+    * `updateMeta(websiteId, sessionId, update)`
     * `setBlock(websiteId, sessionId, blocked)`
     * `deleteOne(websiteId, sessionId)`
     * `acknowledgeMessages(websiteId, sessionId, fingerprints)`

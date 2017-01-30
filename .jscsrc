@@ -15,6 +15,7 @@
   "disallowQuotedKeysInObjects": true,
   "disallowSpacesInsideParentheses": true,
   "disallowKeywordsOnNewLine": ["else"],
+  "disallowPaddingNewlinesInBlocks": { "open": true, "close": true, allExcept: ['conditionals'] },
 
   "requireCurlyBraces": true,
   "requireDotNotation": true,
