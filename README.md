@@ -57,9 +57,13 @@ CrispClient.userSession.loginWithEmail(
   CrispClient.on("message:send", function(message) {
     CrispClient.websiteConversations.sendTextMessage(
       message.website_id,
-      message.session_id,
-      "I'm a bot"
-    )
+      message.session_id, {
+        type : "text",
+        content : "I'm a bot",
+        from : "operator", //or user
+        origin : "chat"
+      }
+    );
   });
 });
 ```
@@ -101,7 +105,7 @@ CrispClient.userSession.loginWithEmail(
     * `getMeta(websiteId, sessionId)`
     * `create(websiteId)`
     * `initiateOne(websiteId, sessionId)`
-    * `sendTextMessage(websiteId, sessionId, text)`
+    * `sendMessage(websiteId, sessionId, message)`
     * `setState(websiteId, sessionId, state)`
     * `updateMeta(websiteId, sessionId, update)`
     * `setBlock(websiteId, sessionId, blocked)`
