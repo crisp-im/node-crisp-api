@@ -55,7 +55,7 @@ CrispClient.userSession.loginWithEmail(
 )
 .then(function() {
   CrispClient.on("message:send", function(message) {
-    CrispClient.websiteConversations.sendTextMessage(
+    CrispClient.websiteConversations.sendMessage(
       message.website_id,
       message.session_id, {
         type : "text",
