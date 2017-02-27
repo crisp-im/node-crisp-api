@@ -103,6 +103,7 @@ CrispClient.userSession.loginWithEmail(
     * `getList(websiteId, page)`
     * `getOne(websiteId, sessionId)`
     * `getMeta(websiteId, sessionId)`
+    * `getMessages(websiteId, sessionId, query)`
     * `create(websiteId)`
     * `initiateOne(websiteId, sessionId)`
     * `sendMessage(websiteId, sessionId, message)`
