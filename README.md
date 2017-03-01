@@ -135,6 +135,7 @@ CrispClient.userSession.loginWithEmail(
   * `session:set_cover` Cover picture is updated
   * `session:set_block` User blocked updated
   * `session:set_state` Conversation state updated
+  * `session:set_data` Conversation custom data updated
   * `session:set_tags` Conversation new tags
   * `session:sync:pages` Visitor visited some pages
   * `session:sync:geolocation` Visitor new geolocation
