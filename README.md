@@ -30,6 +30,8 @@ CrispClient.authenticate(identifier, key);
 // Now, you can use authenticated API sections.
 ```
 
+**🔴 Important: Be sure to login once, and re-use the same authentication keys (same `identifier` + `key`) in all your subsequent requests to the API. Do not generate new tokens from your code for every new request to the API (you will be heavily rate-limited; that will induce HTTP failures for some of your API calls).**
+
 ## API Overview
 
 
