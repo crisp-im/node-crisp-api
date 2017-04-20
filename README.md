@@ -7,6 +7,28 @@
 * **📝 Implements**: [Crisp Platform - API ~ v1](https://docs.crisp.im/api/v1/) at reference revision: 07/17/2016
 * **😘 Maintainer**: [@mywaystar](https://github.com/mywaystar)
 
+## Authentication
+
+To authenticate against the API, generate your session identifier and session key **once** using the following cURL request in your terminal (replace `YOUR_ACCOUNT_EMAIL` and `YOUR_ACCOUNT_PASSWORD`):
+
+```bash
+curl -H "Content-Type: application/json" -X POST -d '{"email":"YOUR_ACCOUNT_EMAIL","password":"YOUR_ACCOUNT_PASSWORD"}' https://api.crisp.im/v1/user/session/login
+```
+
+If authentication succeeds, you will get a JSON response containing your authentication keys: `identifier` and `key`. **Keep those 2 values private, and store them safely for long-term use**.
+
+Then, add authentication parameters to your `client` instance right after you create it:
+
+```js
+var Crisp = require("node-crisp-api");
+var CrispClient  = new Crisp();
+
+// Authenticate to API (identifier, key)
+// eg. CrispClient.authenticate("7c3ef21c-1e04-41ce-8c06-5605c346f73e", "cc29e1a5086e428fcc6a697d5837a66d82808e65c5cce006fbf2191ceea80a0a");
+CrispClient.authenticate(identifier, key);
+
+// Now, you can use authenticated API sections.
+```
 
 ## API Overview
 
@@ -14,23 +36,9 @@
 ```js
 var Crisp = require("node-crisp-api");
 var CrispClient  = new Crisp();
-```
 
-To use Crisp, first, you have to login
+CrispClient.authenticate(identifier, key);
 
-```js
-CrispClient.userSession.loginWithEmail(
-  "youraccount@gmail.com",
-  "your_password"
-)
-.then(function() {
-  //You are now logged
-});
-```
-
-When you are logged you can then use the Crisp API
-
-```js
 CrispClient.userProfile.get().then(function(myProfile) {
   console.log("Hello" + myProfile.first_name);
 });
@@ -42,27 +50,19 @@ CrispClient.userProfile.get().then(function(myProfile) {
 ```js
 var Crisp = require("node-crisp-api");
 var CrispClient  = new Crisp();
-```
 
-To use Crisp, first, you have to login
+CrispClient.authenticate(identifier, key);
 
-```js
-CrispClient.userSession.loginWithEmail(
-  "youraccount@gmail.com",
-  "your_password"
-)
-.then(function() {
-  CrispClient.on("message:send", function(message) {
-    CrispClient.websiteConversations.sendMessage(
-      message.website_id,
-      message.session_id, {
-        type : "text",
-        content : "I'm a bot",
-        from : "operator", //or user
-        origin : "chat"
-      }
-    );
-  });
+CrispClient.on("message:send", function(message) {
+  CrispClient.websiteConversations.sendMessage(
+    message.website_id,
+    message.session_id, {
+      type : "text",
+      content : "I'm a bot",
+      from : "operator", //or user
+      origin : "chat"
+    }
+  );
 });
 ```
 
