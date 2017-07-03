@@ -4,7 +4,7 @@
 
 `npm install --save node-crisp-api`
 
-* **📝 Implements**: [Crisp Platform - API ~ v1](https://docs.crisp.im/api/v1/) at reference revision: 07/17/2016
+* **📝 Implements**: [Crisp Platform - API ~ v1](https://docs.crisp.chat/api/v1/) at reference revision: 07/17/2016
 * **😘 Maintainer**: [@mywaystar](https://github.com/mywaystar)
 
 ## Authentication
