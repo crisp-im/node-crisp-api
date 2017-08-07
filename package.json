@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "fbemitter": "2.0.2",
+    "lodash": "^4.17.4",
     "q": "1.4.1",
     "restler": "3.4.0",
     "socket.io-client": "1.7.2"
