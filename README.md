@@ -112,6 +112,18 @@ CrispClient.on("message:send", function(message) {
     * `setBlock(websiteId, sessionId, blocked)`
     * `deleteOne(websiteId, sessionId)`
     * `acknowledgeMessages(websiteId, sessionId, fingerprints)`
+  * websitePeople
+    * `createNewPeopleProfile(websiteId)`
+    * `checkPeopleProfileExists(websiteId, peopleId)`
+    * `getPeopleProfile(websiteId, peopleId)`
+    * `listPeopleProfiles(websiteId, peopleId, page)`
+    * `removePeopleProfile(websiteId, peopleId)`
+    * `savePeopleProfile(websiteId, peopleId, data)`
+    * `updatePeopleProfile(websiteId, peopleId, data)`
+    * `listPeopleSegments(websiteId, peopleId, page)`
+    * `listPeopleEvent(websiteId, peopleId, page)`
+    * `getPeopleData(websiteId, peopleId)`
+    * `updatePeopleData(websiteId, peopleId, data)`
   * websiteOperators
     * `getList(websiteId)`
     * `getOne(websiteId, operatorId)`
