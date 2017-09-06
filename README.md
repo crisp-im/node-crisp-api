@@ -97,17 +97,17 @@ From the API side, Users are Crisp Users, not your end users
 
 * **Website Conversations**
   * **Get Conversation List**: `CrispClient.websiteConversations.getList(websiteId, page)`
-  * **Get A Conversation**: `getOne(websiteId, sessionId)`
-  * **Get Conversation Metadata**: `getMeta(websiteId, sessionId)`
-  * **Update Conversation Metadata**:`updateMeta(websiteId, sessionId, params)`
-  * **Get Conversation Messages**: `getMessages(websiteId, sessionId, query)`
-  * **Create a Conversation**: `create(websiteId)`
-  * **Initiate a Conversation**: `initiateOne(websiteId, sessionId)`
-  * **Send a Conversation**: `sendMessage(websiteId, sessionId, message)`
-  * **Set Conversation State:**: `setState(websiteId, sessionId, state)`
-  * **Block Conversation:**: `setBlock(websiteId, sessionId, blocked)`
-  * **Delete Conversation:**:`deleteOne(websiteId, sessionId)`
-  * **Acknowledge Messages:**: `acknowledgeMessages(websiteId, sessionId, fingerprints)`
+  * **Get A Conversation**: `CrispClient.websiteConversations.getOne(websiteId, sessionId)`
+  * **Get Conversation Metadata**: `CrispClient.websiteConversations.getMeta(websiteId, sessionId)`
+  * **Update Conversation Metadata**:`CrispClient.websiteConversations.updateMeta(websiteId, sessionId, params)`
+  * **Get Conversation Messages**: `CrispClient.websiteConversations.getMessages(websiteId, sessionId, query)`
+  * **Create a Conversation**: `CrispClient.websiteConversations.create(websiteId)`
+  * **Initiate a Conversation**: `CrispClient.websiteConversations.initiateOne(websiteId, sessionId)`
+  * **Send a Conversation**: `CrispClient.websiteConversations.sendMessage(websiteId, sessionId, message)`
+  * **Set Conversation State:**: `CrispClient.websiteConversations.setState(websiteId, sessionId, state)`
+  * **Block Conversation:**: `CrispClient.websiteConversations.setBlock(websiteId, sessionId, blocked)`
+  * **Delete Conversation:**:`CrispClient.websiteConversations.deleteOne(websiteId, sessionId)`
+  * **Acknowledge Messages:**: `CrispClient.websiteConversations.acknowledgeMessages(websiteId, sessionId, fingerprints)`
 
 * **Website People** (These are your End Users)
   *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
@@ -120,6 +120,7 @@ From the API side, Users are Crisp Users, not your end users
   *  **Save A Profile**: `CrispClient.websitePeople.savePeopleProfile(websiteId, peopleId, params)`
   *  **Update A Profile**: `CrispClient.websitePeople.updatePeopleProfile(websiteId, peopleId, params)`
   *  **List Segments**: `CrispClient.websitePeople.listPeopleSegments(websiteId, peopleId, page)`
+  *  **Add Event**: `CrispClient.websitePeople.addPeopleEvent(websiteId, peopleId, params)`
   *  **List Events**: `CrispClient.websitePeople.listPeopleEvent(websiteId, peopleId, page)`
   *  **Get Data**: `CrispClient.websitePeople.getPeopleData(websiteId, peopleId)`
   *  **Update Data**: `CrispClient.websitePeople.updatePeopleData(websiteId, peopleId, params)`
