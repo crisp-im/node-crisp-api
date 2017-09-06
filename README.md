@@ -4,7 +4,7 @@
 
 `npm install --save node-crisp-api`
 
-* **📝 Implements**: [Crisp Platform - API ~ v1](https://docs.crisp.chat/api/v1/) at reference revision: 07/17/2016
+* **📝 Implements**: [Crisp Platform - API ~ v1](https://docs.crisp.chat/api/v1/) at reference revision: 09/05/2017
 * **😘 Maintainer**: [@mywaystar](https://github.com/mywaystar)
 
 ## Authentication
@@ -72,64 +72,68 @@ CrispClient.on("message:send", function(message) {
 
 *Where you see `params` it is a plain JavaScript object, e.g. `{ email: 'foo@example.com' }`*
 
-  * on(event, callback)
-  * userSession
-    * `loginWithEmail(email, password)`
-    * `recoverPassword(email)`
-    * `logout()`
-  * userAccount
-    * `get()`
-    * `create(params)`
-  * userNotification
-    * `get()`
-    * `update(params)`
-  * userProfile
-    * `get()`
-    * `update(params)`
-  * userSchedule
-    * `get()`
-    * `update(params)`
-  * userWebsites
-    * `get()`
-  * website
-    * `create(params)`
-    * `delete(websiteId)`
-  * websiteSettings
-    * `get(websiteId)`
-    * `update(websiteId)`
-  * websiteStats
-    * `get(websiteId)`
-  * websiteConversations
-    * `getList(websiteId, page)`
-    * `getOne(websiteId, sessionId)`
-    * `getMeta(websiteId, sessionId)`
-    * `getMessages(websiteId, sessionId, query)`
-    * `create(websiteId)`
-    * `initiateOne(websiteId, sessionId)`
-    * `sendMessage(websiteId, sessionId, message)`
-    * `setState(websiteId, sessionId, state)`
-    * `updateMeta(websiteId, sessionId, update)`
-    * `setBlock(websiteId, sessionId, blocked)`
-    * `deleteOne(websiteId, sessionId)`
-    * `acknowledgeMessages(websiteId, sessionId, fingerprints)`
-  * websitePeople
-    * `createNewPeopleProfile(websiteId)`
-    * `checkPeopleProfileExists(websiteId, peopleId)`
-    * `getPeopleProfile(websiteId, peopleId)`
-    * `listPeopleProfiles(websiteId, peopleId, page)`
-    * `removePeopleProfile(websiteId, peopleId)`
-    * `savePeopleProfile(websiteId, peopleId, data)`
-    * `updatePeopleProfile(websiteId, peopleId, data)`
-    * `listPeopleSegments(websiteId, peopleId, page)`
-    * `listPeopleEvent(websiteId, peopleId, page)`
-    * `getPeopleData(websiteId, peopleId)`
-    * `updatePeopleData(websiteId, peopleId, data)`
-  * websiteOperators
-    * `getList(websiteId)`
-    * `getOne(websiteId, operatorId)`
-    * `deleteOne(websiteId, operatorId)`
-    * `createOne(websiteId, parameters)`
-    * `updateOne(websiteId, operatorId, parameters)`
+
+### User
+
+From the API side, Users are Crisp Users, not your end users
+
+* **User Account**
+  * **Get User Account**: `CrispClient.userAccount.get()`
+  * **Create User Account**: `CrispClient.userAccount.create(params)`
+* **User Session**
+  * **Create A New Sessiont**: `CrispClient.userSession.loginWithEmail(email, password)`
+  * **Recover the Password**: `CrispClient.userSession.recoverPassword(email)`
+  * **Logout**: `CrispClient.userSession.logout()`
+* **User Notifications**
+  * **Get User Notifications**: `CrispClient.userNotification.get()`
+  * **Update User Notifications**: `CrispClient.userNotification.update(params)`
+* **User Profile**
+  * **Get User Profile**: `CrispClient.userProfile.get()`
+  * **Update User Profile**: `CrispClient.userProfile.update(params)`
+* **User Websites**
+  * **Get**: `CrispClient.userWebsites.get()`
+
+### Website
+
+* **Website Conversations**
+  * **Get Conversation List**: `CrispClient.websiteConversations.getList(websiteId, page)`
+  * **Get A Conversation**: `getOne(websiteId, sessionId)`
+  * **Get Conversation Metadata**: `getMeta(websiteId, sessionId)`
+  * **Update Conversation Metadata**:`updateMeta(websiteId, sessionId, params)`
+  * **Get Conversation Messages**: `getMessages(websiteId, sessionId, query)`
+  * **Create a Conversation**: `create(websiteId)`
+  * **Initiate a Conversation**: `initiateOne(websiteId, sessionId)`
+  * **Send a Conversation**: `sendMessage(websiteId, sessionId, message)`
+  * **Set Conversation State:**: `setState(websiteId, sessionId, state)`
+  * **Block Conversation:**: `setBlock(websiteId, sessionId, blocked)`
+  * **Delete Conversation:**:`deleteOne(websiteId, sessionId)`
+  * **Acknowledge Messages:**: `acknowledgeMessages(websiteId, sessionId, fingerprints)`
+
+* **Website People** (These are your End Users)
+  *  **Create A New Profile**: `createNewPeopleProfile(websiteId, params)`
+  *  **Check  If Exists**: `checkPeopleProfileExists(websiteId, peopleId)`
+  *  **Get People Profile**: `getPeopleProfile(websiteId, peopleId)`
+  *  **List People Profiles**: `listPeopleProfiles(websiteId, peopleId, page)`
+  *  **Remove A Profile**: `removePeopleProfile(websiteId, peopleId)`
+  *  **Save A Profile**: `savePeopleProfile(websiteId, peopleId, params)`
+  *  **Update A Profile**: `updatePeopleProfile(websiteId, peopleId, params)`
+  *  **List Segments**: `listPeopleSegments(websiteId, peopleId, page)`
+  *  **List Events**: `listPeopleEvent(websiteId, peopleId, page)`
+  *  **Get Data**: `getPeopleData(websiteId, peopleId)`
+  *  **Update Data**: `updatePeopleData(websiteId, peopleId, params)`
+  
+* **Website Base**
+  * **Create A Website**: `CrispClient.website.create(params)`
+  * **Create User Account**: `CrispClient.website.delete(websiteId)`
+* **Website Settings**
+  * **Get Website Settings**: `CrispClient.websiteSettings.get(websiteId)`
+  * **Update Website Settings**: `CrispClient.websiteSettings.get(params)`
+* **Website Operators**
+  * **Get All Operators**: `getList(websiteId)`
+  * **Get One Operators**: `getOne(websiteId, operatorId)`
+  * **Delete One Operators**: `deleteOne(websiteId, operatorId)`
+  * **Create An Operator**: `createOne(websiteId, parameters)`
+  * **Update An Operator**: `updateOne(websiteId, operatorId, parameters)`
 
 ## Available events
 
