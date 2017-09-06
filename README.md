@@ -131,26 +131,94 @@ CrispClient.on("message:send", function(message) {
     * `createOne(websiteId, parameters)`
     * `updateOne(websiteId, operatorId, parameters)`
 
-### Available events
+## Available events
 
-  * `message:send` Message from visitor
-  * `message:received` Message from operator
-  * `message:compose:send` Visitor is writing something
-  * `message:acknowledge:read:send` Message is read from visitor
-  * `message:acknowledge:read:received` Message is read from operator
-  * `message:acknowledge:delivered` Message is delivered
-  * `session:update_availability` Visitor is now online or offline
-  * `session:request:initiated` You tried to initiate a message to someone
-  * `session:set_email` Email is updated
-  * `session:set_nickname` Nickname is updated
-  * `session:set_avatar` Avatar is updated
-  * `session:set_cover` Cover picture is updated
-  * `session:set_block` User blocked updated
-  * `session:set_state` Conversation state updated
-  * `session:set_data` Conversation custom data updated
-  * `session:set_tags` Conversation new tags
-  * `session:sync:pages` Visitor visited some pages
-  * `session:sync:geolocation` Visitor new geolocation
-  * `session:sync:system` Visitor new system (Useragent, etc)
-  * `session:sync:extended_informations` Visitor new extended informations
-  * `session:sync:removed` Conversation removed
+Available events are listed below:
+
+* **Session Events**
+  * **Session Update Availability**: `session:update_availability`
+  * **Session Request Initiated**: `session:request:initiated`
+  * **Session Set Email**: `session:set_email`
+  * **Session Set Phone**: `session:set_phone`
+  * **Session Set Address**: `session:set_address`
+  * **Session Set Avatar**: `session:set_avatar`
+  * **Session Set Nickname**: `session:set_nickname`
+  * **Session Set Data**: `session:set_data`
+  * **Session Sync Pages**: `session:sync:pages`
+  * **Session Sync Events**: `session:sync:events`
+  * **Session Sync Capabilities**: `session:sync:capabilities`
+  * **Session Sync Geolocation**: `session:sync:geolocation`
+  * **Session Sync System**: `session:sync:system`
+  * **Session Sync Network**: `session:sync:network`
+  * **Session Sync Timezone**: `session:sync:timezone`
+  * **Session Sync Locales**: `session:sync:locales`
+  * **Session Set State**: `session:set_state`
+  * **Session Set Block**: `session:set_block`
+  * **Session Set Segments**: `session:set_segments`
+  * **Session Set Opened**: `session:set_opened`
+  * **Session Set Closed**: `session:set_closed`
+  * **Session Set Mention**: `session:set_mentions`
+  * **Session Removed**: `session:removed`
+
+* **Message Events**
+  * **Message Updated**: `message:updated`
+  * **Message Send**: `message:send`
+  * **Message Received**: `message:received`
+  * **Message Compose Send**: `message:compose:send`
+  * **Message Compose Receive**: `message:compose:receive`
+  * **Message Acknowledge Read Send**: `message:acknowledge:read:send`
+  * **Message Acknowledge Read Received**: `message:acknowledge:read:received`
+  * **Message Acknowledge Delivered**: `message:acknowledge:delivered`
+
+* **People Events**
+  * **People Bind Session**: `people:bind:session`
+  * **People Sync Profile**: `people:sync:profile`
+  * **People Import Progress**: `people:import:progress`
+  * **People Import Done**: `people:import:done`
+
+* **Campaign Events**
+  * **Campaign Progress**: `campaign:progress`
+  * **Campaign Dispatched**: `campaign:dispatched`
+  * **Campaign Running**: `campaign:running`
+
+* **Browsing Events**
+  * **Browsing Request Initiated**: `browsing:request:initiated`
+  * **Browsing Request Rejected**: `browsing:request:rejected`
+  * **Browsing Action Started**: `browsing:action:started`
+  * **Browsing Action Stopped**: `browsing:action:stopped`
+  * **Browsing Stream Mirror**: `browsing:stream:mirror`
+  * **Browsing Stream Mouse**: `browsing:stream:mouse`
+  * **Browsing Stream Tab**: `browsing:stream:tab`
+  * **Browsing Stream Scroll**: `browsing:stream:scroll`
+  * **Browsing Debug Started**: `browsing:debug:started`
+  * **Browsing Debug Stopped**: `browsing:debug:stopped`
+  * **Browsing Debug Executed**: `browsing:debug:executed`
+  * **Browsing Debug Stream**: `browsing:debug:stream`
+  * **Browsing Assist Started**: `browsing:assist:started`
+  * **Browsing Assist Stopped**: `browsing:assist:stopped`
+
+* **Call Events**
+  * **Call Request Initiated**: `call:request:initiated`
+  * **Call Request Rejected**: `call:request:rejected`
+  * **Call Action Started**: `call:action:started`
+  * **Call Action Stopped**: `call:action:stopped`
+  * **Call Signaling SDP**: `call:signaling:sdp`
+  * **Call Signaling Candidate**: `call:signaling:candidate`
+
+* **Website Events**
+  * **Website Update Visitors Count**: `website:update_visitors_count`
+  * **Website Update Operators Availability**: `website:update_operators_availability`
+  * **Website Users Available**: `website:users:available`
+
+* **Bucket Events**
+  * **Bucket URL Upload Generated**: `bucket:url:upload:generated`
+  * **Bucket URL Avatar Generated**: `bucket:url:avatar:generated`
+  * **Bucket URL Campaign Generated**: `bucket:url:campaign:generated`
+  * **Bucket URL Processing Generated**: `bucket:url:processing:generated`
+
+* **Media Events**
+  * **Media Animation Listed**: `media:animation:listed`
+
+* **Billing Events**
+  * **Billing Link Redirect**: `billing:link:redirect`
+
