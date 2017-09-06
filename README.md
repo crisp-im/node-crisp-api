@@ -110,17 +110,19 @@ From the API side, Users are Crisp Users, not your end users
   * **Acknowledge Messages:**: `acknowledgeMessages(websiteId, sessionId, fingerprints)`
 
 * **Website People** (These are your End Users)
-  *  **Create A New Profile**: `createNewPeopleProfile(websiteId, params)`
-  *  **Check  If Exists**: `checkPeopleProfileExists(websiteId, peopleId)`
-  *  **Get People Profile**: `getPeopleProfile(websiteId, peopleId)`
-  *  **List People Profiles**: `listPeopleProfiles(websiteId, peopleId, page)`
-  *  **Remove A Profile**: `removePeopleProfile(websiteId, peopleId)`
-  *  **Save A Profile**: `savePeopleProfile(websiteId, peopleId, params)`
-  *  **Update A Profile**: `updatePeopleProfile(websiteId, peopleId, params)`
-  *  **List Segments**: `listPeopleSegments(websiteId, peopleId, page)`
-  *  **List Events**: `listPeopleEvent(websiteId, peopleId, page)`
-  *  **Get Data**: `getPeopleData(websiteId, peopleId)`
-  *  **Update Data**: `updatePeopleData(websiteId, peopleId, params)`
+  *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
+  *  **Check By Segments**: `CrispClient.websitePeople.findBySegments(websiteId, segments)`
+  *  **Create A New Profile**: `CrispClient.websitePeople.createNewPeopleProfile(websiteId, params)`
+  *  **Check  If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
+  *  **Get People Profile**: `CrispClient.websitePeople.getPeopleProfile(websiteId, peopleId)`
+  *  **List People Profiles**: `CrispClient.websitePeople.listPeopleProfiles(websiteId, peopleId, page)`
+  *  **Remove A Profile**: `CrispClient.websitePeople.removePeopleProfile(websiteId, peopleId)`
+  *  **Save A Profile**: `CrispClient.websitePeople.savePeopleProfile(websiteId, peopleId, params)`
+  *  **Update A Profile**: `CrispClient.websitePeople.updatePeopleProfile(websiteId, peopleId, params)`
+  *  **List Segments**: `CrispClient.websitePeople.listPeopleSegments(websiteId, peopleId, page)`
+  *  **List Events**: `CrispClient.websitePeople.listPeopleEvent(websiteId, peopleId, page)`
+  *  **Get Data**: `CrispClient.websitePeople.getPeopleData(websiteId, peopleId)`
+  *  **Update Data**: `CrispClient.websitePeople.updatePeopleData(websiteId, peopleId, params)`
   
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
@@ -129,11 +131,11 @@ From the API side, Users are Crisp Users, not your end users
   * **Get Website Settings**: `CrispClient.websiteSettings.get(websiteId)`
   * **Update Website Settings**: `CrispClient.websiteSettings.get(params)`
 * **Website Operators**
-  * **Get All Operators**: `getList(websiteId)`
-  * **Get One Operators**: `getOne(websiteId, operatorId)`
-  * **Delete One Operators**: `deleteOne(websiteId, operatorId)`
-  * **Create An Operator**: `createOne(websiteId, parameters)`
-  * **Update An Operator**: `updateOne(websiteId, operatorId, parameters)`
+  * **Get All Operators**: `CrispClient.websiteOperators.getList(websiteId)`
+  * **Get One Operators**: `CrispClient.websiteOperators.getOne(websiteId, operatorId)`
+  * **Delete One Operators**: `CrispClient.websiteOperators.deleteOne(websiteId, operatorId)`
+  * **Create An Operator**: `CrispClient.websiteOperators.createOne(websiteId, parameters)`
+  * **Update An Operator**: `CrispClient.websiteOperators.updateOne(websiteId, operatorId, parameters)`
 
 ## Available events
 
