@@ -103,7 +103,7 @@ CrispClient.on("message:send", function(message) {
   *  **List Events**: `CrispClient.websitePeople.listPeopleEvent(websiteId, peopleId, page)`
   *  **Get Data**: `CrispClient.websitePeople.getPeopleData(websiteId, peopleId)`
   *  **Update Data**: `CrispClient.websitePeople.updatePeopleData(websiteId, peopleId, params)`
-  
+
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
   * **Create User Account**: `CrispClient.website.delete(websiteId)`
@@ -143,6 +143,7 @@ Available events are listed below:
 
 * **Session Events**
   * **Session Update Availability**: `session:update_availability`
+  * **Session Update Verify**: `session:update_verify`
   * **Session Request Initiated**: `session:request:initiated`
   * **Session Set Email**: `session:set_email`
   * **Session Set Phone**: `session:set_phone`
@@ -164,19 +165,36 @@ Available events are listed below:
   * **Session Set Opened**: `session:set_opened`
   * **Session Set Closed**: `session:set_closed`
   * **Session Set Mention**: `session:set_mentions`
+  * **Session Set Routing**: `session:set_routing`
   * **Session Removed**: `session:removed`
 
 * **Message Events**
   * **Message Updated**: `message:updated`
-  * **Message Send**: `message:send`
-  * **Message Received**: `message:received`
+  * **Message Send (Text Variant)**: `message:send/text`
+  * **Message Send (File Variant)**: `message:send/file`
+  * **Message Send (Animation Variant)**: `message:send/animation`
+  * **Message Send (Audio Variant)**: `message:send/audio`
+  * **Message Send (Picker Variant)**: `message:send/picker`
+  * **Message Send (Field Variant)**: `message:send/field`
+  * **Message Send (Note Variant)**: `message:send/note`
+  * **Message Received (Text Variant)**: `message:received/text`
+  * **Message Received (File Variant)**: `message:received/file`
+  * **Message Received (Animation Variant)**: `message:received/animation`
+  * **Message Received (Audio Variant)**: `message:received/audio`
+  * **Message Received (Picker Variant)**: `message:received/picker`
+  * **Message Received (Field Variant)**: `message:received/field`
+  * **Message Received (Note Variant)**: `message:received/note`
   * **Message Compose Send**: `message:compose:send`
   * **Message Compose Receive**: `message:compose:receive`
   * **Message Acknowledge Read Send**: `message:acknowledge:read:send`
   * **Message Acknowledge Read Received**: `message:acknowledge:read:received`
   * **Message Acknowledge Delivered**: `message:acknowledge:delivered`
+  * **Message Notify Unread Send**: `message:notify:unread:send`
+  * **Message Notify Unread Received**: `message:notify:unread:received`
 
 * **People Events**
+  * **People Profile Created**: `people:profile:created`
+  * **People Profile Removed**: `people:profile:removed`
   * **People Bind Session**: `people:bind:session`
   * **People Sync Profile**: `people:sync:profile`
   * **People Import Progress**: `people:import:progress`
@@ -211,19 +229,29 @@ Available events are listed below:
   * **Call Signaling SDP**: `call:signaling:sdp`
   * **Call Signaling Candidate**: `call:signaling:candidate`
 
+* **Service Events**
+  * **Service Translate Processed**: `service:translate:processed`
+
 * **Website Events**
   * **Website Update Visitors Count**: `website:update_visitors_count`
   * **Website Update Operators Availability**: `website:update_operators_availability`
   * **Website Users Available**: `website:users:available`
+  * **Website Validate Domain Valid**: `website:validate:domain:valid`
+  * **Website Validate Domain Invalid**: `website:validate:domain:invalid`
 
 * **Bucket Events**
   * **Bucket URL Upload Generated**: `bucket:url:upload:generated`
   * **Bucket URL Avatar Generated**: `bucket:url:avatar:generated`
   * **Bucket URL Campaign Generated**: `bucket:url:campaign:generated`
+  * **Bucket URL Helpdesk Generated**: `bucket:url:helpdesk:generated`
   * **Bucket URL Processing Generated**: `bucket:url:processing:generated`
 
 * **Media Events**
   * **Media Animation Listed**: `media:animation:listed`
+
+* **Email Events**
+  * **Email Subscribe**: `email:subscribe`
+  * **Email Track View**: `email:track:view`
 
 * **Billing Events**
   * **Billing Link Redirect**: `billing:link:redirect`
