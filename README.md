@@ -207,6 +207,14 @@ Available events are listed below:
   * **Campaign Dispatched**: `campaign:dispatched`
   * **Campaign Running**: `campaign:running`
 
+* **Browsing Events**
+  * **Browsing Request Initiated**: `browsing:request:initiated`
+  * **Browsing Request Rejected**: `browsing:request:rejected`
+
+* **Call Events**
+  * **Call Request Initiated**: `call:request:initiated`
+  * **Call Request Rejected**: `call:request:rejected`
+
 * **Service Events**
   * **Service Translate Processed**: `service:translate:processed`
 
