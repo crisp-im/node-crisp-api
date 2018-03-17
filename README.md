@@ -207,30 +207,6 @@ Available events are listed below:
   * **Campaign Dispatched**: `campaign:dispatched`
   * **Campaign Running**: `campaign:running`
 
-* **Browsing Events**
-  * **Browsing Request Initiated**: `browsing:request:initiated`
-  * **Browsing Request Rejected**: `browsing:request:rejected`
-  * **Browsing Action Started**: `browsing:action:started`
-  * **Browsing Action Stopped**: `browsing:action:stopped`
-  * **Browsing Stream Mirror**: `browsing:stream:mirror`
-  * **Browsing Stream Mouse**: `browsing:stream:mouse`
-  * **Browsing Stream Tab**: `browsing:stream:tab`
-  * **Browsing Stream Scroll**: `browsing:stream:scroll`
-  * **Browsing Debug Started**: `browsing:debug:started`
-  * **Browsing Debug Stopped**: `browsing:debug:stopped`
-  * **Browsing Debug Executed**: `browsing:debug:executed`
-  * **Browsing Debug Stream**: `browsing:debug:stream`
-  * **Browsing Assist Started**: `browsing:assist:started`
-  * **Browsing Assist Stopped**: `browsing:assist:stopped`
-
-* **Call Events**
-  * **Call Request Initiated**: `call:request:initiated`
-  * **Call Request Rejected**: `call:request:rejected`
-  * **Call Action Started**: `call:action:started`
-  * **Call Action Stopped**: `call:action:stopped`
-  * **Call Signaling SDP**: `call:signaling:sdp`
-  * **Call Signaling Candidate**: `call:signaling:candidate`
-
 * **Service Events**
   * **Service Translate Processed**: `service:translate:processed`
 
