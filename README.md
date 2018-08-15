@@ -121,23 +121,12 @@ CrispClient.on("message:send", function(message) {
 
 ### User
 
-From the API side, Users are Crisp Users, not your end users
+_From the API side, users are Crisp operators, not your end users!_
 
-* **User Account**
-  * **Get User Account**: `CrispClient.userAccount.get()`
-  * **Create User Account**: `CrispClient.userAccount.create(params)`
 * **User Session**
   * **Create A New Sessiont**: `CrispClient.userSession.loginWithEmail(email, password)`
   * **Recover the Password**: `CrispClient.userSession.recoverPassword(email)`
   * **Logout**: `CrispClient.userSession.logout()`
-* **User Notifications**
-  * **Get User Notifications**: `CrispClient.userNotification.get()`
-  * **Update User Notifications**: `CrispClient.userNotification.update(params)`
-* **User Profile**
-  * **Get User Profile**: `CrispClient.userProfile.get()`
-  * **Update User Profile**: `CrispClient.userProfile.update(params)`
-* **User Websites**
-  * **Get**: `CrispClient.userWebsites.get()`
 
 ## Available events
 
@@ -172,20 +161,8 @@ Available events are listed below:
 
 * **Message Events**
   * **Message Updated**: `message:updated`
-  * **Message Send (Text Variant)**: `message:send/text`
-  * **Message Send (File Variant)**: `message:send/file`
-  * **Message Send (Animation Variant)**: `message:send/animation`
-  * **Message Send (Audio Variant)**: `message:send/audio`
-  * **Message Send (Picker Variant)**: `message:send/picker`
-  * **Message Send (Field Variant)**: `message:send/field`
-  * **Message Send (Note Variant)**: `message:send/note`
-  * **Message Received (Text Variant)**: `message:received/text`
-  * **Message Received (File Variant)**: `message:received/file`
-  * **Message Received (Animation Variant)**: `message:received/animation`
-  * **Message Received (Audio Variant)**: `message:received/audio`
-  * **Message Received (Picker Variant)**: `message:received/picker`
-  * **Message Received (Field Variant)**: `message:received/field`
-  * **Message Received (Note Variant)**: `message:received/note`
+  * **Message Send**: `message:send`
+  * **Message Received**: `message:received`
   * **Message Compose Send**: `message:compose:send`
   * **Message Compose Receive**: `message:compose:receive`
   * **Message Acknowledge Read Send**: `message:acknowledge:read:send`
@@ -215,21 +192,22 @@ Available events are listed below:
   * **Call Request Initiated**: `call:request:initiated`
   * **Call Request Rejected**: `call:request:rejected`
 
-* **Service Events**
-  * **Service Translate Processed**: `service:translate:processed`
+* **Status Events**
+
+  * **Status Health Changed**: `status:health:changed`
 
 * **Website Events**
   * **Website Update Visitors Count**: `website:update_visitors_count`
   * **Website Update Operators Availability**: `website:update_operators_availability`
   * **Website Users Available**: `website:users:available`
-  * **Website Validate Domain Valid**: `website:validate:domain:valid`
-  * **Website Validate Domain Invalid**: `website:validate:domain:invalid`
 
 * **Bucket Events**
   * **Bucket URL Upload Generated**: `bucket:url:upload:generated`
   * **Bucket URL Avatar Generated**: `bucket:url:avatar:generated`
+  * **Bucket URL Website Generated**: `bucket:url:website:generated`
   * **Bucket URL Campaign Generated**: `bucket:url:campaign:generated`
   * **Bucket URL Helpdesk Generated**: `bucket:url:helpdesk:generated`
+  * **Bucket URL Status Generated**: `bucket:url:status:generated`
   * **Bucket URL Processing Generated**: `bucket:url:processing:generated`
 
 * **Media Events**
@@ -239,6 +217,7 @@ Available events are listed below:
   * **Email Subscribe**: `email:subscribe`
   * **Email Track View**: `email:track:view`
 
-* **Billing Events**
-  * **Billing Link Redirect**: `billing:link:redirect`
-
+* **Plugin Events**
+  * **Plugin Channel**: `plugin:channel`
+  * **Plugin Event**: `plugin:event`
+  * **Plugin Settings Saved**: `plugin:settings:saved`
