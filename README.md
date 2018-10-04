@@ -90,11 +90,14 @@ CrispClient.on("message:send", function(message) {
   * **Delete Conversation:**:`CrispClient.websiteConversations.deleteOne(websiteId, sessionId)`
   * **Acknowledge Messages:**: `CrispClient.websiteConversations.acknowledgeMessages(websiteId, sessionId, fingerprints)`
 
-* **Website People** (These are your End Users)
+* **Website People** (These are your End Users). 
+
+The **PeopleID** argument can be an **email** or the **PeopleID**.
+
   *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
   *  **Check By Segments**: `CrispClient.websitePeople.findBySegments(websiteId, segments)`
   *  **Create A New Profile**: `CrispClient.websitePeople.createNewPeopleProfile(websiteId, params)`
-  *  **Check  If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
+  *  **Check  If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)` 
   *  **Get People Profile**: `CrispClient.websitePeople.getPeopleProfile(websiteId, peopleId)`
   *  **List People Profiles**: `CrispClient.websitePeople.listPeopleProfiles(websiteId, peopleId, page)`
   *  **Remove A Profile**: `CrispClient.websitePeople.removePeopleProfile(websiteId, peopleId)`
