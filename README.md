@@ -42,7 +42,7 @@ var CrispClient  = new Crisp();
 CrispClient.authenticate(identifier, key);
 
 CrispClient.userProfile.get().then(function(myProfile) {
-  console.log("Hello" + myProfile.first_name);
+  console.log("Hello " + myProfile.first_name);
 });
 ```
 
