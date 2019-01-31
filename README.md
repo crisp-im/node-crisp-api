@@ -105,6 +105,7 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
   *  **Save A Profile**: `CrispClient.websitePeople.savePeopleProfile(websiteId, peopleId, params)`
   *  **Update A Profile**: `CrispClient.websitePeople.updatePeopleProfile(websiteId, peopleId, params)`
   *  **List Segments**: `CrispClient.websitePeople.listPeopleSegments(websiteId, peopleId, page)`
+  *  **List Conversations**: `CrispClient.websitePeople.listPeopleConversations(websiteId, peopleId, page)`
   *  **Add Event**: `CrispClient.websitePeople.addPeopleEvent(websiteId, peopleId, params)`
   *  **List Events**: `CrispClient.websitePeople.listPeopleEvent(websiteId, peopleId, page)`
   *  **Get Data**: `CrispClient.websitePeople.getPeopleData(websiteId, peopleId)`
