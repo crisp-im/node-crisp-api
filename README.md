@@ -109,7 +109,6 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
 
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
-  * **Create User Account**: `CrispClient.website.delete(websiteId)`
 * **Website Settings**
   * **Get Website Settings**: `CrispClient.websiteSettings.get(websiteId)`
   * **Update Website Settings**: `CrispClient.websiteSettings.get(params)`
