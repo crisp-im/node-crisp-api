@@ -36,8 +36,8 @@ CrispClient.websiteConversations.sendMessage(
     origin : "chat"
   }
 )
-  .then(() => {
-    console.info("Sent message.");
+  .then((data) => {
+    console.info("Sent message.", data);
   })
   .catch((error) => {
     console.error("Failed sending message:", error);
