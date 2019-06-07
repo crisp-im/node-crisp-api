@@ -1,6 +1,6 @@
 {
   "name": "node-crisp-api",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "description": "Crisp API Node Wrapper",
   "main": "lib/crisp.js",
   "engines": {
