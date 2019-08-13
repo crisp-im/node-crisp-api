@@ -106,6 +106,8 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
   *  **List Events**: `CrispClient.websitePeople.listPeopleEvent(websiteId, peopleId, page)`
   *  **Get Data**: `CrispClient.websitePeople.getPeopleData(websiteId, peopleId)`
   *  **Update Data**: `CrispClient.websitePeople.updatePeopleData(websiteId, peopleId, params)`
+  *  **Get Subscription Status**: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteId, peopleId)`
+  *  **Update Subscription Status**: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
 
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
