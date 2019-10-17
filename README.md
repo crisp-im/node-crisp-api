@@ -86,6 +86,7 @@ CrispClient.on("message:send", function(message) {
   * **Block Conversation:**: `CrispClient.websiteConversations.setBlock(websiteId, sessionId, blocked)`
   * **Delete Conversation:**:`CrispClient.websiteConversations.deleteOne(websiteId, sessionId)`
   * **Acknowledge Messages:**: `CrispClient.websiteConversations.acknowledgeMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Compose Messages:**: `CrispClient.websiteConversations.composeMessages(websiteId, sessionId, params)`
 
 * **Website People** (These are your End Users).
 
