@@ -80,13 +80,13 @@ CrispClient.on("message:send", function(message) {
   * **Create a Conversation**: `CrispClient.websiteConversations.create(websiteId)`
   * **Initiate a Conversation**: `CrispClient.websiteConversations.initiateOne(websiteId, sessionId)`
   * **Send a Conversation**: `CrispClient.websiteConversations.sendMessage(websiteId, sessionId, message)`
+  * **Compose Message:**: `CrispClient.websiteConversations.composeMessage(websiteId, sessionId, params)`
   * **Set Conversation State:**: `CrispClient.websiteConversations.setState(websiteId, sessionId, state)`
   * **Get Conversation Routing Assign**: `CrispClient.websiteConversations.getRouting(websiteId, sessionId)`
   * **Set Conversation Routing Assign:**: `CrispClient.websiteConversations.setRouting(websiteId, sessionId, assign)`
   * **Block Conversation:**: `CrispClient.websiteConversations.setBlock(websiteId, sessionId, blocked)`
   * **Delete Conversation:**:`CrispClient.websiteConversations.deleteOne(websiteId, sessionId)`
   * **Acknowledge Messages:**: `CrispClient.websiteConversations.acknowledgeMessages(websiteId, sessionId, from, origin, fingerprints)`
-  * **Compose Messages:**: `CrispClient.websiteConversations.composeMessages(websiteId, sessionId, params)`
 
 * **Website People** (These are your End Users).
 
