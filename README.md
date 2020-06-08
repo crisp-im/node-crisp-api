@@ -76,7 +76,7 @@ CrispClient.on("message:send", function(message) {
   * **Get A Conversation**: `CrispClient.websiteConversations.getOne(websiteId, sessionId)`
   * **Get Conversation Metadata**: `CrispClient.websiteConversations.getMeta(websiteId, sessionId)`
   * **Update Conversation Metadata**:`CrispClient.websiteConversations.updateMeta(websiteId, sessionId, params)`
-  * **Get Conversation Messages**: `CrispClient.websiteConversations.getMessages(websiteId, sessionId, query)`
+  * **Get Conversation Messages**: `CrispClient.websiteConversations.getMessages(websiteId, sessionId, timestampBefore)`
   * **Create a Conversation**: `CrispClient.websiteConversations.create(websiteId)`
   * **Initiate a Conversation**: `CrispClient.websiteConversations.initiateOne(websiteId, sessionId)`
   * **Send a Conversation**: `CrispClient.websiteConversations.sendMessage(websiteId, sessionId, message)`
