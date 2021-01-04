@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fbemitter": "2.0.3",
+    "fbemitter": "2.1.1",
     "q": "2.0.3",
     "got": "9.6.0",
     "socket.io-client": "2.1.1"
