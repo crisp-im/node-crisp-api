@@ -86,7 +86,8 @@ CrispClient.on("message:send", function(message) {
   * **Set Conversation Routing Assign:**: `CrispClient.websiteConversations.setRouting(websiteId, sessionId, assign)`
   * **Block Conversation:**: `CrispClient.websiteConversations.setBlock(websiteId, sessionId, blocked)`
   * **Delete Conversation:**:`CrispClient.websiteConversations.deleteOne(websiteId, sessionId)`
-  * **Acknowledge Messages:**: `CrispClient.websiteConversations.acknowledgeMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Mark messages as read:**: `CrispClient.websiteConversations.readMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Mark messages as delivered:**: `CrispClient.websiteConversations.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
 
 * **Website People** (These are your End Users).
 
@@ -121,6 +122,11 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
   * **Delete One Operators**: `CrispClient.websiteOperators.deleteOne(websiteId, operatorId)`
   * **Create An Operator**: `CrispClient.websiteOperators.createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient.websiteOperators.updateOne(websiteId, operatorId, parameters)`
+
+### Bucket
+
+* **Buckets**
+  * **Generate a new bucket**: `CrispClient.buckets.generate(content)`
 
 ## Available events
 
