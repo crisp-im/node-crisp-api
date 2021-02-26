@@ -27,7 +27,7 @@ CrispClient.on("message:send", function(message) {
 });
 
 CrispClient.on("message:received", function(message) {
-  console.info("Got 'message:send' event:", message);
+  console.info("Got 'message:received' event:", message);
 });
 
 console.info("Now listening.");
