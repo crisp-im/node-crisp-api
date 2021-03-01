@@ -122,11 +122,6 @@ CrispClient.on("message:send", function(message) {
   * **Create An Operator**: `CrispClient.websiteOperators.createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient.websiteOperators.updateOne(websiteId, operatorId, parameters)`
 
-### Bucket
-
-* **Buckets**
-  * **Generate a new bucket**: `CrispClient.buckets.generate(content)`
-
 ## Available events
 
 Available events are listed below:
