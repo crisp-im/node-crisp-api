@@ -90,15 +90,12 @@ CrispClient.on("message:send", function(message) {
   * **Mark messages as delivered:**: `CrispClient.websiteConversations.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
 
 * **Website People** (These are your End Users).
-
-The **PeopleID** argument can be an **email** or the **PeopleID**.
-
   *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
   *  **Find With Search Text (Name, Email, Segments)**: `CrispClient.websitePeople.findWithSearchText(websiteId, searchText)`
   *  **Create A New Profile**: `CrispClient.websitePeople.createNewPeopleProfile(websiteId, params)`
   *  **Check  If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
   *  **Get People Profile**: `CrispClient.websitePeople.getPeopleProfile(websiteId, peopleId)`
-  *  **List People Profiles**: `CrispClient.websitePeople.listPeopleProfiles(websiteId, peopleId, page)`
+  *  **List People Profiles**: `CrispClient.websitePeople.listPeopleProfiles(websiteId, page)`
   *  **Remove A Profile**: `CrispClient.websitePeople.removePeopleProfile(websiteId, peopleId)`
   *  **Save A Profile**: `CrispClient.websitePeople.savePeopleProfile(websiteId, peopleId, params)`
   *  **Update A Profile**: `CrispClient.websitePeople.updatePeopleProfile(websiteId, peopleId, params)`
@@ -110,6 +107,8 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
   *  **Update Data**: `CrispClient.websitePeople.updatePeopleData(websiteId, peopleId, params)`
   *  **Get Subscription Status**: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteId, peopleId)`
   *  **Update Subscription Status**: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
+
+**🔵 Notice: The peopleId argument can be an email or the peopleId.**
 
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
