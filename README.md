@@ -112,15 +112,22 @@ CrispClient.on("message:send", function(message) {
 
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
+
 * **Website Settings**
   * **Get Website Settings**: `CrispClient.websiteSettings.get(websiteId)`
   * **Update Website Settings**: `CrispClient.websiteSettings.get(params)`
+
 * **Website Operators**
   * **Get All Operators**: `CrispClient.websiteOperators.getList(websiteId)`
   * **Get One Operators**: `CrispClient.websiteOperators.getOne(websiteId, operatorId)`
   * **Delete One Operators**: `CrispClient.websiteOperators.deleteOne(websiteId, operatorId)`
   * **Create An Operator**: `CrispClient.websiteOperators.createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient.websiteOperators.updateOne(websiteId, operatorId, parameters)`
+
+### Bucket
+
+* **Buckets**
+  * **Generate a new bucket**: `CrispClient.buckets.generate(content)`
 
 ## Available events
 
