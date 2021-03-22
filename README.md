@@ -138,15 +138,13 @@ CrispClient.on("message:send", function(message) {
   * **Subscribe Website To Plugin**: `CrispClient.pluginSubscriptions.subscribeWebsiteToPlugin(websiteId, pluginId)`
   * **Unsubscribe Plugin From Website**: `CrispClient.pluginSubscriptions.unsubscribePluginFromWebsite(websiteId, pluginId)`
   * **Get Subscription Settings**: `CrispClient.pluginSubscriptions.getSubscriptionSettings(websiteId, pluginId)`
-  * **Save Subscription Settings**: `CrispClient.pluginSubscriptions.saveSubscriptionSettings(websiteId, pluginId, settings *)` 
-  * **Update Subscription Settings**: `CrispClient.pluginSubscriptions.updateSubscriptionSettings(websiteId, pluginId, settings *)`
-
-_*_ settings: Object fields must match the JAV schema fields of your plugin settings.
+  * **Save Subscription Settings**: `CrispClient.pluginSubscriptions.saveSubscriptionSettings(websiteId, pluginId, settings)`
+  * **Update Subscription Settings**: `CrispClient.pluginSubscriptions.updateSubscriptionSettings(websiteId, pluginId, settings)`
 
 ### Bucket
 
 * **Buckets**
-  * **Generate a new bucket**: `CrispClient.buckets.generate(content)`
+  * **Generate a new bucket**: `CrispClient.buckets.generate(data)`
 
 ## Available events
 
