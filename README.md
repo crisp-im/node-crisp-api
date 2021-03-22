@@ -124,6 +124,25 @@ CrispClient.on("message:send", function(message) {
   * **Create An Operator**: `CrispClient.websiteOperators.createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient.websiteOperators.updateOne(websiteId, operatorId, parameters)`
 
+### Plugin
+
+* **Plugin Connect**
+  * **Resolves the current plugin account information**: `CrispClient.pluginConnect.connectAccount()`
+  * **Checks whether the connected plugin session is valid**: `CrispClient.pluginConnect.connectSession()`
+  * **Lists all websites linked to connected plugin**: `CrispClient.pluginConnect.listAllConnectWebsites()`
+
+* **Plugin Subscription**
+  * **List All Active Subscriptions**: `CrispClient.pluginSubscriptions.listAllActiveSubscriptions()`
+  * **List Subscriptions For Website**: `CrispClient.pluginSubscriptions.listSubscriptionsForWebsite(websiteId)`
+  * **Get Subscription Details**: `CrispClient.pluginSubscriptions.getSubscriptionDetails(websiteId, pluginId)`
+  * **Subscribe Website To Plugin**: `CrispClient.pluginSubscriptions.subscribeWebsiteToPlugin(websiteId, pluginId)`
+  * **Unsubscribe Plugin From Website**: `CrispClient.pluginSubscriptions.unsubscribePluginFromWebsite(websiteId, pluginId)`
+  * **Get Subscription Settings**: `CrispClient.pluginSubscriptions.getSubscriptionSettings(websiteId, pluginId)`
+  * **Save Subscription Settings**: `CrispClient.pluginSubscriptions.saveSubscriptionSettings(websiteId, pluginId, settings *)` 
+  * **Update Subscription Settings**: `CrispClient.pluginSubscriptions.updateSubscriptionSettings(websiteId, pluginId, settings *)`
+
+_*_ settings: Object fields must match the JAV schema fields of your plugin settings.
+
 ### Bucket
 
 * **Buckets**
