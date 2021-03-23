@@ -17,7 +17,7 @@ Then, add authentication parameters to your `client` instance right after you cr
 
 ```js
 var Crisp = require("node-crisp-api");
-var CrispClient  = new Crisp();
+var CrispClient = new Crisp();
 
 // Authenticate to API (identifier, key)
 // eg. CrispClient.authenticate("7c3ef21c-1e04-41ce-8c06-5605c346f73e", "cc29e1a5086e428fcc6a697d5837a66d82808e65c5cce006fbf2191ceea80a0a");
@@ -33,7 +33,7 @@ CrispClient.authenticate(identifier, key);
 
 ```js
 var Crisp = require("node-crisp-api");
-var CrispClient  = new Crisp();
+var CrispClient = new Crisp();
 
 CrispClient.authenticate(identifier, key);
 
@@ -47,7 +47,7 @@ CrispClient.userProfile.get().then(function(myProfile) {
 
 ```js
 var Crisp = require("node-crisp-api");
-var CrispClient  = new Crisp();
+var CrispClient = new Crisp();
 
 CrispClient.authenticate(identifier, key);
 
@@ -93,7 +93,7 @@ CrispClient.on("message:send", function(message) {
   *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
   *  **Find With Search Text (Name, Email, Segments)**: `CrispClient.websitePeople.findWithSearchText(websiteId, searchText)`
   *  **Create A New Profile**: `CrispClient.websitePeople.createNewPeopleProfile(websiteId, params)`
-  *  **Check  If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
+  *  **Check If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
   *  **Get People Profile**: `CrispClient.websitePeople.getPeopleProfile(websiteId, peopleId)`
   *  **List People Profiles**: `CrispClient.websitePeople.listPeopleProfiles(websiteId, page)`
   *  **Remove A Profile**: `CrispClient.websitePeople.removePeopleProfile(websiteId, peopleId)`
@@ -127,9 +127,9 @@ CrispClient.on("message:send", function(message) {
 ### Plugin
 
 * **Plugin Connect**
-  * **Resolves the current plugin account information**: `CrispClient.pluginConnect.connectAccount()`
-  * **Checks whether the connected plugin session is valid**: `CrispClient.pluginConnect.connectSession()`
-  * **Lists all websites linked to connected plugin**: `CrispClient.pluginConnect.listAllConnectWebsites()`
+  * **Get Plugin Connect Account**: `CrispClient.pluginConnect.connectAccount()`
+  * **Check Plugin Connect Session Validity**: `CrispClient.pluginConnect.connectSession()`
+  * **List All Connected Websites**: `CrispClient.pluginConnect.listAllConnectWebsites()`
 
 * **Plugin Subscription**
   * **List All Active Subscriptions**: `CrispClient.pluginSubscriptions.listAllActiveSubscriptions()`
