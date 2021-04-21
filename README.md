@@ -58,7 +58,7 @@ CrispClient.on("message:send", function(message) {
     message.session_id, {
       type : "text",
       content : "I'm a bot",
-      from : "operator", //or user
+      from : "operator", // or user
       origin : "chat"
     }
   );
@@ -73,6 +73,7 @@ CrispClient.on("message:send", function(message) {
 
 * **Website Conversations**
   * **Get Conversation List**: `CrispClient.websiteConversations.getList(websiteId, page)`
+  * **Find Conversations With Search**: `CrispClient.websiteConversations.findWithSearch(websiteId, page, { searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated })`
   * **Get A Conversation**: `CrispClient.websiteConversations.getOne(websiteId, sessionId)`
   * **Get Conversation Metadata**: `CrispClient.websiteConversations.getMeta(websiteId, sessionId)`
   * **Update Conversation Metadata**:`CrispClient.websiteConversations.updateMeta(websiteId, sessionId, params)`
