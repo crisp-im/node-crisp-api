@@ -72,7 +72,7 @@ CrispClient.on("message:send", function(message) {
 ### Website
 
 * **Website Conversations**
-  * **Get Conversation List**: `CrispClient.websiteConversations.getList(websiteId, page)`
+  * **Get Conversations List**: `CrispClient.websiteConversations.getList(websiteId, page)`
   * **Find Conversations With Search**: `CrispClient.websiteConversations.findWithSearch(websiteId, page, { searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated })`
   * **Get A Conversation**: `CrispClient.websiteConversations.getOne(websiteId, sessionId)`
   * **Get Conversation Metadata**: `CrispClient.websiteConversations.getMeta(websiteId, sessionId)`
