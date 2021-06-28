@@ -19,6 +19,10 @@ Then, add authentication parameters to your `client` instance right after you cr
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
+// Make sure to use the correct tier if you are authenticating a plugin
+// eg. with a permanent token generated from Crisp Marketplace
+CrispClient.setTier("plugin");
+
 // Authenticate to API (identifier, key)
 // eg. CrispClient.authenticate("7c3ef21c-1e04-41ce-8c06-5605c346f73e", "cc29e1a5086e428fcc6a697d5837a66d82808e65c5cce006fbf2191ceea80a0a");
 CrispClient.authenticate(identifier, key);
@@ -109,7 +113,7 @@ CrispClient.on("message:send", function(message) {
   *  **Get Subscription Status**: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteId, peopleId)`
   *  **Update Subscription Status**: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
 
-**🔵 Notice: The peopleId argument can be an email or the peopleId.**
+*Notice: The peopleId argument can be an email or the peopleId.*
 
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
