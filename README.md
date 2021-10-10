@@ -17,7 +17,11 @@ Then, add authentication parameters to your `client` instance right after you cr
 
 ```js
 var Crisp = require("node-crisp-api");
-var CrispClient  = new Crisp();
+var CrispClient = new Crisp();
+
+// Make sure to use the correct tier if you are authenticating a plugin
+// eg. with a permanent token generated from Crisp Marketplace
+// CrispClient.setTier("plugin");
 
 // Authenticate to API (identifier, key)
 // eg. CrispClient.authenticate("7c3ef21c-1e04-41ce-8c06-5605c346f73e", "cc29e1a5086e428fcc6a697d5837a66d82808e65c5cce006fbf2191ceea80a0a");
@@ -33,7 +37,7 @@ CrispClient.authenticate(identifier, key);
 
 ```js
 var Crisp = require("node-crisp-api");
-var CrispClient  = new Crisp();
+var CrispClient = new Crisp();
 
 CrispClient.authenticate(identifier, key);
 
@@ -47,7 +51,7 @@ CrispClient.userProfile.get().then(function(myProfile) {
 
 ```js
 var Crisp = require("node-crisp-api");
-var CrispClient  = new Crisp();
+var CrispClient = new Crisp();
 
 CrispClient.authenticate(identifier, key);
 
@@ -58,7 +62,7 @@ CrispClient.on("message:send", function(message) {
     message.session_id, {
       type : "text",
       content : "I'm a bot",
-      from : "operator", //or user
+      from : "operator", // or user
       origin : "chat"
     }
   );
@@ -72,7 +76,8 @@ CrispClient.on("message:send", function(message) {
 ### Website
 
 * **Website Conversations**
-  * **Get Conversation List**: `CrispClient.websiteConversations.getList(websiteId, page)`
+  * **Get Conversations List**: `CrispClient.websiteConversations.getList(websiteId, page)`
+  * **Find Conversations With Search**: `CrispClient.websiteConversations.findWithSearch(websiteId, page, { searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated })`
   * **Get A Conversation**: `CrispClient.websiteConversations.getOne(websiteId, sessionId)`
   * **Get Conversation Metadata**: `CrispClient.websiteConversations.getMeta(websiteId, sessionId)`
   * **Update Conversation Metadata**:`CrispClient.websiteConversations.updateMeta(websiteId, sessionId, params)`
@@ -86,18 +91,16 @@ CrispClient.on("message:send", function(message) {
   * **Set Conversation Routing Assign:**: `CrispClient.websiteConversations.setRouting(websiteId, sessionId, assign)`
   * **Block Conversation:**: `CrispClient.websiteConversations.setBlock(websiteId, sessionId, blocked)`
   * **Delete Conversation:**:`CrispClient.websiteConversations.deleteOne(websiteId, sessionId)`
-  * **Acknowledge Messages:**: `CrispClient.websiteConversations.acknowledgeMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Mark messages as read:**: `CrispClient.websiteConversations.readMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Mark messages as delivered:**: `CrispClient.websiteConversations.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
 
 * **Website People** (These are your End Users).
-
-The **PeopleID** argument can be an **email** or the **PeopleID**.
-
   *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
   *  **Find With Search Text (Name, Email, Segments)**: `CrispClient.websitePeople.findWithSearchText(websiteId, searchText)`
   *  **Create A New Profile**: `CrispClient.websitePeople.createNewPeopleProfile(websiteId, params)`
-  *  **Check  If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
+  *  **Check If Exists**: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
   *  **Get People Profile**: `CrispClient.websitePeople.getPeopleProfile(websiteId, peopleId)`
-  *  **List People Profiles**: `CrispClient.websitePeople.listPeopleProfiles(websiteId, peopleId, page)`
+  *  **List People Profiles**: `CrispClient.websitePeople.listPeopleProfiles(websiteId, page)`
   *  **Remove A Profile**: `CrispClient.websitePeople.removePeopleProfile(websiteId, peopleId)`
   *  **Save A Profile**: `CrispClient.websitePeople.savePeopleProfile(websiteId, peopleId, params)`
   *  **Update A Profile**: `CrispClient.websitePeople.updatePeopleProfile(websiteId, peopleId, params)`
@@ -110,17 +113,43 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
   *  **Get Subscription Status**: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteId, peopleId)`
   *  **Update Subscription Status**: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
 
+*Notice: The peopleId argument can be an email or the peopleId.*
+
 * **Website Base**
   * **Create A Website**: `CrispClient.website.create(params)`
+
 * **Website Settings**
   * **Get Website Settings**: `CrispClient.websiteSettings.get(websiteId)`
   * **Update Website Settings**: `CrispClient.websiteSettings.get(params)`
+
 * **Website Operators**
   * **Get All Operators**: `CrispClient.websiteOperators.getList(websiteId)`
   * **Get One Operators**: `CrispClient.websiteOperators.getOne(websiteId, operatorId)`
   * **Delete One Operators**: `CrispClient.websiteOperators.deleteOne(websiteId, operatorId)`
   * **Create An Operator**: `CrispClient.websiteOperators.createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient.websiteOperators.updateOne(websiteId, operatorId, parameters)`
+
+### Plugin
+
+* **Plugin Connect**
+  * **Get Plugin Connect Account**: `CrispClient.pluginConnect.connectAccount()`
+  * **Check Plugin Connect Session Validity**: `CrispClient.pluginConnect.connectSession()`
+  * **List All Connected Websites**: `CrispClient.pluginConnect.listAllConnectWebsites()`
+
+* **Plugin Subscription**
+  * **List All Active Subscriptions**: `CrispClient.pluginSubscriptions.listAllActiveSubscriptions()`
+  * **List Subscriptions For Website**: `CrispClient.pluginSubscriptions.listSubscriptionsForWebsite(websiteId)`
+  * **Get Subscription Details**: `CrispClient.pluginSubscriptions.getSubscriptionDetails(websiteId, pluginId)`
+  * **Subscribe Website To Plugin**: `CrispClient.pluginSubscriptions.subscribeWebsiteToPlugin(websiteId, pluginId)`
+  * **Unsubscribe Plugin From Website**: `CrispClient.pluginSubscriptions.unsubscribePluginFromWebsite(websiteId, pluginId)`
+  * **Get Subscription Settings**: `CrispClient.pluginSubscriptions.getSubscriptionSettings(websiteId, pluginId)`
+  * **Save Subscription Settings**: `CrispClient.pluginSubscriptions.saveSubscriptionSettings(websiteId, pluginId, settings)`
+  * **Update Subscription Settings**: `CrispClient.pluginSubscriptions.updateSubscriptionSettings(websiteId, pluginId, settings)`
+
+### Bucket
+
+* **Buckets**
+  * **Generate a new bucket**: `CrispClient.buckets.generate(data)`
 
 ## Available events
 
