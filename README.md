@@ -9,7 +9,7 @@
 
 ## Authentication
 
-To authenticate against the API, generate your session identifier and session key **once** using the [Crisp token generation utility](https://go.crisp.chat/account/token/). You'll get a token keypair made of 2 values.
+To authenticate against the API, obtain your authentication token keypair by following the [REST API Authentication](https://docs.crisp.chat/guides/rest-api/authentication/) guide. You'll get a token keypair made of 2 values.
 
 **Keep your token keypair values private, and store them safely for long-term use.**
 
@@ -19,26 +19,23 @@ Then, add authentication parameters to your `client` instance right after you cr
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
-// Make sure to use the correct tier if you are authenticating a plugin
-// eg. with a permanent token generated from Crisp Marketplace
-// CrispClient.setTier("plugin");
-
-// Authenticate to API (identifier, key)
+// Authenticate to API with your plugin token (identifier, key)
 // eg. CrispClient.authenticate("7c3ef21c-1e04-41ce-8c06-5605c346f73e", "cc29e1a5086e428fcc6a697d5837a66d82808e65c5cce006fbf2191ceea80a0a");
+CrispClient.setTier("plugin");
 CrispClient.authenticate(identifier, key);
 
 // Now, you can use authenticated API sections.
 ```
 
-**🔴 Important: Make sure to generate your token once, and use the same token keys in all your subsequent requests to the API. Do not generate too many tokens, as we may invalidate your older tokens to make room for newer tokens.**
-
 ## API Overview
 
+You may follow the [REST API Quickstart](https://docs.crisp.chat/guides/rest-api/quickstart/) guide, which will get you running with the REST API in minutes.
 
 ```js
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
+CrispClient.setTier("plugin");
 CrispClient.authenticate(identifier, key);
 
 CrispClient.userProfile.get().then(function(myProfile) {
@@ -53,6 +50,7 @@ CrispClient.userProfile.get().then(function(myProfile) {
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
+CrispClient.setTier("plugin");
 CrispClient.authenticate(identifier, key);
 
 // Notice: make sure to authenticate before listening for an event
