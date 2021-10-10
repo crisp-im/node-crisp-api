@@ -5,7 +5,7 @@
 `npm install --save node-crisp-api`
 
 * **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 01/30/2019
-* **😘 Maintainer**: [@mywaystar](https://github.com/mywaystar), [@eliottvincent](https://github.com/eliottvincent)
+* **😘 Maintainer**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent)
 
 ## Authentication
 
