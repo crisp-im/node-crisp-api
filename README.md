@@ -55,8 +55,9 @@ CrispClient.authenticate(identifier, key);
 // Notice: make sure to authenticate before listening for an event
 CrispClient.on("message:send", function(message) {
   CrispClient.websiteConversations.sendMessage(
-    message.website_id,
-    message.session_id, {
+    message.website_id, message.session_id,
+
+    {
       type : "text",
       content : "I'm a bot",
       from : "operator", // or user
@@ -91,7 +92,7 @@ CrispClient.on("message:send", function(message) {
   * **Mark messages as read:**: `CrispClient.websiteConversations.readMessages(websiteId, sessionId, from, origin, fingerprints)`
   * **Mark messages as delivered:**: `CrispClient.websiteConversations.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
 
-* **Website People** (These are your End Users).
+* **Website People** _(these are your end-users)_
   *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
   *  **Find With Search Text (Name, Email, Segments)**: `CrispClient.websitePeople.findWithSearchText(websiteId, searchText)`
   *  **Create A New Profile**: `CrispClient.websitePeople.createNewPeopleProfile(websiteId, params)`
@@ -213,7 +214,6 @@ Available events are listed below:
   * **Call Request Rejected**: `call:request:rejected`
 
 * **Status Events**
-
   * **Status Health Changed**: `status:health:changed`
 
 * **Website Events**
