@@ -15,7 +15,7 @@ To authenticate against the API, obtain your authentication token keypair by fol
 
 Then, add authentication parameters to your `client` instance right after you create it:
 
-```js
+```javascript
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
@@ -31,22 +31,21 @@ CrispClient.authenticate(identifier, key);
 
 You may follow the [REST API Quickstart](https://docs.crisp.chat/guides/rest-api/quickstart/) guide, which will get you running with the REST API in minutes.
 
-```js
+```javascript
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
 CrispClient.setTier("plugin");
 CrispClient.authenticate(identifier, key);
 
-CrispClient.userProfile.get().then(function(myProfile) {
-  console.log("Hello " + myProfile.first_name);
+CrispClient.websiteConversations.getList().then(function(conversations) {
+  console.log("Latest conversations:", conversations);
 });
 ```
 
 ## Create your own bot!
 
-
-```js
+```javascript
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
@@ -146,8 +145,8 @@ CrispClient.on("message:send", function(message) {
 
 ### Bucket
 
-* **Buckets**
-  * **Generate a new bucket**: `CrispClient.buckets.generate(data)`
+* **BucketURL**
+  * **Generate a new bucket**: `CrispClient.bucketUrl.generate(data)`
 
 ## Available events
 
