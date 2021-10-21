@@ -102,23 +102,30 @@ Thus, it is straightforward to look for them in the library while reading the [R
   * **Mark messages as delivered:** [`user`, `plugin`]: `CrispClient.websiteConversation.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
 
 * **Website People** _(these are your end-users)_
-  *  **Find By Email** [`user`, `plugin`]: `CrispClient.websitePeople.findByEmail(websiteId, email)`
-  *  **Find With Search Text (Name, Email, Segments)** [`user`, `plugin`]: `CrispClient.websitePeople.findWithSearchText(websiteId, searchText)`
-  *  **Create A New Profile** [`user`, `plugin`]: `CrispClient.websitePeople.createNewPeopleProfile(websiteId, params)`
-  *  **Check If Exists** [`user`, `plugin`]: `CrispClient.websitePeople.checkPeopleProfileExists(websiteId, peopleId)`
-  *  **Get People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleProfile(websiteId, peopleId)`
-  *  **List People Profiles** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleProfiles(websiteId, page)`
-  *  **Remove A Profile** [`user`, `plugin`]: `CrispClient.websitePeople.removePeopleProfile(websiteId, peopleId)`
-  *  **Save A Profile** [`user`, `plugin`]: `CrispClient.websitePeople.savePeopleProfile(websiteId, peopleId, params)`
-  *  **Update A Profile** [`user`, `plugin`]: `CrispClient.websitePeople.updatePeopleProfile(websiteId, peopleId, params)`
-  *  **List Segments** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleSegments(websiteId, peopleId, page)`
-  *  **List Conversations** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleConversations(websiteId, peopleId, page)`
-  *  **Add Event** [`user`, `plugin`]: `CrispClient.websitePeople.addPeopleEvent(websiteId, peopleId, params)`
-  *  **List Events** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleEvent(websiteId, peopleId, page)`
-  *  **Get Data** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleData(websiteId, peopleId)`
-  *  **Update Data** [`user`, `plugin`]: `CrispClient.websitePeople.updatePeopleData(websiteId, peopleId, params)`
-  *  **Get Subscription Status** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteId, peopleId)`
-  *  **Update Subscription Status** [`user`, `plugin`]: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
+  * **Get People Statistics** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleStatistics(websiteID)`
+  * **List Suggested People Segments** [`user`, `plugin`]: `CrispClient.websitePeople.listSuggestedPeopleSegments(websiteID, pageNumber)`
+  * **Delete Suggested People Segment** [`user`, `plugin`]: `CrispClient.websitePeople.deleteSuggestedPeopleSegment(websiteID, segment)`
+  * **List Suggested People Data Keys** [`user`, `plugin`]: `CrispClient.websitePeople.listSuggestedPeopleDataKeys(websiteID, pageNumber)`
+  * **Delete Suggested People Data Key** [`user`, `plugin`]: `CrispClient.websitePeople.deleteSuggestedPeopleDataKey(websiteID, key)`
+  * **List Suggested People Events** [`user`, `plugin`]: `CrispClient.websitePeople.listSuggestedPeopleEvents(websiteID, pageNumber)`
+  * **Delete Suggested People Event** [`user`, `plugin`]: `CrispClient.websitePeople.deleteSuggestedPeopleEvent(websiteID, text)`
+  * **List People Profiles** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleProfiles(websiteID, pageNumber, searchField, searchOrder, searchOperator, searchFilter, searchText)`
+  * **Add New People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.addNewPeopleProfile(websiteID, peopleProfile)`
+  * **Check If People Profile Exists** [`user`, `plugin`]: `CrispClient.websitePeople.checkPeopleProfileExists(websiteID, peopleID)`
+  * **Get People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleProfile(websiteID, peopleID)`
+  * **Save People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.savePeopleProfile(websiteID, peopleID, peopleProfile)`
+  * **Update People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.updatePeopleProfile(websiteID, peopleID, peopleProfile)`
+  * **Remove People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.removePeopleProfile(websiteID, peopleID)`
+  * **List People Conversations** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleConversations(websiteID, peopleID, pageNumber)`
+  * **List People Campaigns** [`user`]: `CrispClient.websitePeople.listPeopleCampaigns(websiteID, peopleID, pageNumber)`
+  + **Add A People Event** [`user`, `plugin`]: `CrispClient.websitePeople.addPeopleEvent(websiteID, peopleID, peopleEvent)`
+  + **List People Events** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleEvents(websiteID, peopleID, pageNumber)`
+  + **Get People Data** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleData(websiteID, peopleID)`
+  + **Save People Data** [`user`, `plugin`]: `CrispClient.websitePeople.savePeopleData(websiteID, peopleID, peopleData)`
+  + **Get People Subscription Status** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteID, peopleID)`
+  + **Update People Subscription Status** [`user`, `plugin`]: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteID, peopleID, peopleSubscription)`
+  * **Export People Profiles** [`user`]: `CrispClient.websitePeople.exportPeopleProfiles(websiteID)`
+  * **Import People Profiles** [`user`]: `CrispClient.websitePeople.importPeopleProfiles(websiteID, profileImportSetup)`
 
 _👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
 
