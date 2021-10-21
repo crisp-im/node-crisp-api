@@ -130,7 +130,7 @@ _👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
 
 * **Website Settings**
   * **Get Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.getWebsiteSettings(websiteId)`
-  * **Update Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.updateWebsiteSettings(params)`
+  * **Update Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.updateWebsiteSettings(websiteId, settings)`
 
 * **Website Operator**
   * **List Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.listWebsiteOperators(websiteId)`
@@ -145,8 +145,7 @@ _👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
 * **Website Visitors**
   * **Count Visitors** [`user`, `plugin`]: `CrispClient.websiteVisitors.countVisitors(websiteID)`
   * **List Visitors** [`user`, `plugin`]: `CrispClient.websiteVisitors.listVisitors(websiteID, pageNumber)`
-  * **Pinpoint Visitors On A Map (Wide Variant)** [`user`, `plugin`]: `CrispClient.websiteVisitors.pinpointVisitorsOnMapWide(websiteID)`
-  * **Pinpoint Visitors On A Map (Area Variant)** [`user`, `plugin`]: `CrispClient.websiteVisitors.pinpointVisitorsOnMapArea(websiteID, centerLongitude, centerLatitude, centerRadius)`
+  * **Pinpoint Visitors On A Map** [`user`, `plugin`]: `CrispClient.websiteVisitors.pinpointVisitorsOnMap(websiteID, centerLongitude, centerLatitude, centerRadius)`
   * **Get Session Identifier From Token** [`user`, `plugin`]: `CrispClient.websiteVisitors.getSessionIdentifierFromToken(websiteID, tokenID)`
   * **Count Blocked Visitors** [`user`]: `CrispClient.websiteVisitors.countBlockedVisitors(websiteID)`
   * **Count Blocked Visitors In Rule** [`user`]: `CrispClient.websiteVisitors.countBlockedVisitorsInRule(websiteID, rule)`
@@ -175,10 +174,8 @@ _👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
 
 * **Website Campaigns**
   * **List Campaigns** [`user`]: `CrispClient.websiteCampaign.listCampaigns(websiteID, pageNumber)`
-  * **List Campaigns (Filter Variant)** [`user`]: `CrispClient.websiteCampaign.filterCampaigns(websiteID, pageNumber, searchName, filterTag, filterTypeOneShot, filterTypeAutomated, filterStatusNotConfigured, filterStatusReady, filterStatusPaused, filterStatusSending, filterStatusDone)`
   * **List Campaign Tags** [`user`]: `CrispClient.websiteCampaign.listCampaignTags(websiteID)`
   * **List Campaign Templates** [`user`]: `CrispClient.websiteCampaign.listCampaignTemplates(websiteID, pageNumber)`
-  * **List Campaign Templates (Filter Variant)** [`user`]: `CrispClient.websiteCampaign.filterCampaignTemplates(websiteID, pageNumber, searchName, filterTypeStatic, filterTypeCustom)`
   * **Create A New Campaign Template** [`user`]: `CrispClient.websiteCampaign.createNewCampaignTemplate(websiteID, templateFormat, templateName)`
   * **Check If Campaign Template Exists** [`user`]: `CrispClient.websiteCampaign.checkCampaignTemplateExists(websiteID, templateID)`
   * **Get A Campaign Template** [`user`]: `CrispClient.websiteCampaign.getCampaignTemplate(websiteID, templateID)`
@@ -264,22 +261,8 @@ Available events are listed below:
 
 * **Message Events**
   * **Message Updated** [`user`, `plugin`]: `message:updated`
-  * **Message Send (Text Variant)** [`user`, `plugin`]: `message:send/text`
-  * **Message Send (File Variant)** [`user`, `plugin`]: `message:send/file`
-  * **Message Send (Animation Variant)** [`user`, `plugin`]: `message:send/animation`
-  * **Message Send (Audio Variant)** [`user`, `plugin`]: `message:send/audio`
-  * **Message Send (Picker Variant)** [`user`, `plugin`]: `message:send/picker`
-  * **Message Send (Field Variant)** [`user`, `plugin`]: `message:send/field`
-  * **Message Send (Note Variant)** [`user`, `plugin`]: `message:send/note`
-  * **Message Send (Event Variant)** [`user`, `plugin`]: `message:send/event`
-  * **Message Received (Text Variant)** [`user`, `plugin`]: `message:received/text`
-  * **Message Received (File Variant)** [`user`, `plugin`]: `message:received/file`
-  * **Message Received (Animation Variant)** [`user`, `plugin`]: `message:received/animation`
-  * **Message Received (Audio Variant)** [`user`, `plugin`]: `message:received/audio`
-  * **Message Received (Picker Variant)** [`user`, `plugin`]: `message:received/picker`
-  * **Message Received (Field Variant)** [`user`, `plugin`]: `message:received/field`
-  * **Message Received (Note Variant)** [`user`, `plugin`]: `message:received/note`
-  * **Message Received (Event Variant)** [`user`, `plugin`]: `message:received/event`
+  * **Message Send** [`user`, `plugin`]: `message:send`
+  * **Message Received** [`user`, `plugin`]: `message:received`
   * **Message Compose Send** [`user`, `plugin`]: `message:compose:send`
   * **Message Compose Receive** [`user`, `plugin`]: `message:compose:receive`
   * **Message Acknowledge Read Send** [`user`, `plugin`]: `message:acknowledge:read:send`
