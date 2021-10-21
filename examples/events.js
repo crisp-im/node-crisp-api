@@ -1,8 +1,8 @@
 /*
- * Bundle: Examples / Events
- * Project: Crisp - Node API
- * Author: Baptiste Jamin http://jamin.me/
- * Copyright: 2019, Crisp IM
+ * node-crisp-api
+ *
+ * Copyright 2021, Crisp IM SARL
+ * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
 "use strict";
