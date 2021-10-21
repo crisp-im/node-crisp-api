@@ -1,6 +1,6 @@
 {
   "name": "node-crisp-api",
-  "description": "Crisp API for NodeJS",
+  "description": "Crisp API Node Wrapper",
   "version": "3.0.0",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
