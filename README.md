@@ -25,8 +25,7 @@ var CrispClient = new Crisp();
 
 // Authenticate to API with your plugin token (identifier, key)
 // eg. CrispClient.authenticate("7c3ef21c-1e04-41ce-8c06-5605c346f73e", "cc29e1a5086e428fcc6a697d5837a66d82808e65c5cce006fbf2191ceea80a0a");
-CrispClient.setTier("plugin");
-CrispClient.authenticate(identifier, key);
+CrispClient.authenticateTier("plugin", identifier, key);
 
 // Now, you can use authenticated API sections.
 ```
@@ -39,8 +38,7 @@ You may follow the [REST API Quickstart](https://docs.crisp.chat/guides/rest-api
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
-CrispClient.setTier("plugin");
-CrispClient.authenticate(identifier, key);
+CrispClient.authenticateTier("plugin", identifier, key);
 
 CrispClient.websiteConversation.getList().then(function(conversations) {
   console.log("Latest conversations:", conversations);
@@ -55,8 +53,7 @@ CrispClient.websiteConversation.getList().then(function(conversations) {
 var Crisp = require("node-crisp-api");
 var CrispClient = new Crisp();
 
-CrispClient.setTier("plugin");
-CrispClient.authenticate(identifier, key);
+CrispClient.authenticateTier("plugin", identifier, key);
 
 // Notice: make sure to authenticate before listening for an event
 CrispClient.on("message:send", function(message) {

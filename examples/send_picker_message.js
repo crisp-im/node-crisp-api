@@ -24,7 +24,7 @@ var CrispClient = new Crisp();
 
 console.info("Authenticating...");
 
-CrispClient.authenticate(TOKEN.identifier, TOKEN.key);
+CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
 
 
 console.info("Sending message...");
