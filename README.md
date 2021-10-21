@@ -1,11 +1,15 @@
-# Crisp API Node
+# node-crisp-api
+
+The Crisp API NodeJS wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your JavaScript code.
+
+Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
+
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 01/30/2019
+* **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent)
 
 ## Installation
 
 `npm install --save node-crisp-api`
-
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 01/30/2019
-* **😘 Maintainer**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent)
 
 ## Authentication
 
