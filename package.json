@@ -26,6 +26,12 @@
   "engines": {
     "node": ">= 6.0.0"
   },
+  "scripts": {
+    "test": "check-build"
+  },
+  "devDependencies": {
+    "check-build": "2.8.2"
+  },
   "dependencies": {
     "socket.io-client": "2.4.0",
     "fbemitter": "3.0.0",

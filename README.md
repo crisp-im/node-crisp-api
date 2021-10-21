@@ -1,5 +1,7 @@
 # node-crisp-api
 
+[![Test and Build](https://github.com/crisp-im/node-crisp-api/workflows/Test%20and%20Build/badge.svg?branch=master)](https://github.com/crisp-im/node-crisp-api/actions?query=workflow%3A%22Test+and+Build%22) [![NPM](https://img.shields.io/npm/v/node-crisp-api.svg)](https://www.npmjs.com/package/node-crisp-api) [![Downloads](https://img.shields.io/npm/dt/node-crisp-api.svg)](https://www.npmjs.com/package/node-crisp-api)
+
 The Crisp API NodeJS wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your JavaScript code.
 
 Copyright 2021 Crisp IM SARL. See LICENSE for copying information.

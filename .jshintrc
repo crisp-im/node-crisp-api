@@ -1,13 +1,6 @@
 {
-  "camelcase": true,
+  "camelcase": false,
   "node": true,
-  "esnext" : false,
-  "predef": [
-    "require",
-    "define",
-    "escape",
-    "Buffer",
-    "console",
-    "module"
-  ]
+  "esnext" : true,
+  "predef": []
 }
