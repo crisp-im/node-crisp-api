@@ -13,7 +13,7 @@ Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
 
 `npm install --save node-crisp-api`
 
-**⚠️ Important: version `3.0.0` of the library introduced breaking changes on a lot of methods regarding `conversations` and `people` routes. We recommend that you migrate your integrations to support the new methods. If you want to wait to apply those changes, we may pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.**
+**⚠️ Important: version `3.0.0` of the library introduced breaking changes on a lot of methods regarding `conversations` and `people` routes. We recommend that you migrate your integrations to support the new methods.** If you want to wait to apply those changes, we may pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.
 
 ## Authentication
 
@@ -170,7 +170,7 @@ Thus, it is straightforward to look for them in the library while reading the [R
   * **Export People Profiles** [`user`]: `CrispClient.websitePeople.exportPeopleProfiles(websiteID)`
   * **Import People Profiles** [`user`]: `CrispClient.websitePeople.importPeopleProfiles(websiteID, profileImportSetup)`
 
-_👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
+_👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Base**
   * **Check If Website Exists** [`user`, `plugin`]: `CrispClient.websiteBase.checkWebsiteExists(domain)`
@@ -179,15 +179,15 @@ _👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
   * **Delete A Website** [`user`]: `CrispClient.websiteBase.deleteWebsite(websiteID, verify)`
 
 * **Website Settings**
-  * **Get Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.getWebsiteSettings(websiteId)`
-  * **Update Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.updateWebsiteSettings(websiteId, settings)`
+  * **Get Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.getWebsiteSettings(websiteID)`
+  * **Update Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.updateWebsiteSettings(websiteID, settings)`
 
 * **Website Operator**
-  * **List Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.listWebsiteOperators(websiteId)`
+  * **List Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.listWebsiteOperators(websiteID)`
   * **List Last Active Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.listLastActiveWebsiteOperators(websiteID)`
   * **Flush Last Active Website Operators** [`user`]: `CrispClient.websiteOperator.flushLastActiveWebsiteOperators(websiteID)`
   * **Send Email To Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.sendEmailToWebsiteOperators(websiteID, emailData)`
-  * **Get A Website Operator** [`user`, `plugin`]: `CrispClient.websiteOperator.getWebsiteOperator(websiteId, userId)`
+  * **Get A Website Operator** [`user`, `plugin`]: `CrispClient.websiteOperator.getWebsiteOperator(websiteID, userID)`
   * **Invite A Website Operator** [`user`]: `CrispClient.websiteOperator.inviteWebsiteOperator(websiteID, email, role, verify)`
   * **Change Operator Membership** [`user`]: `CrispClient.websiteOperator.changeOperatorMembership(websiteID, userID, role, title)`
   * **Unlink Operator From Website** [`user`]: `CrispClient.websiteOperator.unlinkOperatorFromWebsite(websiteID, userID)`
@@ -256,20 +256,20 @@ _👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
 
 * **Plugin Subscription**
   * **List All Active Subscriptions** [`user`]: `CrispClient.pluginSubscription.listAllActiveSubscriptions()`
-  * **List Subscriptions For A Website** [`user`]: `CrispClient.pluginSubscription.listSubscriptionsForWebsite(websiteId)`
-  * **Get Subscription Details** [`user`]: `CrispClient.pluginSubscription.getSubscriptionDetails(websiteId, pluginId)`
-  * **Subscribe Website To Plugin** [`user`]: `CrispClient.pluginSubscription.subscribeWebsiteToPlugin(websiteId, pluginId)`
-  * **Unsubscribe Plugin From Website** [`user`]: `CrispClient.pluginSubscription.unsubscribePluginFromWebsite(websiteId, pluginId)`
-  * **Get Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.getSubscriptionSettings(websiteId, pluginId)`
-  * **Save Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.saveSubscriptionSettings(websiteId, pluginId, settings)`
-  * **Update Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.updateSubscriptionSettings(websiteId, pluginId, settings)`
+  * **List Subscriptions For A Website** [`user`]: `CrispClient.pluginSubscription.listSubscriptionsForWebsite(websiteID)`
+  * **Get Subscription Details** [`user`]: `CrispClient.pluginSubscription.getSubscriptionDetails(websiteID, pluginID)`
+  * **Subscribe Website To Plugin** [`user`]: `CrispClient.pluginSubscription.subscribeWebsiteToPlugin(websiteID, pluginID)`
+  * **Unsubscribe Plugin From Website** [`user`]: `CrispClient.pluginSubscription.unsubscribePluginFromWebsite(websiteID, pluginID)`
+  * **Get Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.getSubscriptionSettings(websiteID, pluginID)`
+  * **Save Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.saveSubscriptionSettings(websiteID, pluginID, settings)`
+  * **Update Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.updateSubscriptionSettings(websiteID, pluginID, settings)`
   * **Forward Plugin Payload To Channel** [`user`, `plugin`]: `CrispClient.pluginSubscription.forwardPluginPayloadToChannel(websiteID, pluginID, payload)`
   * **Dispatch Plugin Event** [`user`, `plugin`]: `CrispClient.pluginSubscription.dispatchPluginEvent(websiteID, pluginID, payload)`
 
 ### Media
 
 * **MediaAnimation**
-  * **List Animation Medias** [`user`]: `CrispClient.mediaAnimation.listAnimationMedias(pageNumber, listId, searchQuery)`
+  * **List Animation Medias** [`user`]: `CrispClient.mediaAnimation.listAnimationMedias(pageNumber, listID, searchQuery)`
 
 ### Bucket
 
