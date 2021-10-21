@@ -179,16 +179,16 @@ _👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
   * **Create A New Campaign Template** [`user`]: `CrispClient.websiteCampaign.createNewCampaignTemplate(websiteID, templateFormat, templateName)`
   * **Check If Campaign Template Exists** [`user`]: `CrispClient.websiteCampaign.checkCampaignTemplateExists(websiteID, templateID)`
   * **Get A Campaign Template** [`user`]: `CrispClient.websiteCampaign.getCampaignTemplate(websiteID, templateID)`
-  * **Save A Campaign Template** [`user`]: `CrispClient.websiteCampaign.saveCampaignTemplate(websiteID, templateID, websiteCampaignTemplateItem)`
-  * **Update A Campaign Template** [`user`]: `CrispClient.websiteCampaign.updateCampaignTemplate(websiteID, templateID, websiteCampaignTemplateItem)`
+  * **Save A Campaign Template** [`user`]: `CrispClient.websiteCampaign.saveCampaignTemplate(websiteID, templateID, template)`
+  * **Update A Campaign Template** [`user`]: `CrispClient.websiteCampaign.updateCampaignTemplate(websiteID, templateID, template)`
   * **Remove A Campaign Template** [`user`]: `CrispClient.websiteCampaign.removeCampaignTemplate(websiteID, templateID)`
 
 * **Website Campaign**
   * **Create A New Campaign** [`user`]: `CrispClient.websiteCampaign.createNewCampaign(websiteID, campaignType, campaignName)`
   * **Check If Campaign Exists** [`user`]: `CrispClient.websiteCampaign.checkCampaignExists(websiteID, campaignID)`
   * **Get A Campaign** [`user`]: `CrispClient.websiteCampaign.getCampaign(websiteID, campaignID)`
-  * **Save A Campaign** [`user`]: `CrispClient.websiteCampaign.saveCampaign(websiteID, campaignID, websiteCampaignItem)`
-  * **Update A Campaign** [`user`]: `CrispClient.websiteCampaign.updateCampaign(websiteID, campaignID, websiteCampaignItem)`
+  * **Save A Campaign** [`user`]: `CrispClient.websiteCampaign.saveCampaign(websiteID, campaignID, campaign)`
+  * **Update A Campaign** [`user`]: `CrispClient.websiteCampaign.updateCampaign(websiteID, campaignID, campaign)`
   * **Remove A Campaign** [`user`]: `CrispClient.websiteCampaign.removeCampaign(websiteID, campaignID)`
   * **Dispatch A Campaign** [`user`]: `CrispClient.websiteCampaign.dispatchCampaign(websiteID, campaignID)`
   * **Resume A Campaign** [`user`]: `CrispClient.websiteCampaign.resumeCampaign(websiteID, campaignID)`
