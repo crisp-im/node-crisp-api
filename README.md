@@ -13,6 +13,8 @@ Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
 
 `npm install --save node-crisp-api`
 
+**⚠️ Important: version `3.0.0` of the library introduced breaking changes on a lot of methods regarding `conversations` and `people` routes. We recommend that you migrate your integrations to support the new methods. If you want to wait to apply those changes, we may pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.**
+
 ## Authentication
 
 To authenticate against the API, obtain your authentication token keypair by following the [REST API Authentication](https://docs.crisp.chat/guides/rest-api/authentication/) guide. You'll get a token keypair made of 2 values.
