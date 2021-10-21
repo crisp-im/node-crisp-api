@@ -14,13 +14,15 @@ const TOKEN = {
   key        : "<YOUR_API_TOKEN_KEY>"
 };
 
-var Crisp = require("../");
 
+var Crisp = require("../");
 var CrispClient = new Crisp();
+
 
 console.info("Authenticating...");
 
 CrispClient.authenticate(TOKEN.identifier, TOKEN.key);
+
 
 console.info("Listening for events...");
 

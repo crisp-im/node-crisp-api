@@ -17,13 +17,15 @@ const TOKEN = {
 const WEBSITE_ID = "<YOUR_WEBSITE_ID>";
 const SESSION_ID = "<YOUR_SESSION_ID>";
 
-var Crisp = require("../");
 
+var Crisp = require("../");
 var CrispClient = new Crisp();
+
 
 console.info("Authenticating...");
 
 CrispClient.authenticate(TOKEN.identifier, TOKEN.key);
+
 
 console.info("Sending message...");
 
