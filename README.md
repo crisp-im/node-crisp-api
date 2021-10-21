@@ -5,7 +5,7 @@ The Crisp API NodeJS wrapper. Authenticate, send messages, fetch conversations, 
 Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
 
 * **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 01/30/2019
-* **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent)
+* **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
 
@@ -31,7 +31,7 @@ CrispClient.authenticate(identifier, key);
 // Now, you can use authenticated API sections.
 ```
 
-## API Overview
+## Overview
 
 You may follow the [REST API Quickstart](https://docs.crisp.chat/guides/rest-api/quickstart/) guide, which will get you running with the REST API in minutes.
 
@@ -42,12 +42,14 @@ var CrispClient = new Crisp();
 CrispClient.setTier("plugin");
 CrispClient.authenticate(identifier, key);
 
-CrispClient.websiteConversations.getList().then(function(conversations) {
+CrispClient.websiteConversation.getList().then(function(conversations) {
   console.log("Latest conversations:", conversations);
 });
 ```
 
-## Create your own bot!
+## Examples
+
+### Create your own bot!
 
 ```javascript
 var Crisp = require("node-crisp-api");
@@ -58,7 +60,7 @@ CrispClient.authenticate(identifier, key);
 
 // Notice: make sure to authenticate before listening for an event
 CrispClient.on("message:send", function(message) {
-  CrispClient.websiteConversations.sendMessage(
+  CrispClient.websiteConversation.sendMessage(
     message.website_id, message.session_id,
 
     {
@@ -71,30 +73,32 @@ CrispClient.on("message:send", function(message) {
 });
 ```
 
-### Available resources & methods
+## Resource Methods
 
 *Where you see `params` it is a plain JavaScript object, e.g. `{ email: 'foo@example.com' }`*
 
 ### Website
 
 * **Website Conversations**
-  * **Get Conversations List**: `CrispClient.websiteConversations.getList(websiteId, page)`
-  * **Find Conversations With Search**: `CrispClient.websiteConversations.findWithSearch(websiteId, page, { searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated })`
-  * **Get A Conversation**: `CrispClient.websiteConversations.getOne(websiteId, sessionId)`
-  * **Get Conversation Metadata**: `CrispClient.websiteConversations.getMeta(websiteId, sessionId)`
-  * **Update Conversation Metadata**:`CrispClient.websiteConversations.updateMeta(websiteId, sessionId, params)`
-  * **Get Conversation Messages**: `CrispClient.websiteConversations.getMessages(websiteId, sessionId, timestampBefore)`
-  * **Create a Conversation**: `CrispClient.websiteConversations.create(websiteId)`
-  * **Initiate a Conversation**: `CrispClient.websiteConversations.initiateOne(websiteId, sessionId)`
-  * **Send a Conversation**: `CrispClient.websiteConversations.sendMessage(websiteId, sessionId, message)`
-  * **Compose Message:**: `CrispClient.websiteConversations.composeMessage(websiteId, sessionId, params)`
-  * **Set Conversation State:**: `CrispClient.websiteConversations.setState(websiteId, sessionId, state)`
-  * **Get Conversation Routing Assign**: `CrispClient.websiteConversations.getRouting(websiteId, sessionId)`
-  * **Set Conversation Routing Assign:**: `CrispClient.websiteConversations.setRouting(websiteId, sessionId, assign)`
-  * **Block Conversation:**: `CrispClient.websiteConversations.setBlock(websiteId, sessionId, blocked)`
-  * **Delete Conversation:**:`CrispClient.websiteConversations.deleteOne(websiteId, sessionId)`
-  * **Mark messages as read:**: `CrispClient.websiteConversations.readMessages(websiteId, sessionId, from, origin, fingerprints)`
-  * **Mark messages as delivered:**: `CrispClient.websiteConversations.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Get Conversations List**: `CrispClient.websiteConversation.getList(websiteId, page)`
+  * **Find Conversations With Search**: `CrispClient.websiteConversation.findWithSearch(websiteId, page, { searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated })`
+
+* **Website Conversation**
+  * **Get A Conversation**: `CrispClient.websiteConversation.getOne(websiteId, sessionId)`
+  * **Get Conversation Metadata**: `CrispClient.websiteConversation.getMeta(websiteId, sessionId)`
+  * **Update Conversation Metadata**:`CrispClient.websiteConversation.updateMeta(websiteId, sessionId, params)`
+  * **Get Conversation Messages**: `CrispClient.websiteConversation.getMessages(websiteId, sessionId, timestampBefore)`
+  * **Create a Conversation**: `CrispClient.websiteConversation.create(websiteId)`
+  * **Initiate a Conversation**: `CrispClient.websiteConversation.initiateOne(websiteId, sessionId)`
+  * **Send a Conversation**: `CrispClient.websiteConversation.sendMessage(websiteId, sessionId, message)`
+  * **Compose Message:**: `CrispClient.websiteConversation.composeMessage(websiteId, sessionId, params)`
+  * **Set Conversation State:**: `CrispClient.websiteConversation.setState(websiteId, sessionId, state)`
+  * **Get Conversation Routing Assign**: `CrispClient.websiteConversation.getRouting(websiteId, sessionId)`
+  * **Set Conversation Routing Assign:**: `CrispClient.websiteConversation.setRouting(websiteId, sessionId, assign)`
+  * **Block Conversation:**: `CrispClient.websiteConversation.setBlock(websiteId, sessionId, blocked)`
+  * **Delete Conversation:**:`CrispClient.websiteConversation.deleteOne(websiteId, sessionId)`
+  * **Mark messages as read:**: `CrispClient.websiteConversation.readMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Mark messages as delivered:**: `CrispClient.websiteConversation.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
 
 * **Website People** _(these are your end-users)_
   *  **Find By Email**: `CrispClient.websitePeople.findByEmail(websiteId, email)`
@@ -115,45 +119,79 @@ CrispClient.on("message:send", function(message) {
   *  **Get Subscription Status**: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteId, peopleId)`
   *  **Update Subscription Status**: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
 
-*Notice: The peopleId argument can be an email or the peopleId.*
+_👉 Notice: The `peopleId` argument can be an email or the `peopleId`._
 
 * **Website Base**
-  * **Create A Website**: `CrispClient.website.create(params)`
+  * **Check If Website Exists**: `CrispClient.websiteBase.checkWebsiteExists(domain)`
+  * **Create Website**: `CrispClient.websiteBase.createWebsite(websiteData)`
+  * **Get A Website**: `CrispClient.websiteBase.getWebsite(websiteID)`
+  * **Delete A Website**: `CrispClient.websiteBase.deleteWebsite(websiteID, verify)`
 
 * **Website Settings**
-  * **Get Website Settings**: `CrispClient.websiteSettings.get(websiteId)`
-  * **Update Website Settings**: `CrispClient.websiteSettings.get(params)`
+  * **Get Website Settings**: `CrispClient.websiteSettings.getWebsiteSettings(websiteId)`
+  * **Update Website Settings**: `CrispClient.websiteSettings.updateWebsiteSettings(params)`
 
-* **Website Operators**
-  * **Get All Operators**: `CrispClient.websiteOperators.getList(websiteId)`
-  * **Get One Operators**: `CrispClient.websiteOperators.getOne(websiteId, operatorId)`
-  * **Delete One Operators**: `CrispClient.websiteOperators.deleteOne(websiteId, operatorId)`
-  * **Create An Operator**: `CrispClient.websiteOperators.createOne(websiteId, parameters)`
-  * **Update An Operator**: `CrispClient.websiteOperators.updateOne(websiteId, operatorId, parameters)`
+* **Website Operator**
+  * **List Website Operators**: `CrispClient.websiteOperator.listWebsiteOperators(websiteId)`
+  * **List Last Active Website Operators**: `CrispClient.websiteOperator.listLastActiveWebsiteOperators(websiteID)`
+  * **Flush Last Active Website Operators**: `CrispClient.websiteOperator.flushLastActiveWebsiteOperators(websiteID)`
+  * **Send Email To Website Operators**: `CrispClient.websiteOperator.sendEmailToWebsiteOperators(websiteID, emailData)`
+  * **Get A Website Operator**: `CrispClient.websiteOperator.getWebsiteOperator(websiteId, userId)`
+  * **Invite A Website Operator**: `CrispClient.websiteOperator.inviteWebsiteOperator(websiteID, email, role, verify)`
+  * **Change Operator Membership**: `CrispClient.websiteOperator.changeOperatorMembership(websiteID, userID, role, title)`
+  * **Unlink Operator From Website**: `CrispClient.websiteOperator.unlinkOperatorFromWebsite(websiteID, userID)`
+
+* **Website Visitors**
+  * `TODO`
+
+* **Website Availability**
+  * `TODO`
+
+* **Website Analytics**
+  * `TODO`
+
+* **Website Batch**
+  * `TODO`
+
+* **Website Verify**
+  * `TODO`
+
+* **Website Campaigns**
+  * `TODO`
+
+* **Website Campaign**
+  * `TODO`
 
 ### Plugin
 
 * **Plugin Connect**
-  * **Get Plugin Connect Account**: `CrispClient.pluginConnect.connectAccount()`
-  * **Check Plugin Connect Session Validity**: `CrispClient.pluginConnect.connectSession()`
-  * **List All Connected Websites**: `CrispClient.pluginConnect.listAllConnectWebsites()`
+  * **Get Connect Account**: `CrispClient.pluginConnect.getConnectAccount()`
+  * **Check Connect Session Validity**: `CrispClient.pluginConnect.checkConnectSessionValidity()`
+  * **List All Connect Websites**: `CrispClient.pluginConnect.listAllConnectWebsites(pageNumber, filterConfigured, dateSince)`
 
 * **Plugin Subscription**
-  * **List All Active Subscriptions**: `CrispClient.pluginSubscriptions.listAllActiveSubscriptions()`
-  * **List Subscriptions For Website**: `CrispClient.pluginSubscriptions.listSubscriptionsForWebsite(websiteId)`
-  * **Get Subscription Details**: `CrispClient.pluginSubscriptions.getSubscriptionDetails(websiteId, pluginId)`
-  * **Subscribe Website To Plugin**: `CrispClient.pluginSubscriptions.subscribeWebsiteToPlugin(websiteId, pluginId)`
-  * **Unsubscribe Plugin From Website**: `CrispClient.pluginSubscriptions.unsubscribePluginFromWebsite(websiteId, pluginId)`
-  * **Get Subscription Settings**: `CrispClient.pluginSubscriptions.getSubscriptionSettings(websiteId, pluginId)`
-  * **Save Subscription Settings**: `CrispClient.pluginSubscriptions.saveSubscriptionSettings(websiteId, pluginId, settings)`
-  * **Update Subscription Settings**: `CrispClient.pluginSubscriptions.updateSubscriptionSettings(websiteId, pluginId, settings)`
+  * **List All Active Subscriptions**: `CrispClient.pluginSubscription.listAllActiveSubscriptions()`
+  * **List Subscriptions For A Website**: `CrispClient.pluginSubscription.listSubscriptionsForWebsite(websiteId)`
+  * **Get Subscription Details**: `CrispClient.pluginSubscription.getSubscriptionDetails(websiteId, pluginId)`
+  * **Subscribe Website To Plugin**: `CrispClient.pluginSubscription.subscribeWebsiteToPlugin(websiteId, pluginId)`
+  * **Unsubscribe Plugin From Website**: `CrispClient.pluginSubscription.unsubscribePluginFromWebsite(websiteId, pluginId)`
+  * **Get Subscription Settings**: `CrispClient.pluginSubscription.getSubscriptionSettings(websiteId, pluginId)`
+  * **Save Subscription Settings**: `CrispClient.pluginSubscription.saveSubscriptionSettings(websiteId, pluginId, settings)`
+  * **Update Subscription Settings**: `CrispClient.pluginSubscription.updateSubscriptionSettings(websiteId, pluginId, settings)`
+  * **Forward Plugin Payload To Channel**: `CrispClient.pluginSubscription.forwardPluginPayloadToChannel(websiteID, pluginID, payload)`
+  * **Dispatch Plugin Event**: `CrispClient.pluginSubscription.dispatchPluginEvent(websiteID, pluginID, payload)`
+
+### Media
+
+* **MediaAnimation**
+  * **List Animation Medias**: `CrispClient.mediaAnimation.listAnimationMedias(pageNumber, listId, searchQuery)`
 
 ### Bucket
 
 * **BucketURL**
-  * **Generate a new bucket**: `CrispClient.bucketUrl.generate(data)`
+  * **Generate Bucket URL**: `CrispClient.bucketUrl.generateBucketURL(data)`
 
-## Available events
+## Realtime Events
 
 Available events are listed below:
 
