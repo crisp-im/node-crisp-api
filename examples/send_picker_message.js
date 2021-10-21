@@ -5,11 +5,13 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+
 "use strict";
 
+
 const TOKEN = {
-  identifier: "<YOUR_API_TOKEN_IDENTIFIER>",
-  key: "<YOUR_API_TOKEN_KEY>"
+  identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
+  key        : "<YOUR_API_TOKEN_KEY>"
 };
 
 const WEBSITE_ID = "<YOUR_WEBSITE_ID>";
@@ -26,25 +28,31 @@ CrispClient.authenticate(TOKEN.identifier, TOKEN.key);
 console.info("Sending message...");
 
 CrispClient.websiteConversations.sendMessage(
-  WEBSITE_ID,
-  SESSION_ID,
+  WEBSITE_ID, SESSION_ID,
 
   {
-    type : "picker",
+    type    : "picker",
+
     content : {
-      "id": "routing",
-      "text": "What is your question about?",
-      "choices": [{
-        "value": "sales",
-        "label": "Sales",
-        "selected": false
-      }, {
-        "value": "tech",
-        "label": "Tech",
-        "selected": false
-      }]
+      "id"   : "routing",
+      "text" : "What is your question about?",
+
+      "choices": [
+        {
+          "value"    : "sales",
+          "label"    : "Sales",
+          "selected" : false
+        },
+
+        {
+        "value"    : "tech",
+        "label"    : "Tech",
+        "selected" : false
+        }
+      ]
     },
-    from : "operator",
+
+    from   : "operator",
     origin : "chat"
   }
 )

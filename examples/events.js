@@ -5,11 +5,13 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+
 "use strict";
 
+
 const TOKEN = {
-  identifier: "<YOUR_API_TOKEN_IDENTIFIER>",
-  key: "<YOUR_API_TOKEN_KEY>"
+  identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
+  key        : "<YOUR_API_TOKEN_KEY>"
 };
 
 var Crisp = require("../");
