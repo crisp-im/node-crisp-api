@@ -40,9 +40,13 @@ var CrispClient = new Crisp();
 
 CrispClient.authenticateTier("plugin", identifier, key);
 
-CrispClient.websiteConversation.getList().then(function(conversations) {
-  console.log("Latest conversations:", conversations);
-});
+CrispClient.websiteConversation.listConversations(websiteID, 1)
+  .then(function(conversations) {
+    console.log("Listed conversations:", conversations);
+  })
+  .catch(function(error) {
+    console.error("Error listing conversations:", error);
+  });
 ```
 
 ## Examples
@@ -57,16 +61,22 @@ CrispClient.authenticateTier("plugin", identifier, key);
 
 // Notice: make sure to authenticate before listening for an event
 CrispClient.on("message:send", function(message) {
-  CrispClient.websiteConversation.sendMessage(
+  CrispClient.websiteConversation.sendMessageInConversation(
     message.website_id, message.session_id,
 
     {
-      type : "text",
+      type    : "text",
       content : "I'm a bot",
-      from : "operator", // or user
-      origin : "chat"
+      from    : "operator", // or user
+      origin  : "chat"
     }
-  );
+  )
+    .then(function(message) {
+      console.log("Message sent:", message);
+    })
+    .catch(function(error) {
+      console.error("Error sending message:", error);
+    });
 });
 ```
 
@@ -81,25 +91,54 @@ Thus, it is straightforward to look for them in the library while reading the [R
 ### Website
 
 * **Website Conversations**
-  * **Get Conversations List** [`user`, `plugin`]: `CrispClient.websiteConversation.getList(websiteId, page)`
-  * **Find Conversations With Search** [`user`, `plugin`]: `CrispClient.websiteConversation.findWithSearch(websiteId, page, { searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated })`
+  * **List Conversations** [`user`, `plugin`]: `CrispClient.websiteConversation.listConversations(websiteID, pageNumber)`
+  * **List Suggested Conversation Segments** [`user`, `plugin`]: `CrispClient.websiteConversation.listSuggestedConversationSegments(websiteID, pageNumber)`
+  * **Delete Suggested Conversation Segment** [`user`, `plugin`]: `CrispClient.websiteConversation.deleteSuggestedConversationSegment(websiteID, segment)`
+  * **List Suggested Conversation Data Keys** [`user`, `plugin`]: `CrispClient.websiteConversation.listSuggestedConversationDataKeys(websiteID, pageNumber)`
+  * **Delete Suggested Conversation Data Key** [`user`, `plugin`]: `CrispClient.websiteConversation.deleteSuggestedConversationDataKey(websiteID, key)`
 
 * **Website Conversation**
-  * **Get A Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getOne(websiteId, sessionId)`
-  * **Get Conversation Metadata** [`user`, `plugin`]: `CrispClient.websiteConversation.getMeta(websiteId, sessionId)`
-  * **Update Conversation Metadata**:`CrispClient.websiteConversation.updateMeta(websiteId, sessionId, params)`
-  * **Get Conversation Messages** [`user`, `plugin`]: `CrispClient.websiteConversation.getMessages(websiteId, sessionId, timestampBefore)`
-  * **Create a Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.create(websiteId)`
-  * **Initiate a Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.initiateOne(websiteId, sessionId)`
-  * **Send a Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.sendMessage(websiteId, sessionId, message)`
-  * **Compose Message:** [`user`, `plugin`]: `CrispClient.websiteConversation.composeMessage(websiteId, sessionId, params)`
-  * **Set Conversation State:** [`user`, `plugin`]: `CrispClient.websiteConversation.setState(websiteId, sessionId, state)`
-  * **Get Conversation Routing Assign** [`user`, `plugin`]: `CrispClient.websiteConversation.getRouting(websiteId, sessionId)`
-  * **Set Conversation Routing Assign:** [`user`, `plugin`]: `CrispClient.websiteConversation.setRouting(websiteId, sessionId, assign)`
-  * **Block Conversation:** [`user`, `plugin`]: `CrispClient.websiteConversation.setBlock(websiteId, sessionId, blocked)`
-  * **Delete Conversation:**:`CrispClient.websiteConversation.deleteOne(websiteId, sessionId)`
-  * **Mark messages as read:** [`user`, `plugin`]: `CrispClient.websiteConversation.readMessages(websiteId, sessionId, from, origin, fingerprints)`
-  * **Mark messages as delivered:** [`user`, `plugin`]: `CrispClient.websiteConversation.deliveredMessages(websiteId, sessionId, from, origin, fingerprints)`
+  * **Create A New Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.createNewConversation(websiteID)`
+  * **Check If Conversation Exists** [`user`, `plugin`]: `CrispClient.websiteConversation.checkConversationExists(websiteID, sessionID)`
+  * **Get A Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversation(websiteID, sessionID)`
+  * **Remove A Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.removeConversation(websiteID, sessionID)`
+  * **Initiate A Conversation With Existing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.initiateConversationWithExistingSession(websiteID, sessionID)`
+  * **Get Messages In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getMessagesInConversation(websiteID, sessionID, timestampBefore)`
+  * **Send A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.sendMessageInConversation(websiteID, sessionID, message)`
+  * **Get A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getMessageInConversation(websiteID, sessionID, fingerprint)`
+  * **Update A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.updateMessageInConversation(websiteID, sessionID, fingerprint, content)`
+  * **Compose A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.composeMessageInConversation(websiteID, sessionID, compose)`
+  * **Mark Messages As Read In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.markMessagesReadInConversation(websiteID, sessionID, read)`
+  * **Mark Messages As Delivered In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.markMessagesDeliveredInConversation(websiteID, sessionID, delivered)`
+  * **Update Conversation Open State** [`user`, `plugin`]: `CrispClient.websiteConversation.updateConversationOpenState(websiteID, sessionID, opened)`
+  * **Get Conversation Routing Assign** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationRoutingAssign(websiteID, sessionID)`
+  * **Assign Conversation Routing** [`user`, `plugin`]: `CrispClient.websiteConversation.assignConversationRouting(websiteID, sessionID, assign)`
+  * **Get Conversation Metas** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationMetas(websiteID, sessionID)`
+  * **Update Conversation Metas** [`user`, `plugin`]: `CrispClient.websiteConversation.updateConversationMetas(websiteID, sessionID, metas)`
+  * **Get An Original Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getOriginalMessageInConversation(websiteID, sessionID, originalID)`
+  * **List Conversation Pages** [`user`, `plugin`]: `CrispClient.websiteConversation.listConversationPages(websiteID, sessionID, pageNumber)`
+  * **List Conversation Events** [`user`, `plugin`]: `CrispClient.websiteConversation.listConversationEvents(websiteID, sessionID, pageNumber)`
+  * **Get Conversation State** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationState(websiteID, sessionID)`
+  * **Change Conversation State** [`user`, `plugin`]: `CrispClient.websiteConversation.changeConversationState(websiteID, sessionID, state)`
+  * **Get Conversation Participants** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationParticipants(websiteID, sessionID)`
+  * **Save Conversation Participants** [`user`, `plugin`]: `CrispClient.websiteConversation.saveConversationParticipants(websiteID, sessionID, participants)`
+  * **Get Block Status For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getBlockStatusForConversation(websiteID, sessionID)`
+  * **Block Incoming Messages For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.blockIncomingMessagesForConversation(websiteID, sessionID, blocked)`
+  * **Request Email Transcript For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.requestEmailTranscriptForConversation(websiteID, sessionID, to, email)`
+  * **Request Chatbox Binding Purge For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.requestChatboxBindingPurgeForConversation(websiteID, sessionID)`
+  * **List Browsing Sessions For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.listBrowsingSessionsForConversation(websiteID, sessionID)`
+  * **Initiate Browsing Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.initiateBrowsingSessionForConversation(websiteID, sessionID)`
+  * **Send Action To An Existing Browsing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.sendActionToExistingBrowsingSession(websiteID, sessionID, browsingID, action)`
+  * **Debug Existing Browsing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.debugExistingBrowsingSession(websiteID, sessionID, browsingID, debug)`
+  * **Assist Existing Browsing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.assistExistingBrowsingSession(websiteID, sessionID, browsingID, assist)`
+  * **Initiate New Call Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.initiateNewCallSessionForConversation(websiteID, sessionID)`
+  * **Get Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getOngoingCallSessionForConversation(websiteID, sessionID)`
+  * **Abort Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.abortOngoingCallSessionForConversation(websiteID, sessionID, callID)`
+  * **Transmit Signaling On Ongoing Call Session** [`user`, `plugin`]: `CrispClient.websiteConversation.transmitSignalingOnOngoingCallSession(websiteID, sessionID, callID, payload)`
+  * **Deliver Widget Button Action For Conversation** [`user`]: `CrispClient.websiteConversation.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value)`
+  * **Deliver Widget Data Fetch Action For Conversation** [`user`]: `CrispClient.websiteConversation.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID)`
+  * **Deliver Widget Data Edit Action For Conversation** [`user`]: `CrispClient.websiteConversation.deliverWidgetDataEditActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, value)`
+  * **Schedule A Reminder For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.scheduleReminderForConversation(websiteID, sessionID, date, note)`
 
 * **Website People** _(these are your end-users)_
   * **Get People Statistics** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleStatistics(websiteID)`

@@ -29,7 +29,7 @@ CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
 
 console.info("Sending message...");
 
-CrispClient.websiteConversation.sendMessage(
+CrispClient.websiteConversation.sendMessageInConversation(
   WEBSITE_ID, SESSION_ID,
 
   {
