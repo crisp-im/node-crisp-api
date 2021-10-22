@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v4.0.0
+
+### Breaking Changes
+
+**⚠️ Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `3.0.0` or lower in your `package.json`.**
+
+* All resource methods have been nested into their parent category, eg. `website`. So all calls to eg. `CrispClient.websiteConversation` or `CrispClient.websitePeople` become `CrispClient.website`. This makes API calls more readable throughout your code.
+
 ## v3.0.0
 
 ### Breaking Changes

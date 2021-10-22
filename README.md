@@ -44,7 +44,7 @@ var CrispClient = new Crisp();
 
 CrispClient.authenticateTier("plugin", identifier, key);
 
-CrispClient.websiteConversation.listConversations(websiteID, 1)
+CrispClient.website.listConversations(websiteID, 1)
   .then(function(conversations) {
     console.log("Listed conversations:", conversations);
   })
@@ -65,7 +65,7 @@ CrispClient.authenticateTier("plugin", identifier, key);
 
 // Notice: make sure to authenticate before listening for an event
 CrispClient.on("message:send", function(message) {
-  CrispClient.websiteConversation.sendMessageInConversation(
+  CrispClient.website.sendMessageInConversation(
     message.website_id, message.session_id,
 
     {
@@ -95,186 +95,186 @@ Thus, it is straightforward to look for them in the library while reading the [R
 ### Website
 
 * **Website Conversations**
-  * **List Conversations** [`user`, `plugin`]: `CrispClient.websiteConversation.listConversations(websiteID, pageNumber)`
-  * **List Suggested Conversation Segments** [`user`, `plugin`]: `CrispClient.websiteConversation.listSuggestedConversationSegments(websiteID, pageNumber)`
-  * **Delete Suggested Conversation Segment** [`user`, `plugin`]: `CrispClient.websiteConversation.deleteSuggestedConversationSegment(websiteID, segment)`
-  * **List Suggested Conversation Data Keys** [`user`, `plugin`]: `CrispClient.websiteConversation.listSuggestedConversationDataKeys(websiteID, pageNumber)`
-  * **Delete Suggested Conversation Data Key** [`user`, `plugin`]: `CrispClient.websiteConversation.deleteSuggestedConversationDataKey(websiteID, key)`
+  * **List Conversations** [`user`, `plugin`]: `CrispClient.website.listConversations(websiteID, pageNumber)`
+  * **List Suggested Conversation Segments** [`user`, `plugin`]: `CrispClient.website.listSuggestedConversationSegments(websiteID, pageNumber)`
+  * **Delete Suggested Conversation Segment** [`user`, `plugin`]: `CrispClient.website.deleteSuggestedConversationSegment(websiteID, segment)`
+  * **List Suggested Conversation Data Keys** [`user`, `plugin`]: `CrispClient.website.listSuggestedConversationDataKeys(websiteID, pageNumber)`
+  * **Delete Suggested Conversation Data Key** [`user`, `plugin`]: `CrispClient.website.deleteSuggestedConversationDataKey(websiteID, key)`
 
 * **Website Conversation**
-  * **Create A New Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.createNewConversation(websiteID)`
-  * **Check If Conversation Exists** [`user`, `plugin`]: `CrispClient.websiteConversation.checkConversationExists(websiteID, sessionID)`
-  * **Get A Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversation(websiteID, sessionID)`
-  * **Remove A Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.removeConversation(websiteID, sessionID)`
-  * **Initiate A Conversation With Existing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.initiateConversationWithExistingSession(websiteID, sessionID)`
-  * **Get Messages In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getMessagesInConversation(websiteID, sessionID, timestampBefore)`
-  * **Send A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.sendMessageInConversation(websiteID, sessionID, message)`
-  * **Get A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getMessageInConversation(websiteID, sessionID, fingerprint)`
-  * **Update A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.updateMessageInConversation(websiteID, sessionID, fingerprint, content)`
-  * **Compose A Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.composeMessageInConversation(websiteID, sessionID, compose)`
-  * **Mark Messages As Read In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.markMessagesReadInConversation(websiteID, sessionID, read)`
-  * **Mark Messages As Delivered In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.markMessagesDeliveredInConversation(websiteID, sessionID, delivered)`
-  * **Update Conversation Open State** [`user`, `plugin`]: `CrispClient.websiteConversation.updateConversationOpenState(websiteID, sessionID, opened)`
-  * **Get Conversation Routing Assign** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationRoutingAssign(websiteID, sessionID)`
-  * **Assign Conversation Routing** [`user`, `plugin`]: `CrispClient.websiteConversation.assignConversationRouting(websiteID, sessionID, assign)`
-  * **Get Conversation Metas** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationMetas(websiteID, sessionID)`
-  * **Update Conversation Metas** [`user`, `plugin`]: `CrispClient.websiteConversation.updateConversationMetas(websiteID, sessionID, metas)`
-  * **Get An Original Message In Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getOriginalMessageInConversation(websiteID, sessionID, originalID)`
-  * **List Conversation Pages** [`user`, `plugin`]: `CrispClient.websiteConversation.listConversationPages(websiteID, sessionID, pageNumber)`
-  * **List Conversation Events** [`user`, `plugin`]: `CrispClient.websiteConversation.listConversationEvents(websiteID, sessionID, pageNumber)`
-  * **Get Conversation State** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationState(websiteID, sessionID)`
-  * **Change Conversation State** [`user`, `plugin`]: `CrispClient.websiteConversation.changeConversationState(websiteID, sessionID, state)`
-  * **Get Conversation Participants** [`user`, `plugin`]: `CrispClient.websiteConversation.getConversationParticipants(websiteID, sessionID)`
-  * **Save Conversation Participants** [`user`, `plugin`]: `CrispClient.websiteConversation.saveConversationParticipants(websiteID, sessionID, participants)`
-  * **Get Block Status For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getBlockStatusForConversation(websiteID, sessionID)`
-  * **Block Incoming Messages For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.blockIncomingMessagesForConversation(websiteID, sessionID, blocked)`
-  * **Request Email Transcript For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.requestEmailTranscriptForConversation(websiteID, sessionID, to, email)`
-  * **Request Chatbox Binding Purge For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.requestChatboxBindingPurgeForConversation(websiteID, sessionID)`
-  * **List Browsing Sessions For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.listBrowsingSessionsForConversation(websiteID, sessionID)`
-  * **Initiate Browsing Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.initiateBrowsingSessionForConversation(websiteID, sessionID)`
-  * **Send Action To An Existing Browsing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.sendActionToExistingBrowsingSession(websiteID, sessionID, browsingID, action)`
-  * **Debug Existing Browsing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.debugExistingBrowsingSession(websiteID, sessionID, browsingID, debug)`
-  * **Assist Existing Browsing Session** [`user`, `plugin`]: `CrispClient.websiteConversation.assistExistingBrowsingSession(websiteID, sessionID, browsingID, assist)`
-  * **Initiate New Call Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.initiateNewCallSessionForConversation(websiteID, sessionID)`
-  * **Get Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.getOngoingCallSessionForConversation(websiteID, sessionID)`
-  * **Abort Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.abortOngoingCallSessionForConversation(websiteID, sessionID, callID)`
-  * **Transmit Signaling On Ongoing Call Session** [`user`, `plugin`]: `CrispClient.websiteConversation.transmitSignalingOnOngoingCallSession(websiteID, sessionID, callID, payload)`
-  * **Deliver Widget Button Action For Conversation** [`user`]: `CrispClient.websiteConversation.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value)`
-  * **Deliver Widget Data Fetch Action For Conversation** [`user`]: `CrispClient.websiteConversation.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID)`
-  * **Deliver Widget Data Edit Action For Conversation** [`user`]: `CrispClient.websiteConversation.deliverWidgetDataEditActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, value)`
-  * **Schedule A Reminder For Conversation** [`user`, `plugin`]: `CrispClient.websiteConversation.scheduleReminderForConversation(websiteID, sessionID, date, note)`
+  * **Create A New Conversation** [`user`, `plugin`]: `CrispClient.website.createNewConversation(websiteID)`
+  * **Check If Conversation Exists** [`user`, `plugin`]: `CrispClient.website.checkConversationExists(websiteID, sessionID)`
+  * **Get A Conversation** [`user`, `plugin`]: `CrispClient.website.getConversation(websiteID, sessionID)`
+  * **Remove A Conversation** [`user`, `plugin`]: `CrispClient.website.removeConversation(websiteID, sessionID)`
+  * **Initiate A Conversation With Existing Session** [`user`, `plugin`]: `CrispClient.website.initiateConversationWithExistingSession(websiteID, sessionID)`
+  * **Get Messages In Conversation** [`user`, `plugin`]: `CrispClient.website.getMessagesInConversation(websiteID, sessionID, timestampBefore)`
+  * **Send A Message In Conversation** [`user`, `plugin`]: `CrispClient.website.sendMessageInConversation(websiteID, sessionID, message)`
+  * **Get A Message In Conversation** [`user`, `plugin`]: `CrispClient.website.getMessageInConversation(websiteID, sessionID, fingerprint)`
+  * **Update A Message In Conversation** [`user`, `plugin`]: `CrispClient.website.updateMessageInConversation(websiteID, sessionID, fingerprint, content)`
+  * **Compose A Message In Conversation** [`user`, `plugin`]: `CrispClient.website.composeMessageInConversation(websiteID, sessionID, compose)`
+  * **Mark Messages As Read In Conversation** [`user`, `plugin`]: `CrispClient.website.markMessagesReadInConversation(websiteID, sessionID, read)`
+  * **Mark Messages As Delivered In Conversation** [`user`, `plugin`]: `CrispClient.website.markMessagesDeliveredInConversation(websiteID, sessionID, delivered)`
+  * **Update Conversation Open State** [`user`, `plugin`]: `CrispClient.website.updateConversationOpenState(websiteID, sessionID, opened)`
+  * **Get Conversation Routing Assign** [`user`, `plugin`]: `CrispClient.website.getConversationRoutingAssign(websiteID, sessionID)`
+  * **Assign Conversation Routing** [`user`, `plugin`]: `CrispClient.website.assignConversationRouting(websiteID, sessionID, assign)`
+  * **Get Conversation Metas** [`user`, `plugin`]: `CrispClient.website.getConversationMetas(websiteID, sessionID)`
+  * **Update Conversation Metas** [`user`, `plugin`]: `CrispClient.website.updateConversationMetas(websiteID, sessionID, metas)`
+  * **Get An Original Message In Conversation** [`user`, `plugin`]: `CrispClient.website.getOriginalMessageInConversation(websiteID, sessionID, originalID)`
+  * **List Conversation Pages** [`user`, `plugin`]: `CrispClient.website.listConversationPages(websiteID, sessionID, pageNumber)`
+  * **List Conversation Events** [`user`, `plugin`]: `CrispClient.website.listConversationEvents(websiteID, sessionID, pageNumber)`
+  * **Get Conversation State** [`user`, `plugin`]: `CrispClient.website.getConversationState(websiteID, sessionID)`
+  * **Change Conversation State** [`user`, `plugin`]: `CrispClient.website.changeConversationState(websiteID, sessionID, state)`
+  * **Get Conversation Participants** [`user`, `plugin`]: `CrispClient.website.getConversationParticipants(websiteID, sessionID)`
+  * **Save Conversation Participants** [`user`, `plugin`]: `CrispClient.website.saveConversationParticipants(websiteID, sessionID, participants)`
+  * **Get Block Status For Conversation** [`user`, `plugin`]: `CrispClient.website.getBlockStatusForConversation(websiteID, sessionID)`
+  * **Block Incoming Messages For Conversation** [`user`, `plugin`]: `CrispClient.website.blockIncomingMessagesForConversation(websiteID, sessionID, blocked)`
+  * **Request Email Transcript For Conversation** [`user`, `plugin`]: `CrispClient.website.requestEmailTranscriptForConversation(websiteID, sessionID, to, email)`
+  * **Request Chatbox Binding Purge For Conversation** [`user`, `plugin`]: `CrispClient.website.requestChatboxBindingPurgeForConversation(websiteID, sessionID)`
+  * **List Browsing Sessions For Conversation** [`user`, `plugin`]: `CrispClient.website.listBrowsingSessionsForConversation(websiteID, sessionID)`
+  * **Initiate Browsing Session For Conversation** [`user`, `plugin`]: `CrispClient.website.initiateBrowsingSessionForConversation(websiteID, sessionID)`
+  * **Send Action To An Existing Browsing Session** [`user`, `plugin`]: `CrispClient.website.sendActionToExistingBrowsingSession(websiteID, sessionID, browsingID, action)`
+  * **Debug Existing Browsing Session** [`user`, `plugin`]: `CrispClient.website.debugExistingBrowsingSession(websiteID, sessionID, browsingID, debug)`
+  * **Assist Existing Browsing Session** [`user`, `plugin`]: `CrispClient.website.assistExistingBrowsingSession(websiteID, sessionID, browsingID, assist)`
+  * **Initiate New Call Session For Conversation** [`user`, `plugin`]: `CrispClient.website.initiateNewCallSessionForConversation(websiteID, sessionID)`
+  * **Get Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.website.getOngoingCallSessionForConversation(websiteID, sessionID)`
+  * **Abort Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.website.abortOngoingCallSessionForConversation(websiteID, sessionID, callID)`
+  * **Transmit Signaling On Ongoing Call Session** [`user`, `plugin`]: `CrispClient.website.transmitSignalingOnOngoingCallSession(websiteID, sessionID, callID, payload)`
+  * **Deliver Widget Button Action For Conversation** [`user`]: `CrispClient.website.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value)`
+  * **Deliver Widget Data Fetch Action For Conversation** [`user`]: `CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID)`
+  * **Deliver Widget Data Edit Action For Conversation** [`user`]: `CrispClient.website.deliverWidgetDataEditActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, value)`
+  * **Schedule A Reminder For Conversation** [`user`, `plugin`]: `CrispClient.website.scheduleReminderForConversation(websiteID, sessionID, date, note)`
 
 * **Website People** _(these are your end-users)_
-  * **Get People Statistics** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleStatistics(websiteID)`
-  * **List Suggested People Segments** [`user`, `plugin`]: `CrispClient.websitePeople.listSuggestedPeopleSegments(websiteID, pageNumber)`
-  * **Delete Suggested People Segment** [`user`, `plugin`]: `CrispClient.websitePeople.deleteSuggestedPeopleSegment(websiteID, segment)`
-  * **List Suggested People Data Keys** [`user`, `plugin`]: `CrispClient.websitePeople.listSuggestedPeopleDataKeys(websiteID, pageNumber)`
-  * **Delete Suggested People Data Key** [`user`, `plugin`]: `CrispClient.websitePeople.deleteSuggestedPeopleDataKey(websiteID, key)`
-  * **List Suggested People Events** [`user`, `plugin`]: `CrispClient.websitePeople.listSuggestedPeopleEvents(websiteID, pageNumber)`
-  * **Delete Suggested People Event** [`user`, `plugin`]: `CrispClient.websitePeople.deleteSuggestedPeopleEvent(websiteID, text)`
-  * **List People Profiles** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleProfiles(websiteID, pageNumber, searchField, searchOrder, searchOperator, searchFilter, searchText)`
-  * **Add New People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.addNewPeopleProfile(websiteID, peopleProfile)`
-  * **Check If People Profile Exists** [`user`, `plugin`]: `CrispClient.websitePeople.checkPeopleProfileExists(websiteID, peopleID)`
-  * **Get People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleProfile(websiteID, peopleID)`
-  * **Save People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.savePeopleProfile(websiteID, peopleID, peopleProfile)`
-  * **Update People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.updatePeopleProfile(websiteID, peopleID, peopleProfile)`
-  * **Remove People Profile** [`user`, `plugin`]: `CrispClient.websitePeople.removePeopleProfile(websiteID, peopleID)`
-  * **List People Conversations** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleConversations(websiteID, peopleID, pageNumber)`
-  * **List People Campaigns** [`user`]: `CrispClient.websitePeople.listPeopleCampaigns(websiteID, peopleID, pageNumber)`
-  + **Add A People Event** [`user`, `plugin`]: `CrispClient.websitePeople.addPeopleEvent(websiteID, peopleID, peopleEvent)`
-  + **List People Events** [`user`, `plugin`]: `CrispClient.websitePeople.listPeopleEvents(websiteID, peopleID, pageNumber)`
-  + **Get People Data** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleData(websiteID, peopleID)`
-  + **Save People Data** [`user`, `plugin`]: `CrispClient.websitePeople.savePeopleData(websiteID, peopleID, peopleData)`
-  + **Get People Subscription Status** [`user`, `plugin`]: `CrispClient.websitePeople.getPeopleSubscriptionStatus(websiteID, peopleID)`
-  + **Update People Subscription Status** [`user`, `plugin`]: `CrispClient.websitePeople.updatePeopleSubscriptionStatus(websiteID, peopleID, peopleSubscription)`
-  * **Export People Profiles** [`user`]: `CrispClient.websitePeople.exportPeopleProfiles(websiteID)`
-  * **Import People Profiles** [`user`]: `CrispClient.websitePeople.importPeopleProfiles(websiteID, profileImportSetup)`
+  * **Get People Statistics** [`user`, `plugin`]: `CrispClient.website.getPeopleStatistics(websiteID)`
+  * **List Suggested People Segments** [`user`, `plugin`]: `CrispClient.website.listSuggestedPeopleSegments(websiteID, pageNumber)`
+  * **Delete Suggested People Segment** [`user`, `plugin`]: `CrispClient.website.deleteSuggestedPeopleSegment(websiteID, segment)`
+  * **List Suggested People Data Keys** [`user`, `plugin`]: `CrispClient.website.listSuggestedPeopleDataKeys(websiteID, pageNumber)`
+  * **Delete Suggested People Data Key** [`user`, `plugin`]: `CrispClient.website.deleteSuggestedPeopleDataKey(websiteID, key)`
+  * **List Suggested People Events** [`user`, `plugin`]: `CrispClient.website.listSuggestedPeopleEvents(websiteID, pageNumber)`
+  * **Delete Suggested People Event** [`user`, `plugin`]: `CrispClient.website.deleteSuggestedPeopleEvent(websiteID, text)`
+  * **List People Profiles** [`user`, `plugin`]: `CrispClient.website.listPeopleProfiles(websiteID, pageNumber, searchField, searchOrder, searchOperator, searchFilter, searchText)`
+  * **Add New People Profile** [`user`, `plugin`]: `CrispClient.website.addNewPeopleProfile(websiteID, peopleProfile)`
+  * **Check If People Profile Exists** [`user`, `plugin`]: `CrispClient.website.checkPeopleProfileExists(websiteID, peopleID)`
+  * **Get People Profile** [`user`, `plugin`]: `CrispClient.website.getPeopleProfile(websiteID, peopleID)`
+  * **Save People Profile** [`user`, `plugin`]: `CrispClient.website.savePeopleProfile(websiteID, peopleID, peopleProfile)`
+  * **Update People Profile** [`user`, `plugin`]: `CrispClient.website.updatePeopleProfile(websiteID, peopleID, peopleProfile)`
+  * **Remove People Profile** [`user`, `plugin`]: `CrispClient.website.removePeopleProfile(websiteID, peopleID)`
+  * **List People Conversations** [`user`, `plugin`]: `CrispClient.website.listPeopleConversations(websiteID, peopleID, pageNumber)`
+  * **List People Campaigns** [`user`]: `CrispClient.website.listPeopleCampaigns(websiteID, peopleID, pageNumber)`
+  + **Add A People Event** [`user`, `plugin`]: `CrispClient.website.addPeopleEvent(websiteID, peopleID, peopleEvent)`
+  + **List People Events** [`user`, `plugin`]: `CrispClient.website.listPeopleEvents(websiteID, peopleID, pageNumber)`
+  + **Get People Data** [`user`, `plugin`]: `CrispClient.website.getPeopleData(websiteID, peopleID)`
+  + **Save People Data** [`user`, `plugin`]: `CrispClient.website.savePeopleData(websiteID, peopleID, peopleData)`
+  + **Get People Subscription Status** [`user`, `plugin`]: `CrispClient.website.getPeopleSubscriptionStatus(websiteID, peopleID)`
+  + **Update People Subscription Status** [`user`, `plugin`]: `CrispClient.website.updatePeopleSubscriptionStatus(websiteID, peopleID, peopleSubscription)`
+  * **Export People Profiles** [`user`]: `CrispClient.website.exportPeopleProfiles(websiteID)`
+  * **Import People Profiles** [`user`]: `CrispClient.website.importPeopleProfiles(websiteID, profileImportSetup)`
 
 _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Base**
-  * **Check If Website Exists** [`user`, `plugin`]: `CrispClient.websiteBase.checkWebsiteExists(domain)`
-  * **Create Website** [`user`]: `CrispClient.websiteBase.createWebsite(websiteData)`
-  * **Get A Website** [`user`, `plugin`]: `CrispClient.websiteBase.getWebsite(websiteID)`
-  * **Delete A Website** [`user`]: `CrispClient.websiteBase.deleteWebsite(websiteID, verify)`
+  * **Check If Website Exists** [`user`, `plugin`]: `CrispClient.website.checkWebsiteExists(domain)`
+  * **Create Website** [`user`]: `CrispClient.website.createWebsite(websiteData)`
+  * **Get A Website** [`user`, `plugin`]: `CrispClient.website.getWebsite(websiteID)`
+  * **Delete A Website** [`user`]: `CrispClient.website.deleteWebsite(websiteID, verify)`
 
 * **Website Settings**
-  * **Get Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.getWebsiteSettings(websiteID)`
-  * **Update Website Settings** [`user`, `plugin`]: `CrispClient.websiteSettings.updateWebsiteSettings(websiteID, settings)`
+  * **Get Website Settings** [`user`, `plugin`]: `CrispClient.website.getWebsiteSettings(websiteID)`
+  * **Update Website Settings** [`user`, `plugin`]: `CrispClient.website.updateWebsiteSettings(websiteID, settings)`
 
 * **Website Operator**
-  * **List Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.listWebsiteOperators(websiteID)`
-  * **List Last Active Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.listLastActiveWebsiteOperators(websiteID)`
-  * **Flush Last Active Website Operators** [`user`]: `CrispClient.websiteOperator.flushLastActiveWebsiteOperators(websiteID)`
-  * **Send Email To Website Operators** [`user`, `plugin`]: `CrispClient.websiteOperator.sendEmailToWebsiteOperators(websiteID, emailData)`
-  * **Get A Website Operator** [`user`, `plugin`]: `CrispClient.websiteOperator.getWebsiteOperator(websiteID, userID)`
-  * **Invite A Website Operator** [`user`]: `CrispClient.websiteOperator.inviteWebsiteOperator(websiteID, email, role, verify)`
-  * **Change Operator Membership** [`user`]: `CrispClient.websiteOperator.changeOperatorMembership(websiteID, userID, role, title)`
-  * **Unlink Operator From Website** [`user`]: `CrispClient.websiteOperator.unlinkOperatorFromWebsite(websiteID, userID)`
+  * **List Website Operators** [`user`, `plugin`]: `CrispClient.website.listWebsiteOperators(websiteID)`
+  * **List Last Active Website Operators** [`user`, `plugin`]: `CrispClient.website.listLastActiveWebsiteOperators(websiteID)`
+  * **Flush Last Active Website Operators** [`user`]: `CrispClient.website.flushLastActiveWebsiteOperators(websiteID)`
+  * **Send Email To Website Operators** [`user`, `plugin`]: `CrispClient.website.sendEmailToWebsiteOperators(websiteID, emailData)`
+  * **Get A Website Operator** [`user`, `plugin`]: `CrispClient.website.getWebsiteOperator(websiteID, userID)`
+  * **Invite A Website Operator** [`user`]: `CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify)`
+  * **Change Operator Membership** [`user`]: `CrispClient.website.changeOperatorMembership(websiteID, userID, role, title)`
+  * **Unlink Operator From Website** [`user`]: `CrispClient.website.unlinkOperatorFromWebsite(websiteID, userID)`
 
 * **Website Visitors**
-  * **Count Visitors** [`user`, `plugin`]: `CrispClient.websiteVisitors.countVisitors(websiteID)`
-  * **List Visitors** [`user`, `plugin`]: `CrispClient.websiteVisitors.listVisitors(websiteID, pageNumber)`
-  * **Pinpoint Visitors On A Map** [`user`, `plugin`]: `CrispClient.websiteVisitors.pinpointVisitorsOnMap(websiteID, centerLongitude, centerLatitude, centerRadius)`
-  * **Get Session Identifier From Token** [`user`, `plugin`]: `CrispClient.websiteVisitors.getSessionIdentifierFromToken(websiteID, tokenID)`
-  * **Count Blocked Visitors** [`user`]: `CrispClient.websiteVisitors.countBlockedVisitors(websiteID)`
-  * **Count Blocked Visitors In Rule** [`user`]: `CrispClient.websiteVisitors.countBlockedVisitorsInRule(websiteID, rule)`
-  * **Clear Blocked Visitors In Rule** [`user`]: `CrispClient.websiteVisitors.clearBlockedVisitorsInRule(websiteID, rule)`
+  * **Count Visitors** [`user`, `plugin`]: `CrispClient.website.countVisitors(websiteID)`
+  * **List Visitors** [`user`, `plugin`]: `CrispClient.website.listVisitors(websiteID, pageNumber)`
+  * **Pinpoint Visitors On A Map** [`user`, `plugin`]: `CrispClient.website.pinpointVisitorsOnMap(websiteID, centerLongitude, centerLatitude, centerRadius)`
+  * **Get Session Identifier From Token** [`user`, `plugin`]: `CrispClient.website.getSessionIdentifierFromToken(websiteID, tokenID)`
+  * **Count Blocked Visitors** [`user`]: `CrispClient.website.countBlockedVisitors(websiteID)`
+  * **Count Blocked Visitors In Rule** [`user`]: `CrispClient.website.countBlockedVisitorsInRule(websiteID, rule)`
+  * **Clear Blocked Visitors In Rule** [`user`]: `CrispClient.website.clearBlockedVisitorsInRule(websiteID, rule)`
 
 * **Website Availability**
-  * **Get Website Availability Status** [`user`, `plugin`]: `CrispClient.websiteAvailability.getWebsiteAvailabilityStatus(websiteID)`
-  * **List Website Operator Availabilities** [`user`, `plugin`]: `CrispClient.websiteAvailability.listWebsiteOperatorAvailabilities(websiteID)`
+  * **Get Website Availability Status** [`user`, `plugin`]: `CrispClient.website.getWebsiteAvailabilityStatus(websiteID)`
+  * **List Website Operator Availabilities** [`user`, `plugin`]: `CrispClient.website.listWebsiteOperatorAvailabilities(websiteID)`
 
 * **Website Analytics**
-  * **Acquire Analytics Points** [`user`]: `CrispClient.websiteAnalytics.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary)`
-  * **List Analytics Filters** [`user`]: `CrispClient.websiteAnalytics.listAnalyticsFilters(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo)`
-  * **List Analytics Classifiers** [`user`]: `CrispClient.websiteAnalytics.listAnalyticsClassifiers(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo)`
+  * **Acquire Analytics Points** [`user`]: `CrispClient.website.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary)`
+  * **List Analytics Filters** [`user`]: `CrispClient.website.listAnalyticsFilters(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo)`
+  * **List Analytics Classifiers** [`user`]: `CrispClient.website.listAnalyticsClassifiers(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo)`
 
 * **Website Batch**
-  * **Batch Resolve Conversations** [`user`]: `CrispClient.websiteBatch.batchResolveConversations(websiteID, sessions)`
-  * **Batch Read Conversations** [`user`]: `CrispClient.websiteBatch.batchReadConversations(websiteID, sessions)`
-  * **Batch Remove Conversations** [`user`]: `CrispClient.websiteBatch.batchRemoveConversations(websiteID, sessions)`
-  * **Batch Remove People** [`user`]: `CrispClient.websiteBatch.batchRemovePeople(websiteID, people)`
+  * **Batch Resolve Conversations** [`user`]: `CrispClient.website.batchResolveConversations(websiteID, sessions)`
+  * **Batch Read Conversations** [`user`]: `CrispClient.website.batchReadConversations(websiteID, sessions)`
+  * **Batch Remove Conversations** [`user`]: `CrispClient.website.batchRemoveConversations(websiteID, sessions)`
+  * **Batch Remove People** [`user`]: `CrispClient.website.batchRemovePeople(websiteID, people)`
 
 * **Website Verify**
-  * **Get Verify Settings** [`user`, `plugin`]: `CrispClient.websiteVerify.getVerifySettings(websiteID)`
-  * **Update Verify Settings** [`user`, `plugin`]: `CrispClient.websiteVerify.updateVerifySettings(websiteID, settings)`
-  * **Get Verify Key** [`user`, `plugin`]: `CrispClient.websiteVerify.getVerifyKey(websiteID)`
-  * **Roll Verify Key** [`user`, `plugin`]: `CrispClient.websiteVerify.rollVerifyKey(websiteID)`
+  * **Get Verify Settings** [`user`, `plugin`]: `CrispClient.website.getVerifySettings(websiteID)`
+  * **Update Verify Settings** [`user`, `plugin`]: `CrispClient.website.updateVerifySettings(websiteID, settings)`
+  * **Get Verify Key** [`user`, `plugin`]: `CrispClient.website.getVerifyKey(websiteID)`
+  * **Roll Verify Key** [`user`, `plugin`]: `CrispClient.website.rollVerifyKey(websiteID)`
 
 * **Website Campaigns**
-  * **List Campaigns** [`user`]: `CrispClient.websiteCampaign.listCampaigns(websiteID, pageNumber)`
-  * **List Campaign Tags** [`user`]: `CrispClient.websiteCampaign.listCampaignTags(websiteID)`
-  * **List Campaign Templates** [`user`]: `CrispClient.websiteCampaign.listCampaignTemplates(websiteID, pageNumber)`
-  * **Create A New Campaign Template** [`user`]: `CrispClient.websiteCampaign.createNewCampaignTemplate(websiteID, templateFormat, templateName)`
-  * **Check If Campaign Template Exists** [`user`]: `CrispClient.websiteCampaign.checkCampaignTemplateExists(websiteID, templateID)`
-  * **Get A Campaign Template** [`user`]: `CrispClient.websiteCampaign.getCampaignTemplate(websiteID, templateID)`
-  * **Save A Campaign Template** [`user`]: `CrispClient.websiteCampaign.saveCampaignTemplate(websiteID, templateID, template)`
-  * **Update A Campaign Template** [`user`]: `CrispClient.websiteCampaign.updateCampaignTemplate(websiteID, templateID, template)`
-  * **Remove A Campaign Template** [`user`]: `CrispClient.websiteCampaign.removeCampaignTemplate(websiteID, templateID)`
+  * **List Campaigns** [`user`]: `CrispClient.website.listCampaigns(websiteID, pageNumber)`
+  * **List Campaign Tags** [`user`]: `CrispClient.website.listCampaignTags(websiteID)`
+  * **List Campaign Templates** [`user`]: `CrispClient.website.listCampaignTemplates(websiteID, pageNumber)`
+  * **Create A New Campaign Template** [`user`]: `CrispClient.website.createNewCampaignTemplate(websiteID, templateFormat, templateName)`
+  * **Check If Campaign Template Exists** [`user`]: `CrispClient.website.checkCampaignTemplateExists(websiteID, templateID)`
+  * **Get A Campaign Template** [`user`]: `CrispClient.website.getCampaignTemplate(websiteID, templateID)`
+  * **Save A Campaign Template** [`user`]: `CrispClient.website.saveCampaignTemplate(websiteID, templateID, template)`
+  * **Update A Campaign Template** [`user`]: `CrispClient.website.updateCampaignTemplate(websiteID, templateID, template)`
+  * **Remove A Campaign Template** [`user`]: `CrispClient.website.removeCampaignTemplate(websiteID, templateID)`
 
 * **Website Campaign**
-  * **Create A New Campaign** [`user`]: `CrispClient.websiteCampaign.createNewCampaign(websiteID, campaignType, campaignName)`
-  * **Check If Campaign Exists** [`user`]: `CrispClient.websiteCampaign.checkCampaignExists(websiteID, campaignID)`
-  * **Get A Campaign** [`user`]: `CrispClient.websiteCampaign.getCampaign(websiteID, campaignID)`
-  * **Save A Campaign** [`user`]: `CrispClient.websiteCampaign.saveCampaign(websiteID, campaignID, campaign)`
-  * **Update A Campaign** [`user`]: `CrispClient.websiteCampaign.updateCampaign(websiteID, campaignID, campaign)`
-  * **Remove A Campaign** [`user`]: `CrispClient.websiteCampaign.removeCampaign(websiteID, campaignID)`
-  * **Dispatch A Campaign** [`user`]: `CrispClient.websiteCampaign.dispatchCampaign(websiteID, campaignID)`
-  * **Resume A Campaign** [`user`]: `CrispClient.websiteCampaign.resumeCampaign(websiteID, campaignID)`
-  * **Pause A Campaign** [`user`]: `CrispClient.websiteCampaign.pauseCampaign(websiteID, campaignID)`
-  * **Test A Campaign** [`user`]: `CrispClient.websiteCampaign.testCampaign(websiteID, campaignID)`
-  * **List Campaign Recipients** [`user`]: `CrispClient.websiteCampaign.listCampaignRecipients(websiteID, campaignID, pageNumber)`
-  * **List Campaign Statistics** [`user`]: `CrispClient.websiteCampaign.listCampaignStatistics(websiteID, campaignID, action, pageNumber)`
+  * **Create A New Campaign** [`user`]: `CrispClient.website.createNewCampaign(websiteID, campaignType, campaignName)`
+  * **Check If Campaign Exists** [`user`]: `CrispClient.website.checkCampaignExists(websiteID, campaignID)`
+  * **Get A Campaign** [`user`]: `CrispClient.website.getCampaign(websiteID, campaignID)`
+  * **Save A Campaign** [`user`]: `CrispClient.website.saveCampaign(websiteID, campaignID, campaign)`
+  * **Update A Campaign** [`user`]: `CrispClient.website.updateCampaign(websiteID, campaignID, campaign)`
+  * **Remove A Campaign** [`user`]: `CrispClient.website.removeCampaign(websiteID, campaignID)`
+  * **Dispatch A Campaign** [`user`]: `CrispClient.website.dispatchCampaign(websiteID, campaignID)`
+  * **Resume A Campaign** [`user`]: `CrispClient.website.resumeCampaign(websiteID, campaignID)`
+  * **Pause A Campaign** [`user`]: `CrispClient.website.pauseCampaign(websiteID, campaignID)`
+  * **Test A Campaign** [`user`]: `CrispClient.website.testCampaign(websiteID, campaignID)`
+  * **List Campaign Recipients** [`user`]: `CrispClient.website.listCampaignRecipients(websiteID, campaignID, pageNumber)`
+  * **List Campaign Statistics** [`user`]: `CrispClient.website.listCampaignStatistics(websiteID, campaignID, action, pageNumber)`
 
 ### Plugin
 
 * **Plugin Connect**
-  * **Get Connect Account** [`user`, `plugin`]: `CrispClient.pluginConnect.getConnectAccount()`
-  * **Check Connect Session Validity** [`user`, `plugin`]: `CrispClient.pluginConnect.checkConnectSessionValidity()`
-  * **List All Connect Websites** [`user`, `plugin`]: `CrispClient.pluginConnect.listAllConnectWebsites(pageNumber, filterConfigured, dateSince)`
+  * **Get Connect Account** [`user`, `plugin`]: `CrispClient.plugin.getConnectAccount()`
+  * **Check Connect Session Validity** [`user`, `plugin`]: `CrispClient.plugin.checkConnectSessionValidity()`
+  * **List All Connect Websites** [`user`, `plugin`]: `CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSince)`
 
 * **Plugin Subscription**
-  * **List All Active Subscriptions** [`user`]: `CrispClient.pluginSubscription.listAllActiveSubscriptions()`
-  * **List Subscriptions For A Website** [`user`]: `CrispClient.pluginSubscription.listSubscriptionsForWebsite(websiteID)`
-  * **Get Subscription Details** [`user`]: `CrispClient.pluginSubscription.getSubscriptionDetails(websiteID, pluginID)`
-  * **Subscribe Website To Plugin** [`user`]: `CrispClient.pluginSubscription.subscribeWebsiteToPlugin(websiteID, pluginID)`
-  * **Unsubscribe Plugin From Website** [`user`]: `CrispClient.pluginSubscription.unsubscribePluginFromWebsite(websiteID, pluginID)`
-  * **Get Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.getSubscriptionSettings(websiteID, pluginID)`
-  * **Save Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.saveSubscriptionSettings(websiteID, pluginID, settings)`
-  * **Update Subscription Settings** [`user`, `plugin`]: `CrispClient.pluginSubscription.updateSubscriptionSettings(websiteID, pluginID, settings)`
-  * **Forward Plugin Payload To Channel** [`user`, `plugin`]: `CrispClient.pluginSubscription.forwardPluginPayloadToChannel(websiteID, pluginID, payload)`
-  * **Dispatch Plugin Event** [`user`, `plugin`]: `CrispClient.pluginSubscription.dispatchPluginEvent(websiteID, pluginID, payload)`
+  * **List All Active Subscriptions** [`user`]: `CrispClient.plugin.listAllActiveSubscriptions()`
+  * **List Subscriptions For A Website** [`user`]: `CrispClient.plugin.listSubscriptionsForWebsite(websiteID)`
+  * **Get Subscription Details** [`user`]: `CrispClient.plugin.getSubscriptionDetails(websiteID, pluginID)`
+  * **Subscribe Website To Plugin** [`user`]: `CrispClient.plugin.subscribeWebsiteToPlugin(websiteID, pluginID)`
+  * **Unsubscribe Plugin From Website** [`user`]: `CrispClient.plugin.unsubscribePluginFromWebsite(websiteID, pluginID)`
+  * **Get Subscription Settings** [`user`, `plugin`]: `CrispClient.plugin.getSubscriptionSettings(websiteID, pluginID)`
+  * **Save Subscription Settings** [`user`, `plugin`]: `CrispClient.plugin.saveSubscriptionSettings(websiteID, pluginID, settings)`
+  * **Update Subscription Settings** [`user`, `plugin`]: `CrispClient.plugin.updateSubscriptionSettings(websiteID, pluginID, settings)`
+  * **Forward Plugin Payload To Channel** [`user`, `plugin`]: `CrispClient.plugin.forwardPluginPayloadToChannel(websiteID, pluginID, payload)`
+  * **Dispatch Plugin Event** [`user`, `plugin`]: `CrispClient.plugin.dispatchPluginEvent(websiteID, pluginID, payload)`
 
 ### Media
 
 * **MediaAnimation**
-  * **List Animation Medias** [`user`]: `CrispClient.mediaAnimation.listAnimationMedias(pageNumber, listID, searchQuery)`
+  * **List Animation Medias** [`user`]: `CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery)`
 
 ### Bucket
 
 * **BucketURL**
-  * **Generate Bucket URL** [`user`, `plugin`]: `CrispClient.bucketUrl.generateBucketURL(data)`
+  * **Generate Bucket URL** [`user`, `plugin`]: `CrispClient.bucket.generateBucketURL(data)`
 
 ## Realtime Events
 
