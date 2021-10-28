@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v4.0.2
+
+### Bug Fixes
+
+* Fixed a typo in the `BucketURL` resource include from its `Bucket` service.
+
 ## v4.0.1
 
 ### Changes
