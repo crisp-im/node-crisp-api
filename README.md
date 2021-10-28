@@ -6,7 +6,7 @@ The Crisp API NodeJS wrapper. Authenticate, send messages, fetch conversations, 
 
 Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 15/10/2021
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 28/10/2021
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -133,7 +133,6 @@ Thus, it is straightforward to look for them in the library while reading the [R
   * **List Browsing Sessions For Conversation** [`user`, `plugin`]: `CrispClient.website.listBrowsingSessionsForConversation(websiteID, sessionID)`
   * **Initiate Browsing Session For Conversation** [`user`, `plugin`]: `CrispClient.website.initiateBrowsingSessionForConversation(websiteID, sessionID)`
   * **Send Action To An Existing Browsing Session** [`user`, `plugin`]: `CrispClient.website.sendActionToExistingBrowsingSession(websiteID, sessionID, browsingID, action)`
-  * **Debug Existing Browsing Session** [`user`, `plugin`]: `CrispClient.website.debugExistingBrowsingSession(websiteID, sessionID, browsingID, debug)`
   * **Assist Existing Browsing Session** [`user`, `plugin`]: `CrispClient.website.assistExistingBrowsingSession(websiteID, sessionID, browsingID, assist)`
   * **Initiate New Call Session For Conversation** [`user`, `plugin`]: `CrispClient.website.initiateNewCallSessionForConversation(websiteID, sessionID)`
   * **Get Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.website.getOngoingCallSessionForConversation(websiteID, sessionID)`

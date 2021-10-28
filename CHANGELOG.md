@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v4.0.1
+
+### Changes
+
+* The `CrispClient.website.debugExistingBrowsingSession` method has been removed, following the sunset of the LiveDebug feature across our products.
+
 ## v4.0.0
 
 ### Breaking Changes
