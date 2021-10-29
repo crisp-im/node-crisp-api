@@ -22,7 +22,7 @@
       "url": "https://github.com/crisp-im/node-crisp-api/blob/master/LICENSE"
     }
   ],
-  "main": "lib/crisp",
+  "main": "./lib/crisp",
   "types": "./types",
   "engines": {
     "node": ">= 6.0.0"
