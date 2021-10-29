@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v4.1.1
+
+### Bug Fixes
+
+* Fixed TypeScript types not being picked up correctly.
+
 ## v4.1.0
 
 ### New Features
