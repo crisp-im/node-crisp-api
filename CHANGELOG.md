@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v4.1.0
+
+### New Features
+
+* Added TypeScript definitions.
+
 ## v4.0.2
 
 ### Bug Fixes
