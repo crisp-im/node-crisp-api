@@ -23,7 +23,7 @@
     }
   ],
   "main": "lib/crisp",
-  "types": "./types",
+  "types": "./types/crisp.d.ts",
   "engines": {
     "node": ">= 6.0.0"
   },
