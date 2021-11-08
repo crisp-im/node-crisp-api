@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.0.1
+
+### Changes
+
+* Minor `README.md` title change.
+
 ## v5.0.0
 
 ### Breaking Changes
