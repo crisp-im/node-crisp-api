@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.0.0
+
+### Breaking Changes
+
+* The package has been renamed from `node-crisp-api` to `crisp-api`. Since it is typical of NPM packages to skip the `node-` prefix in their name, we chose to normalize the package name to this community standard. The programmatic API did not change, so you can simply update the package name to the new name in your `package.json` and all imports.
+
 ## v4.2.0
 
 ### New Features

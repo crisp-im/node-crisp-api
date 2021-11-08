@@ -1,6 +1,6 @@
 # node-crisp-api
 
-[![Test and Build](https://github.com/crisp-im/node-crisp-api/workflows/Test%20and%20Build/badge.svg?branch=master)](https://github.com/crisp-im/node-crisp-api/actions?query=workflow%3A%22Test+and+Build%22) [![NPM](https://img.shields.io/npm/v/node-crisp-api.svg)](https://www.npmjs.com/package/node-crisp-api) [![Downloads](https://img.shields.io/npm/dt/node-crisp-api.svg)](https://www.npmjs.com/package/node-crisp-api)
+[![Test and Build](https://github.com/crisp-im/node-crisp-api/workflows/Test%20and%20Build/badge.svg?branch=master)](https://github.com/crisp-im/node-crisp-api/actions?query=workflow%3A%22Test+and+Build%22) [![NPM](https://img.shields.io/npm/v/crisp-api.svg)](https://www.npmjs.com/package/crisp-api) [![Downloads](https://img.shields.io/npm/dt/crisp-api.svg)](https://www.npmjs.com/package/crisp-api)
 
 The Crisp API NodeJS wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your JavaScript code.
 
@@ -11,9 +11,7 @@ Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
 
 ## Installation
 
-`npm install --save node-crisp-api`
-
-**⚠️ Important: version `3.0.0` of the library introduced breaking changes on a lot of methods regarding `conversations` and `people` routes. We recommend that you migrate your integrations to support the new methods.** If you want to wait to apply those changes, we may pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.
+`npm install --save crisp-api`
 
 ## Authentication
 
@@ -24,7 +22,7 @@ To authenticate against the API, obtain your authentication token keypair by fol
 Then, add authentication parameters to your `client` instance right after you create it:
 
 ```javascript
-var Crisp = require("node-crisp-api");
+var Crisp = require("crisp-api");
 var CrispClient = new Crisp();
 
 // Authenticate to API with your plugin token (identifier, key)
@@ -39,7 +37,7 @@ CrispClient.authenticateTier("plugin", identifier, key);
 You may follow the [REST API Quickstart](https://docs.crisp.chat/guides/rest-api/quickstart/) guide, which will get you running with the REST API in minutes.
 
 ```javascript
-var Crisp = require("node-crisp-api");
+var Crisp = require("crisp-api");
 var CrispClient = new Crisp();
 
 CrispClient.authenticateTier("plugin", identifier, key);
@@ -58,7 +56,7 @@ CrispClient.website.listConversations(websiteID, 1)
 ### Create your own bot!
 
 ```javascript
-var Crisp = require("node-crisp-api");
+var Crisp = require("crisp-api");
 var CrispClient = new Crisp();
 
 CrispClient.authenticateTier("plugin", identifier, key);
