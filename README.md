@@ -6,7 +6,7 @@ The Crisp API NodeJS wrapper. Authenticate, send messages, fetch conversations, 
 
 Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 28/10/2021
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 08/11/2021
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -164,6 +164,7 @@ Thus, it is straightforward to look for them in the library while reading the [R
   + **List People Events** [`user`, `plugin`]: `CrispClient.website.listPeopleEvents(websiteID, peopleID, pageNumber)`
   + **Get People Data** [`user`, `plugin`]: `CrispClient.website.getPeopleData(websiteID, peopleID)`
   + **Save People Data** [`user`, `plugin`]: `CrispClient.website.savePeopleData(websiteID, peopleID, peopleData)`
+  + **Update People Data** [`user`, `plugin`]: `CrispClient.website.updatePeopleData(websiteID, peopleID, peopleData)`
   + **Get People Subscription Status** [`user`, `plugin`]: `CrispClient.website.getPeopleSubscriptionStatus(websiteID, peopleID)`
   + **Update People Subscription Status** [`user`, `plugin`]: `CrispClient.website.updatePeopleSubscriptionStatus(websiteID, peopleID, peopleSubscription)`
   * **Export People Profiles** [`user`]: `CrispClient.website.exportPeopleProfiles(websiteID)`

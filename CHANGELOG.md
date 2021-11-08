@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v4.2.0
+
+### New Features
+
+* Added the new `CrispClient.website.updatePeopleData` method.
+
 ## v4.1.1
 
 ### Bug Fixes
