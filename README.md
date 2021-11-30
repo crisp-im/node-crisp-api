@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 08/11/2021
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 30/11/2021
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -137,7 +137,7 @@ Thus, it is straightforward to look for them in the library while reading the [R
   * **Abort Ongoing Call Session For Conversation** [`user`, `plugin`]: `CrispClient.website.abortOngoingCallSessionForConversation(websiteID, sessionID, callID)`
   * **Transmit Signaling On Ongoing Call Session** [`user`, `plugin`]: `CrispClient.website.transmitSignalingOnOngoingCallSession(websiteID, sessionID, callID, payload)`
   * **Deliver Widget Button Action For Conversation** [`user`]: `CrispClient.website.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value)`
-  * **Deliver Widget Data Fetch Action For Conversation** [`user`]: `CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID)`
+  * **Deliver Widget Data Fetch Action For Conversation** [`user`]: `CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data)`
   * **Deliver Widget Data Edit Action For Conversation** [`user`]: `CrispClient.website.deliverWidgetDataEditActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, value)`
   * **Schedule A Reminder For Conversation** [`user`, `plugin`]: `CrispClient.website.scheduleReminderForConversation(websiteID, sessionID, date, note)`
 

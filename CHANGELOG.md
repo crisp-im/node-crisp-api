@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.0.2
+
+### Changes
+
+* Added a new parameter `data` to the `CrispClient.website.deliverWidgetDataFetchActionForConversation` method.
+
 ## v5.0.1
 
 ### Changes
