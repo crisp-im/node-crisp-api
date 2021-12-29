@@ -93,7 +93,7 @@ Thus, it is straightforward to look for them in the library while reading the [R
 ### Website
 
 * **Website Conversations**
-  * **List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
+  * **⭐ List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
     * `CrispClient.website.listConversations(websiteID, pageNumber)`
   * **List Suggested Conversation Segments** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-conversation-segments)
     * `CrispClient.website.listSuggestedConversationSegments(websiteID, pageNumber)`
@@ -105,19 +105,19 @@ Thus, it is straightforward to look for them in the library while reading the [R
     * `CrispClient.website.deleteSuggestedConversationDataKey(websiteID, key)`
 
 * **Website Conversation**
-  * **Create A New Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
+  * **⭐ Create A New Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
     * `CrispClient.website.createNewConversation(websiteID)`
   * **Check If Conversation Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-conversation-exists)
     * `CrispClient.website.checkConversationExists(websiteID, sessionID)`
-  * **Get A Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-conversation)
+  * **⭐ Get A Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-conversation)
     * `CrispClient.website.getConversation(websiteID, sessionID)`
   * **Remove A Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-conversation)
     * `CrispClient.website.removeConversation(websiteID, sessionID)`
   * **Initiate A Conversation With Existing Session** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initiate-a-conversation-with-existing-session)
     * `CrispClient.website.initiateConversationWithExistingSession(websiteID, sessionID)`
-  * **Get Messages In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-messages-in-conversation)
+  * **⭐ Get Messages In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-messages-in-conversation)
     * `CrispClient.website.getMessagesInConversation(websiteID, sessionID, timestampBefore)`
-  * **Send A Message In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#send-a-message-in-conversation)
+  * **⭐ Send A Message In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#send-a-message-in-conversation)
     * `CrispClient.website.sendMessageInConversation(websiteID, sessionID, message)`
   * **Get A Message In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-message-in-conversation)
     * `CrispClient.website.getMessageInConversation(websiteID, sessionID, fingerprint)`
@@ -125,19 +125,19 @@ Thus, it is straightforward to look for them in the library while reading the [R
     * `CrispClient.website.updateMessageInConversation(websiteID, sessionID, fingerprint, content)`
   * **Compose A Message In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#compose-a-message-in-conversation)
     * `CrispClient.website.composeMessageInConversation(websiteID, sessionID, compose)`
-  * **Mark Messages As Read In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-read-in-conversation)
+  * **⭐ Mark Messages As Read In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-read-in-conversation)
     * `CrispClient.website.markMessagesReadInConversation(websiteID, sessionID, read)`
-  * **Mark Messages As Delivered In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-delivered-in-conversation)
+  * **⭐ Mark Messages As Delivered In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-delivered-in-conversation)
     * `CrispClient.website.markMessagesDeliveredInConversation(websiteID, sessionID, delivered)`
   * **Update Conversation Open State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-open-state)
     * `CrispClient.website.updateConversationOpenState(websiteID, sessionID, opened)`
-  * **Get Conversation Routing Assign** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-routing-assign)
+  * **⭐ Get Conversation Routing Assign** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-routing-assign)
     * `CrispClient.website.getConversationRoutingAssign(websiteID, sessionID)`
-  * **Assign Conversation Routing** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#assign-conversation-routing)
+  * **⭐ Assign Conversation Routing** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#assign-conversation-routing)
     * `CrispClient.website.assignConversationRouting(websiteID, sessionID, assign)`
-  * **Get Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas)
+  * **⭐ Get Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas)
     * `CrispClient.website.getConversationMetas(websiteID, sessionID)`
-  * **Update Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas)
+  * **⭐ Update Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas)
     * `CrispClient.website.updateConversationMetas(websiteID, sessionID, metas)`
   * **Get An Original Message In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-an-original-message-in-conversation)
     * `CrispClient.website.getOriginalMessageInConversation(websiteID, sessionID, originalID)`
@@ -147,7 +147,7 @@ Thus, it is straightforward to look for them in the library while reading the [R
     * `CrispClient.website.listConversationEvents(websiteID, sessionID, pageNumber)`
   * **Get Conversation State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-state)
     * `CrispClient.website.getConversationState(websiteID, sessionID)`
-  * **Change Conversation State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-conversation-state)
+  * **⭐ Change Conversation State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-conversation-state)
     * `CrispClient.website.changeConversationState(websiteID, sessionID, state)`
   * **Get Conversation Participants** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-participants)
     * `CrispClient.website.getConversationParticipants(websiteID, sessionID)`
@@ -201,19 +201,19 @@ Thus, it is straightforward to look for them in the library while reading the [R
     * `CrispClient.website.listSuggestedPeopleEvents(websiteID, pageNumber)`
   * **Delete Suggested People Event** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-suggested-people-event)
     * `CrispClient.website.deleteSuggestedPeopleEvent(websiteID, text)`
-  * **List People Profiles** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
+  * **⭐ List People Profiles** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
     * `CrispClient.website.listPeopleProfiles(websiteID, pageNumber, searchField, searchOrder, searchOperator, searchFilter, searchText)`
-  * **Add New People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-new-people-profile)
+  * **⭐ Add New People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-new-people-profile)
     * `CrispClient.website.addNewPeopleProfile(websiteID, peopleProfile)`
-  * **Check If People Profile Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-people-profile-exists)
+  * **⭐ Check If People Profile Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-people-profile-exists)
     * `CrispClient.website.checkPeopleProfileExists(websiteID, peopleID)`
-  * **Get People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
+  * **⭐ Get People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
     * `CrispClient.website.getPeopleProfile(websiteID, peopleID)`
-  * **Save People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-profile)
+  * **⭐ Save People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-profile)
     * `CrispClient.website.savePeopleProfile(websiteID, peopleID, peopleProfile)`
-  * **Update People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-profile)
+  * **⭐ Update People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-profile)
     * `CrispClient.website.updatePeopleProfile(websiteID, peopleID, peopleProfile)`
-  * **Remove People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-people-profile)
+  * **⭐ Remove People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-people-profile)
     * `CrispClient.website.removePeopleProfile(websiteID, peopleID)`
   * **List People Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations)
     * `CrispClient.website.listPeopleConversations(websiteID, peopleID, pageNumber)`
