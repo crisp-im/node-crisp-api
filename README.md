@@ -478,7 +478,7 @@ Available events are listed below:
   * **Session Removed** [`user`, `plugin`]:
     * `session:removed`
 
-* **Message Events** [Reference] (https://docs.crisp.chat/references/rtm-api/v1/#message-events)
+* **Message Events** [Reference](https://docs.crisp.chat/references/rtm-api/v1/#message-events)
   * **Message Updated** [`user`, `plugin`]:
     * `message:updated`
   * **Message Send** [`user`, `plugin`]:
