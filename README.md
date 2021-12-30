@@ -404,13 +404,13 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Media
 
-* **MediaAnimation**
+* **Media Animation**
   * **List Animation Medias** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-animation-medias)
     * `CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery)`
 
 ### Bucket
 
-* **BucketURL**
+* **Bucket URL**
   * **Generate Bucket URL** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#bucket-url)
     * `CrispClient.bucket.generateBucketURL(data)`
 
