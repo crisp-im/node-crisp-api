@@ -373,11 +373,11 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 ### Plugin
 
 * **Plugin Connect**
-  * **Get Connect Account** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-account)
+  * **⭐ Get Connect Account** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-account)
     * `CrispClient.plugin.getConnectAccount()`
-  * **Check Connect Session Validity** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-connect-session-validity)
+  * **⭐ Check Connect Session Validity** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-connect-session-validity)
     * `CrispClient.plugin.checkConnectSessionValidity()`
-  * **List All Connect Websites** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-connect-websites)
+  * **⭐ List All Connect Websites** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-connect-websites)
     * `CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSince)`
 
 * **Plugin Subscription**
