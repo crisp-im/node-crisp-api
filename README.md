@@ -157,7 +157,7 @@ Thus, it is straightforward to look for them in the library while reading the [R
     * `CrispClient.website.getBlockStatusForConversation(websiteID, sessionID)`
   * **Block Incoming Messages For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#block-incoming-messages-for-conversation)
     * `CrispClient.website.blockIncomingMessagesForConversation(websiteID, sessionID, blocked)`
-  * **Request Email Transcript For Conversation** [`user`, `plugin`]: [Reference](hhttps://docs.crisp.chat/references/rest-api/v1/#request-email-transcript-for-conversation)
+  * **Request Email Transcript For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#request-email-transcript-for-conversation)
     * `CrispClient.website.requestEmailTranscriptForConversation(websiteID, sessionID, to, email)`
   * **Request Chatbox Binding Purge For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#request-chatbox-binding-purge-for-conversation)
     * `CrispClient.website.requestChatboxBindingPurgeForConversation(websiteID, sessionID)`
