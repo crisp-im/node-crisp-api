@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.0.3
+
+### Changes
+
+* Improved `README.md` references to REST API and RTM API resources.
+
 ## v5.0.2
 
 ### Changes
