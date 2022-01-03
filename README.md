@@ -170,7 +170,7 @@ All methods that you will most likely need when building a Crisp integration are
   * **Assist Existing Browsing Session** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#assist-an-existing-browsing-session)
     * `CrispClient.website.assistExistingBrowsingSession(websiteID, sessionID, browsingID, assist)`
   * **Initiate New Call Session For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initiate-new-call-session-for-conversation)
-    * `CrispClient.website.initiateNewCallSessionForConversation(websiteID, sessionID)`
+    * `CrispClient.website.initiateNewCallSessionForConversation(websiteID, sessionID, mode)`
   * **Get Ongoing Call Session For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-ongoing-call-session-for-conversation)
     * `CrispClient.website.getOngoingCallSessionForConversation(websiteID, sessionID)`
   * **Abort Ongoing Call Session For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#abort-ongoing-call-session-for-conversation)

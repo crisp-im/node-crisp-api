@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.0.4
+
+### Changes
+
+* Added a new parameter `mode` to the `CrispClient.website.initiateNewCallSessionForConversation` method.
+
 ## v5.0.3
 
 ### Changes
