@@ -388,7 +388,9 @@ All methods that you will most likely need when building a Crisp integration are
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       
       var assign = {
-        "user_id": "a4c32c68-be91-4e29-8a05-976e93abbe3f"
+        "assigned": {
+          "user_id": "a4c32c68-be91-4e29-8a05-976e93abbe3f"
+        }
       };
       
       CrispClient.website.assignConversationRouting(websiteID, sessionID, assign);
@@ -527,12 +529,14 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       
-      var participants = [
-        {
-          "type": "email",
-          "target": "jane.doe@acme-inc.com"
-        }
-      ];
+      var participants = {
+        "participants": [
+          {
+            "type": "email",
+            "target": "jane.doe@acme-inc.com"
+          }
+        ]
+      };
       
       CrispClient.website.saveConversationParticipants(websiteID, sessionID, participants);
       ```
@@ -1092,8 +1096,10 @@ All methods that you will most likely need when building a Crisp integration are
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       
       var peopleData = {
-        "type": "customer",
-        "signup": "finished"
+        "data": {
+          "type": "customer",
+          "signup": "finished"
+        }
       };
       
       CrispClient.website.savePeopleData(websiteID, peopleID, peopleData);
@@ -1110,7 +1116,9 @@ All methods that you will most likely need when building a Crisp integration are
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       
       var peopleData = {
-        "signup": "finished"
+        "data": {
+          "signup": "finished"
+        }
       };
       
       CrispClient.website.updatePeopleData(websiteID, peopleID, peopleData);
@@ -1139,7 +1147,9 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       
-      var peopleSubscription = true;
+      var peopleSubscription = {
+        "email": true
+      };
       
       CrispClient.website.updatePeopleSubscriptionStatus(websiteID, peopleID, peopleSubscription);
       ```
@@ -1672,7 +1682,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       
-      var settings = true;
+      var settings = {
+        "enabled": true
+      };
       
       CrispClient.website.updateVerifySettings(websiteID, settings);
       ```
@@ -1919,7 +1931,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
       
-      var campaign = "*Hey there*, welcome on Crisp folks!";
+      var campaign = {
+        "message": "*Hey there*, welcome on Crisp folks!"
+      };
       
       CrispClient.website.updateCampaign(websiteID, campaignID, campaign);
       ```
