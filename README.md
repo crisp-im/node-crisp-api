@@ -91,11 +91,11 @@ All methods that you will most likely need when building a Crisp integration are
 **⚠️ Note that, depending on your authentication token tier, which is either `user` or `plugin`, you may not be allowed to use all methods from the library. When in doubt, refer to the library method descriptions below. Most likely, you are using a `plugin` token.**
 
 ### Index
- * [Website](#website)
  * <details>
    <summary>
-   * [Website Conversations](#website-conversations)
+   [Website](#website)
    </summary>
+   * [Website Conversations](#website-conversations)
    </details>
  * [Plugin](#plugin)
  * [Media](#media)
