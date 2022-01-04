@@ -108,10 +108,32 @@ All methods that you will most likely need when building a Crisp integration are
     <li><a href="#website-campaign">Website Campaign</a></li>
   </ul>
 </details>
+<details>
+  <summary>
+  <a href="#plugin">Plugin</a>
+  </summary>
+  <ul>
+    <li><a href="#plugin-connect">Plugin Connect</a></li>
+    <li><a href="#plugin-subscription">Plugin Subscription</a></li>
+  </ul>
+</details>
+<details>
+  <summary>
+  <a href="#media">Media</a>
+  </summary>
+  <ul>
+    <li><a href="#media-animation">Media Animation</a></li>
+  </ul>
+</details>
+<details>
+  <summary>
+  <a href="#bucket">Bucket</a>
+  </summary>
+  <ul>
+    <li><a href="#bucket-url">Bucket URL</a></li>
+  </ul>
+</details>
 
- * #### [Plugin](#plugin)
- * [Media](#media)
- * [Bucket](#bucket)
  * [RTM Events](#realtime-events)
 
 ### Website
@@ -2059,7 +2081,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Plugin
 
-* **Plugin Connect**
+* #### **Plugin Connect**
   * **⭐ Get Connect Account** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-account)
     * `CrispClient.plugin.getConnectAccount()`
     * <details>
@@ -2093,7 +2115,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Plugin Subscription**
+* #### **Plugin Subscription**
   * **List All Active Subscriptions** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions)
     * `CrispClient.plugin.listAllActiveSubscriptions()`
     * <details>
@@ -2252,7 +2274,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Media
 
-* **Media Animation**
+* #### **Media Animation**
   * **List Animation Medias** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-animation-medias)
     * `CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery)`
     * <details>
