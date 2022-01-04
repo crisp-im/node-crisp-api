@@ -92,6 +92,11 @@ All methods that you will most likely need when building a Crisp integration are
 
 ### Index
  * [Website](#website)
+ * <details>
+   <summary>
+   * [Website Conversations](#website-conversations)
+   </summary>
+   </details>
  * [Plugin](#plugin)
  * [Media](#media)
  * [Bucket](#bucket)
