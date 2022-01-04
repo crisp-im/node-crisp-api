@@ -93,9 +93,9 @@ All methods that you will most likely need when building a Crisp integration are
 ### Index
  * <details>
    <summary>
-   [Website](#website)
+    <a href="#website">Website</a>
    </summary>
-   * [Website Conversations](#website-conversations)
+   * <a href="#website-conversations">Website Conversations</a>
    </details>
  * [Plugin](#plugin)
  * [Media](#media)
