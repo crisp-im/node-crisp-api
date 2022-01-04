@@ -138,19 +138,19 @@ All methods that you will most likely need when building a Crisp integration are
   <a href="#plugin">RTM Events</a>
   </summary>
   <ul>
-    <li><a href="#session-events">Session Events</a></li>
-    <li><a href="#message-events">Message Events</a></li>
-    <li><a href="#people-events">People Events</a></li>
-    <li><a href="#campaign-events">Campaign Events</a></li>
-    <li><a href="#browsing-events">Browsing Events</a></li>
-    <li><a href="#call-events">Call Events</a></li>
-    <li><a href="#widget-events">Widget Events</a></li>
-    <li><a href="#status-events">Status Events</a></li>
-    <li><a href="#website-events">Website Events</a></li>
-    <li><a href="#bucket-events">Bucket Events</a></li>
-    <li><a href="#media-events">Media Events</a></li>
-    <li><a href="#email-events">Email Events</a></li>
-    <li><a href="#plugin-events">Plugin Events</a></li>
+    <li><a href="#session--reference">Session Events</a></li>
+    <li><a href="#message-events-reference">Message Events</a></li>
+    <li><a href="#people-events-reference">People Events</a></li>
+    <li><a href="#campaign-events-reference">Campaign Events</a></li>
+    <li><a href="#browsing-events-reference">Browsing Events</a></li>
+    <li><a href="#call-events-reference">Call Events</a></li>
+    <li><a href="#widget-events-reference">Widget Events</a></li>
+    <li><a href="#status-events-reference">Status Events</a></li>
+    <li><a href="#website-events-reference">Website Events</a></li>
+    <li><a href="#bucket-events-reference">Bucket Events</a></li>
+    <li><a href="#media-events-reference">Media Events</a></li>
+    <li><a href="#email-events-reference">Email Events</a></li>
+    <li><a href="#plugin-events-reference">Plugin Events</a></li>
   </ul>
 </details>
 
@@ -2310,7 +2310,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Bucket
 
-* **Bucket URL**
+* #### **Bucket URL**
   * **Generate Bucket URL** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#bucket-url)
     * `CrispClient.bucket.generateBucketURL(data)`
     * <details>
