@@ -91,24 +91,25 @@ All methods that you will most likely need when building a Crisp integration are
 **⚠️ Note that, depending on your authentication token tier, which is either `user` or `plugin`, you may not be allowed to use all methods from the library. When in doubt, refer to the library method descriptions below. Most likely, you are using a `plugin` token.**
 
 ### Index
- <details>
-   <summary>
-    <a href="#website">Website</a>
-   </summary>
-    <ul>
-      <li><a href="#website-conversations">Website Conversations</a></li>
-      <li><a href="#website-conversation">Website Conversation</a></li>
-      <li><a href="#website-people">Website People</a></li>
-      <li><a href="#website-operator">Website Operator</a></li>
-      <li><a href="#website-availability">Website Availability</a></li>
-      <li><a href="#website-analytics">Website Analytics</a></li>
-      <li><a href="#website-batch">Website Batch</a></li>
-      <li><a href="#website-verify">Website Verify</a></li>
-      <li><a href="#website-campaigns">Website Campaigns</a></li>
-      <li><a href="#website-campaign">Website Campaign</a></li>
-    </ul>
-  </details>
- * [Plugin](#plugin)
+<details>
+  <summary>
+  <a href="#website">Website</a>
+  </summary>
+  <ul>
+    <li><a href="#website-conversations">Website Conversations</a></li>
+    <li><a href="#website-conversation">Website Conversation</a></li>
+    <li><a href="#website-people">Website People</a></li>
+    <li><a href="#website-operator">Website Operator</a></li>
+    <li><a href="#website-availability">Website Availability</a></li>
+    <li><a href="#website-analytics">Website Analytics</a></li>
+    <li><a href="#website-batch">Website Batch</a></li>
+    <li><a href="#website-verify">Website Verify</a></li>
+    <li><a href="#website-campaigns">Website Campaigns</a></li>
+    <li><a href="#website-campaign">Website Campaign</a></li>
+  </ul>
+</details>
+
+ * #### [Plugin](#plugin)
  * [Media](#media)
  * [Bucket](#bucket)
  * [RTM Events](#realtime-events)
