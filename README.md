@@ -90,9 +90,74 @@ All methods that you will most likely need when building a Crisp integration are
 
 **⚠️ Note that, depending on your authentication token tier, which is either `user` or `plugin`, you may not be allowed to use all methods from the library. When in doubt, refer to the library method descriptions below. Most likely, you are using a `plugin` token.**
 
+### Resource Methods Index
+<details>
+  <summary>
+  <a href="#website">Website</a>
+  </summary>
+  <ul>
+    <li><a href="#website-conversations">Website Conversations</a></li>
+    <li><a href="#website-conversation">Website Conversation</a></li>
+    <li><a href="#website-people">Website People</a></li>
+    <li><a href="#website-operator">Website Operator</a></li>
+    <li><a href="#website-availability">Website Availability</a></li>
+    <li><a href="#website-analytics">Website Analytics</a></li>
+    <li><a href="#website-batch">Website Batch</a></li>
+    <li><a href="#website-verify">Website Verify</a></li>
+    <li><a href="#website-campaigns">Website Campaigns</a></li>
+    <li><a href="#website-campaign">Website Campaign</a></li>
+  </ul>
+</details>
+<details>
+  <summary>
+  <a href="#plugin">Plugin</a>
+  </summary>
+  <ul>
+    <li><a href="#plugin-connect">Plugin Connect</a></li>
+    <li><a href="#plugin-subscription">Plugin Subscription</a></li>
+  </ul>
+</details>
+<details>
+  <summary>
+  <a href="#media">Media</a>
+  </summary>
+  <ul>
+    <li><a href="#media-animation">Media Animation</a></li>
+  </ul>
+</details>
+<details>
+  <summary>
+  <a href="#bucket">Bucket</a>
+  </summary>
+  <ul>
+    <li><a href="#bucket-url">Bucket URL</a></li>
+  </ul>
+</details>
+<details>
+  <summary>
+  <a href="#plugin">RTM Events</a>
+  </summary>
+  <ul>
+    <li><a href="#session--reference">Session Events</a></li>
+    <li><a href="#message-events-reference">Message Events</a></li>
+    <li><a href="#people-events-reference">People Events</a></li>
+    <li><a href="#campaign-events-reference">Campaign Events</a></li>
+    <li><a href="#browsing-events-reference">Browsing Events</a></li>
+    <li><a href="#call-events-reference">Call Events</a></li>
+    <li><a href="#widget-events-reference">Widget Events</a></li>
+    <li><a href="#status-events-reference">Status Events</a></li>
+    <li><a href="#website-events-reference">Website Events</a></li>
+    <li><a href="#bucket-events-reference">Bucket Events</a></li>
+    <li><a href="#media-events-reference">Media Events</a></li>
+    <li><a href="#email-events-reference">Email Events</a></li>
+    <li><a href="#plugin-events-reference">Plugin Events</a></li>
+  </ul>
+</details>
+
+
 ### Website
 
-* **Website Conversations**
+* #### **Website Conversations**
   * **⭐ List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
     * `CrispClient.website.listConversations(websiteID, pageNumber)`
     * <details>
@@ -161,7 +226,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
 
-* **Website Conversation**
+* #### **Website Conversation**
   * **⭐ Create A New Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
     * `CrispClient.website.createNewConversation(websiteID)`
     * <details>
@@ -815,7 +880,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
 
-* **Website People** _(these are your end-users)_
+* ### **Website People** _(these are your end-users)_
   * **Get People Statistics** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-statistics)
     * `CrispClient.website.getPeopleStatistics(websiteID)`
     * <details>
@@ -1200,7 +1265,7 @@ All methods that you will most likely need when building a Crisp integration are
 
 _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
-* **Website Base**
+* #### **Website Base**
   * **Check If Website Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-website-exists)
     * `CrispClient.website.checkWebsiteExists(domain)`
     * <details>
@@ -1248,7 +1313,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Settings**
+* #### **Website Settings**
   * **Get Website Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-settings)
     * `CrispClient.website.getWebsiteSettings(websiteID)`
     * <details>
@@ -1339,7 +1404,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Operator**
+* #### **Website Operator**
   * **List Website Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-operators)
     * `CrispClient.website.listWebsiteOperators(websiteID)`
     * <details>
@@ -1457,7 +1522,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Visitors**
+* #### **Website Visitors**
   * **Count Visitors** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#count-visitors)
     * `CrispClient.website.countVisitors(websiteID)`
     * <details>
@@ -1535,7 +1600,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Availability**
+* #### **Website Availability**
   * **Get Website Availability Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-availability-status)
     * `CrispClient.website.getWebsiteAvailabilityStatus(websiteID)`
     * <details>
@@ -1561,7 +1626,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Analytics**
+* #### **Website Analytics**
   * **Acquire Analytics Points** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#acquire-analytics-points)
     * `CrispClient.website.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary)`
     * <details>
@@ -1601,7 +1666,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Batch**
+* #### **Website Batch**
   * **Batch Resolve Conversations** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-resolve-items)
     * `CrispClient.website.batchResolveConversations(websiteID, sessions)`
     * <details>
@@ -1661,7 +1726,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Verify**
+* #### **Website Verify**
   * **Get Verify Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-settings)
     * `CrispClient.website.getVerifySettings(websiteID)`
     * <details>
@@ -1715,7 +1780,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Campaigns**
+* #### **Website Campaigns**
   * **List Campaigns** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaigns)
     * `CrispClient.website.listCampaigns(websiteID, pageNumber)`
     * <details>
@@ -1845,7 +1910,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Website Campaign**
+* #### **Website Campaign**
   * **Create A New Campaign** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-campaign)
     * `CrispClient.website.createNewCampaign(websiteID, campaignType, campaignName)`
     * <details>
@@ -2035,7 +2100,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Plugin
 
-* **Plugin Connect**
+* #### **Plugin Connect**
   * **⭐ Get Connect Account** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-account)
     * `CrispClient.plugin.getConnectAccount()`
     * <details>
@@ -2069,7 +2134,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* **Plugin Subscription**
+* #### **Plugin Subscription**
   * **List All Active Subscriptions** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions)
     * `CrispClient.plugin.listAllActiveSubscriptions()`
     * <details>
@@ -2228,7 +2293,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Media
 
-* **Media Animation**
+* #### **Media Animation**
   * **List Animation Medias** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-animation-medias)
     * `CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery)`
     * <details>
@@ -2245,7 +2310,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Bucket
 
-* **Bucket URL**
+* #### **Bucket URL**
   * **Generate Bucket URL** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#bucket-url)
     * `CrispClient.bucket.generateBucketURL(data)`
     * <details>
@@ -2265,7 +2330,7 @@ You won't receive any event if you don't explicitly subscribe to realtime events
 
 Available events are listed below:
 
-* **Session Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#session-events)
+* #### **Session Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#session-events)
   * **Session Update Availability** [`user`, `plugin`]:
     * `session:update_availability`
   * **Session Update Verify** [`user`, `plugin`]:
@@ -2321,7 +2386,7 @@ Available events are listed below:
   * **Session Removed** [`user`, `plugin`]:
     * `session:removed`
 
-* **Message Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#message-events)
+* #### **Message Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#message-events)
   * **Message Updated** [`user`, `plugin`]:
     * `message:updated`
   * **Message Send** [`user`, `plugin`]:
@@ -2343,7 +2408,7 @@ Available events are listed below:
   * **Message Notify Unread Received** [`user`, `plugin`]:
     * `message:notify:unread:received`
 
-* **People Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#people-events)
+* #### **People Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#people-events)
   * **People Profile Created** [`user`, `plugin`]:
     * `people:profile:created`
   * **People Profile Updated** [`user`, `plugin`]:
@@ -2359,7 +2424,7 @@ Available events are listed below:
   * **People Import Done** [`user`]:
     * `people:import:done`
 
-* **Campaign Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#campaign-events)
+* #### **Campaign Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#campaign-events)
   * **Campaign Progress** [`user`]:
     * `campaign:progress`
   * **Campaign Dispatched** [`user`]:
@@ -2367,27 +2432,27 @@ Available events are listed below:
   * **Campaign Running** [`user`]:
     * `campaign:running`
 
-* **Browsing Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#browsing-events)
+* #### **Browsing Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#browsing-events)
   * **Browsing Request Initiated** [`user`, `plugin`]:
     * `browsing:request:initiated`
   * **Browsing Request Rejected** [`user`, `plugin`]:
     * `browsing:request:rejected`
 
-* **Call Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#call-events)
+* #### **Call Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#call-events)
   * **Call Request Initiated** [`user`, `plugin`]:
     * `call:request:initiated`
   * **Call Request Rejected** [`user`, `plugin`]:
     * `call:request:rejected`
 
-* **Widget Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#widget-events)
+* #### **Widget Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#widget-events)
   * **Widget Action Processed** [`user`]:
     * `widget:action:processed`
 
-* **Status Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#status-events)
+* #### **Status Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#status-events)
   * **Status Health Changed** [`user`]:
     * `status:health:changed`
 
-* **Website Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#website-events)
+* #### **Website Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#website-events)
   * **Website Update Visitors Count** [`user`, `plugin`]:
     * `website:update_visitors_count`
   * **Website Update Operators Availability** [`user`, `plugin`]:
@@ -2395,7 +2460,7 @@ Available events are listed below:
   * **Website Users Available** [`user`, `plugin`]: 
     * `website:users:available`
 
-* **Bucket Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#bucket-events)
+* #### **Bucket Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#bucket-events)
   * **Bucket URL Upload Generated** [`user`, `plugin`]:
     * `bucket:url:upload:generated`
   * **Bucket URL Avatar Generated** [`user`, `plugin`]:
@@ -2411,17 +2476,17 @@ Available events are listed below:
   * **Bucket URL Processing Generated** [`user`, `plugin`]:
     * `bucket:url:processing:generated`
 
-* **Media Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#media-events)
+* #### **Media Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#media-events)
   * **Media Animation Listed** [`user`]:
     * `media:animation:listed`
 
-* **Email Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#email-events)
+* #### **Email Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#email-events)
   * **Email Subscribe** [`user`, `plugin`]:
     * `email:subscribe`
   * **Email Track View** [`user`, `plugin`]:
     * `email:track:view`
 
-* **Plugin Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#plugin-events)
+* #### **Plugin Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#plugin-events)
   * **Plugin Channel** [`user`, `plugin`]: 
     * `plugin:channel`
   * **Plugin Event** [`user`, `plugin`]:
