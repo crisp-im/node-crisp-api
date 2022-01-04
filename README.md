@@ -116,7 +116,7 @@ All methods that you will most likely need when building a Crisp integration are
 
 ### Website
 
-#### **Website Conversations**
+* #### **Website Conversations**
   * **⭐ List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
     * `CrispClient.website.listConversations(websiteID, pageNumber)`
     * <details>
@@ -185,7 +185,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
 
-#### **Website Conversation**
+* #### **Website Conversation**
   * **⭐ Create A New Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
     * `CrispClient.website.createNewConversation(websiteID)`
     * <details>
@@ -839,7 +839,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
 
-#### **Website People** _(these are your end-users)_
+* ### **Website People** _(these are your end-users)_
   * **Get People Statistics** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-statistics)
     * `CrispClient.website.getPeopleStatistics(websiteID)`
     * <details>
@@ -1224,7 +1224,7 @@ All methods that you will most likely need when building a Crisp integration are
 
 _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
-#### **Website Base**
+* #### **Website Base**
   * **Check If Website Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-website-exists)
     * `CrispClient.website.checkWebsiteExists(domain)`
     * <details>
@@ -1272,7 +1272,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Settings**
+* #### **Website Settings**
   * **Get Website Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-settings)
     * `CrispClient.website.getWebsiteSettings(websiteID)`
     * <details>
@@ -1363,7 +1363,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Operator**
+* #### **Website Operator**
   * **List Website Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-operators)
     * `CrispClient.website.listWebsiteOperators(websiteID)`
     * <details>
@@ -1481,7 +1481,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Visitors**
+* #### **Website Visitors**
   * **Count Visitors** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#count-visitors)
     * `CrispClient.website.countVisitors(websiteID)`
     * <details>
@@ -1559,7 +1559,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Availability**
+* #### **Website Availability**
   * **Get Website Availability Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-availability-status)
     * `CrispClient.website.getWebsiteAvailabilityStatus(websiteID)`
     * <details>
@@ -1585,7 +1585,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Analytics**
+* #### **Website Analytics**
   * **Acquire Analytics Points** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#acquire-analytics-points)
     * `CrispClient.website.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary)`
     * <details>
@@ -1625,7 +1625,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Batch**
+* #### **Website Batch**
   * **Batch Resolve Conversations** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-resolve-items)
     * `CrispClient.website.batchResolveConversations(websiteID, sessions)`
     * <details>
@@ -1685,7 +1685,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Verify**
+* #### **Website Verify**
   * **Get Verify Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-settings)
     * `CrispClient.website.getVerifySettings(websiteID)`
     * <details>
@@ -1739,7 +1739,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Campaigns**
+* #### **Website Campaigns**
   * **List Campaigns** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaigns)
     * `CrispClient.website.listCampaigns(websiteID, pageNumber)`
     * <details>
@@ -1869,7 +1869,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-#### **Website Campaign**
+* #### **Website Campaign**
   * **Create A New Campaign** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-campaign)
     * `CrispClient.website.createNewCampaign(websiteID, campaignType, campaignName)`
     * <details>
