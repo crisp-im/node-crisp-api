@@ -86,7 +86,7 @@ CrispClient.on("message:send", function(message) {
 
 All the available Crisp API resources are fully implemented. **Programmatic methods names are named after their label name in the [REST API Reference](https://docs.crisp.chat/references/rest-api/v1/)**.
 
-All methods that you will most likely need when building a Crisp integration are prefixed with a star symbol (⭐).
+All methods that you will most likely need when building a Crisp integration are prefixed with a star symbol (⭐). The methods are c
 
 **⚠️ Note that, depending on your authentication token tier, which is either `user` or `plugin`, you may not be allowed to use all methods from the library. When in doubt, refer to the library method descriptions below. Most likely, you are using a `plugin` token.**
 
@@ -99,7 +99,7 @@ All methods that you will most likely need when building a Crisp integration are
 
 ### Website
 
-* **Website Conversations**
+#### **Website Conversations**
   * **⭐ List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
     * `CrispClient.website.listConversations(websiteID, pageNumber)`
     * <details>
