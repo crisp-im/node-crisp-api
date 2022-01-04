@@ -86,11 +86,11 @@ CrispClient.on("message:send", function(message) {
 
 All the available Crisp API resources are fully implemented. **Programmatic methods names are named after their label name in the [REST API Reference](https://docs.crisp.chat/references/rest-api/v1/)**.
 
-All methods that you will most likely need when building a Crisp integration are prefixed with a star symbol (⭐). The methods are c
+All methods that you will most likely need when building a Crisp integration are prefixed with a star symbol (⭐).
 
 **⚠️ Note that, depending on your authentication token tier, which is either `user` or `plugin`, you may not be allowed to use all methods from the library. When in doubt, refer to the library method descriptions below. Most likely, you are using a `plugin` token.**
 
-### Index
+### Methods Index
 <details>
   <summary>
   <a href="#website">Website</a>
@@ -133,8 +133,27 @@ All methods that you will most likely need when building a Crisp integration are
     <li><a href="#bucket-url">Bucket URL</a></li>
   </ul>
 </details>
+<details>
+  <summary>
+  <a href="#plugin">RTM Events</a>
+  </summary>
+  <ul>
+    <li><a href="#session-events">Session Events</a></li>
+    <li><a href="#message-events">Message Events</a></li>
+    <li><a href="#people-events">People Events</a></li>
+    <li><a href="#campaign-events">Campaign Events</a></li>
+    <li><a href="#browsing-events">Browsing Events</a></li>
+    <li><a href="#call-events">Call Events</a></li>
+    <li><a href="#widget-events">Widget Events</a></li>
+    <li><a href="#status-events">Status Events</a></li>
+    <li><a href="#website-events">Website Events</a></li>
+    <li><a href="#bucket-events">Bucket Events</a></li>
+    <li><a href="#media-events">Media Events</a></li>
+    <li><a href="#email-events">Email Events</a></li>
+    <li><a href="#plugin-events">Plugin Events</a></li>
+  </ul>
+</details>
 
- * [RTM Events](#realtime-events)
 
 ### Website
 
@@ -2311,7 +2330,7 @@ You won't receive any event if you don't explicitly subscribe to realtime events
 
 Available events are listed below:
 
-* **Session Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#session-events)
+* #### **Session Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#session-events)
   * **Session Update Availability** [`user`, `plugin`]:
     * `session:update_availability`
   * **Session Update Verify** [`user`, `plugin`]:
@@ -2367,7 +2386,7 @@ Available events are listed below:
   * **Session Removed** [`user`, `plugin`]:
     * `session:removed`
 
-* **Message Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#message-events)
+* #### **Message Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#message-events)
   * **Message Updated** [`user`, `plugin`]:
     * `message:updated`
   * **Message Send** [`user`, `plugin`]:
@@ -2389,7 +2408,7 @@ Available events are listed below:
   * **Message Notify Unread Received** [`user`, `plugin`]:
     * `message:notify:unread:received`
 
-* **People Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#people-events)
+* #### **People Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#people-events)
   * **People Profile Created** [`user`, `plugin`]:
     * `people:profile:created`
   * **People Profile Updated** [`user`, `plugin`]:
@@ -2405,7 +2424,7 @@ Available events are listed below:
   * **People Import Done** [`user`]:
     * `people:import:done`
 
-* **Campaign Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#campaign-events)
+* #### **Campaign Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#campaign-events)
   * **Campaign Progress** [`user`]:
     * `campaign:progress`
   * **Campaign Dispatched** [`user`]:
@@ -2413,27 +2432,27 @@ Available events are listed below:
   * **Campaign Running** [`user`]:
     * `campaign:running`
 
-* **Browsing Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#browsing-events)
+* #### **Browsing Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#browsing-events)
   * **Browsing Request Initiated** [`user`, `plugin`]:
     * `browsing:request:initiated`
   * **Browsing Request Rejected** [`user`, `plugin`]:
     * `browsing:request:rejected`
 
-* **Call Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#call-events)
+* #### **Call Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#call-events)
   * **Call Request Initiated** [`user`, `plugin`]:
     * `call:request:initiated`
   * **Call Request Rejected** [`user`, `plugin`]:
     * `call:request:rejected`
 
-* **Widget Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#widget-events)
+* #### **Widget Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#widget-events)
   * **Widget Action Processed** [`user`]:
     * `widget:action:processed`
 
-* **Status Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#status-events)
+* #### **Status Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#status-events)
   * **Status Health Changed** [`user`]:
     * `status:health:changed`
 
-* **Website Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#website-events)
+* #### **Website Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#website-events)
   * **Website Update Visitors Count** [`user`, `plugin`]:
     * `website:update_visitors_count`
   * **Website Update Operators Availability** [`user`, `plugin`]:
@@ -2441,7 +2460,7 @@ Available events are listed below:
   * **Website Users Available** [`user`, `plugin`]: 
     * `website:users:available`
 
-* **Bucket Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#bucket-events)
+* #### **Bucket Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#bucket-events)
   * **Bucket URL Upload Generated** [`user`, `plugin`]:
     * `bucket:url:upload:generated`
   * **Bucket URL Avatar Generated** [`user`, `plugin`]:
@@ -2457,17 +2476,17 @@ Available events are listed below:
   * **Bucket URL Processing Generated** [`user`, `plugin`]:
     * `bucket:url:processing:generated`
 
-* **Media Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#media-events)
+* #### **Media Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#media-events)
   * **Media Animation Listed** [`user`]:
     * `media:animation:listed`
 
-* **Email Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#email-events)
+* #### **Email Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#email-events)
   * **Email Subscribe** [`user`, `plugin`]:
     * `email:subscribe`
   * **Email Track View** [`user`, `plugin`]:
     * `email:track:view`
 
-* **Plugin Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#plugin-events)
+* #### **Plugin Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#plugin-events)
   * **Plugin Channel** [`user`, `plugin`]: 
     * `plugin:channel`
   * **Plugin Event** [`user`, `plugin`]:
