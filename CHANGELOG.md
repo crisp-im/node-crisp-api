@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.1.0
+
+### New Features
+
+* Added support for the `session:set_subject` RTM API event.
+
 ## v5.0.4
 
 ### Changes

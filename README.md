@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2021 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 30/11/2021
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 05/04/2022
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -2345,6 +2345,8 @@ Available events are listed below:
     * `session:set_phone`
   * **Session Set Address** [`user`, `plugin`]:
     * `session:set_address`
+  * **Session Set Subject** [`user`, `plugin`]:
+    * `session:set_subject`
   * **Session Set Avatar** [`user`, `plugin`]:
     * `session:set_avatar`
   * **Session Set Nickname** [`user`, `plugin`]:
