@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.2.0
+
+### Changes
+
+* Upgraded Socket.IO from v2 to v4, meaning that `node-crisp-api` is now connecting to the RTM API over EIO protocol version 4 (versus EIO 3 before).
+
 ## v5.1.0
 
 ### New Features
