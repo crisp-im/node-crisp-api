@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v5.3.0
+
+### New Features
+
+* Added the new `CrispClient.plugin.getConnectEndpoints` method.
+
 ## v5.2.0
 
 ### Changes
