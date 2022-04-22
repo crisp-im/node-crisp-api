@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2021 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 10/04/2022
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 22/04/2022
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -2103,7 +2103,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 ### Plugin
 
 * #### **Plugin Connect**
-  * **⭐ Get Connect Account** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-account)
+  * **⭐ Get Connect Account** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-account)
     * `CrispClient.plugin.getConnectAccount()`
     * <details>
       <summary>See Example</summary>
@@ -2113,7 +2113,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **⭐ Check Connect Session Validity** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-connect-session-validity)
+  * **⭐ Check Connect Session Validity** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-connect-session-validity)
     * `CrispClient.plugin.checkConnectSessionValidity()`
     * <details>
       <summary>See Example</summary>
@@ -2123,15 +2123,25 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **⭐ List All Connect Websites** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-connect-websites)
+  * **⭐ List All Connect Websites** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-connect-websites)
     * `CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSince)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var pageNumber = 1;
-      
+
       CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSince);
+      ```
+      </details>
+
+  * **⭐ Get Connect Endpoints** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-endpoints)
+    * `CrispClient.plugin.getConnectEndpoints()`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      CrispClient.plugin.getConnectEndpoints();
       ```
       </details>
 
