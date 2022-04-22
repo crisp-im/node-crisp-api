@@ -1452,6 +1452,12 @@ CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSinc
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#get-connect-endpoints
+
+CrispClient.plugin.getConnectEndpoints();
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions
 
 CrispClient.plugin.listAllActiveSubscriptions();
