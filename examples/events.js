@@ -28,10 +28,20 @@ console.info("Listening for events...");
 
 CrispClient.on("message:send", function(message) {
   console.info("Got 'message:send' event:", message);
-});
+})
+  .then(function() {
+    console.error("Requested to listen to sent messages");
+  })
+  .catch(function(error) {
+    console.error("Failed listening to sent messages:", error);
+  });
 
 CrispClient.on("message:received", function(message) {
   console.info("Got 'message:received' event:", message);
-});
-
-console.info("Now listening.");
+})
+  .then(function() {
+    console.error("Requested to listen to received messages");
+  })
+  .catch(function(error) {
+    console.error("Failed listening to received messages:", error);
+  });

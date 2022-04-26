@@ -25,7 +25,7 @@
   "main": "./lib/crisp",
   "types": "./types/crisp.d.ts",
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">= 8.0.0"
   },
   "scripts": {
     "test": "check-build",
@@ -38,8 +38,7 @@
   "dependencies": {
     "socket.io-client": "4.4.1",
     "fbemitter": "3.0.0",
-    "got": "9.6.0",
-    "q": "2.0.3"
+    "got": "9.6.0"
   },
   "keywords": [
     "crisp",

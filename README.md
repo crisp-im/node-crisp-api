@@ -79,7 +79,13 @@ CrispClient.on("message:send", function(message) {
     .catch(function(error) {
       console.error("Error sending message:", error);
     });
-});
+})
+  .then(function() {
+    console.error("Requested to listen to sent messages");
+  })
+  .catch(function(error) {
+    console.error("Failed listening to sent messages:", error);
+  });
 ```
 
 ## Resource Methods
@@ -2338,7 +2344,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 You can bind to realtime events from Crisp, in order to get notified of incoming messages and updates in websites.
 
-You won't receive any event if you don't explicitly subscribe to realtime events using `CrispClient.on()`, as the library doesn't connect to the realtime backend automatically.
+You won't receive any event if you don't explicitly subscribe to realtime events using `CrispClient.on()`, as the library doesn't connect to the realtime backend automatically. This method returns a `Promise` object.
 
 Available events are listed below:
 
