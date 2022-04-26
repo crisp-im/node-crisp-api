@@ -1,6 +1,21 @@
 Changelog
 =========
 
+## v6.0.0
+
+### Breaking Changes
+
+* Support for NodeJS 6 has been removed. The minimum version is now NodeJS 8.
+* The `CrispClient.on` method now returns a `Promise`. Please update your code accordingly. We do recommend that you add error catchers.
+
+### New Features
+
+* The RTM API URL is now dynamically pulled from the REST API, based on the authentication tier. This allows for (much) more efficient message routing at Crisp scale, and offers performance and stability benefits to your integration.
+
+### Bug Fixes
+
+* Fixed an issue where the library would not reconnect to the RTM API when it lost connection with the server.
+
 ## v5.3.0
 
 ### New Features
