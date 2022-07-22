@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2022 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 22/04/2022
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 22/07/2022
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -360,6 +360,20 @@ All methods that you will most likely need when building a Crisp integration are
       var content = "Hey there! Need help?";
       
       CrispClient.website.updateMessageInConversation(websiteID, sessionID, fingerprint, content);
+      ```
+      </details>
+
+  * **Remove A Message In Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-message-in-conversation)
+    * `CrispClient.website.removeMessageInConversation(websiteID, sessionID, fingerprint)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+      var fingerprint = 524653764345;
+
+      CrispClient.website.removeMessageInConversation(websiteID, sessionID, fingerprint);
       ```
       </details>
 
@@ -2413,6 +2427,8 @@ Available events are listed below:
     * `message:send`
   * **Message Received** [`user`, `plugin`]:
     * `message:received`
+  * **Message Removed** [`user`, `plugin`]:
+    * `message:removed`
   * **Message Compose Send** [`user`, `plugin`]:
     * `message:compose:send`
   * **Message Compose Receive** [`user`, `plugin`]:
