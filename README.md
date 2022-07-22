@@ -105,7 +105,7 @@ All methods that you will most likely need when building a Crisp integration are
   <ul>
     <li><a href="#website-conversations">Website Conversations</a></li>
     <li><a href="#website-conversation">Website Conversation</a></li>
-    <li><a href="#website-people">Website People</a></li>
+    <li><a href="#website-people-these-are-your-end-users">Website People</a></li>
     <li><a href="#website-operator">Website Operator</a></li>
     <li><a href="#website-availability">Website Availability</a></li>
     <li><a href="#website-analytics">Website Analytics</a></li>
@@ -174,7 +174,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listConversations(websiteID, pageNumber);
       ```
       </details>
@@ -187,7 +187,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listSuggestedConversationSegments(websiteID, pageNumber);
       ```
       </details>
@@ -199,9 +199,9 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var segment = "bug";
-      
+
       CrispClient.website.deleteSuggestedConversationSegment(websiteID, segment);
       ```
       </details>
@@ -214,7 +214,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listSuggestedConversationDataKeys(websiteID, pageNumber);
       ```
       </details>
@@ -226,9 +226,9 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var key = "price";
-      
+
       CrispClient.website.deleteSuggestedConversationDataKey(websiteID, key);
       ```
       </details>
@@ -242,7 +242,7 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.createNewConversation(websiteID);
       ```
       </details>
@@ -255,7 +255,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.checkConversationExists(websiteID, sessionID);
       ```
       </details>
@@ -268,7 +268,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.getConversation(websiteID, sessionID);
       ```
       </details>
@@ -281,7 +281,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.removeConversation(websiteID, sessionID);
       ```
       </details>
@@ -294,7 +294,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.initiateConversationWithExistingSession(websiteID, sessionID);
       ```
       </details>
@@ -308,7 +308,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var timestampBefore = 1641206011000;
-      
+
       CrispClient.website.getMessagesInConversation(websiteID, sessionID, timestampBefore);
       ```
       </details>
@@ -321,14 +321,14 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var message = {
         "type": "text",
         "from": "operator",
         "origin": "chat",
         "content": "Hey there! Need help?"
       };
-      
+
       CrispClient.website.sendMessageInConversation(websiteID, sessionID, message);
       ```
       </details>
@@ -342,7 +342,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var fingerprint = 524653764345;
-      
+
       CrispClient.website.getMessageInConversation(websiteID, sessionID, fingerprint);
       ```
       </details>
@@ -356,9 +356,9 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var fingerprint = 524653764345;
-      
+
       var content = "Hey there! Need help?";
-      
+
       CrispClient.website.updateMessageInConversation(websiteID, sessionID, fingerprint, content);
       ```
       </details>
@@ -385,12 +385,12 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var compose = {
         "type": "start",
         "from": "operator"
       };
-      
+
       CrispClient.website.composeMessageInConversation(websiteID, sessionID, compose);
       ```
       </details>
@@ -403,7 +403,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var read = {
         "from": "operator",
         "origin": "urn:crisp.im:slack:0",
@@ -411,7 +411,7 @@ All methods that you will most likely need when building a Crisp integration are
           "5719231201"
         ]
       };
-      
+
       CrispClient.website.markMessagesReadInConversation(websiteID, sessionID, read);
       ```
       </details>
@@ -424,7 +424,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var delivered = {
         "from": "operator",
         "origin": "urn:crisp.im:slack:0",
@@ -432,7 +432,7 @@ All methods that you will most likely need when building a Crisp integration are
           "5719231201"
         ]
       };
-      
+
       CrispClient.website.markMessagesDeliveredInConversation(websiteID, sessionID, delivered);
       ```
       </details>
@@ -445,9 +445,9 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var opened = true;
-      
+
       CrispClient.website.updateConversationOpenState(websiteID, sessionID, opened);
       ```
       </details>
@@ -460,7 +460,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.getConversationRoutingAssign(websiteID, sessionID);
       ```
       </details>
@@ -473,13 +473,13 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var assign = {
         "assigned": {
           "user_id": "a4c32c68-be91-4e29-8a05-976e93abbe3f"
         }
       };
-      
+
       CrispClient.website.assignConversationRouting(websiteID, sessionID, assign);
       ```
       </details>
@@ -492,7 +492,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.getConversationMetas(websiteID, sessionID);
       ```
       </details>
@@ -505,7 +505,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var metas = {
         "nickname": "John Doe",
         "email": "john.doe@acme-inc.com",
@@ -519,7 +519,7 @@ All methods that you will most likely need when building a Crisp integration are
           "signup": "finished"
         }
       };
-      
+
       CrispClient.website.updateConversationMetas(websiteID, sessionID, metas);
       ```
       </details>
@@ -533,7 +533,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var originalID = "2325a3c0-9b47-4fc6-b00e-111b752e44cd";
-      
+
       CrispClient.website.getOriginalMessageInConversation(websiteID, sessionID, originalID);
       ```
       </details>
@@ -547,7 +547,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var pageNumber = 1;
-      
+
       CrispClient.website.listConversationPages(websiteID, sessionID, pageNumber);
       ```
       </details>
@@ -561,7 +561,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var pageNumber = 1;
-      
+
       CrispClient.website.listConversationEvents(websiteID, sessionID, pageNumber);
       ```
       </details>
@@ -574,7 +574,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.getConversationState(websiteID, sessionID);
       ```
       </details>
@@ -587,9 +587,9 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var state = "unresolved";
-      
+
       CrispClient.website.changeConversationState(websiteID, sessionID, state);
       ```
       </details>
@@ -602,7 +602,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.getConversationParticipants(websiteID, sessionID);
       ```
       </details>
@@ -615,7 +615,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var participants = {
         "participants": [
           {
@@ -624,7 +624,7 @@ All methods that you will most likely need when building a Crisp integration are
           }
         ]
       };
-      
+
       CrispClient.website.saveConversationParticipants(websiteID, sessionID, participants);
       ```
       </details>
@@ -637,7 +637,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.getBlockStatusForConversation(websiteID, sessionID);
       ```
       </details>
@@ -650,9 +650,9 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var blocked = true;
-      
+
       CrispClient.website.blockIncomingMessagesForConversation(websiteID, sessionID, blocked);
       ```
       </details>
@@ -665,12 +665,12 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var email = {
         "to": "operator",
         "email": "valerian@crisp.chat"
       };
-      
+
       CrispClient.website.requestEmailTranscriptForConversation(websiteID, sessionID, to, email);
       ```
       </details>
@@ -683,7 +683,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.requestChatboxBindingPurgeForConversation(websiteID, sessionID);
       ```
       </details>
@@ -696,7 +696,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.listBrowsingSessionsForConversation(websiteID, sessionID);
       ```
       </details>
@@ -709,7 +709,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.initiateBrowsingSessionForConversation(websiteID, sessionID);
       ```
       </details>
@@ -723,9 +723,9 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var browsingID = "browsing_05a9392d-ff3f-45e7-b021-1179c45668fa";
-      
+
       var action = "start";
-      
+
       CrispClient.website.sendActionToExistingBrowsingSession(websiteID, sessionID, browsingID, action);
       ```
       </details>
@@ -739,7 +739,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var browsingID = "browsing_05a9392d-ff3f-45e7-b021-1179c45668fa";
-      
+
       var assist = {
         "action": "mouse",
         "mouse": {
@@ -747,7 +747,7 @@ All methods that you will most likely need when building a Crisp integration are
           "y": 784
         }
       };
-      
+
       CrispClient.website.assistExistingBrowsingSession(websiteID, sessionID, browsingID, assist);
       ```
       </details>
@@ -760,9 +760,9 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var mode = "audio";
-      
+
       CrispClient.website.initiateNewCallSessionForConversation(websiteID, sessionID, mode);
       ```
       </details>
@@ -775,7 +775,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       CrispClient.website.getOngoingCallSessionForConversation(websiteID, sessionID);
       ```
       </details>
@@ -789,7 +789,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var callID = "call_35a0c062-72fa-4095-a2a0-f9911d47ee56";
-      
+
       CrispClient.website.abortOngoingCallSessionForConversation(websiteID, sessionID, callID);
       ```
       </details>
@@ -803,12 +803,12 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
       var callID = "call_35a0c062-72fa-4095-a2a0-f9911d47ee56";
-      
+
       var payload = {
         "type": "sdp",
         "payload": {}
       };
-      
+
       CrispClient.website.transmitSignalingOnOngoingCallSession(websiteID, sessionID, callID, payload);
       ```
       </details>
@@ -824,7 +824,7 @@ All methods that you will most likely need when building a Crisp integration are
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
       var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
       var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-      
+
       var value = {
         "section_id": "payments",
         "item_id": "refund_on_stripe",
@@ -832,7 +832,7 @@ All methods that you will most likely need when building a Crisp integration are
           "invoice": "D-1929-X"
         }
       };
-      
+
       CrispClient.website.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value);
       ```
       </details>
@@ -848,14 +848,14 @@ All methods that you will most likely need when building a Crisp integration are
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
       var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
       var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-      
+
       var data = {
         "section_id": "payments",
         "item_id": "unpaid_balance",
         "action": "fetch",
         "data": {}
       };
-      
+
       CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data);
       ```
       </details>
@@ -871,14 +871,14 @@ All methods that you will most likely need when building a Crisp integration are
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
       var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
       var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-      
+
       var data = {
         "section_id": "payments",
         "item_id": "unpaid_balance",
         "action": "fetch",
         "data": {}
       };
-      
+
       CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data);
       ```
       </details>
@@ -891,12 +891,12 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      
+
       var note = {
         "date": "2018-05-29T09:00:00Z",
         "note": "Call this customer."
       };
-      
+
       CrispClient.website.scheduleReminderForConversation(websiteID, sessionID, date, note);
       ```
       </details>
@@ -910,7 +910,7 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.getPeopleStatistics(websiteID);
       ```
       </details>
@@ -923,7 +923,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listSuggestedPeopleSegments(websiteID, pageNumber);
       ```
       </details>
@@ -935,9 +935,9 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var segment = "poweruser";
-      
+
       CrispClient.website.deleteSuggestedPeopleSegment(websiteID, segment);
       ```
       </details>
@@ -951,9 +951,9 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var key = "price";
-      
+
       CrispClient.website.deleteSuggestedPeopleDataKey(websiteID, key);
       ```
       </details>
@@ -966,7 +966,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listSuggestedPeopleEvents(websiteID, pageNumber);
       ```
       </details>
@@ -978,9 +978,9 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var text = "Removed item from basket";
-      
+
       CrispClient.website.deleteSuggestedPeopleEvent(websiteID, text);
       ```
       </details>
@@ -993,7 +993,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listPeopleProfiles(websiteID, pageNumber, searchField, searchOrder, searchOperator, searchFilter, searchText);
       ```
       </details>
@@ -1005,14 +1005,14 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var peopleProfile = {
         "email": "valerian@crisp.chat",
         "person": {
           "nickname": "Valerian Saliou"
         }
       };
-      
+
       CrispClient.website.addNewPeopleProfile(websiteID, peopleProfile);
       ```
       </details>
@@ -1025,7 +1025,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       CrispClient.website.checkPeopleProfileExists(websiteID, peopleID);
       ```
       </details>
@@ -1038,7 +1038,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       CrispClient.website.getPeopleProfile(websiteID, peopleID);
       ```
       </details>
@@ -1051,14 +1051,14 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       var peopleProfile = {
         "email": "valerian@crisp.chat",
         "person": {
           "nickname": "Valerian Saliou"
         }
       };
-      
+
       CrispClient.website.savePeopleProfile(websiteID, peopleID, peopleProfile);
       ```
       </details>
@@ -1071,14 +1071,14 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       var peopleProfile = {
         "email": "valerian@crisp.chat",
         "person": {
           "nickname": "Valerian Saliou"
         }
       };
-      
+
       CrispClient.website.updatePeopleProfile(websiteID, peopleID, peopleProfile);
       ```
       </details>
@@ -1091,7 +1091,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       CrispClient.website.removePeopleProfile(websiteID, peopleID);
       ```
       </details>
@@ -1105,7 +1105,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       var pageNumber = 1;
-      
+
       CrispClient.website.listPeopleConversations(websiteID, peopleID, pageNumber);
       ```
       </details>
@@ -1119,7 +1119,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       var pageNumber = 1;
-      
+
       CrispClient.website.listPeopleCampaigns(websiteID, peopleID, pageNumber);
       ```
       </details>
@@ -1132,7 +1132,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       var peopleEvent = {
         "text": "Added item to basket",
         "data": {
@@ -1141,7 +1141,7 @@ All methods that you will most likely need when building a Crisp integration are
         },
         "color": "red"
       };
-      
+
       CrispClient.website.addPeopleEvent(websiteID, peopleID, peopleEvent);
       ```
       </details>
@@ -1155,7 +1155,7 @@ All methods that you will most likely need when building a Crisp integration are
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       var pageNumber = 1;
-      
+
       CrispClient.website.listPeopleEvents(websiteID, peopleID, pageNumber);
       ```
       </details>
@@ -1168,7 +1168,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       CrispClient.website.getPeopleData(websiteID, peopleID);
       ```
       </details>
@@ -1181,14 +1181,14 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       var peopleData = {
         "data": {
           "type": "customer",
           "signup": "finished"
         }
       };
-      
+
       CrispClient.website.savePeopleData(websiteID, peopleID, peopleData);
       ```
       </details>
@@ -1201,13 +1201,13 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       var peopleData = {
         "data": {
           "signup": "finished"
         }
       };
-      
+
       CrispClient.website.updatePeopleData(websiteID, peopleID, peopleData);
       ```
       </details>
@@ -1220,7 +1220,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       CrispClient.website.getPeopleSubscriptionStatus(websiteID, peopleID);
       ```
       </details>
@@ -1233,11 +1233,11 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      
+
       var peopleSubscription = {
         "email": true
       };
-      
+
       CrispClient.website.updatePeopleSubscriptionStatus(websiteID, peopleID, peopleSubscription);
       ```
       </details>
@@ -1249,7 +1249,7 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.exportPeopleProfiles(websiteID);
       ```
       </details>
@@ -1261,7 +1261,7 @@ All methods that you will most likely need when building a Crisp integration are
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var profileImportSetup = {
         "url": "https://storage.crisp.chat/users/processing/import/aa0b64dd-9fb4-4db9-80d6-5a49eb84087b/19d956c7-0294-45ad-89e1-58ce45e7008f.csv",
         "mapping": [
@@ -1279,7 +1279,7 @@ All methods that you will most likely need when building a Crisp integration are
           "skip_header": true
         }
       };
-      
+
       CrispClient.website.importPeopleProfiles(websiteID, profileImportSetup);
       ```
       </details>
@@ -1315,7 +1315,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.getWebsite(websiteID);
       ```
       </details>
@@ -1327,9 +1327,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var verify = "MySuperSecurePassword";
-      
+
       CrispClient.website.deleteWebsite(websiteID, verify);
       ```
       </details>
@@ -1343,7 +1343,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.getWebsiteSettings(websiteID);
       ```
       </details>
@@ -1355,7 +1355,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var settings = {
         "name": "Crisp",
         "domain": "crisp.chat",
@@ -1420,7 +1420,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           ]
         }
       };
-      
+
       CrispClient.website.updateWebsiteSettings(websiteID, settings);
       ```
       </details>
@@ -1434,7 +1434,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.listWebsiteOperators(websiteID);
       ```
       </details>
@@ -1446,7 +1446,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.listLastActiveWebsiteOperators(websiteID);
       ```
       </details>
@@ -1458,7 +1458,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.flushLastActiveWebsiteOperators(websiteID);
       ```
       </details>
@@ -1470,13 +1470,13 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var emailData = {
         "recipient": "owners",
         "subject": "Plugin limits reached",
         "message": "Hi, you've reached the Slack plugin limits. Please contact our support team."
       };
-      
+
       CrispClient.website.sendEmailToWebsiteOperators(websiteID, emailData);
       ```
       </details>
@@ -1489,7 +1489,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
-      
+
       CrispClient.website.getWebsiteOperator(websiteID, userID);
       ```
       </details>
@@ -1501,13 +1501,13 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var verify = {
         "email": "julien@crisp.chat",
         "role": "member",
         "verify": "MySuperSecurePassword"
       };
-      
+
       CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify);
       ```
       </details>
@@ -1520,12 +1520,12 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
-      
+
       var title = {
         "role": "owner",
         "title": "CTO"
       };
-      
+
       CrispClient.website.changeOperatorMembership(websiteID, userID, role, title);
       ```
       </details>
@@ -1538,7 +1538,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
-      
+
       CrispClient.website.unlinkOperatorFromWebsite(websiteID, userID);
       ```
       </details>
@@ -1552,7 +1552,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.countVisitors(websiteID);
       ```
       </details>
@@ -1565,7 +1565,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listVisitors(websiteID, pageNumber);
       ```
       </details>
@@ -1577,7 +1577,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.pinpointVisitorsOnMap(websiteID, centerLongitude, centerLatitude, centerRadius);
       ```
       </details>
@@ -1590,7 +1590,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var tokenID = "d3c17241-1327-47d7-9d8e-b89ff7bd2904";
-      
+
       CrispClient.website.getSessionIdentifierFromToken(websiteID, tokenID);
       ```
       </details>
@@ -1604,7 +1604,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.countBlockedVisitorsInRule(websiteID, rule);
       ```
       </details>
@@ -1616,7 +1616,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.clearBlockedVisitorsInRule(websiteID, rule);
       ```
       </details>
@@ -1630,7 +1630,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.getWebsiteAvailabilityStatus(websiteID);
       ```
       </details>
@@ -1642,7 +1642,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.listWebsiteOperatorAvailabilities(websiteID);
       ```
       </details>
@@ -1656,7 +1656,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary);
       ```
       </details>
@@ -1669,7 +1669,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listAnalyticsFilters(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo);
       ```
       </details>
@@ -1682,7 +1682,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listAnalyticsClassifiers(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo);
       ```
       </details>
@@ -1696,7 +1696,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.batchResolveConversations(websiteID, sessions);
       ```
       </details>
@@ -1708,7 +1708,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.batchReadConversations(websiteID, sessions);
       ```
       </details>
@@ -1720,12 +1720,12 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var sessions = [
         "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
         "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
       ];
-      
+
       CrispClient.website.batchRemoveConversations(websiteID, sessions);
       ```
       </details>
@@ -1737,12 +1737,12 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var sessions = [
         "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
         "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
       ];
-      
+
       CrispClient.website.batchRemoveConversations(websiteID, sessions);
       ```
       </details>
@@ -1756,7 +1756,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.getVerifySettings(websiteID);
       ```
       </details>
@@ -1768,11 +1768,11 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var settings = {
         "enabled": true
       };
-      
+
       CrispClient.website.updateVerifySettings(websiteID, settings);
       ```
       </details>
@@ -1784,7 +1784,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.getVerifyKey(websiteID);
       ```
       </details>
@@ -1796,7 +1796,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.rollVerifyKey(websiteID);
       ```
       </details>
@@ -1811,7 +1811,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listCampaigns(websiteID, pageNumber);
       ```
       </details>
@@ -1823,7 +1823,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.website.listCampaignTags(websiteID);
       ```
       </details>
@@ -1836,7 +1836,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
-      
+
       CrispClient.website.listCampaignTemplates(websiteID, pageNumber);
       ```
       </details>
@@ -1848,12 +1848,12 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var templateName = {
         "name": "HTML Template",
         "format": "html"
       };
-      
+
       CrispClient.website.createNewCampaignTemplate(websiteID, templateFormat, templateName);
       ```
       </details>
@@ -1866,7 +1866,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var templateID = "a4876300-4dae-47f7-8599-3bf9283f36c2";
-      
+
       CrispClient.website.checkCampaignTemplateExists(websiteID, templateID);
       ```
       </details>
@@ -1879,7 +1879,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var templateID = "a4876300-4dae-47f7-8599-3bf9283f36c2";
-      
+
       CrispClient.website.getCampaignTemplate(websiteID, templateID);
       ```
       </details>
@@ -1892,13 +1892,13 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var templateID = "a4876300-4dae-47f7-8599-3bf9283f36c2";
-      
+
       var template = {
         "name": "HTML Template",
         "format": "html",
         "content": "<html><body><a href=\"{{url.unsubscribe}}\"></a></body></html>"
       };
-      
+
       CrispClient.website.saveCampaignTemplate(websiteID, templateID, template);
       ```
       </details>
@@ -1911,9 +1911,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var templateID = "a4876300-4dae-47f7-8599-3bf9283f36c2";
-      
+
       var template = "<html><body><a href=\"{{url.unsubscribe}}\"></a></body></html>";
-      
+
       CrispClient.website.updateCampaignTemplate(websiteID, templateID, template);
       ```
       </details>
@@ -1926,7 +1926,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var templateID = "a4876300-4dae-47f7-8599-3bf9283f36c2";
-      
+
       CrispClient.website.removeCampaignTemplate(websiteID, templateID);
       ```
       </details>
@@ -1940,12 +1940,12 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       var campaignName = {
         "type": "one-shot",
         "name": "Welcome!"
       };
-      
+
       CrispClient.website.createNewCampaign(websiteID, campaignType, campaignName);
       ```
       </details>
@@ -1958,7 +1958,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       CrispClient.website.checkCampaignExists(websiteID, campaignID);
       ```
       </details>
@@ -1971,7 +1971,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       CrispClient.website.getCampaign(websiteID, campaignID);
       ```
       </details>
@@ -1984,7 +1984,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       var campaign = {
         "type": "one-shot",
         "format": "markdown",
@@ -2004,7 +2004,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           "tracking": true
         }
       };
-      
+
       CrispClient.website.saveCampaign(websiteID, campaignID, campaign);
       ```
       </details>
@@ -2017,11 +2017,11 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       var campaign = {
         "message": "*Hey there*, welcome on Crisp folks!"
       };
-      
+
       CrispClient.website.updateCampaign(websiteID, campaignID, campaign);
       ```
       </details>
@@ -2034,7 +2034,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       CrispClient.website.removeCampaign(websiteID, campaignID);
       ```
       </details>
@@ -2047,7 +2047,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       CrispClient.website.dispatchCampaign(websiteID, campaignID);
       ```
       </details>
@@ -2060,7 +2060,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       CrispClient.website.resumeCampaign(websiteID, campaignID);
       ```
       </details>
@@ -2073,7 +2073,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       CrispClient.website.pauseCampaign(websiteID, campaignID);
       ```
       </details>
@@ -2086,7 +2086,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      
+
       CrispClient.website.testCampaign(websiteID, campaignID);
       ```
       </details>
@@ -2100,7 +2100,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
       var pageNumber = 1;
-      
+
       CrispClient.website.listCampaignRecipients(websiteID, campaignID, pageNumber);
       ```
       </details>
@@ -2114,7 +2114,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
       var pageNumber = 1;
-      
+
       CrispClient.website.listCampaignStatistics(websiteID, campaignID, action, pageNumber);
       ```
       </details>
@@ -2184,7 +2184,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      
+
       CrispClient.plugin.listSubscriptionsForWebsite(websiteID);
       ```
       </details>
@@ -2197,7 +2197,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       CrispClient.plugin.getSubscriptionDetails(websiteID, pluginID);
       ```
       </details>
@@ -2210,9 +2210,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       var pluginID = "98454664-9f7d-4d95-a9ce-f37356f5e65a";
-      
+
       CrispClient.plugin.subscribeWebsiteToPlugin(websiteID, pluginID);
       ```
       </details>
@@ -2225,7 +2225,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       CrispClient.plugin.unsubscribePluginFromWebsite(websiteID, pluginID);
       ```
       </details>
@@ -2238,7 +2238,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       CrispClient.plugin.getSubscriptionSettings(websiteID, pluginID);
       ```
       </details>
@@ -2251,13 +2251,13 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       var settings = {
         "chatbox": {
           "25": "#bbbbbb"
         }
       };
-      
+
       CrispClient.plugin.saveSubscriptionSettings(websiteID, pluginID, settings);
       ```
       </details>
@@ -2270,13 +2270,13 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       var settings = {
         "chatbox": {
           "25": "#bbbbbb"
         }
       };
-      
+
       CrispClient.plugin.updateSubscriptionSettings(websiteID, pluginID, settings);
       ```
       </details>
@@ -2289,14 +2289,14 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       var payload = {
         "namespace": "bot:step",
         "payload": {
           "step": 1
         }
       };
-      
+
       CrispClient.plugin.forwardPluginPayloadToChannel(websiteID, pluginID, payload);
       ```
       </details>
@@ -2309,7 +2309,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      
+
       var payload = {
         "name": "bot-is-running",
         "data": {
@@ -2317,7 +2317,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           "email": "valerian@crisp.chat"
         }
       };
-      
+
       CrispClient.plugin.dispatchPluginEvent(websiteID, pluginID, payload);
       ```
       </details>
@@ -2334,7 +2334,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var listID = "f7fb43da-1cd8-49c1-ade0-9f5b71d034e3";
       var pageNumber = 1;
-      
+
       CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery);
       ```
       </details>
@@ -2385,7 +2385,7 @@ Available events are listed below:
     * `session:set_data`
   * **Session Sync Pages** [`user`, `plugin`]:
     * `session:sync:pages`
-  * **Session Sync Events** [`user`, `plugin`]: 
+  * **Session Sync Events** [`user`, `plugin`]:
     * `session:sync:events`
   * **Session Sync Capabilities** [`user`, `plugin`]:
     * `session:sync:capabilities`
@@ -2493,7 +2493,7 @@ Available events are listed below:
     * `website:update_visitors_count`
   * **Website Update Operators Availability** [`user`, `plugin`]:
     * `website:update_operators_availability`
-  * **Website Users Available** [`user`, `plugin`]: 
+  * **Website Users Available** [`user`, `plugin`]:
     * `website:users:available`
 
 * #### **Bucket Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#bucket-events)
@@ -2523,9 +2523,9 @@ Available events are listed below:
     * `email:track:view`
 
 * #### **Plugin Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#plugin-events)
-  * **Plugin Channel** [`user`, `plugin`]: 
+  * **Plugin Channel** [`user`, `plugin`]:
     * `plugin:channel`
   * **Plugin Event** [`user`, `plugin`]:
     * `plugin:event`
-  * **Plugin Settings Saved** [`user`, `plugin`]: 
+  * **Plugin Settings Saved** [`user`, `plugin`]:
     * `plugin:settings:saved`
