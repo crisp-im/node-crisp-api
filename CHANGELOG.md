@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## v6.1.0
+
+### New Features
+
+* Added the new `CrispClient.website.removeMessageInConversation` method.
+* Added support for the `message:removed` RTM API event.
+
 ## v6.0.0
 
 ### Breaking Changes
