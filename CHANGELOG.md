@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## v6.2.0
+
+### New Features
+
+* Added the new `CrispClient.website.getVerifyStatusForConversation` method.
+* Added the new `CrispClient.website.updateVerifyStatusForConversation` method.
+
 ## v6.1.0
 
 ### New Features
