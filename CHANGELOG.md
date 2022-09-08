@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v6.3.0
+
+### New Features
+
+* Added the new `CrispClient.rebind` method, which requests the RTM API to rebind to newly installed/subscribed websites (depending on the authentication tier).
+
 ## v6.2.0
 
 ### New Features
