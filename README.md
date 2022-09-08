@@ -2386,7 +2386,10 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 You can bind to realtime events from Crisp, in order to get notified of incoming messages and updates in websites.
 
-You won't receive any event if you don't explicitly subscribe to realtime events using `CrispClient.on()`, as the library doesn't connect to the realtime backend automatically. This method returns a `Promise` object.
+Before you start with RTM events, please consider the following:
+
+* You won't receive any event if you don't explicitly subscribe to realtime events using `CrispClient.on()`, as the library doesn't connect to the realtime backend automatically. This method returns a `Promise` object.
+* Whenever the list of websites that your authentication token is entitled to receive events for changes, you will need to call `CrispClient.rebind()`. This method also returns a `Promise` object.
 
 Available events are listed below:
 

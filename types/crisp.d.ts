@@ -25,6 +25,8 @@ declare class Crisp {
     /** @private */
     private _socketScheduler;
     /** @private */
+    private _lastEventRebind;
+    /** @private */
     private _socketBindHooks;
     /** @private */
     private _boundEvents;
@@ -40,6 +42,7 @@ declare class Crisp {
     put: (resource: string, query: object, body: object) => any;
     delete: (resource: string, query: object, body: object) => any;
     on: (event: string, callback: Function) => void;
+    rebind: () => void;
     _prepareRestUrl: (paths: any[]) => string;
     _prepareServices: () => void;
     _prepareResources: (serviceInstance: object, resources: any[]) => void;
@@ -48,7 +51,7 @@ declare class Crisp {
     _emitAuthenticate: () => void;
 }
 declare namespace Crisp {
-    export { DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_SOCKET_SCHEDULE, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, DEFAULT_RTM_EVENTS, Crisp };
+    export { DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_SOCKET_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, DEFAULT_RTM_EVENTS, Crisp };
 }
 declare var DEFAULT_REQUEST_TIMEOUT: number;
 declare var DEFAULT_SOCKET_TIMEOUT: number;
@@ -56,6 +59,7 @@ declare var DEFAULT_SOCKET_RECONNECT_DELAY: number;
 declare var DEFAULT_SOCKET_RECONNECT_DELAY_MAX: number;
 declare var DEFAULT_SOCKET_RECONNECT_FACTOR: number;
 declare var DEFAULT_SOCKET_SCHEDULE: number;
+declare var DEFAULT_EVENT_REBIND_INTERVAL_MIN: number;
 declare var DEFAULT_USERAGENT_PREFIX: string;
 declare var DEFAULT_REST_HOST: string;
 declare var DEFAULT_REST_BASE_PATH: string;
