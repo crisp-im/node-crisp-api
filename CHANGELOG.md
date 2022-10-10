@@ -1,6 +1,16 @@
 Changelog
 =========
 
+## v6.3.1
+
+### Breaking Changes
+
+* Support for NodeJS 8 has been removed. The minimum version is now NodeJS 10.
+
+### Changes
+
+* Upgraded dependencies (closes [#30](https://github.com/crisp-im/node-crisp-api/issues/30).
+
 ## v6.3.0
 
 ### New Features
