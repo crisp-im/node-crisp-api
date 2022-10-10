@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "socket.io-client": "4.4.1",
-    "fbemitter": "3.0.0",
+    "fbemitter": "git+https://github.com/crisp-dev/emitter.git#695f60594bdca0c876e5c232de57702ab3151b6f",
     "got": "11.8.5"
   },
   "keywords": [
