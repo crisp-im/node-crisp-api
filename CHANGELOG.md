@@ -9,7 +9,7 @@ Changelog
 
 ### Changes
 
-* Upgraded dependencies (closes [#30](https://github.com/crisp-im/node-crisp-api/issues/30).
+* Upgraded dependencies (closes [#30](https://github.com/crisp-im/node-crisp-api/issues/30)).
 
 ## v6.3.0
 
