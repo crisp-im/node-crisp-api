@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## v6.3.2
+
+### Bug Fixes
+
+* Prevent Got from throwing errors for non `2xx / 3xx` response codes.
+* Fixed body payload type.
+
 ## v6.3.1
 
 ### Breaking Changes
