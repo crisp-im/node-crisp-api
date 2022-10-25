@@ -402,6 +402,15 @@ CrispClient.website.requestChatboxBindingPurgeForConversation(websiteID, session
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#request-user-feedback-for-conversation
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+CrispClient.website.requestUserFeedbackForConversation(websiteID, sessionID);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#list-browsing-sessions-for-conversation
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
