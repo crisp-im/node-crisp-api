@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v6.4.0
+
+### New Features
+
+* Added the new `CrispClient.website.requestUserFeedbackForConversation` method.
+
 ## v6.3.2
 
 ### Bug Fixes
