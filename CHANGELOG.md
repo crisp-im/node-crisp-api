@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v6.4.1
+
+### Bug Fixes
+
+* Return more informative error reasons for non `2xx / 3xx` response codes on `HEAD` requests.
+
 ## v6.4.0
 
 ### New Features
