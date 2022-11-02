@@ -142,7 +142,7 @@ All methods that you will most likely need when building a Crisp integration are
 </details>
 <details>
   <summary>
-  <a href="#plugin">RTM Events</a>
+  <a href="#realtime-events">RTM Events</a>
   </summary>
   <ul>
     <li><a href="#session--reference">Session Events</a></li>
