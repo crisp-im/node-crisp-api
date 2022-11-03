@@ -54,6 +54,11 @@ CrispClient.website.sendMessageInConversation(
       ]
     },
 
+    user   : {
+      nickname : "My Custom Bot"
+      // avatar   : "https://PATH_TO_A_CUSTOM_AVATAR"
+    },
+
     from   : "operator",
     origin : "chat"
   }

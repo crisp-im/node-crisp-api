@@ -36,7 +36,12 @@ CrispClient.website.sendMessageInConversation(
     type    : "text",
     content : "This is a message sent from node-crisp-api examples.",
     from    : "operator",
-    origin  : "chat"
+    origin  : "chat",
+
+    user   : {
+      nickname : "My Custom Bot"
+      // avatar   : "https://PATH_TO_A_CUSTOM_AVATAR"
+    }
   }
 )
   .then((data) => {
