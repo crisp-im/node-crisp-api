@@ -9,6 +9,13 @@
     "email": "baptiste@crisp.chat",
     "url": "https://jamin.me/"
   },
+  "contributors": [
+    {
+      "name": "Valerian Saliou",
+      "email": "valerian@valeriansaliou.name",
+      "url": "https://valeriansaliou.name/"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/crisp-im/node-crisp-api.git"
