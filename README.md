@@ -2421,8 +2421,8 @@ You will need to adjust your code so that:
 
 1. The RTM events mode is set to Web Hooks: `CrispClient.setRtmMode(Crisp.RTM_MODES.WebHooks)`
 2. Your HTTP endpoint mounts a route listening for POST requests, and upon receiving requests:
-  1. It verifies the requests with: `CrispClient.verifyHook(secret, body, timestamp, signature)`
-  2. It receives the Web Hook with: `CrispClient.receiveHook(body)`
+    * It verifies the requests with: `CrispClient.verifyHook(secret, body, timestamp, signature)`
+    * It receives the Web Hook with: `CrispClient.receiveHook(body)`
 
 Plugin Web Hooks will need to be configured first for this to work. Check out our [Web Hooks Quickstart guide](https://docs.crisp.chat/guides/web-hooks/quickstart/) and our [Web Hooks Reference](https://docs.crisp.chat/references/web-hooks/v1/) to get started.
 
