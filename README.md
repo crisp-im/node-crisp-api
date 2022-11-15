@@ -2399,10 +2399,29 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 You can bind to realtime events from Crisp, in order to get notified of incoming messages and updates in websites.
 
-Before you start with RTM events, please consider the following:
+**There are two ways to receive realtime events:**
+
+1. Using Web Hooks (**⭐ recommended**)
+2. Using WebSockets with the RTM API
+
+**Before you start with RTM events, please consider the following:**
 
 * You won't receive any event if you don't explicitly subscribe to realtime events using `CrispClient.on()`, as the library doesn't connect to the realtime backend automatically. This method returns a `Promise` object.
-* Whenever the list of websites that your authentication token is entitled to receive events for changes, you will need to call `CrispClient.rebindSocket()`. This method also returns a `Promise` object.
+* Whenever the list of websites that your authentication token is entitled to receive events for changes, you will need to call `CrispClient.rebindSocket()`. This method also returns a `Promise` object. _This only applies to WebSockets with the RTM API_.
+
+### Receive realtime events
+
+#### Receive events over Web Hooks
+
+To start listening for events and bind a handler, check out the [events over Web Hooks example](https://github.com/crisp-im/node-crisp-api/blob/master/examples/events_webhooks.js).
+
+Plugin Web Hooks will need to be configured first for this to work. Check out our [Web Hooks Quickstart guide](https://docs.crisp.chat/guides/web-hooks/quickstart/) and our [Web Hooks Reference](https://docs.crisp.chat/references/web-hooks/v1/) to get started.
+
+#### Receive events over WebSockets (RTM API)
+
+To start listening for events and bind a handler, check out the [events over WebSockets example](https://github.com/crisp-im/node-crisp-api/blob/master/examples/events_websockets.js).
+
+### Available realtime events
 
 Available events are listed below:
 
