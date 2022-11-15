@@ -2399,6 +2399,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 You can bind to realtime events from Crisp, in order to get notified of incoming messages and updates in websites.
 
+You won't receive any event if you don't explicitly subscribe to realtime events, as the library doesn't connect to the realtime backend automatically.
+
 **There are two ways to receive realtime events:**
 
 1. Using Web Hooks (**⭐ recommended**)
