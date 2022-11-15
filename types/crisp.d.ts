@@ -42,18 +42,23 @@ declare class Crisp {
     patch: (resource: string, query: object, body: object) => any;
     put: (resource: string, query: object, body: object) => any;
     delete: (resource: string, query: object, body: object) => any;
-    on: (event: string, callback: Function) => void;
-    rebind: () => void;
+    on: (event: string, callback: Function) => any;
+    rebindSocket: () => any;
     _prepareRestUrl: (paths: any[]) => string;
     _prepareServices: () => void;
     _prepareResources: (serviceInstance: object, resources: any[]) => void;
-    _prepareSocket: (fnBindHook: Function) => void;
+    _prepareBroker: (fnBindHook: Function) => any;
+    _connectLoopback: () => any;
+    _connectSocket: (rtmHostOverride: string) => any;
+    _emitAuthenticateSocket: () => void;
+    _unstackBrokerBindHooks: (modeInstance: object) => void;
     _request: (resource: string, method: string, query: object, body: object, resolve: Function, reject: Function) => void;
-    _emitAuthenticate: () => void;
 }
 declare namespace Crisp {
-    export { DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_SOCKET_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, DEFAULT_RTM_MODE, DEFAULT_RTM_EVENTS, AVAILABLE_RTM_MODES, Crisp };
+    export { RTM_MODES, AVAILABLE_RTM_MODES, DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_SOCKET_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, DEFAULT_RTM_MODE, DEFAULT_RTM_EVENTS, Crisp };
 }
+declare var RTM_MODES: object;
+declare var AVAILABLE_RTM_MODES: string[];
 declare var DEFAULT_REQUEST_TIMEOUT: number;
 declare var DEFAULT_SOCKET_TIMEOUT: number;
 declare var DEFAULT_SOCKET_RECONNECT_DELAY: number;
@@ -66,4 +71,3 @@ declare var DEFAULT_REST_HOST: string;
 declare var DEFAULT_REST_BASE_PATH: string;
 declare var DEFAULT_RTM_MODE: string;
 declare var DEFAULT_RTM_EVENTS: string[];
-declare var AVAILABLE_RTM_MODES: string[];
