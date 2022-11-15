@@ -157,7 +157,7 @@ Changelog
 
 ### Breaking Changes
 
-**Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `3.0.0` or lower in your `package.json`.**
+**🆘 Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `3.0.0` or lower in your `package.json`.**
 
 * ⚠️ All resource methods have been nested into their parent category, eg. `website`. So all calls to eg. `CrispClient.websiteConversation` or `CrispClient.websitePeople` become `CrispClient.website`. This makes API calls more readable throughout your code.
 
@@ -165,6 +165,6 @@ Changelog
 
 ### Breaking Changes
 
-**Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.**
+**🆘 Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.**
 
 * ⚠️ The programmatic interface to `node-crisp-api` has been completely revamped, so that all REST API methods specified in [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) are also available in this wrapper. Most method names have been changed as to match their name in the reference. Please check the [README](./README.md) for a full list of available methods.
