@@ -2417,11 +2417,22 @@ You won't receive any event if you don't explicitly subscribe to realtime events
 
 To start listening for events and bind a handler, check out the [events over Web Hooks example](https://github.com/crisp-im/node-crisp-api/blob/master/examples/events_webhooks.js).
 
+You will need to adjust your code so that:
+
+1. The RTM events mode is set to Web Hooks: `CrispClient.setRtmMode(Crisp.RTM_MODES.WebHooks)`
+2. Your HTTP endpoint mounts a route listening for POST requests, and upon receiving requests:
+  1. It verifies the requests with: `CrispClient.verifyHook(secret, body, timestamp, signature)`
+  2. It receives the Web Hook with: `CrispClient.receiveHook(body)`
+
 Plugin Web Hooks will need to be configured first for this to work. Check out our [Web Hooks Quickstart guide](https://docs.crisp.chat/guides/web-hooks/quickstart/) and our [Web Hooks Reference](https://docs.crisp.chat/references/web-hooks/v1/) to get started.
 
 #### Receive events over WebSockets (RTM API)
 
 To start listening for events and bind a handler, check out the [events over WebSockets example](https://github.com/crisp-im/node-crisp-api/blob/master/examples/events_websockets.js).
+
+You will need to adjust your code so that:
+
+1. The RTM events mode is set to WebSockets: `CrispClient.setRtmMode(Crisp.RTM_MODES.WebSockets)`
 
 ### Available realtime events
 
