@@ -1,6 +1,16 @@
 Changelog
 =========
 
+## v7.0.0
+
+### Breaking Changes
+
+* ⚠️ Renamed the `CrispClient.rebind` method into `CrispClient.rebindSocket` (update your code if you use it).
+
+### New Features
+
+* Added support for receiving Web Hooks through the RTM events pipeline (via `CrispClient.setRtmMode(Crisp.RTM_MODES.WebHooks)`).
+
 ## v6.4.1
 
 ### Bug Fixes
@@ -24,7 +34,7 @@ Changelog
 
 ### Breaking Changes
 
-* Support for NodeJS 8 has been removed. The minimum version is now NodeJS 10.
+* ⚠️ Support for NodeJS 8 has been removed. The minimum version is now NodeJS 10.
 
 ### Changes
 
@@ -54,8 +64,8 @@ Changelog
 
 ### Breaking Changes
 
-* Support for NodeJS 6 has been removed. The minimum version is now NodeJS 8.
-* The `CrispClient.on` method now returns a `Promise`. Please update your code accordingly. We do recommend that you add error catchers.
+* ⚠️ Support for NodeJS 6 has been removed. The minimum version is now NodeJS 8.
+* ⚠️ The `CrispClient.on` method now returns a `Promise`. Please update your code accordingly. We do recommend that you add error catchers.
 
 ### New Features
 
@@ -111,7 +121,7 @@ Changelog
 
 ### Breaking Changes
 
-* The package has been renamed from `node-crisp-api` to `crisp-api`. Since it is typical of NPM packages to skip the `node-` prefix in their name, we chose to normalize the package name to this community standard. The programmatic API did not change, so you can simply update the package name to the new name in your `package.json` and all imports.
+* ⚠️ The package has been renamed from `node-crisp-api` to `crisp-api`. Since it is typical of NPM packages to skip the `node-` prefix in their name, we chose to normalize the package name to this community standard. The programmatic API did not change, so you can simply update the package name to the new name in your `package.json` and all imports.
 
 ## v4.2.0
 
@@ -147,14 +157,14 @@ Changelog
 
 ### Breaking Changes
 
-**⚠️ Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `3.0.0` or lower in your `package.json`.**
+**Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `3.0.0` or lower in your `package.json`.**
 
-* All resource methods have been nested into their parent category, eg. `website`. So all calls to eg. `CrispClient.websiteConversation` or `CrispClient.websitePeople` become `CrispClient.website`. This makes API calls more readable throughout your code.
+* ⚠️ All resource methods have been nested into their parent category, eg. `website`. So all calls to eg. `CrispClient.websiteConversation` or `CrispClient.websitePeople` become `CrispClient.website`. This makes API calls more readable throughout your code.
 
 ## v3.0.0
 
 ### Breaking Changes
 
-**⚠️ Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.**
+**Major changes follow, that will likely require that you update your integration code. If you want to wait to apply those changes, we recommend that you pin `node-crisp-api` to `2.0.0` or lower in your `package.json`.**
 
-* The programmatic interface to `node-crisp-api` has been completely revamped, so that all REST API methods specified in [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) are also available in this wrapper. Most method names have been changed as to match their name in the reference. Please check the [README](./README.md) for a full list of available methods.
+* ⚠️ The programmatic interface to `node-crisp-api` has been completely revamped, so that all REST API methods specified in [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) are also available in this wrapper. Most method names have been changed as to match their name in the reference. Please check the [README](./README.md) for a full list of available methods.
