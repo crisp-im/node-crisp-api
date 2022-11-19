@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v7.0.1
+
+### New Features
+
+* Added `CrispClient.verifyWidget` to verify Widget Events.
+
 ## v7.0.0
 
 ### Breaking Changes
