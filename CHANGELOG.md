@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v7.2.0
+
+### New Features
+
+* Automated the package release process via GitHub Actions (ie. `npm publish`).
+
 ## v7.1.0
 
 ### New Features
