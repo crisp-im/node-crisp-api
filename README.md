@@ -4,9 +4,9 @@
 
 The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your JavaScript code.
 
-Copyright 2022 Crisp IM SAS. See LICENSE for copying information.
+Copyright 2023 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 29/07/2022
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 16/01/2023
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
