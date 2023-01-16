@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v7.3.0
+
+### New Features
+
+* Added the new `CrispClient.website.listConversationFiles` method.
+
 ## v7.2.0
 
 ### New Features
