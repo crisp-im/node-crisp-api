@@ -6,5 +6,9 @@ export = Website;
  */
 declare function Website(): void;
 declare class Website {
-    _resources: string[];
+    /**
+     * @private
+     * @type {Array}
+    */
+    private _resources;
 }

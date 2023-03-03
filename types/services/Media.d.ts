@@ -6,5 +6,9 @@ export = Media;
  */
 declare function Media(): void;
 declare class Media {
-    _resources: string[];
+    /**
+     * @private
+     * @type {Array}
+    */
+    private _resources;
 }

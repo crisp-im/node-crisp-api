@@ -6,5 +6,9 @@ export = Plugin;
  */
 declare function Plugin(): void;
 declare class Plugin {
-    _resources: string[];
+    /**
+     * @private
+     * @type {Array}
+    */
+    private _resources;
 }

@@ -6,5 +6,9 @@ export = Bucket;
  */
 declare function Bucket(): void;
 declare class Bucket {
-    _resources: string[];
+    /**
+     * @private
+     * @type {Array}
+    */
+    private _resources;
 }

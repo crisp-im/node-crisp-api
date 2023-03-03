@@ -8,24 +8,24 @@ declare function Crisp(): void;
 declare class Crisp {
     /**
      * @public
-     * @type {object}
+     * @type {*}
     */
-    public bucket: object;
+    public bucket: any;
     /**
      * @public
-     * @type {object}
+     * @type {*}
     */
-    public media: object;
+    public media: any;
     /**
      * @public
-     * @type {object}
+     * @type {*}
     */
-    public plugin: object;
+    public plugin: any;
     /**
      * @public
-     * @type {object}
+     * @type {*}
     */
-    public website: object;
+    public website: any;
     /**
      * @public
      * @type {object}
