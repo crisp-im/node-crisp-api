@@ -6,68 +6,126 @@ export = Crisp;
  */
 declare function Crisp(): void;
 declare class Crisp {
-    auth: {};
+    /**
+     * @public
+     * @type {object}
+    */
+    public bucket: object;
+    /**
+     * @public
+     * @type {object}
+    */
+    public media: object;
+    /**
+     * @public
+     * @type {object}
+    */
+    public plugin: object;
+    /**
+     * @public
+     * @type {object}
+    */
+    public website: object;
+    /**
+     * @public
+     * @type {object}
+    */
+    public auth: object;
+    /**
+     * @private
+     * @type {object}
+    */
+    private _rest;
+    /**
+     * @private
+     * @type {object}
+    */
+    private _rtm;
     /**
      * @private
      * @type {string}
     */
-    private _tier;
-    /** @private */
-    private _rest;
-    /** @private */
-    private _rtm;
-    /** @private */
     private _useragent;
-    /** @private */
+    /**
+     * @private
+     * @type {object}
+    */
     private _emitter;
-    /** @private */
+    /**
+     * @private
+     * @type {object|null}
+    */
     private _socket;
-    /** @private */
-    private _socketScheduler;
-    /** @private */
+    /**
+     * @private
+     * @type {object|null}
+    */
+    private _loopback;
+    /**
+     * @private
+     * @type {number|null}
+    */
     private _lastEventRebind;
-    /** @private */
-    private _socketBindHooks;
-    /** @private */
+    /**
+     * @private
+     * @type {object|null}
+    */
+    private _brokerScheduler;
+    /**
+     * @private
+     * @type {Array}
+    */
+    private _brokerBindHooks;
+    /**
+     * @private
+     * @type {object}
+    */
     private _boundEvents;
-    setRestHost: (host: string) => void;
-    setRtmHost: (host: string) => void;
-    setRtmMode: (mode: string) => void;
-    setTier: (tier: string) => void;
-    authenticate: (identifier: string, key: string) => void;
-    authenticateTier: (tier: string, identifier: string, key: string) => void;
-    head: (resource: string, query: object, body: object) => any;
-    get: (resource: string, query: object) => any;
-    post: (resource: string, query: object, body: object) => any;
-    patch: (resource: string, query: object, body: object) => any;
-    put: (resource: string, query: object, body: object) => any;
-    delete: (resource: string, query: object, body: object) => any;
-    on: (event: string, callback: Function) => any;
-    rebindSocket: () => any;
+    setRestHost: (host: string) => undefined;
+    setRtmHost: (host: string) => undefined;
+    setRtmMode: (mode: string) => undefined;
+    setTier: (tier: string) => undefined;
+    authenticate: (identifier: string, key: string) => undefined;
+    authenticateTier: (tier: string, identifier: string, key: string) => undefined;
+    head: (resource: string, query: object, body: object) => Promise<any>;
+    get: (resource: string, query: object) => Promise<any>;
+    post: (resource: string, query: object, body: object) => Promise<any>;
+    patch: (resource: string, query: object, body: object) => Promise<any>;
+    put: (resource: string, query: object, body: object) => Promise<any>;
+    delete: (resource: string, query: object, body: object) => Promise<any>;
+    on: (event: string, callback: Function) => Promise<any>;
+    receiveHook: (body: object) => undefined;
+    verifyHook: (secret: string, body: object, timestamp: string, signature: string) => boolean;
+    verifyWidget: (secret: string, body: object, timestamp: string, signature: string) => boolean;
+    rebindSocket: () => Promise<any>;
     _prepareRestUrl: (paths: any[]) => string;
-    _prepareServices: () => void;
-    _prepareResources: (serviceInstance: object, resources: any[]) => void;
-    _prepareBroker: (fnBindHook: Function) => any;
-    _connectLoopback: () => any;
-    _connectSocket: (rtmHostOverride: string) => any;
-    _emitAuthenticateSocket: () => void;
-    _unstackBrokerBindHooks: (modeInstance: object) => void;
-    _request: (resource: string, method: string, query: object, body: object, resolve: Function, reject: Function) => void;
+    _prepareServices: () => undefined;
+    _prepareResources: (serviceMap: object, resources: any[]) => undefined;
+    _prepareBroker: (fnBindHook: Function) => Promise<any>;
+    _connectLoopback: () => Promise<any>;
+    _connectSocket: (rtmHostOverride: string) => Promise<any>;
+    _emitAuthenticateSocket: () => undefined;
+    _unstackBrokerBindHooks: (modeInstance: object) => undefined;
+    _request: (resource: string, method: string, query: object, body: object, resolve: Function, reject: Function) => undefined;
+    _readErrorResponseReason: (method: string, statusCode: number, response: object) => string;
+    _verifySignature: (secret: string, body: object, timestamp: string, signature: string) => boolean;
 }
 declare namespace Crisp {
-    export { RTM_MODES, AVAILABLE_RTM_MODES, DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_SOCKET_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, DEFAULT_RTM_MODE, DEFAULT_RTM_EVENTS, Crisp };
+    export { RTM_MODES, AVAILABLE_RTM_MODES, DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_BROKER_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, WebSockets as DEFAULT_RTM_MODE, DEFAULT_RTM_EVENTS, Crisp };
 }
-declare var RTM_MODES: object;
+declare namespace RTM_MODES {
+    const WebSockets: string;
+    const WebHooks: string;
+}
 declare var AVAILABLE_RTM_MODES: string[];
 declare var DEFAULT_REQUEST_TIMEOUT: number;
 declare var DEFAULT_SOCKET_TIMEOUT: number;
 declare var DEFAULT_SOCKET_RECONNECT_DELAY: number;
 declare var DEFAULT_SOCKET_RECONNECT_DELAY_MAX: number;
 declare var DEFAULT_SOCKET_RECONNECT_FACTOR: number;
-declare var DEFAULT_SOCKET_SCHEDULE: number;
+declare var DEFAULT_BROKER_SCHEDULE: number;
 declare var DEFAULT_EVENT_REBIND_INTERVAL_MIN: number;
 declare var DEFAULT_USERAGENT_PREFIX: string;
 declare var DEFAULT_REST_HOST: string;
 declare var DEFAULT_REST_BASE_PATH: string;
-declare var DEFAULT_RTM_MODE: string;
 declare var DEFAULT_RTM_EVENTS: string[];
