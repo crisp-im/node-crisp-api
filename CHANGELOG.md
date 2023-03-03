@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v7.4.1
+
+### Bug Fixes
+
+* Changed type of exported services in JSDoc to `any` so that TypeScript projects can use resource methods without `tsc` throwing errors.
+
 ## v7.4.0
 
 ### New Features
