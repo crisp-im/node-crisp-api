@@ -1,6 +1,16 @@
 Changelog
 =========
 
+## v7.4.0
+
+### New Features
+
+* Generated up-to-date TypeScript definitions.
+
+### Bug Fixes
+
+* Fixed the automatic generation of TypeScript definitions.
+
 ## v7.3.0
 
 ### New Features
