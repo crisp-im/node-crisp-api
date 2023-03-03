@@ -34,18 +34,18 @@
       "url": "https://github.com/crisp-im/node-crisp-api/blob/master/LICENSE"
     }
   ],
-  "main": "./lib/crisp",
-  "types": "./types/crisp.d.ts",
+  "main": "lib/crisp.js",
+  "types": "types/crisp.d.ts",
   "engines": {
     "node": ">= 10.19.0"
   },
   "scripts": {
     "test": "check-build",
-    "gen-types": "tsc"
+    "generate:types": "rm -rf ./types/* && tsc"
   },
   "devDependencies": {
     "check-build": "2.8.2",
-    "typescript": "4.4.4"
+    "typescript": "4.9.5"
   },
   "dependencies": {
     "socket.io-client": "4.4.1",
