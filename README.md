@@ -1,3 +1,12 @@
+# Issue
+../node_modules/crisp-api/types/crisp.d.ts:114:325 - error TS2552: Cannot find name 'WebSockets'. Did you mean 'WebSocket'?
+
+114     export { RTM_MODES, AVAILABLE_RTM_MODES, DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_BROKER_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, WebSockets as DEFAULT_RTM_MODE, DEFAULT_RTM_EVENTS, Crisp };
+                                                                                                                                                           
+TypeScript reports that not only there is no "WebSockets", but also that: Cannot export 'WebSocket'. Only local declarations can be exported from a module.ts(2661).
+
+My current workaround simply deletes the DEFAULT_RTM_MODE, as I am not using RTM. I haven't tested it, but this at the very least will allow compilation.
+
 # Crisp API Wrapper
 
 [![Test and Build](https://github.com/crisp-im/node-crisp-api/workflows/Test%20and%20Build/badge.svg?branch=master)](https://github.com/crisp-im/node-crisp-api/actions?query=workflow%3A%22Test+and+Build%22) [![Build and Release](https://github.com/crisp-im/node-crisp-api/workflows/Build%20and%20Release/badge.svg)](https://github.com/crisp-im/node-crisp-api/actions?query=workflow%3A%22Build+and+Release%22) [![Version](https://img.shields.io/npm/v/crisp-api.svg)](https://www.npmjs.com/package/crisp-api) [![Downloads](https://img.shields.io/npm/dt/crisp-api.svg)](https://www.npmjs.com/package/crisp-api)
