@@ -1,11 +1,21 @@
 # Issue
-../node_modules/crisp-api/types/crisp.d.ts:114:325 - error TS2552: Cannot find name 'WebSockets'. Did you mean 'WebSocket'?
+The TypeScript compiler error points out that it cannot find 'WebSockets' on this line:
 
-114     export { RTM_MODES, AVAILABLE_RTM_MODES, DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_BROKER_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, WebSockets as DEFAULT_RTM_MODE, DEFAULT_RTM_EVENTS, Crisp };
-                                                                                                                                                           
-TypeScript reports that not only there is no "WebSockets", but also that: Cannot export 'WebSocket'. Only local declarations can be exported from a module.ts(2661).
+javascript
+Copy code
+export { ..., WebSockets as DEFAULT_RTM_MODE, ... };
+The issue here is that 'WebSockets' is not a standalone exported value, but is a property of RTM_MODES object. TypeScript is statically typed and expects to know about WebSockets at compile time, but here it's being dynamically assigned as a property of an object.
 
-My current workaround simply deletes the DEFAULT_RTM_MODE, as I am not using RTM. I haven't tested it, but this at the very least will allow compilation.
+My current workaround simply removes the DEFAULT_RTM_MODE from the TypeScript declaration file. This allows the TypeScript compilation to proceed, as I'm not using RTM in my project.
+
+However, this might not be an ideal solution for those who plan to use RTM and need TypeScript to be aware of DEFAULT_RTM_MODE. A more general solution may require a revision of how these constants and their types are defined and exported, such that TypeScript can correctly infer their types at compile time.
+
+In the JavaScript implementation (crisp.js), DEFAULT_RTM_MODE is dynamically assigned like so:
+
+javascript
+Copy code
+Crisp.DEFAULT_RTM_MODE = Crisp.RTM_MODES.WebSockets;
+This dynamic assignment is causing the TypeScript compiler to complain. A potential solution may involve making these constants and their types more explicit in the TypeScript declaration file, such that TypeScript can correctly infer their types at compile time.
 
 # Crisp API Wrapper
 
