@@ -1,9 +1,9 @@
 # Issue
 The TypeScript compiler error points out that it cannot find 'WebSockets' on this line:
 
-javascript
-Copy code
+```
 export { ..., WebSockets as DEFAULT_RTM_MODE, ... };
+```
 The issue here is that 'WebSockets' is not a standalone exported value, but is a property of RTM_MODES object. TypeScript is statically typed and expects to know about WebSockets at compile time, but here it's being dynamically assigned as a property of an object.
 
 My current workaround simply removes the DEFAULT_RTM_MODE from the TypeScript declaration file. This allows the TypeScript compilation to proceed, as I'm not using RTM in my project.
@@ -12,9 +12,9 @@ However, this might not be an ideal solution for those who plan to use RTM and n
 
 In the JavaScript implementation (crisp.js), DEFAULT_RTM_MODE is dynamically assigned like so:
 
-javascript
-Copy code
+```
 Crisp.DEFAULT_RTM_MODE = Crisp.RTM_MODES.WebSockets;
+```
 This dynamic assignment is causing the TypeScript compiler to complain. A potential solution may involve making these constants and their types more explicit in the TypeScript declaration file, such that TypeScript can correctly infer their types at compile time.
 
 # Crisp API Wrapper
