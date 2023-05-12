@@ -1,22 +1,3 @@
-# Issue
-The TypeScript compiler error points out that it cannot find 'WebSockets' on this line:
-
-```
-export { ..., WebSockets as DEFAULT_RTM_MODE, ... };
-```
-The issue here is that 'WebSockets' is not a standalone exported value, but is a property of RTM_MODES object. TypeScript is statically typed and expects to know about WebSockets at compile time, but here it's being dynamically assigned as a property of an object.
-
-My current workaround simply removes the DEFAULT_RTM_MODE from the TypeScript declaration file. This allows the TypeScript compilation to proceed, as I'm not using RTM in my project.
-
-However, this might not be an ideal solution for those who plan to use RTM and need TypeScript to be aware of DEFAULT_RTM_MODE. A more general solution may require a revision of how these constants and their types are defined and exported, such that TypeScript can correctly infer their types at compile time.
-
-In the JavaScript implementation (crisp.js), DEFAULT_RTM_MODE is dynamically assigned like so:
-
-```
-Crisp.DEFAULT_RTM_MODE = Crisp.RTM_MODES.WebSockets;
-```
-This dynamic assignment is causing the TypeScript compiler to complain. A potential solution may involve making these constants and their types more explicit in the TypeScript declaration file, such that TypeScript can correctly infer their types at compile time.
-
 # Crisp API Wrapper
 
 [![Test and Build](https://github.com/crisp-im/node-crisp-api/workflows/Test%20and%20Build/badge.svg?branch=master)](https://github.com/crisp-im/node-crisp-api/actions?query=workflow%3A%22Test+and+Build%22) [![Build and Release](https://github.com/crisp-im/node-crisp-api/workflows/Build%20and%20Release/badge.svg)](https://github.com/crisp-im/node-crisp-api/actions?query=workflow%3A%22Build+and+Release%22) [![Version](https://img.shields.io/npm/v/crisp-api.svg)](https://www.npmjs.com/package/crisp-api) [![Downloads](https://img.shields.io/npm/dt/crisp-api.svg)](https://www.npmjs.com/package/crisp-api)
