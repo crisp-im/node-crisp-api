@@ -1342,6 +1342,847 @@ All methods that you will most likely need when building a Crisp integration are
 
 _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
+* #### **Website Helpdesk**
+  * **Check If Helpdesk Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-exists)
+    * `CrispClient.website.checkHelpdeskExists(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.website.checkHelpdeskExists(websiteID);
+      ```
+      </details>
+
+  * **Resolve Helpdesk** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk)
+    * `CrispClient.website.resolveHelpdesk(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.website.resolveHelpdesk(websiteID);
+      ```
+      </details>
+
+  * **Initialize Helpdesk** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initialize-helpdesk)
+    * `CrispClient.website.initializeHelpdesk(websiteID, name, domainBasic)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var name = "Valerian Helpdesk";
+      var domainBasic = "valerian";
+
+      CrispClient.website.initializeHelpdesk(websiteID, name, domainBasic);
+      ```
+      </details>
+
+  * **Delete Helpdesk** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk)
+    * `CrispClient.website.deleteHelpdesk(websiteID, verify)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var verify = "MySuperSecurePassword";
+
+      CrispClient.website.deleteHelpdesk(websiteID, verify);
+      ```
+      </details>
+
+  * **List Helpdesk Locales** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locales)
+    * `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pageNumber = 1;
+
+      CrispClient.website.listHelpdeskLocales(websiteID, pageNumber);
+      ```
+      </details>
+
+  * **Add Helpdesk Locale** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale)
+    * `CrispClient.website.addHelpdeskLocale(websiteID, locale)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+
+      CrispClient.website.addHelpdeskLocale(websiteID, locale);
+      ```
+      </details>
+
+  * **Check If Helpdesk Locale Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-exists)
+    * `CrispClient.website.checkHelpdeskLocaleExists(websiteID, locale)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+
+      CrispClient.website.checkHelpdeskLocaleExists(websiteID, locale);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Locale** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale)
+    * `CrispClient.website.resolveHelpdeskLocale(websiteID, locale)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+
+      CrispClient.website.resolveHelpdeskLocale(websiteID, locale);
+      ```
+      </details>
+
+  * **Delete Helpdesk Locale** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale)
+    * `CrispClient.website.deleteHelpdeskLocale(websiteID, locale)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+
+      CrispClient.website.deleteHelpdeskLocale(websiteID, locale);
+      ```
+      </details>
+
+  * **List Helpdesk Locale Articles** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-articles)
+    * `CrispClient.website.listHelpdeskLocaleArticles(websiteID, locale, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var pageNumber = 1;
+
+      CrispClient.website.listHelpdeskLocaleArticles(websiteID, locale, pageNumber);
+      ```
+      </details>
+
+  * **Add A New Helpdesk Locale Article** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-new-helpdesk-locale-article)
+    * `CrispClient.website.addNewHelpdeskLocaleArticle(websiteID, locale, title)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var title = "How to use $crisp JavaScript SDK?";
+
+      CrispClient.website.addNewHelpdeskLocaleArticle(websiteID, locale, title);
+      ```
+      </details>
+
+  * **Check If Helpdesk Locale Article Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-article-exists)
+    * `CrispClient.website.checkHelpdeskLocaleArticleExists(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.checkHelpdeskLocaleArticleExists(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Locale Article** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article)
+    * `CrispClient.website.resolveHelpdeskLocaleArticle(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.resolveHelpdeskLocaleArticle(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **Save Helpdesk Locale Article** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-article)
+    * `CrispClient.website.saveHelpdeskLocaleArticle(websiteID, locale, articleId, article)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      var article = {
+        "title": "How to use $crisp JavaScript SDK?",
+        "description": null,
+        "content": "Crisp lets you create your customized chatbox easily. **It's easy to setup**.",
+        "featured": false,
+        "order": 1
+      };
+
+      CrispClient.website.saveHelpdeskLocaleArticle(websiteID, locale, articleId, article);
+      ```
+      </details>
+
+  * **Update Helpdesk Locale Article** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-article)
+    * `CrispClient.website.updateHelpdeskLocaleArticle(websiteID, locale, articleId, article)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      var article = {
+        "content": "Crisp lets you create your customized chatbox easily. **It's easy to setup**."
+      };
+
+      CrispClient.website.updateHelpdeskLocaleArticle(websiteID, locale, articleId, article);
+      ```
+      </details>
+
+  * **Delete Helpdesk Locale Article** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-article)
+    * `CrispClient.website.deleteHelpdeskLocaleArticle(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.deleteHelpdeskLocaleArticle(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Locale Article Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-category)
+    * `CrispClient.website.resolveHelpdeskLocaleArticleCategory(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.resolveHelpdeskLocaleArticleCategory(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **Update Helpdesk Locale Article Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-article-category)
+    * `CrispClient.website.updateHelpdeskLocaleArticleCategory(websiteID, locale, articleId, categoryId, sectionId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+      var categoryId = "00d344a3-8948-45b5-9bc4-82ec249fcd44";
+
+      CrispClient.website.updateHelpdeskLocaleArticleCategory(websiteID, locale, articleId, categoryId);
+      ```
+      </details>
+
+  * **List Helpdesk Locale Article Alternates** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-article-alternates)
+    * `CrispClient.website.listHelpdeskLocaleArticleAlternates(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.listHelpdeskLocaleArticleAlternates(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **Check If Helpdesk Locale Article Alternate Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-article-alternate-exists)
+    * `CrispClient.website.checkHelpdeskLocaleArticleAlternateExists(websiteID, locale, articleId, localeLinked)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+      var localeLinked = "fr";
+
+      CrispClient.website.checkHelpdeskLocaleArticleAlternateExists(websiteID, locale, articleId, localeLinked);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Locale Article Alternate** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-alternate)
+    * `CrispClient.website.resolveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+      var localeLinked = "fr";
+
+      CrispClient.website.resolveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked);
+      ```
+      </details>
+
+  * **Save Helpdesk Locale Article Alternate** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-article-alternate)
+    * `CrispClient.website.saveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked, articleIdLinked)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+      var localeLinked = "fr";
+      var articleIdLinked = "9dc0e823-56b0-43ca-9ca3-47e25a8eb543";
+
+      CrispClient.website.saveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked, articleIdLinked);
+      ```
+      </details>
+
+  * **Delete Helpdesk Locale Article Alternate** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-article-alternate)
+    * `CrispClient.website.deleteHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+      var localeLinked = "fr";
+
+      CrispClient.website.deleteHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked);
+      ```
+      </details>
+
+  * **Publish Helpdesk Locale Article** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#publish-helpdesk-locale-article)
+    * `CrispClient.website.publishHelpdeskLocaleArticle(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.publishHelpdeskLocaleArticle(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **Unpublish Helpdesk Locale Article** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unpublish-helpdesk-locale-article)
+    * `CrispClient.website.unpublishHelpdeskLocaleArticle(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.unpublishHelpdeskLocaleArticle(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **List Helpdesk Locale Categories** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-categories)
+    * `CrispClient.website.listHelpdeskLocaleCategories(websiteID, locale, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var pageNumber = 1;
+
+      CrispClient.website.listHelpdeskLocaleCategories(websiteID, locale, pageNumber);
+      ```
+      </details>
+
+  * **Add Helpdesk Locale Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-category)
+    * `CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+
+      CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale);
+      ```
+      </details>
+
+  * **Check If Helpdesk Locale Category Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-category-exists)
+    * `CrispClient.website.checkHelpdeskLocaleCategoryExists(websiteID, locale, categoryId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+      CrispClient.website.checkHelpdeskLocaleCategoryExists(websiteID, locale, categoryId);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Locale Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-category)
+    * `CrispClient.website.resolveHelpdeskLocaleCategory(websiteID, locale, categoryId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+      CrispClient.website.resolveHelpdeskLocaleCategory(websiteID, locale, categoryId);
+      ```
+      </details>
+
+  * **Save Helpdesk Locale Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-category)
+    * `CrispClient.website.saveHelpdeskLocaleCategory(websiteID, locale, categoryId, category)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+      var category = {
+        "name": "Chatbox",
+        "description": "Help on how to setup and use the Crisp chatbox.",
+        "color": "#377FEA",
+        "image": null,
+        "order": 1
+      };
+
+      CrispClient.website.saveHelpdeskLocaleCategory(websiteID, locale, categoryId, category);
+      ```
+      </details>
+
+  * **Update Helpdesk Locale Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-category)
+    * `CrispClient.website.updateHelpdeskLocaleCategory(websiteID, locale, categoryId, category)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+      var category = {
+        "color": "#377FEA"
+      };
+
+      CrispClient.website.updateHelpdeskLocaleCategory(websiteID, locale, categoryId, category);
+      ```
+      </details>
+
+  * **Delete Helpdesk Locale Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-category)
+    * `CrispClient.website.deleteHelpdeskLocaleCategory(websiteID, locale, categoryId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+      CrispClient.website.deleteHelpdeskLocaleCategory(websiteID, locale, categoryId);
+      ```
+      </details>
+
+  * **List Helpdesk Locale Sections** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-sections)
+    * `CrispClient.website.listHelpdeskLocaleSections(websiteID, locale, categoryId, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var pageNumber = 1;
+
+      CrispClient.website.listHelpdeskLocaleSections(websiteID, locale, categoryId, pageNumber);
+      ```
+      </details>
+
+  * **Add Helpdesk Locale Section** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-section)
+    * `CrispClient.website.addHelpdeskLocaleSection(websiteID, locale, categoryId, name)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var name = "Integrate with our SDKs";
+
+      CrispClient.website.addHelpdeskLocaleSection(websiteID, locale, categoryId, name);
+      ```
+      </details>
+
+  * **Check If Helpdesk Locale Section Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-section-exists)
+    * `CrispClient.website.checkHelpdeskLocaleSectionExists(websiteID, locale, categoryId, sectionId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+      CrispClient.website.checkHelpdeskLocaleSectionExists(websiteID, locale, categoryId, sectionId);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Locale Section** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-section)
+    * `CrispClient.website.resolveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+      CrispClient.website.resolveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId);
+      ```
+      </details>
+
+  * **Save Helpdesk Locale Section** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-section)
+    * `CrispClient.website.saveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+      var section = {
+        "name": "Integrate with our SDKs",
+        "order": 1
+      };
+
+      CrispClient.website.saveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section);
+      ```
+      </details>
+
+  * **Update Helpdesk Locale Section** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-section)
+    * `CrispClient.website.updateHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+      var section = {
+        "name": "Integrate with our SDKs",
+        "order": 1
+      };
+
+      CrispClient.website.updateHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section);
+      ```
+      </details>
+
+  * **Delete Helpdesk Locale Section** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-section)
+    * `CrispClient.website.deleteHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+      CrispClient.website.deleteHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId);
+      ```
+      </details>
+
+  * **Map Helpdesk Locale Feedback Ratings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#map-helpdesk-locale-feedback-ratings)
+    * `CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale, filterDateStart, filterDateEnd)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+
+      CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale);
+      ```
+      </details>
+
+  * **List Helpdesk Locale Feedbacks** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-feedbacks)
+    * `CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, pageNumber, filterDateStart, filterDateEnd)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var pageNumber = 1;
+
+      CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, pageNumber);
+      ```
+      </details>
+
+  * **Import External Helpdesk To Locale** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#import-external-helpdesk-to-locale)
+    * `CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, helpdeskUrl)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var helpdeskUrl = "https://docs.acme.com/";
+
+      CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, helpdeskUrl);
+      ```
+      </details>
+
+  * **Export Helpdesk Locale Articles** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#export-helpdesk-locale-articles)
+    * `CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+
+      CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale);
+      ```
+      </details>
+
+  * **List Helpdesk Redirections** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-redirections)
+    * `CrispClient.website.listHelpdeskRedirections(websiteID, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pageNumber = 1;
+
+      CrispClient.website.listHelpdeskRedirections(websiteID, pageNumber);
+      ```
+      </details>
+
+  * **Add Helpdesk Redirection** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-redirection)
+    * `CrispClient.website.addHelpdeskRedirection(websiteID, redirectionPath, redirectionTarget)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var redirectionPath = "/en/article/how-can-i-automatically-set-custom-user-data/";
+      var redirectionTarget = "/en/article/how-can-i-automatically-set-custom-user-data-1xh7pqk/";
+
+      CrispClient.website.addHelpdeskRedirection(websiteID, redirectionPath, redirectionTarget);
+      ```
+      </details>
+
+  * **Check If Helpdesk Redirection Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-redirection-exists)
+    * `CrispClient.website.checkHelpdeskRedirectionExists(websiteID, redirectionId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+
+      CrispClient.website.checkHelpdeskRedirectionExists(websiteID, redirectionId);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Redirection** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-redirection)
+    * `CrispClient.website.resolveHelpdeskRedirection(websiteID, redirectionId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+
+      CrispClient.website.resolveHelpdeskRedirection(websiteID, redirectionId);
+      ```
+      </details>
+
+  * **Delete Helpdesk Redirection** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-redirection)
+    * `CrispClient.website.deleteHelpdeskRedirection(websiteID, redirectionId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+
+      CrispClient.website.deleteHelpdeskRedirection(websiteID, redirectionId);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-settings)
+    * `CrispClient.website.resolveHelpdeskSettings(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.website.resolveHelpdeskSettings(websiteID);
+      ```
+      </details>
+
+  * **Save Helpdesk Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-settings)
+    * `CrispClient.website.saveHelpdeskSettings(websiteID, settings)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var settings = {
+        "name": "Valerian Helpdesk",
+
+        "appearance": {
+          "logos": {
+            "header": null,
+            "footer": null
+          },
+
+          "banner": null
+        },
+
+        "behavior": {
+          "frequently_read": true,
+          "show_category_images": true,
+          "show_chatbox": true,
+          "ask_feedback": false,
+          "locale_picker": false,
+          "refer_link": true,
+          "forbid_indexing": false,
+          "status_health_dead": true
+        },
+
+        "include": {
+          "html": null
+        },
+
+        "access": {
+          "password": null
+        }
+      };
+
+      CrispClient.website.saveHelpdeskSettings(websiteID, settings);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Domain** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-domain)
+    * `CrispClient.website.resolveHelpdeskDomain(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.website.resolveHelpdeskDomain(websiteID);
+      ```
+      </details>
+
+  * **Request Helpdesk Domain Change** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#request-helpdesk-domain-change)
+    * `CrispClient.website.requestHelpdeskDomainChange(websiteID, basic, custom)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var basic = "valerian";
+      var custom = "help.valeriansaliou.name";
+
+      CrispClient.website.requestHelpdeskDomainChange(websiteID, basic, custom);
+      ```
+      </details>
+
+  * **Generate Helpdesk Domain Setup Flow** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#generate-helpdesk-domain-setup-flow)
+    * `CrispClient.website.generateHelpdeskDomainSetupFlow(websiteID, custom)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var custom = "help.valeriansaliou.name";
+
+      CrispClient.website.generateHelpdeskDomainSetupFlow(websiteID, custom);
+      ```
+      </details>
+
 * #### **Website Base**
   * **Check If Website Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-website-exists)
     * `CrispClient.website.checkWebsiteExists(domain)`
