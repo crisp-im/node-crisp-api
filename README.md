@@ -106,6 +106,7 @@ All methods that you will most likely need when building a Crisp integration are
     <li><a href="#website-conversations">Website Conversations</a></li>
     <li><a href="#website-conversation">Website Conversation</a></li>
     <li><a href="#website-people-these-are-your-end-users">Website People</a></li>
+    <li><a href="#website-helpdesk">Website Helpdesk</a></li>
     <li><a href="#website-operator">Website Operator</a></li>
     <li><a href="#website-availability">Website Availability</a></li>
     <li><a href="#website-analytics">Website Analytics</a></li>
