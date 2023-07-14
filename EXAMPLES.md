@@ -878,6 +878,634 @@ CrispClient.website.importPeopleProfiles(websiteID, profileImportSetup);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.website.checkHelpdeskExists(websiteID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.website.resolveHelpdesk(websiteID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#initialize-helpdesk
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var name = "Valerian Helpdesk";
+var domainBasic = "valerian";
+
+CrispClient.website.initializeHelpdesk(websiteID, name, domainBasic);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var verify = "MySuperSecurePassword";
+
+CrispClient.website.deleteHelpdesk(websiteID, verify);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locales
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pageNumber = 1;
+
+CrispClient.website.listHelpdeskLocales(websiteID, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+
+CrispClient.website.addHelpdeskLocale(websiteID, locale);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+
+CrispClient.website.checkHelpdeskLocaleExists(websiteID, locale);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+
+CrispClient.website.resolveHelpdeskLocale(websiteID, locale);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+
+CrispClient.website.deleteHelpdeskLocale(websiteID, locale);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-articles
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var pageNumber = 1;
+
+CrispClient.website.listHelpdeskLocaleArticles(websiteID, locale, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#add-a-new-helpdesk-locale-article
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var title = "How to use $crisp JavaScript SDK?";
+
+CrispClient.website.addNewHelpdeskLocaleArticle(websiteID, locale, title);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-article-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+CrispClient.website.checkHelpdeskLocaleArticleExists(websiteID, locale, articleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+CrispClient.website.resolveHelpdeskLocaleArticle(websiteID, locale, articleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-article
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+var article = {
+  "title": "How to use $crisp JavaScript SDK?",
+  "description": null,
+  "content": "Crisp lets you create your customized chatbox easily. **It's easy to setup**.",
+  "featured": false,
+  "order": 1
+};
+
+CrispClient.website.saveHelpdeskLocaleArticle(websiteID, locale, articleId, article);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-article
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+var article = {
+  "content": "Crisp lets you create your customized chatbox easily. **It's easy to setup**."
+};
+
+CrispClient.website.updateHelpdeskLocaleArticle(websiteID, locale, articleId, article);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-article
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+CrispClient.website.deleteHelpdeskLocaleArticle(websiteID, locale, articleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-category
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+CrispClient.website.resolveHelpdeskLocaleArticleCategory(websiteID, locale, articleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-article-category
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+var categoryId = "00d344a3-8948-45b5-9bc4-82ec249fcd44";
+
+CrispClient.website.updateHelpdeskLocaleArticleCategory(websiteID, locale, articleId, categoryId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-article-alternates
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+CrispClient.website.listHelpdeskLocaleArticleAlternates(websiteID, locale, articleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-article-alternate-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+var localeLinked = "fr";
+
+CrispClient.website.checkHelpdeskLocaleArticleAlternateExists(websiteID, locale, articleId, localeLinked);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-alternate
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+var localeLinked = "fr";
+
+CrispClient.website.resolveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-article-alternate
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+var localeLinked = "fr";
+var articleIdLinked = "9dc0e823-56b0-43ca-9ca3-47e25a8eb543";
+
+CrispClient.website.saveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked, articleIdLinked);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-article-alternate
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+var localeLinked = "fr";
+
+CrispClient.website.deleteHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#publish-helpdesk-locale-article
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+CrispClient.website.publishHelpdeskLocaleArticle(websiteID, locale, articleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#unpublish-helpdesk-locale-article
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+CrispClient.website.unpublishHelpdeskLocaleArticle(websiteID, locale, articleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-categories
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var pageNumber = 1;
+
+CrispClient.website.listHelpdeskLocaleCategories(websiteID, locale, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-category
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+
+CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-category-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+CrispClient.website.checkHelpdeskLocaleCategoryExists(websiteID, locale, categoryId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-category
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+CrispClient.website.resolveHelpdeskLocaleCategory(websiteID, locale, categoryId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-category
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+var category = {
+  "name": "Chatbox",
+  "description": "Help on how to setup and use the Crisp chatbox.",
+  "color": "#377FEA",
+  "image": null,
+  "order": 1
+};
+
+CrispClient.website.saveHelpdeskLocaleCategory(websiteID, locale, categoryId, category);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-category
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+var category = {
+  "color": "#377FEA"
+};
+
+CrispClient.website.updateHelpdeskLocaleCategory(websiteID, locale, categoryId, category);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-category
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+
+CrispClient.website.deleteHelpdeskLocaleCategory(websiteID, locale, categoryId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-sections
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+var pageNumber = 1;
+
+CrispClient.website.listHelpdeskLocaleSections(websiteID, locale, categoryId, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-section
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+var name = "Integrate with our SDKs";
+
+CrispClient.website.addHelpdeskLocaleSection(websiteID, locale, categoryId, name);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-section-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+CrispClient.website.checkHelpdeskLocaleSectionExists(websiteID, locale, categoryId, sectionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-section
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+CrispClient.website.resolveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-section
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+var section = {
+  "name": "Integrate with our SDKs",
+  "order": 1
+};
+
+CrispClient.website.saveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-section
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+var section = {
+  "name": "Integrate with our SDKs",
+  "order": 1
+};
+
+CrispClient.website.updateHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-section
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+
+CrispClient.website.deleteHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#map-helpdesk-locale-feedback-ratings
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+
+CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-feedbacks
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var pageNumber = 1;
+
+CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#import-external-helpdesk-to-locale
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+var helpdeskUrl = "https://docs.acme.com/";
+
+CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, helpdeskUrl);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#export-helpdesk-locale-articles
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var locale = "en";
+
+CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-redirections
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pageNumber = 1;
+
+CrispClient.website.listHelpdeskRedirections(websiteID, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-redirection
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var redirectionPath = "/en/article/how-can-i-automatically-set-custom-user-data/";
+var redirectionTarget = "/en/article/how-can-i-automatically-set-custom-user-data-1xh7pqk/";
+
+CrispClient.website.addHelpdeskRedirection(websiteID, redirectionPath, redirectionTarget);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-redirection-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+
+CrispClient.website.checkHelpdeskRedirectionExists(websiteID, redirectionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-redirection
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+
+CrispClient.website.resolveHelpdeskRedirection(websiteID, redirectionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-redirection
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+
+CrispClient.website.deleteHelpdeskRedirection(websiteID, redirectionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-settings
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.website.resolveHelpdeskSettings(websiteID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-settings
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var settings = {
+  "name": "Valerian Helpdesk",
+
+  "appearance": {
+    "logos": {
+      "header": null,
+      "footer": null
+    },
+
+    "banner": null
+  },
+
+  "behavior": {
+    "frequently_read": true,
+    "show_category_images": true,
+    "show_chatbox": true,
+    "ask_feedback": false,
+    "locale_picker": false,
+    "refer_link": true,
+    "forbid_indexing": false,
+    "status_health_dead": true
+  },
+
+  "include": {
+    "html": null
+  },
+
+  "access": {
+    "password": null
+  }
+};
+
+CrispClient.website.saveHelpdeskSettings(websiteID, settings);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-domain
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.website.resolveHelpdeskDomain(websiteID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#request-helpdesk-domain-change
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var basic = "valerian";
+var custom = "help.valeriansaliou.name";
+
+CrispClient.website.requestHelpdeskDomainChange(websiteID, basic, custom);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#generate-helpdesk-domain-setup-flow
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var custom = "help.valeriansaliou.name";
+
+CrispClient.website.generateHelpdeskDomainSetupFlow(websiteID, custom);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#check-if-website-exists
 
 CrispClient.website.checkWebsiteExists(domain);
