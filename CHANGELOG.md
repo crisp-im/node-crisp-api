@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v7.4.2
+
+### Bug Fixes
+
+* Minor `README.md` title fixes.
+
 ## v7.4.1
 
 ### Bug Fixes
