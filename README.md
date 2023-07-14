@@ -998,8 +998,19 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **List Suggested People Data Keys** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-data-keys/)
+  * **List Suggested People Data Keys** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-data-keys)
     * `CrispClient.website.listSuggestedPeopleDataKeys(websiteID, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pageNumber = 1;
+
+      CrispClient.website.listSuggestedPeopleDataKeys(websiteID, pageNumber);
+      ```
+      </details>
+
   * **Delete Suggested People Data Key** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-suggested-people-data-key)
     * `CrispClient.website.deleteSuggestedPeopleDataKey(websiteID, key)`
     * <details>
