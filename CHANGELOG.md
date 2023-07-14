@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.0.0
+
+### New Features
+
+* Added support for all Helpdesk REST API routes, which have been opened to integrations.
+
 ## v7.4.2
 
 ### Bug Fixes
