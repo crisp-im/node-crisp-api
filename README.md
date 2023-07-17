@@ -1751,7 +1751,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
   * **Add Helpdesk Locale Category** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-category)
-    * `CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale)`
+    * `CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale, name)`
     * <details>
       <summary>See Example</summary>
 
@@ -1759,8 +1759,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
       var locale = "en";
+      var name = "Chatbox";
 
-      CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale);
+      CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale, name);
       ```
       </details>
 

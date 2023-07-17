@@ -1174,8 +1174,9 @@ https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-category
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
 var locale = "en";
+var name = "Chatbox";
 
-CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale);
+CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale, name);
 
 =========================
 
