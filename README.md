@@ -2302,6 +2302,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           "visitor_compose": false,
           "file_transfer": true,
           "helpdesk_link": true,
+          "helpdesk_only": false,
           "status_health_dead": true,
           "check_domain": false,
           "color_theme": "blue",
