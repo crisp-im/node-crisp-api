@@ -1,7 +1,7 @@
 {
   "name": "crisp-api",
   "description": "Crisp API wrapper for Node - official, maintained by Crisp",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
   "author": {
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "check-build": "2.8.2",
-    "typescript": "4.9.5"
+    "typescript": "5.1.6"
   },
   "dependencies": {
     "socket.io-client": "4.4.1",
