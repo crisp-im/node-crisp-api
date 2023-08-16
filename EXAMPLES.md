@@ -2127,7 +2127,15 @@ https://docs.crisp.chat/references/rest-api/v1/#list-all-connect-websites
 
 var pageNumber = 1;
 
-CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSince);
+CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-connect-websites-since
+
+var dateSince = "2023-08-16T09:00:00Z";
+
+CrispClient.plugin.listConnectWebsitesSince(dateSince, filterConfigured);
 
 =========================
 
@@ -2266,4 +2274,3 @@ https://docs.crisp.chat/references/rest-api/v1/#bucket-url
 CrispClient.bucket.generateBucketURL(data);
 
 =========================
-

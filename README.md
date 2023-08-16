@@ -3054,14 +3054,26 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
   * **⭐ List All Connect Websites** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-connect-websites)
-    * `CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSince)`
+    * `CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var pageNumber = 1;
 
-      CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, dateSince);
+      CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured);
+      ```
+      </details>
+
+  * **⭐ List Connect Websites Since** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-connect-websites-since)
+    * `CrispClient.plugin.listConnectWebsitesSince(dateSince, filterConfigured)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var dateSince = "2023-08-16T09:00:00Z";
+
+      CrispClient.plugin.listConnectWebsitesSince(dateSince, filterConfigured);
       ```
       </details>
 
