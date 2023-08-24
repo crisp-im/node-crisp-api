@@ -110,13 +110,33 @@ declare class Crisp {
     _readErrorResponseReason: (method: string, statusCode: number, response: object) => string;
     _verifySignature: (secret: string, body: object, timestamp: string, signature: string) => boolean;
 }
-declare namespace Crisp {
-    export { RTM_MODES, AVAILABLE_RTM_MODES, DEFAULT_REQUEST_TIMEOUT, DEFAULT_SOCKET_TIMEOUT, DEFAULT_SOCKET_RECONNECT_DELAY, DEFAULT_SOCKET_RECONNECT_DELAY_MAX, DEFAULT_SOCKET_RECONNECT_FACTOR, DEFAULT_BROKER_SCHEDULE, DEFAULT_EVENT_REBIND_INTERVAL_MIN, DEFAULT_USERAGENT_PREFIX, DEFAULT_REST_HOST, DEFAULT_REST_BASE_PATH, WebSockets as DEFAULT_RTM_MODE, DEFAULT_RTM_EVENTS, Crisp };
-}
+
 declare namespace RTM_MODES {
     let WebSockets: string;
     let WebHooks: string;
 }
+
+declare namespace Crisp {
+    import DEFAULT_RTM_MODE = RTM_MODES.WebSockets;
+
+    export {
+        RTM_MODES,
+        AVAILABLE_RTM_MODES,
+        DEFAULT_REQUEST_TIMEOUT,
+        DEFAULT_SOCKET_TIMEOUT,
+        DEFAULT_SOCKET_RECONNECT_DELAY,
+        DEFAULT_SOCKET_RECONNECT_DELAY_MAX,
+        DEFAULT_SOCKET_RECONNECT_FACTOR,
+        DEFAULT_BROKER_SCHEDULE,
+        DEFAULT_EVENT_REBIND_INTERVAL_MIN,
+        DEFAULT_USERAGENT_PREFIX,
+        DEFAULT_REST_HOST,
+        DEFAULT_REST_BASE_PATH,
+        DEFAULT_RTM_MODE,
+        DEFAULT_RTM_EVENTS, Crisp
+    };
+}
+
 declare var AVAILABLE_RTM_MODES: string[];
 declare var DEFAULT_REQUEST_TIMEOUT: number;
 declare var DEFAULT_SOCKET_TIMEOUT: number;
