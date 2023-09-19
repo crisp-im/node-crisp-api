@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.1.0
+
+### Bug Fixes
+
+* Fixed an issue where `CrispClient.rebindSocket` and `CrispClient._connectLoopback` base methods would not work due to undefined `this` references.
+
 ## v8.0.3
 
 ### Changes
