@@ -2738,7 +2738,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **List Campaign Templates** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaign-templates)
+  * **List Campaign Templates** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaign-templates)
     * `CrispClient.website.listCampaignTemplates(websiteID, pageNumber)`
     * <details>
       <summary>See Example</summary>
@@ -2751,7 +2751,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Create A New Campaign Template** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-campaign-template)
+  * **Create A New Campaign Template** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-campaign-template)
     * `CrispClient.website.createNewCampaignTemplate(websiteID, templateFormat, templateName)`
     * <details>
       <summary>See Example</summary>
@@ -2768,7 +2768,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Check If Campaign Template Exists** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-campaign-template-exists)
+  * **Check If Campaign Template Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-campaign-template-exists)
     * `CrispClient.website.checkCampaignTemplateExists(websiteID, templateID)`
     * <details>
       <summary>See Example</summary>
@@ -2781,7 +2781,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Get A Campaign Template** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-campaign-template)
+  * **Get A Campaign Template** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-campaign-template)
     * `CrispClient.website.getCampaignTemplate(websiteID, templateID)`
     * <details>
       <summary>See Example</summary>
@@ -2794,7 +2794,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Save A Campaign Template** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-a-campaign-template)
+  * **Save A Campaign Template** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-a-campaign-template)
     * `CrispClient.website.saveCampaignTemplate(websiteID, templateID, template)`
     * <details>
       <summary>See Example</summary>
@@ -2813,7 +2813,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Update A Campaign Template** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-a-campaign-template)
+  * **Update A Campaign Template** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-a-campaign-template)
     * `CrispClient.website.updateCampaignTemplate(websiteID, templateID, template)`
     * <details>
       <summary>See Example</summary>
@@ -2828,7 +2828,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Remove A Campaign Template** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-campaign-template)
+  * **Remove A Campaign Template** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-campaign-template)
     * `CrispClient.website.removeCampaignTemplate(websiteID, templateID)`
     * <details>
       <summary>See Example</summary>
