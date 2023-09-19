@@ -1,6 +1,24 @@
 Changelog
 =========
 
+## v8.0.3
+
+### Changes
+
+* Updated `socket.io-client` dependency to latest.
+
+## v8.0.2
+
+### Changes
+
+* Updated TypeScript definitions.
+
+## v8.0.1
+
+### Changes
+
+* Updated TypeScript definitions.
+
 ## v8.0.0
 
 ### New Features
