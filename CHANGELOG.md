@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.2.0
+
+### New Features
+
+* Added support for the `session:sync:topic` RTM API event.
+
 ## v8.1.0
 
 ### Bug Fixes
