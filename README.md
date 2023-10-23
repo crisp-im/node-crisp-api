@@ -3358,6 +3358,8 @@ Available events are listed below:
     * `session:sync:locales`
   * **Session Sync Rating** [`user`, `plugin`]:
     * `session:sync:rating`
+  * **Session Sync Topic** [`user`, `plugin`]:
+    * `session:sync:topic`
   * **Session Set State** [`user`, `plugin`]:
     * `session:set_state`
   * **Session Set Block** [`user`, `plugin`]:
