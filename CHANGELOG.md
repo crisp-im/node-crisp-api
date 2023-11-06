@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.2.1
+
+### Changes
+
+* Added provenance information upon building NPM package over GitHub Actions.
+
 ## v8.2.0
 
 ### New Features
