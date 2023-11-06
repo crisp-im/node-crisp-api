@@ -3,6 +3,9 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  id-token: write
+
 name: Build and Release
 
 jobs:
