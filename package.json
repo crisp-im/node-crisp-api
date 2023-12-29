@@ -1,7 +1,7 @@
 {
   "name": "crisp-api",
   "description": "Crisp API wrapper for Node - official, maintained by Crisp",
-  "version": "8.2.2",
+  "version": "8.2.3",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
   "author": {
@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "socket.io-client": "4.7.2",
-    "fbemitter": "git+https://github.com/crisp-dev/emitter.git#695f60594bdca0c876e5c232de57702ab3151b6f",
+    "fbemitter": "github:crisp-dev/emitter#695f60594bdca0c876e5c232de57702ab3151b6f",
     "got": "11.8.5"
   },
   "keywords": [

@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.2.3
+
+### Changes
+
+* Use a `github:` prefix for dependency `fbemitter` to fix issue 59 related to Yarn 3
+
 ## v8.2.2
 
 ### Changes
