@@ -3,15 +3,15 @@ Changelog
 
 ## v8.2.3
 
-### Changes
+### Bug Fixes
 
-* Use a `github:` prefix for dependency `fbemitter` to fix issue 59 related to Yarn 3
+* Use a `github:` prefix on dependency `fbemitter` to fix Yarn 3 (closes [#59](https://github.com/crisp-im/node-crisp-api/issues/59)).
 
 ## v8.2.2
 
 ### Changes
 
-* Added an options parameter on `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber, options)`
+* Added an options parameter on `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber, options)`.
 
 ## v8.2.1
 
