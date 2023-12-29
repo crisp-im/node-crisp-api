@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.2.2
+
+### Changes
+
+* Added an options parameter on `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber, options)`
+
 ## v8.2.1
 
 ### Changes

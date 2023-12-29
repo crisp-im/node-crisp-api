@@ -1409,7 +1409,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
   * **List Helpdesk Locales** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locales)
-    * `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber)`
+    * `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber, options={})`
     * <details>
       <summary>See Example</summary>
 
@@ -1417,7 +1417,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
 
-      CrispClient.website.listHelpdeskLocales(websiteID, pageNumber);
+      CrispClient.website.listHelpdeskLocales(websiteID, pageNumber, {
+        order_visits : "1"
+      });
       ```
       </details>
 
