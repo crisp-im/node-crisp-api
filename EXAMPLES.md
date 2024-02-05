@@ -1570,6 +1570,7 @@ var settings = {
   "chatbox": {
     "tile": "default",
     "wait_game": false,
+    "website_icon": true,
     "last_operator_face": false,
     "ongoing_operator_face": true,
     "activity_metrics": true,
