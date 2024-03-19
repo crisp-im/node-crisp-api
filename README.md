@@ -3206,6 +3206,25 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
+  * **Report Plugin Usage To Bill** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#report-plugin-usage-to-bill)
+    * `CrispClient.plugin.reportPluginUsageToBill(websiteID, pluginID, usage)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
+
+      var usage = {
+        "name": "Paid messages sent",
+        "units": 250,
+        "price": 0.10
+      };
+
+      CrispClient.plugin.reportPluginUsageToBill(websiteID, pluginID, usage);
+      ```
+      </details>
+
   * **Forward Plugin Payload To Channel** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#forward-plugin-payload-to-channel)
     * `CrispClient.plugin.forwardPluginPayloadToChannel(websiteID, pluginID, payload)`
     * <details>
