@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.3.0
+
+### New Features
+
+* Added the new `CrispClient.plugin.reportPluginUsageToBill` method.
+
 ## v8.2.3
 
 ### Bug Fixes

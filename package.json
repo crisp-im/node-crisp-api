@@ -1,7 +1,7 @@
 {
   "name": "crisp-api",
   "description": "Crisp API wrapper for Node - official, maintained by Crisp",
-  "version": "8.2.3",
+  "version": "8.3.0",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
   "author": {
