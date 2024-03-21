@@ -3206,6 +3206,19 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
+  * **Get Plugin Usage Bills** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-plugin-usage-bills)
+    * `CrispClient.plugin.getPluginUsageBills(websiteID, pluginID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
+
+      CrispClient.plugin.getPluginUsageBills(websiteID, pluginID);
+      ```
+      </details>
+
   * **Report Plugin Usage To Bill** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#report-plugin-usage-to-bill)
     * `CrispClient.plugin.reportPluginUsageToBill(websiteID, pluginID, usage)`
     * <details>
