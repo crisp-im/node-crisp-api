@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2023 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 17/07/2023
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 10/04/2024
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -1593,6 +1593,21 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
 
       CrispClient.website.deleteHelpdeskLocaleArticle(websiteID, locale, articleId);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Locale Article Page** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-page)
+    * `CrispClient.website.resolveHelpdeskLocaleArticlePage(websiteID, locale, articleId)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var locale = "en";
+      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
+
+      CrispClient.website.resolveHelpdeskLocaleArticlePage(websiteID, locale, articleId);
       ```
       </details>
 
