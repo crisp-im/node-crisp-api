@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.3.2
+
+### New Features
+
+* Added the new `CrispClient.website.resolveHelpdeskLocaleArticlePage` method.
+
 ## v8.3.1
 
 ### New Features
