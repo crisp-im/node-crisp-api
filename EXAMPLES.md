@@ -1597,6 +1597,8 @@ var settings = {
     "ignore_privacy": false,
     "visitor_compose": false,
     "file_transfer": true,
+    "overlay_search": true,
+    "overlay_mode": false,
     "helpdesk_link": true,
     "helpdesk_only": false,
     "status_health_dead": true,
