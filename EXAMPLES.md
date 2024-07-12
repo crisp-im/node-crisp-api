@@ -1548,6 +1548,14 @@ CrispClient.website.deleteWebsite(websiteID, verify);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#abort-website-deletion
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.website.abortWebsiteDeletion(websiteID);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#get-website-settings
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";

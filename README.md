@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2023 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 10/04/2024
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 12/07/2024
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -2257,6 +2257,18 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var verify = "MySuperSecurePassword";
 
       CrispClient.website.deleteWebsite(websiteID, verify);
+      ```
+      </details>
+
+  * **Abort Website Deletion** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#abort-website-deletion)
+    * `CrispClient.website.abortWebsiteDeletion(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.website.abortWebsiteDeletion(websiteID);
       ```
       </details>
 
