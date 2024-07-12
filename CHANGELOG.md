@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v8.4.0
+
+### New Features
+
+* Added the new `CrispClient.website.abortWebsiteDeletion` method.
+
 ## v8.3.2
 
 ### New Features
