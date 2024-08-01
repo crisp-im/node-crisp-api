@@ -230,6 +230,16 @@ CrispClient.website.assignConversationRouting(websiteID, sessionID, assign);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#update-conversation-inbox
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+var inboxID = "bf6935c9-43b3-4f8e-87ea-175c1e1ed1a9";
+
+CrispClient.website.updateConversationInbox(websiteID, sessionID, inboxID);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -1829,7 +1839,16 @@ https://docs.crisp.chat/references/rest-api/v1/#batch-resolve-items
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-CrispClient.website.batchResolveConversations(websiteID, sessions);
+var operation = {
+  "inbox_id": null,
+
+  "sessions": [
+    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+  ]
+};
+
+CrispClient.website.batchResolveConversations(websiteID, operation);
 
 =========================
 
@@ -1837,7 +1856,16 @@ https://docs.crisp.chat/references/rest-api/v1/#batch-read-items
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-CrispClient.website.batchReadConversations(websiteID, sessions);
+var operation = {
+  "inbox_id": null,
+
+  "sessions": [
+    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+  ]
+};
+
+CrispClient.website.batchReadConversations(websiteID, operation);
 
 =========================
 
@@ -1845,12 +1873,16 @@ https://docs.crisp.chat/references/rest-api/v1/#batch-remove-items
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-var sessions = [
-  "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-  "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-];
+var operation = {
+  "inbox_id": null,
 
-CrispClient.website.batchRemoveConversations(websiteID, sessions);
+  "sessions": [
+    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+  ]
+};
+
+CrispClient.website.batchRemoveConversations(websiteID, operation);
 
 =========================
 

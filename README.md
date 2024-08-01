@@ -485,6 +485,20 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
+  * **Update Conversation Inbox** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-inbox)
+    * `CrispClient.website.updateConversationInbox(websiteID, sessionID, inboxID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+      var inboxID = "bf6935c9-43b3-4f8e-87ea-175c1e1ed1a9";
+
+      CrispClient.website.updateConversationInbox(websiteID, sessionID, inboxID);
+      ```
+      </details>
+
   * **⭐ Get Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas)
     * `CrispClient.website.getConversationMetas(websiteID, sessionID)`
     * <details>
@@ -2632,43 +2646,65 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * #### **Website Batch**
   * **Batch Resolve Conversations** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-resolve-items)
-    * `CrispClient.website.batchResolveConversations(websiteID, sessions)`
+    * `CrispClient.website.batchResolveConversations(websiteID, operation)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-      CrispClient.website.batchResolveConversations(websiteID, sessions);
+      var operation = {
+        "inbox_id": null,
+
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ]
+      };
+
+      CrispClient.website.batchResolveConversations(websiteID, operation);
       ```
       </details>
 
   * **Batch Read Conversations** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-read-items)
-    * `CrispClient.website.batchReadConversations(websiteID, sessions)`
+    * `CrispClient.website.batchReadConversations(websiteID, operation)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-      CrispClient.website.batchReadConversations(websiteID, sessions);
+      var operation = {
+        "inbox_id": null,
+
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ]
+      };
+
+      CrispClient.website.batchReadConversations(websiteID, operation);
       ```
       </details>
 
   * **Batch Remove Conversations** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-remove-items)
-    * `CrispClient.website.batchRemoveConversations(websiteID, sessions)`
+    * `CrispClient.website.batchRemoveConversations(websiteID, operation)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-      var sessions = [
-        "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-        "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-      ];
+      var operation = {
+        "inbox_id": null,
 
-      CrispClient.website.batchRemoveConversations(websiteID, sessions);
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ]
+      };
+
+      CrispClient.website.batchRemoveConversations(websiteID, operation);
       ```
       </details>
 
@@ -3440,6 +3476,8 @@ Available events are listed below:
     * `session:set_mentions`
   * **Session Set Routing** [`user`, `plugin`]:
     * `session:set_routing`
+  * **Session Set Inbox** [`user`, `plugin`]:
+    * `session:set_inbox`
   * **Session Removed** [`user`, `plugin`]:
     * `session:removed`
 
