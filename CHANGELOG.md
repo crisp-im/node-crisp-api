@@ -1,6 +1,18 @@
 Changelog
 =========
 
+## v8.5.0
+
+### Breaking Changes
+
+* ⚠️ Changed the argument of the `CrispClient.website.batchResolveConversations` method.
+* ⚠️ Changed the argument of the `CrispClient.website.batchReadConversations` method.
+* ⚠️ Changed the argument of the `CrispClient.website.batchRemoveConversations` method.
+
+### New Features
+
+* Added the new `CrispClient.website.updateConversationInbox` method.
+
 ## v8.4.0
 
 ### New Features
