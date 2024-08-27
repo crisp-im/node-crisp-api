@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2023 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 12/07/2024
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 27/08/2024
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -2605,41 +2605,15 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 
 * #### **Website Analytics**
-  * **Acquire Analytics Points** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#acquire-analytics-points)
-    * `CrispClient.website.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary)`
+  * **Generate Analytics** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#generate-analytics)
+    * `CrispClient.website.generateAnalytics(websiteID, query)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-      CrispClient.website.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary);
-      ```
-      </details>
-
-  * **List Analytics Filters** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-analytics-filters)
-    * `CrispClient.website.listAnalyticsFilters(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var pageNumber = 1;
-
-      CrispClient.website.listAnalyticsFilters(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo);
-      ```
-      </details>
-
-  * **List Analytics Classifiers** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-analytics-classifiers)
-    * `CrispClient.website.listAnalyticsClassifiers(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var pageNumber = 1;
-
-      CrispClient.website.listAnalyticsClassifiers(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo);
+      CrispClient.website.generateAnalytics(websiteID, query);
       ```
       </details>
 

@@ -1809,29 +1809,11 @@ CrispClient.website.listWebsiteOperatorAvailabilities(websiteID);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#acquire-analytics-points
+https://docs.crisp.chat/references/rest-api/v1/#generate-analytics
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-CrispClient.website.acquireAnalyticsPoints(websiteID, pointType, pointMetric, dateFrom, dateTo, dateSplit, classifier, filterPrimary, filterSecondary, filterTertiary);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-analytics-filters
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var pageNumber = 1;
-
-CrispClient.website.listAnalyticsFilters(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-analytics-classifiers
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var pageNumber = 1;
-
-CrispClient.website.listAnalyticsClassifiers(websiteID, pageNumber, pointType, pointMetric, dateFrom, dateTo);
+CrispClient.website.generateAnalytics(websiteID, query);
 
 =========================
 
