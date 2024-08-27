@@ -1,6 +1,18 @@
 Changelog
 =========
 
+## v9.0.0
+
+### Breaking Changes
+
+* ⚠️ Removed the `CrispClient.website.acquireAnalyticsPoints` method (API route has been removed).
+* ⚠️ Removed the `CrispClient.website.listAnalyticsFilters` method (API route has been removed).
+* ⚠️ Removed the `CrispClient.website.listAnalyticsClassifiers` method (API route has been removed).
+
+### New Features
+
+* Added the new `CrispClient.website.generateAnalytics` method.
+
 ## v8.5.0
 
 ### Breaking Changes
