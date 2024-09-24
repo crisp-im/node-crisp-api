@@ -1582,6 +1582,9 @@ var settings = {
   "name": "Crisp",
   "domain": "crisp.chat",
   "logo": "https://storage.crisp.chat/users/avatar/website/8c842203-7ed8-4e29-a608-7cf78a7d2fcc/b6c2948d-b061-405e-91a9-2fdf855d1cc0.png",
+  "audit": {
+    "log": true
+  },
   "contact": {
     "email": "contact@crisp.chat",
     "phone": "+33757905447"
