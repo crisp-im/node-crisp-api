@@ -45,6 +45,35 @@ CrispClient.website.deleteSuggestedConversationDataKey(websiteID, key);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#list-spam-conversations
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pageNumber = 1;
+
+CrispClient.website.listSpamConversations(websiteID, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#resolve-spam-conversation-content
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
+
+CrispClient.website.resolveSpamConversationContent(websiteID, spamID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#submit-spam-conversation-decision
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
+
+var action = "reject";
+
+CrispClient.website.submitSpamConversationDecision(websiteID, spamID, action);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";

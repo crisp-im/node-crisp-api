@@ -234,6 +234,47 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
+  * **List Spam Conversations** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-spam-conversations)
+    * `CrispClient.website.listSpamConversations(websiteID, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pageNumber = 1;
+
+      CrispClient.website.listSpamConversations(websiteID, pageNumber);
+      ```
+      </details>
+
+  * **Resolve Spam Conversation Content** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-spam-conversation-content)
+    * `CrispClient.website.resolveSpamConversationContent(websiteID, spamID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
+
+      CrispClient.website.resolveSpamConversationContent(websiteID, spamID);
+      ```
+      </details>
+
+  * **Submit Spam Conversation Decision** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#submit-spam-conversation-decision)
+    * `CrispClient.website.submitSpamConversationDecision(websiteID, spamID, action)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
+
+      var action = "reject";
+
+      CrispClient.website.submitSpamConversationDecision(websiteID, spamID, action);
+      ```
+      </details>
+
 
 * #### **Website Conversation**
   * **⭐ Create A New Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
