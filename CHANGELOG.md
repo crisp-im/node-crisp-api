@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v9.1.0
+
+### New Features
+
+* Added the new `CrispClient.website.listSpamConversation` method.
+* Added the new `CrispClient.website.resolveSpamConversationContent` method.
+* Added the new `CrispClient.website.submitSpamConversationDecision` method.
+
 ## v9.0.0
 
 ### Breaking Changes
