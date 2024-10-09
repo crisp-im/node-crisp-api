@@ -3523,6 +3523,12 @@ Available events are listed below:
   * **Message Notify Unread Received** [`user`, `plugin`]:
     * `message:notify:unread:received`
 
+* #### **Spam Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#spam-events)
+  * **Spam Message** [`user`]:
+    * `spam:message`
+  * **Spam Decision** [`user`]:
+    * `spam:decision`
+
 * #### **People Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#people-events)
   * **People Profile Created** [`user`, `plugin`]:
     * `people:profile:created`
