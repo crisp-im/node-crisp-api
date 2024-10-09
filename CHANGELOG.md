@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## v9.2.0
+
+### New Features
+
+* Added support for the `spam:message` RTM API event.
+* Added support for the `spam:decision` RTM API event.
+
 ## v9.1.0
 
 ### New Features
