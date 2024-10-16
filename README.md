@@ -2502,11 +2502,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-      var verify = {
-        "email": "julien@crisp.chat",
-        "role": "member",
-        "verify": "MySuperSecurePassword"
-      };
+      var email = "julien@crisp.chat";
+      var role = "member";
+      var verify = "MySuperSecurePassword";
 
       CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify);
       ```
