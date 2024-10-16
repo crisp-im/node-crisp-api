@@ -1734,11 +1734,13 @@ https://docs.crisp.chat/references/rest-api/v1/#invite-a-website-operator
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-var email = "julien@crisp.chat";
-var role = "member";
-var token = "451930";
+var verify = {
+  "email": "julien@crisp.chat",
+  "role": "member",
+  "verify": "MySuperSecurePassword"
+};
 
-CrispClient.website.inviteWebsiteOperator(websiteID, email, role, token);
+CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify);
 
 =========================
 
