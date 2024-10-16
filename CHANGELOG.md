@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.3.0
+
+### Breaking Changes
+
+* ⚠️ Changed the argument of the `CrispClient.website.inviteWebsiteOperator` method.
+
 ## v9.2.0
 
 ### New Features
