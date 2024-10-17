@@ -1457,7 +1457,10 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-      var verify = "MySuperSecurePassword";
+      var verify = {
+        "method": "password",
+        "secret": "MySuperSecurePassword";
+      };
 
       CrispClient.website.deleteHelpdesk(websiteID, verify);
       ```
@@ -2309,7 +2312,10 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-      var verify = "MySuperSecurePassword";
+      var verify = {
+        "method": "password",
+        "secret": "MySuperSecurePassword";
+      };
 
       CrispClient.website.deleteWebsite(websiteID, verify);
       ```
@@ -2504,7 +2510,11 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       var email = "julien@crisp.chat";
       var role = "member";
-      var verify = "MySuperSecurePassword";
+
+      var verify = {
+        "method": "password",
+        "secret": "MySuperSecurePassword";
+      };
 
       CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify);
       ```

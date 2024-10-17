@@ -948,7 +948,10 @@ https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-var verify = "MySuperSecurePassword";
+var verify = {
+  "method": "password",
+  "secret": "MySuperSecurePassword";
+};
 
 CrispClient.website.deleteHelpdesk(websiteID, verify);
 
@@ -1581,7 +1584,10 @@ https://docs.crisp.chat/references/rest-api/v1/#delete-a-website
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
-var verify = "MySuperSecurePassword";
+var verify = {
+  "method": "password",
+  "secret": "MySuperSecurePassword";
+};
 
 CrispClient.website.deleteWebsite(websiteID, verify);
 
@@ -1736,7 +1742,11 @@ var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
 var email = "julien@crisp.chat";
 var role = "member";
-var verify = "MySuperSecurePassword";
+
+var verify = {
+  "method": "password",
+  "secret": "MySuperSecurePassword";
+};
 
 CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify);
 
