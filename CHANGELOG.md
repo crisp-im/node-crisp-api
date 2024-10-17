@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v9.4.0
+
+### Breaking Changes
+
+* ⚠️ Changed the `verify` argument of the `CrispClient.website.inviteWebsiteOperator` method (to be a verification challenge).
+* ⚠️ Changed the `verify` argument of the `CrispClient.website.deleteHelpdesk` method (to be a verification challenge).
+* ⚠️ Changed the `verify` argument of the `CrispClient.website.deleteWebsite` method (to be a verification challenge).
+
 ## v9.3.1
 
 ### Breaking Changes
