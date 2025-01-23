@@ -3526,6 +3526,8 @@ Available events are listed below:
     * `message:acknowledge:read:received`
   * **Message Acknowledge Delivered** [`user`, `plugin`]:
     * `message:acknowledge:delivered`
+  * **Message Acknowledge Ignored** [`user`, `plugin`]:
+    * `message:acknowledge:ignored`
   * **Message Notify Unread Send** [`user`, `plugin`]:
     * `message:notify:unread:send`
   * **Message Notify Unread Received** [`user`, `plugin`]:
