@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.5.0
+
+### New Features
+
+* Added support for the `message:acknowledge:ignored` RTM API event.
+
 ## v9.4.0
 
 ### Breaking Changes
