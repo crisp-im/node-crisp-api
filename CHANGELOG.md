@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.6.0
+
+### New Features
+
+* Added support for the `session:error` RTM API event.
+
 ## v9.5.0
 
 ### New Features
