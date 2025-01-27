@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2024 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 17/10/2024
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 27/01/2025
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -3506,6 +3506,8 @@ Available events are listed below:
     * `session:set_inbox`
   * **Session Removed** [`user`, `plugin`]:
     * `session:removed`
+  * **Session Error** [`user`, `plugin`]:
+    * `session:error`
 
 * #### **Message Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#message-events)
   * **Message Updated** [`user`, `plugin`]:
