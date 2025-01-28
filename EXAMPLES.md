@@ -1642,6 +1642,7 @@ var settings = {
     "ongoing_operator_face": true,
     "activity_metrics": true,
     "operator_privacy": false,
+    "visitor_privacy": false,
     "availability_tooltip": true,
     "hide_vacation": false,
     "hide_on_away": false,
