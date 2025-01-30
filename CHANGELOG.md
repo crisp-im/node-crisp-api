@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.7.0
+
+### New Features
+
+* Added the new `CrispClient.website.reportConversation` method.
+
 ## v9.6.0
 
 ### New Features
