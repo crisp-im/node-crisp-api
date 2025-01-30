@@ -611,6 +611,17 @@ CrispClient.website.deliverWidgetDataEditActionForConversation(websiteID, sessio
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#report-conversation
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+var flag = "spam";
+
+CrispClient.website.reportConversation(websiteID, sessionID, flag);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#schedule-a-reminder-for-conversation
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";

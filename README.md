@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2024 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 27/01/2025
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 30/01/2025
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -1009,6 +1009,21 @@ All methods that you will most likely need when building a Crisp integration are
       };
 
       CrispClient.website.scheduleReminderForConversation(websiteID, sessionID, date, note);
+      ```
+      </details>
+
+  * **Report Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#report-conversation)
+    * `CrispClient.website.reportConversation(websiteID, sessionID, flag)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+      var flag = "spam";
+
+      CrispClient.website.reportConversation(websiteID, sessionID, flag);
       ```
       </details>
 
