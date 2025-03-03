@@ -2383,7 +2383,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
         },
         "inbox": {
           "lock_removal": false,
-          "force_operator_token": false
+          "force_operator_token": false,
+          "locale": ""
         },
         "emails": {
           "rating": true,

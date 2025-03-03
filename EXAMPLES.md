@@ -1637,7 +1637,8 @@ var settings = {
   },
   "inbox": {
     "lock_removal": false,
-    "force_operator_token": false
+    "force_operator_token": false,
+    "locale": ""
   },
   "emails": {
     "rating": true,
