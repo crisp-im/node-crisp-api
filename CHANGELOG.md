@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.8.0
+
+### New Features
+
+* Added the new `CrispClient.website.markConversationAsUnread` method.
+
 ## v9.7.0
 
 ### New Features
