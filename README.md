@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2024 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 30/01/2025
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 14/03/2025
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -455,6 +455,23 @@ All methods that you will most likely need when building a Crisp integration are
       };
 
       CrispClient.website.markMessagesReadInConversation(websiteID, sessionID, read);
+      ```
+      </details>
+
+  * **Mark Conversation As Unread** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-conversation-as-unread)
+    * `CrispClient.website.markConversationAsUnread(websiteID, sessionID, unread)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+      var unread = {
+        "from": "operator"
+      };
+
+      CrispClient.website.markConversationAsUnread(websiteID, sessionID, unread);
       ```
       </details>
 
@@ -3543,6 +3560,8 @@ Available events are listed below:
     * `message:acknowledge:read:send`
   * **Message Acknowledge Read Received** [`user`, `plugin`]:
     * `message:acknowledge:read:received`
+  * **Message Acknowledge Unread Send** [`user`, `plugin`]:
+    * `message:acknowledge:unread:send`
   * **Message Acknowledge Delivered** [`user`, `plugin`]:
     * `message:acknowledge:delivered`
   * **Message Acknowledge Ignored** [`user`, `plugin`]:
