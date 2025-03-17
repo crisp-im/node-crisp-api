@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.9.0
+
+### New Features
+
+* Added support for the `session:set_origin` RTM API event.
+
 ## v9.8.0
 
 ### New Features
