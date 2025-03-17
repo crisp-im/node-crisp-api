@@ -3498,6 +3498,8 @@ Available events are listed below:
     * `session:set_avatar`
   * **Session Set Nickname** [`user`, `plugin`]:
     * `session:set_nickname`
+  * **Session Set Origin** [`user`, `plugin`]:
+    * `session:set_origin`
   * **Session Set Data** [`user`, `plugin`]:
     * `session:set_data`
   * **Session Sync Pages** [`user`, `plugin`]:
