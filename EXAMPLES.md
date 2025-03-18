@@ -1679,6 +1679,7 @@ var settings = {
     "ignore_privacy": false,
     "visitor_compose": false,
     "file_transfer": true,
+    "audio_record": true,
     "overlay_search": true,
     "overlay_mode": false,
     "helpdesk_link": true,
