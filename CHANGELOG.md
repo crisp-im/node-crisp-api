@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.11.0
+
+### New Features
+
+* Added the new `CrispClient.website.requestIdentityVerificationForConversation` method.
+
 ## v9.10.0
 
 ### New Features
