@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.12.0
+
+### New Features
+
+* Added the new `CrispClient.website.redeemIdentityVerificationLinkForConversation` method.
+
 ## v9.11.0
 
 ### New Features
