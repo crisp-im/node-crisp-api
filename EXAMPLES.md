@@ -459,10 +459,12 @@ https://docs.crisp.chat/references/rest-api/v1/#redeem-identity-verification-lin
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
 
-var identity = "email";
-var token = "709691";
+var verification = {
+  "identity": "email",
+  "token": "709691"
+};
 
-CrispClient.website.redeemIdentityVerificationLinkForConversation(websiteID, sessionID, identity, token);
+CrispClient.website.redeemIdentityVerificationLinkForConversation(websiteID, sessionID, verification);
 
 =========================
 
