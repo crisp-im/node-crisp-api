@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v9.13.0
+
+### New Features
+
+* Added support for the `identity:verify:request` RTM API event.
+
 ## v9.12.1
 
 ### New Features
