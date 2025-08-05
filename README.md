@@ -3651,6 +3651,10 @@ Available events are listed below:
   * **Call Request Rejected** [`user`, `plugin`]:
     * `call:request:rejected`
 
+* #### **Identity Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#identity-events)
+  * **Identity Verify Request** [`plugin`]:
+    * `identity:verify:request`
+
 * #### **Widget Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#widget-events)
   * **Widget Action Processed** [`user`]:
     * `widget:action:processed`
