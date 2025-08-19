@@ -626,11 +626,8 @@ export class Crisp {
   /**
    * Binds broker to the main object
    */
-
-  /**
-   *
-   */
   private __prepareBroker(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
     fnBindHook: (modeInstance: any, emitter: any) => void
   ) {
     return new Promise((resolve, reject) => {
