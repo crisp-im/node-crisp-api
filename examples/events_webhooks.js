@@ -26,7 +26,7 @@ const CrispClient = new Crisp();
 console.info("Authenticating...");
 
 CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
-CrispClient.setRtmMode(Crisp.RTM_MODES.WebHooks);
+CrispClient.setRtmMode("webhooks");
 
 
 console.info("Listening for events...");

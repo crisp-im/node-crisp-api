@@ -24,15 +24,11 @@ import Media from "@/services/media";
 import Plugin from "@/services/plugin";
 import Website, { WebsiteServiceInterface } from "@/services/website";
 
-// RTM modes available
-const RTM_MODES           = {
-  WebSockets: "websockets",
-  WebHooks: "webhooks"
-};
+export type RTM_MODES = "websockets" | "webhooks";
 
 const AVAILABLE_RTM_MODES = [
-  RTM_MODES.WebSockets,
-  RTM_MODES.WebHooks
+  "websockets",
+  "webhooks"
 ];
 
 const VERSION = "__PKG_VERSION_PLACEHOLDER__";
@@ -52,7 +48,7 @@ const DEFAULT_REST_HOST      = "https://api.crisp.chat";
 const DEFAULT_REST_BASE_PATH = "/v1/";
 
 // RTM API defaults
-const DEFAULT_RTM_MODE   = RTM_MODES.WebSockets;
+const DEFAULT_RTM_MODE   = "websockets";
 
 const DEFAULT_RTM_EVENTS = [
   // Session Events
@@ -179,19 +175,25 @@ interface CrispAuth {
   token: string | null;
 }
 
-type CrispTier = "user" | "plugin";
+export type CrispTier = "user" | "plugin";
 
 /**
  * Crisp API Library
- * @class
- * @classdesc This is the Crisp Library. Handles REST and RTM operations
  */
-class Crisp {
+export class Crisp {
   public bucket: Bucket = new Bucket();
   public media: Media = new Media();
   public plugin: Plugin = new Plugin();
 
   public website: WebsiteServiceInterface = new Website() as unknown as WebsiteServiceInterface;
+
+  /**
+   * @deprecated Use import { RTM_MODES } instead
+   */
+  public static RTM_MODES = {
+    WebSockets: "websockets" as RTM_MODES,
+    WebHooks: "webhooks" as RTM_MODES
+  };
 
   public auth: CrispAuth = {
     tier: "user",
@@ -207,7 +209,7 @@ class Crisp {
 
   public _rtm  = {
     host: "",
-    mode: DEFAULT_RTM_MODE
+    mode: DEFAULT_RTM_MODE as RTM_MODES
   };
 
   public _useragent = (DEFAULT_USERAGENT_PREFIX + VERSION);
@@ -414,7 +416,7 @@ class Crisp {
         (instance, emitter) => {
           // Listen for event? (once instance is bound)
           switch (rtmMode) {
-            case RTM_MODES.WebSockets: {
+            case "websockets": {
               // Listen on socket event
               instance.on(event, (data) => {
                 emitter.emit(event, data);
@@ -613,7 +615,7 @@ class Crisp {
         // @ts-ignore
         this._brokerScheduler = setTimeout(() => {
           switch (rtmMode) {
-            case RTM_MODES.WebSockets: {
+            case "websockets": {
               // Connect to socket now
               // Notice: will unstack broker bind hooks once ready
               this.connectSocket(rtmHostOverride)
@@ -623,7 +625,7 @@ class Crisp {
               break;
             }
 
-            case RTM_MODES.WebHooks: {
+            case "webhooks": {
               // Connect to loopback now
               this.connectLoopback()
                 .then(resolve)
@@ -948,4 +950,4 @@ class Crisp {
 };
 
 export default Crisp;
-export { Crisp };
+

@@ -3496,7 +3496,7 @@ To start listening for events and bind a handler, check out the [events over Web
 
 You will need to adjust your code so that:
 
-1. The RTM events mode is set to Web Hooks: `CrispClient.setRtmMode(Crisp.RTM_MODES.WebHooks)`
+1. The RTM events mode is set to Web Hooks: `CrispClient.setRtmMode("webhooks")`
 2. Your HTTP endpoint mounts a route listening for POST requests, and upon receiving requests:
     1. It verifies the requests with: `CrispClient.verifyHook(secret, body, timestamp, signature)`
     2. It receives the Web Hook with: `CrispClient.receiveHook(body)`
@@ -3509,7 +3509,7 @@ To start listening for events and bind a handler, check out the [events over Web
 
 You will need to adjust your code so that:
 
-1. The RTM events mode is set to WebSockets: `CrispClient.setRtmMode(Crisp.RTM_MODES.WebSockets)`
+1. The RTM events mode is set to WebSockets: `CrispClient.setRtmMode("websockets")`
 
 ### Available realtime events
 

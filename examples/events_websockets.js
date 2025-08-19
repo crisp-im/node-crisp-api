@@ -17,7 +17,7 @@ const CrispClient = new Crisp();
 console.info("Authenticating...");
 
 CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
-CrispClient.setRtmMode(Crisp.RTM_MODES.WebSockets);
+CrispClient.setRtmMode("websockets");
 
 console.info("Listening for events...");
 
