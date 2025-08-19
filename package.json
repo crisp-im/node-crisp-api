@@ -1,7 +1,7 @@
 {
   "name": "crisp-api",
   "description": "Crisp API wrapper for Node - official, maintained by Crisp",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
   "author": {
@@ -41,7 +41,7 @@
   },
   "scripts": {
     "test": "eslint lib",
-    "build": "npx tsc && npx tsc-alias && sed -i '' s/__PKG_VERSION_PLACEHOLDER__/$(npm pkg get version | tr -d '\"')/g dist/crisp.js"
+    "build": "npx tsc && npx tsc-alias && node -e \"const fs=require('fs');const f='dist/crisp.js';const v=require('./package.json').version;fs.writeFileSync(f, fs.readFileSync(f,'utf8').replace(/__PKG_VERSION_PLACEHOLDER__/g,v));\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "8.39.1",
