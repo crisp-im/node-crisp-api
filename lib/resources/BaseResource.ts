@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: MAIN
 import Crisp from "@/crisp";
 
 /**
@@ -13,6 +18,9 @@ import Crisp from "@/crisp";
 class BaseResource {
   protected crisp: Crisp;
 
+  /**
+   * Constructor
+   */
   constructor(crisp: Crisp) {
     this.crisp = crisp;
   }

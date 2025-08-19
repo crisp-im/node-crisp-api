@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 export interface WebsiteSettings {
@@ -182,7 +187,6 @@ class WebsiteSettingsService extends BaseResource {
     );
   };
 }
-
 
 export default WebsiteSettingsService;
 

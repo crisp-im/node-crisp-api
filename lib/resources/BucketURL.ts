@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 // BucketURLRequestFile mapping
@@ -29,15 +34,10 @@ export type BucketURLRequest = {
 
 /**
  * Crisp BucketURL Resource
- * @class
- * @param {object} service
- * @param {crisp} crisp
- * @classdesc This is the Crisp Bucket URL Resource
  */
 class BucketURL extends BaseResource {
   /**
    * Generate Bucket URL
-   * @param {BucketURLRequest} data
    */
   generateBucketURL(data: BucketURLRequest) {
     return this.crisp.post(

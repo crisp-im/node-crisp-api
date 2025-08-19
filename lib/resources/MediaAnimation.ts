@@ -5,6 +5,11 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 /**
@@ -19,8 +24,8 @@ class MediaAnimation extends BaseResource {
       this.crisp.prepareRestUrl(["media", "animation", "list", String(pageNumber)]),
 
       {
-        list_id      : listID,
-        search_query : searchQuery
+        list_id: listID,
+        search_query: searchQuery
       }
     );
   };

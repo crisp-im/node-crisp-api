@@ -5,12 +5,18 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import MediaAnimation from "@/resources/MediaAnimation";
 
 /**
  * Crisp Media Service
  */
-export class MediaService {
+class MediaService {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   public __resources: any[] = [
     MediaAnimation
   ];

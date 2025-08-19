@@ -5,6 +5,11 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 type WebsiteAvailabilityStatus = {

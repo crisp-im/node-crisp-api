@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 export interface WebsiteOperatorListOne {
@@ -119,9 +124,9 @@ class WebsiteOperatorService extends BaseResource {
       null,
 
       {
-        email  : email,
-        role   : role,
-        verify : verify
+        email: email,
+        role: role,
+        verify: verify
       }
     );
   };
@@ -136,8 +141,8 @@ class WebsiteOperatorService extends BaseResource {
       null,
 
       {
-        role  : role,
-        title : title
+        role: role,
+        title: title
       }
     );
   };

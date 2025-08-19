@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 export interface PeopleStatistics {
@@ -140,7 +145,7 @@ export interface PeopleEvent {
 }
 
 export interface PeopleData {
-  data?: Record<string, any>;
+  data?: Record<string, boolean|string|number>;
 }
 
 export interface PeopleSubscription {
@@ -166,7 +171,6 @@ export interface PeopleProfileImportSetupOptions {
   column_separator?: string;
   skip_header?: boolean;
 }
-
 
 /**
  * Crisp WebsitePeople Resource
@@ -206,7 +210,7 @@ class WebsitePeople extends BaseResource {
       null,
 
       {
-        segment : segment
+        segment: segment
       }
     );
   };
@@ -234,7 +238,7 @@ class WebsitePeople extends BaseResource {
       null,
 
       {
-        key : key
+        key: key
       }
     );
   };
@@ -262,7 +266,7 @@ class WebsitePeople extends BaseResource {
       null,
 
       {
-        text : text
+        text: text
       }
     );
   };
@@ -281,18 +285,22 @@ class WebsitePeople extends BaseResource {
       // @ts-ignore
       query.sort_field = searchField;
     }
+
     if (searchOrder) {
       // @ts-ignore
       query.sort_order = searchOrder;
     }
+
     if (searchOperator) {
       // @ts-ignore
       query.search_operator = searchOperator;
     }
+
     if (searchFilter) {
       // @ts-ignore
       query.search_filter = searchFilter;
     }
+
     if (searchText) {
       // @ts-ignore
       query.search_text = searchText;
@@ -384,7 +392,7 @@ class WebsitePeople extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "conversations", peopleID, "list",
-          String(pageNumber)
+        String(pageNumber)
       ])
     );
   };
@@ -396,7 +404,7 @@ class WebsitePeople extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "campaigns", peopleID, "list",
-          String(pageNumber)
+        String(pageNumber)
       ])
     );
   };
@@ -421,7 +429,7 @@ class WebsitePeople extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "events", peopleID, "list",
-          String(pageNumber)
+        String(pageNumber)
       ])
     );
   };
@@ -440,7 +448,7 @@ class WebsitePeople extends BaseResource {
   /**
    * Save People Data
    */
-  savePeopleData(websiteID: string, peopleID: string, peopleData: Record<string, any>) {
+  savePeopleData(websiteID: string, peopleID: string, peopleData: Record<string, boolean|string|number>) {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "data", peopleID
@@ -453,7 +461,7 @@ class WebsitePeople extends BaseResource {
   /**
    * Update People Data
    */
-  updatePeopleData(websiteID: string, peopleID: string, peopleData: Record<string, any>) {
+  updatePeopleData(websiteID: string, peopleID: string, peopleData: Record<string, boolean|string|number>) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "data", peopleID

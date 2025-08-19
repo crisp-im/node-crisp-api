@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 type PluginSubscription = {
@@ -98,7 +103,7 @@ class PluginSubscriptionService extends BaseResource {
       null,
 
       {
-        plugin_id : pluginID
+        plugin_id: pluginID
       }
     );
   };

@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 export interface Conversation {
@@ -201,8 +206,6 @@ export interface ConversationMessage {
   original?: ConversationMessageOriginal;
 }
 
-
-
 export interface ConversationFileMessageContent {
   name?: string;
   url?: string;
@@ -308,13 +311,13 @@ export interface ConversationMessageOriginal {
 
 export type ConversationMessageNew = (
   ConversationTextMessageNew |
-  ConversationFileMessageNew | 
-  ConversationAnimationMessageNew | 
-  ConversationAudioMessageNew | 
-  ConversationPickerMessageNew | 
-  ConversationFieldMessageNew | 
-  ConversationCarouselMessageNew | 
-  ConversationNoteMessageNew | 
+  ConversationFileMessageNew |
+  ConversationAnimationMessageNew |
+  ConversationAudioMessageNew |
+  ConversationPickerMessageNew |
+  ConversationFieldMessageNew |
+  ConversationCarouselMessageNew |
+  ConversationNoteMessageNew |
   ConversationEventMessageNew
 )
 
@@ -430,7 +433,6 @@ export interface ConversationCarouselMessageNew {
   automated?: boolean;
 }
 
-
 export interface ConversationNoteMessageNew extends ConversationTextMessageNew {
   type: "note";
 }
@@ -473,13 +475,13 @@ export interface ConversationSpam {
   spam_id?:   string;
   type?:      string;
   reason?:    string;
-  metadata?:  Record<string, any>;
-  headers?:   Record<string, any>;
+  metadata?:  Record<string, unknown>;
+  headers?:   Record<string, unknown>;
   timestamp?: number;
 }
 
 export interface ConversationSpamContent extends ConversationSpam {
-  content?: Record<string, any>;
+  content?: Record<string, unknown>;
 }
 
 export interface ConversationReadMessageMark {
@@ -506,6 +508,7 @@ export interface ConversationOriginal {
   session_id?: string;
   original_id?: string;
   type?: string;
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   headers?: Record<string, any>;
   content?: string;
   timestamp?: number;
@@ -605,7 +608,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        segment : segment
+        segment: segment
       }
     );
   };
@@ -633,7 +636,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        key : key
+        key: key
       }
     );
   };
@@ -672,7 +675,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        action : action
+        action: action
       }
     );
   };
@@ -737,11 +740,11 @@ class WebsiteConversation extends BaseResource {
    */
   getMessagesInConversation(websiteID: string, sessionID: string, timestampBefore?: string|number) : Promise<ConversationMessage[]> {
     // Generate query
-    var _query = {};
+    let query = {};
 
     if (timestampBefore) {
       // @ts-ignore
-      _query.timestamp_before = String(timestampBefore);
+      query.timestamp_before = String(timestampBefore);
     }
 
     return this.crisp.get(
@@ -749,7 +752,7 @@ class WebsiteConversation extends BaseResource {
         "website", websiteID, "conversation", sessionID, "messages"
       ]),
 
-      _query
+      query
     );
   };
 
@@ -789,7 +792,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        content : content
+        content: content
       }
     );
   };
@@ -869,7 +872,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        opened : (opened || false)
+        opened: (opened || false)
       }
     );
   };
@@ -910,7 +913,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        inbox_id : inboxID
+        inbox_id: inboxID
       }
     );
   }
@@ -1006,7 +1009,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        state : state
+        state: state
       }
     );
   };
@@ -1058,7 +1061,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        blocked : (blocked || false)
+        blocked: (blocked || false)
       }
     );
   };
@@ -1086,7 +1089,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        verified : (verified || false)
+        verified: (verified || false)
       }
     );
   };
@@ -1115,7 +1118,7 @@ class WebsiteConversation extends BaseResource {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "verify", "identity",
-          "link"
+        "link"
       ]),
 
       null, verification
@@ -1130,7 +1133,7 @@ class WebsiteConversation extends BaseResource {
   ) {
     // Generate body
     let body = {
-      to : to
+      to: to
     };
 
     if (email) {
@@ -1217,7 +1220,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        action : action
+        action: action
       }
     );
   };
@@ -1231,7 +1234,7 @@ class WebsiteConversation extends BaseResource {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "browsing", browsingID,
-          "assist"
+        "assist"
       ]),
 
       null, assist
@@ -1252,7 +1255,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        mode : (mode || "audio")
+        mode: (mode || "audio")
       }
     );
   };
@@ -1306,9 +1309,9 @@ class WebsiteConversation extends BaseResource {
   ) {
     // Generate body
     let body = {
-      section_id : sectionID,
-      item_id    : itemID,
-      data       : data
+      section_id: sectionID,
+      item_id: itemID,
+      data: data
     };
 
     if (typeof value !== "undefined") {
@@ -1319,7 +1322,7 @@ class WebsiteConversation extends BaseResource {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "widget", pluginID,
-          "button"
+        "button"
       ]),
 
       null, body
@@ -1335,15 +1338,15 @@ class WebsiteConversation extends BaseResource {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "widget", pluginID,
-          "data"
+        "data"
       ]),
 
       null,
 
       {
-        section_id : sectionID,
-        item_id    : itemID,
-        data       : data
+        section_id: sectionID,
+        item_id: itemID,
+        data: data
       }
     );
   };
@@ -1357,15 +1360,15 @@ class WebsiteConversation extends BaseResource {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "widget", pluginID,
-          "data"
+        "data"
       ]),
 
       null,
 
       {
-        section_id : sectionID,
-        item_id    : itemID,
-        value      : value
+        section_id: sectionID,
+        item_id: itemID,
+        value: value
       }
     );
   };
@@ -1384,8 +1387,8 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        date : date,
-        note : note
+        date: date,
+        note: note
       }
     );
   };
@@ -1404,7 +1407,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        flag : flag
+        flag: flag
       }
     );
   };

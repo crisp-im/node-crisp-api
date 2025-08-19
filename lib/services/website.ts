@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import WebsiteBase from "@/resources/WebsiteBase";
 import WebsiteAnalytics from "@/resources/WebsiteAnalytics";
 import WebsiteAvailability from "@/resources/WebsiteAvailability";
@@ -18,7 +23,11 @@ import WebsiteSettings from "@/resources/WebsiteSettings";
 import WebsiteVerify from "@/resources/WebsiteVerify";
 import WebsiteVisitors from "@/resources/WebsiteVisitors";
 
-export class WebsiteService {
+/**
+ * Website Service
+ */
+class WebsiteService {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   public __resources: any[] = [
     WebsiteBase,
     WebsiteAnalytics,

@@ -5,8 +5,12 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import BaseResource from "./BaseResource";
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
 
+// PROJECT: RESOURCES
+import BaseResource from "./BaseResource";
 import { WebsiteFilter } from "./WebsiteBase";
 
 // WebsiteCampaignExcerpt mapping
@@ -102,7 +106,7 @@ type WebsiteCampaignRecipientPerson = {
 
 type WebsiteCampaignStatistic = {
   profile?:    WebsiteCampaignStatisticProfile;
-  data?:       Record<string, any>;
+  data?:       Record<string, unknown>;
   created_at?:  number;
   updated_at?:  number;
 }
@@ -176,8 +180,8 @@ class WebsiteCampaign extends BaseResource {
       null,
 
       {
-        format : templateFormat,
-        name   : templateName
+        format: templateFormat,
+        name: templateName
       }
     );
   }
@@ -251,8 +255,8 @@ class WebsiteCampaign extends BaseResource {
       null,
 
       {
-        type : campaignType,
-        name : campaignName
+        type: campaignType,
+        name: campaignName
       }
     );
   };

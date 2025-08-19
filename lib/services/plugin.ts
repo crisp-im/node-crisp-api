@@ -5,13 +5,19 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import PluginConnect from "@/resources/PluginConnect";
 import PluginSubscription from "@/resources/PluginSubscription";
 
 /**
  * Crisp Plugin Service
  */
-export class PluginService {
+class PluginService {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   public __resources: any[] = [
     PluginConnect,
     PluginSubscription

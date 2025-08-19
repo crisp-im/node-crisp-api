@@ -5,6 +5,11 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 type WebsiteBatchConversationsOperation = {
@@ -82,7 +87,7 @@ class WebsiteBatch extends BaseResource {
       null,
 
       {
-        people : people
+        people: people
       }
     );
   };

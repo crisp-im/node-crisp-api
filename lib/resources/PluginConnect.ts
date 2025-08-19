@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 // PluginConnectAccount mapping
@@ -55,7 +60,9 @@ class PluginConnect extends BaseResource {
    */
   checkConnectSessionValidity() {
     return this.crisp.head(
-      this.crisp.prepareRestUrl(["plugin", "connect", "session"]), {}, {}
+      this.crisp.prepareRestUrl(["plugin", "connect", "session"]),
+
+      {}
     );
   };
 
@@ -67,7 +74,7 @@ class PluginConnect extends BaseResource {
   ): Promise<PluginConnectAllWebsites> {
     // Generate query
     let query = {
-      filter_configured : (
+      filter_configured: (
         (filterConfigured === true) ? "1" : "0"
       )
     };
@@ -89,7 +96,7 @@ class PluginConnect extends BaseResource {
   ): Promise<PluginConnectWebsitesSince> {
     // Generate query
     let query = {
-      filter_configured : (
+      filter_configured: (
         (filterConfigured === true) ? "1" : "0"
       )
     };

@@ -5,6 +5,11 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 export interface WebsiteVisitorCount {
@@ -129,13 +134,15 @@ class WebsiteVisitors extends BaseResource {
     const query: Record<string, string> = {};
 
     if (typeof centerLongitude === "number") {
-      query.center_longitude = ("" + centerLongitude);
+      query.center_longitude = String(centerLongitude);
     }
+
     if (typeof centerLatitude === "number") {
-      query.center_latitude = ("" + centerLatitude);
+      query.center_latitude = String(centerLatitude);
     }
+
     if (typeof centerRadius === "number") {
-      query.center_radius = ("" + centerRadius);
+      query.center_radius = String(centerRadius);
     }
 
     return this.crisp.get(

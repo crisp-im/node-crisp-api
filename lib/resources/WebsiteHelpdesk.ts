@@ -5,6 +5,11 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 export interface Helpdesk {
@@ -151,7 +156,6 @@ export interface HelpdeskDomain {
   verified?: boolean;
 }
 
-
 /**
  * Crisp WebsiteHelpdesk Resource
  */
@@ -182,8 +186,8 @@ class WebsiteHelpdesk extends BaseResource {
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk"]), null,
 
       {
-        name         : name,
-        domain_basic : domainBasic
+        name: name,
+        domain_basic: domainBasic
       }
     );
   };
@@ -196,7 +200,7 @@ class WebsiteHelpdesk extends BaseResource {
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk"]), null,
 
       {
-        verify : verify
+        verify: verify
       }
     );
   };
@@ -222,7 +226,7 @@ class WebsiteHelpdesk extends BaseResource {
       null,
 
       {
-        locale : locale
+        locale: locale
       }
     );
   };
@@ -269,7 +273,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "articles",
-          String(pageNumber)
+        String(pageNumber)
       ]),
 
       options
@@ -288,7 +292,7 @@ class WebsiteHelpdesk extends BaseResource {
       null,
 
       {
-        title : title
+        title: title
       }
     );
   };
@@ -311,7 +315,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId
+        articleId
       ])
     );
   };
@@ -325,7 +329,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId
+        articleId
       ]),
 
       null, article
@@ -341,7 +345,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId
+        articleId
       ]),
 
       null, article
@@ -355,7 +359,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.delete(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId
+        articleId
       ])
     );
   };
@@ -369,7 +373,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "page"
+        articleId, "page"
       ])
     );
   };
@@ -383,7 +387,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "category"
+        articleId, "category"
       ])
     );
   };
@@ -396,7 +400,7 @@ class WebsiteHelpdesk extends BaseResource {
   ) {
     // Generate body
     let body = {
-      category_id : categoryId
+      category_id: categoryId
     };
 
     if (sectionId !== undefined) {
@@ -407,7 +411,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "category"
+        articleId, "category"
       ]),
 
       null, body
@@ -423,7 +427,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "alternates"
+        articleId, "alternates"
       ])
     );
   };
@@ -437,7 +441,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.head(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "alternate", localeLinked
+        articleId, "alternate", localeLinked
       ])
     );
   };
@@ -451,7 +455,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "alternate", localeLinked
+        articleId, "alternate", localeLinked
       ])
     );
   };
@@ -465,13 +469,13 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "alternate", localeLinked
+        articleId, "alternate", localeLinked
       ]),
 
       null,
 
       {
-        article_id : articleIdLinked
+        article_id: articleIdLinked
       }
     );
   };
@@ -485,7 +489,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.delete(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "alternate", localeLinked
+        articleId, "alternate", localeLinked
       ])
     );
   };
@@ -499,7 +503,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "publish"
+        articleId, "publish"
       ]),
 
       null,
@@ -517,7 +521,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
-          articleId, "unpublish"
+        articleId, "unpublish"
       ]),
 
       null,
@@ -535,7 +539,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "categories",
-          String(pageNumber)
+        String(pageNumber)
       ])
     );
   };
@@ -552,7 +556,7 @@ class WebsiteHelpdesk extends BaseResource {
       null,
 
       {
-        name : name
+        name: name
       }
     );
   };
@@ -566,7 +570,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.head(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId
+        categoryId
       ])
     );
   };
@@ -580,7 +584,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId
+        categoryId
       ])
     );
   };
@@ -594,7 +598,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId
+        categoryId
       ]),
 
       null, category
@@ -609,7 +613,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId
+        categoryId
       ]),
 
       null, category
@@ -625,7 +629,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.delete(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId
+        categoryId
       ])
     );
   };
@@ -639,7 +643,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId, "sections", String(pageNumber)
+        categoryId, "sections", String(pageNumber)
       ])
     );
   };
@@ -653,13 +657,13 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId, "section"
+        categoryId, "section"
       ]),
 
       null,
 
       {
-        name : name
+        name: name
       }
     );
   };
@@ -673,7 +677,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.head(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId, "section", sectionId
+        categoryId, "section", sectionId
       ])
     );
   };
@@ -687,7 +691,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId, "section", sectionId
+        categoryId, "section", sectionId
       ])
     );
   };
@@ -701,7 +705,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId, "section", sectionId
+        categoryId, "section", sectionId
       ]),
 
       null, section
@@ -717,7 +721,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId, "section", sectionId
+        categoryId, "section", sectionId
       ]),
 
       null, section
@@ -733,7 +737,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.delete(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
-          categoryId, "section", sectionId
+        categoryId, "section", sectionId
       ])
     );
   };
@@ -745,7 +749,7 @@ class WebsiteHelpdesk extends BaseResource {
     websiteID: string, locale: string, filterDateStart?: string | null, filterDateEnd?: string | null
   ) : Promise<HelpdeskLocaleFeedbackRatings> {
     filterDateStart = (filterDateStart || null);
-    filterDateEnd   = (filterDateEnd   || null);  
+    filterDateEnd   = (filterDateEnd   || null);
 
     // Generate query
     let query = {};
@@ -754,6 +758,7 @@ class WebsiteHelpdesk extends BaseResource {
       // @ts-ignore
       query.filter_date_start = filterDateStart;
     }
+
     if (filterDateEnd !== null) {
       // @ts-ignore
       query.filter_date_end = filterDateEnd;
@@ -762,7 +767,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "feedback",
-          "ratings"
+        "ratings"
       ]),
 
       query
@@ -785,6 +790,7 @@ class WebsiteHelpdesk extends BaseResource {
       // @ts-ignore
       query.filter_date_start = filterDateStart;
     }
+
     if (filterDateEnd !== null) {
       // @ts-ignore
       query.filter_date_end = filterDateEnd;
@@ -793,7 +799,7 @@ class WebsiteHelpdesk extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "feedback", "list",
-          String(pageNumber)
+        String(pageNumber)
       ]),
 
       query
@@ -814,7 +820,7 @@ class WebsiteHelpdesk extends BaseResource {
       null,
 
       {
-        helpdesk_url : helpdeskUrl
+        helpdesk_url: helpdeskUrl
       }
     );
   };
@@ -857,8 +863,8 @@ class WebsiteHelpdesk extends BaseResource {
       null,
 
       {
-        path   : redirectionPath,
-        target : redirectionTarget
+        path: redirectionPath,
+        target: redirectionTarget
       }
     );
   };
@@ -936,6 +942,7 @@ class WebsiteHelpdesk extends BaseResource {
       // @ts-ignore
       body.basic = basic;
     }
+
     if (custom !== undefined) {
       // @ts-ignore
       body.custom = custom;

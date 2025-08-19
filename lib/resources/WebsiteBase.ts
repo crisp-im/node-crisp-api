@@ -5,6 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 // Website mapping
@@ -29,7 +34,7 @@ export type WebsiteFilter = {
   model?:      string;
   criterion?:  string;
   operator?:   string;
-  query?:      Record<string, any>;
+  query?:      Record<string, unknown>;
 }
 
 /**
@@ -49,7 +54,7 @@ class WebsiteBase extends BaseResource {
       this.crisp.prepareRestUrl(["website"]),
 
       {
-        domain : domain
+        domain: domain
       }
     );
   };
@@ -85,7 +90,7 @@ class WebsiteBase extends BaseResource {
       this.crisp.prepareRestUrl(["website", websiteID]), undefined,
 
       {
-        verify : verify
+        verify: verify
       }
     );
   };

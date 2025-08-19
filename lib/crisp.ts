@@ -5,20 +5,29 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-// Imports
-import fs            from "fs";
-import got           from "got";
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// NPM
+import got                from "got";
 import { io as socketio } from "socket.io-client";
+import { Socket }         from "socket.io-client";
 
-import { URL }       from "url";
-
-import Crypto        from "crypto";
+import { URL }           from "url";
+import Crypto            from "crypto";
 import mitt, { Emitter } from "mitt";
+
+// PROJECT: SERVICES
+import Bucket from "@/services/bucket";
+import Media from "@/services/media";
+import Plugin from "@/services/plugin";
+import Website, { WebsiteServiceInterface } from "@/services/website";
 
 // RTM modes available
 const RTM_MODES           = {
-  WebSockets : "websockets",
-  WebHooks   : "webhooks"
+  WebSockets: "websockets",
+  WebHooks: "webhooks"
 };
 
 const AVAILABLE_RTM_MODES = [
@@ -152,23 +161,15 @@ const DEFAULT_RTM_EVENTS = [
   // Plugin Events
   "plugin:channel",
   "plugin:event",
-  "plugin:settings:saved",
+  "plugin:settings:saved"
 ];
-
-import Bucket from "@/services/bucket";
-import Media from "@/services/media";
-import Plugin from "@/services/plugin";
-import Website, { WebsiteServiceInterface } from "@/services/website";
-
-import { Socket } from "socket.io-client";
-
 
 // REST API services
 const services = {
-  Bucket  : Bucket,
-  Media   : Media,
-  Plugin  : Plugin,
-  Website : Website
+  Bucket: Bucket,
+  Media: Media,
+  Plugin: Plugin,
+  Website: Website
 };
 
 interface CrispAuth {
@@ -193,23 +194,23 @@ class Crisp {
   public website: WebsiteServiceInterface = new Website() as unknown as WebsiteServiceInterface;
 
   public auth: CrispAuth = {
-    tier       : "user",
-    identifier : null,
-    key        : null,
-    token      : null
+    tier: "user",
+    identifier: null,
+    key: null,
+    token: null
   };
 
   public _rest = {
-    host     : DEFAULT_REST_HOST,
-    basePath : DEFAULT_REST_BASE_PATH
+    host: DEFAULT_REST_HOST,
+    basePath: DEFAULT_REST_BASE_PATH
   };
 
   public _rtm  = {
-    host : "",
-    mode : DEFAULT_RTM_MODE
+    host: "",
+    mode: DEFAULT_RTM_MODE
   };
 
-  public _useragent       = (DEFAULT_USERAGENT_PREFIX + VERSION);
+  public _useragent = (DEFAULT_USERAGENT_PREFIX + VERSION);
 
   public _emitter         = mitt();
 
@@ -218,12 +219,16 @@ class Crisp {
 
   public _lastEventRebind = null;
 
-  public _brokerScheduler: NodeJS.Timeout | null = null;
+  public _brokerScheduler: typeof setTimeout | null = null;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
   public _brokerBindHooks: ((modeInstance: any, emitter: any) => void)[] = [];
 
   public _boundEvents     = {};
 
+  /**
+   * Constructor
+   */
   constructor() {
     this._prepareServices();
   }
@@ -291,10 +296,12 @@ class Crisp {
     this.authenticate(identifier, key);
   }
 
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+
   /**
    * Method wrapper to HEAD a resource
    */
-  head(resource: string, query?: object | null, body?: object | null): Promise<any> {
+  head(resource: string, query?: object | null): Promise<any> {
     return new Promise((resolve, reject) => {
       this.request(
         resource, "head", (query || {}), null, resolve, reject
@@ -357,14 +364,18 @@ class Crisp {
     });
   }
 
+  /* eslint-enable @typescript-eslint/no-explicit-any */
+
   /**
    * Binds RTM event
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
   on(event: string, callback: (data: any) => void) {
     // Ensure all input arguments are set
     if (typeof event !== "string") {
       throw new Error("[Crisp] on: parameter event should be a string");
     }
+
     if (typeof callback !== "function") {
       throw new Error("[Crisp] on: parameter callback should be a function");
     }
@@ -393,7 +404,7 @@ class Crisp {
 
     // Subscribe event on the broker
     if (this._boundEvents[event] !== true) {
-      var rtmMode = this._rtm.mode;
+      let rtmMode = this._rtm.mode;
 
       // Mark event as bound
       this._boundEvents[event] = true;
@@ -422,7 +433,7 @@ class Crisp {
   /**
    * Receives a raw event and dispatches it to the listener (used for Web Hooks)
    */
-  receiveHook(body: Record<string, any>) {
+  receiveHook(body: Record<string, unknown>) {
     if (this._loopback) {
       // Ensure payload is readable
       if (!body || typeof body !== "object") {
@@ -448,7 +459,7 @@ class Crisp {
       //   dispatched on the event bus later, as the hook might be received \
       //   synchronously over HTTP.
       process.nextTick(() => {
-        this._loopback.emit(body.event, body.data);
+        this._loopback.emit(body.event as string, body.data);
       });
 
       return null;
@@ -490,7 +501,7 @@ class Crisp {
 
     // Make sure that the library user is not rebinding too frequently (which \
     //   is illegal)
-    var nowTime = Date.now();
+    const nowTime = Date.now();
 
     if (this._lastEventRebind !== null  &&
           ((nowTime - this._lastEventRebind)  <
@@ -517,7 +528,7 @@ class Crisp {
    */
   prepareRestUrl(paths: string[]) {
     if (Array.isArray(paths) === true) {
-      var output = this._rest.host + this._rest.basePath;
+      let output = this._rest.host + this._rest.basePath;
 
       output += paths.join("/");
 
@@ -534,18 +545,11 @@ class Crisp {
    */
   _prepareServices() {
     // Bind services
-    for (var name in services) {
-      var serviceInstance = new services[name]();
+    for (const name in services) {
+      const serviceInstance = new services[name]();
 
       // Acquire service map
-      var serviceMap = this[(name[0].toLowerCase() + name.substring(1))];
-
-      // No service map available?
-      /*if (!serviceMap) {
-        throw new Error(
-          "[Crisp] prepareServices: service '" + name + "' has no map available"
-        );
-      }*/
+      const serviceMap = this[(name[0].toLowerCase() + name.substring(1))];
 
       // No resources defined in service?
       if (!serviceInstance.__resources  ||
@@ -566,12 +570,12 @@ class Crisp {
   /**
    * Binds resources to the service object
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private prepareResources(serviceMap: any, resources: any) {
-    for (var i = 0; i < resources.length; i++) {
-      var resourceConstructor = resources[i];
+    for (let i = 0; i < resources.length; i++) {
+      const resourceConstructor = resources[i];
 
       const resourceInstance = new resourceConstructor(this);
-      const resourceName = resourceConstructor.name;
 
       // Bind each method of the resource instance to the service map
       for (const methodName of Object.getOwnPropertyNames(Object.getPrototypeOf(resourceInstance))) {
@@ -585,10 +589,11 @@ class Crisp {
   /**
    * Binds broker to the main object
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
   private prepareBroker(fnBindHook: (modeInstance: any, emitter: any) => void) {
     return new Promise((resolve, reject) => {
-      var rtmMode         = this._rtm.mode,
-          rtmHostOverride = this._rtm.host;
+      const rtmMode = this._rtm.mode;
+      const rtmHostOverride = this._rtm.host;
 
       // Append bind hook to pending stack
       this._brokerBindHooks.push(fnBindHook);
@@ -605,6 +610,7 @@ class Crisp {
           );
         }
 
+        // @ts-ignore
         this._brokerScheduler = setTimeout(() => {
           switch (rtmMode) {
             case RTM_MODES.WebSockets: {
@@ -627,7 +633,7 @@ class Crisp {
             }
 
             default: {
-              var unsupportedError = new Error(
+              const unsupportedError = new Error(
                 "[Crisp] prepareBroker: mode of RTM broker unsupported "  +
                   "('" + rtmMode + "')"
               );
@@ -668,14 +674,14 @@ class Crisp {
         // Any override RTM API host?
         if (rtmHostOverride) {
           return Promise.resolve({
-            socket : {
-              app : rtmHostOverride
+            socket: {
+              app: rtmHostOverride
             }
           });
         }
 
         // Acquire RTM API URL from remote
-        var restUrlSegments;
+        let restUrlSegments;
 
         switch (this.auth.tier) {
           case "plugin": {
@@ -699,7 +705,7 @@ class Crisp {
       })
       .then((endpoints) => {
         // @ts-ignore
-        var rtmHostAffinity = ((endpoints.socket || {}).app || null);
+        const rtmHostAffinity = (endpoints?.socket?.app || null);
 
         // No RTM API host acquired?
         if (rtmHostAffinity === null) {
@@ -710,18 +716,18 @@ class Crisp {
         }
 
         // Parse target RTM API host as an URL object
-        var rtmHostUrl = new URL(rtmHostAffinity);
+        const rtmHostUrl = new URL(rtmHostAffinity);
 
         // Connect to socket
         // @ts-ignore
         this._socket = socketio(rtmHostUrl.origin, {
-          path                 : (rtmHostUrl.pathname || "/"),
-          transports           : ["websocket"],
-          timeout              : DEFAULT_SOCKET_TIMEOUT,
-          reconnection         : true,
-          reconnectionDelay    : DEFAULT_SOCKET_RECONNECT_DELAY,
-          reconnectionDelayMax : DEFAULT_SOCKET_RECONNECT_DELAY_MAX,
-          randomizationFactor  : DEFAULT_SOCKET_RECONNECT_FACTOR
+          path: (rtmHostUrl.pathname || "/"),
+          transports: ["websocket"],
+          timeout: DEFAULT_SOCKET_TIMEOUT,
+          reconnection: true,
+          reconnectionDelay: DEFAULT_SOCKET_RECONNECT_DELAY,
+          reconnectionDelayMax: DEFAULT_SOCKET_RECONNECT_DELAY_MAX,
+          randomizationFactor: DEFAULT_SOCKET_RECONNECT_FACTOR
         });
 
         this.emitAuthenticateSocket();
@@ -749,8 +755,8 @@ class Crisp {
    * Authenticates client (used for WebSockets)
    */
   private emitAuthenticateSocket() {
-    var auth        = this.auth,
-        boundEvents = Object.keys(this._boundEvents);
+    const auth = this.auth;
+    const boundEvents = Object.keys(this._boundEvents);
 
     if (!this._socket) {
       throw new Error(
@@ -758,12 +764,14 @@ class Crisp {
           "is not yet bound"
       );
     }
+
     if (!auth.identifier || !auth.key) {
       throw new Error(
         "[Crisp] emitAuthenticateSocket: cannot listen for events as you "  +
           "did not authenticate"
       );
     }
+
     if (boundEvents.length === 0) {
       throw new Error(
         "[Crisp] emitAuthenticateSocket: cannot listen for events as no "  +
@@ -772,16 +780,17 @@ class Crisp {
     }
 
     this._socket.emit("authentication", {
-      username : auth.identifier,
-      password : auth.key,
-      tier     : auth.tier,
-      events   : boundEvents
+      username: auth.identifier,
+      password: auth.key,
+      tier: auth.tier,
+      events: boundEvents
     });
   }
 
   /**
    * Unstacks pending broker bind hooks
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private unstackBrokerBindHooks(modeInstance: any) {
     // Setup user socket event listeners
     while (this._brokerBindHooks.length > 0) {
@@ -799,19 +808,21 @@ class Crisp {
     method: string,
     query: object,
     body: object | null,
-    resolve: (value: any) => void,
-    reject: (reason?: any) => void
-  ){
+    // eslint-disable-next-line no-unused-vars
+    resolve: (value: unknown) => void,
+    // eslint-disable-next-line no-unused-vars
+    reject: (reason?: unknown) => void
+  ) {
     let requestParameters = {
-      responseType    : "json",
-      timeout         : DEFAULT_REQUEST_TIMEOUT,
+      responseType: "json",
+      timeout: DEFAULT_REQUEST_TIMEOUT,
 
-      headers         : {
-        "User-Agent"   : this._useragent,
-        "X-Crisp-Tier" : this.auth.tier
+      headers: {
+        "User-Agent": this._useragent,
+        "X-Crisp-Tier": this.auth.tier
       },
 
-      throwHttpErrors : false
+      throwHttpErrors: false
     };
 
     // Add authorization?
@@ -841,14 +852,14 @@ class Crisp {
         // Request error?
         if (!response.statusCode) {
           return reject({
-            reason  : "error",
-            message : "internal_error",
-            code    : 500,
+            reason: "error",
+            message: "internal_error",
+            code: 500,
 
-            data    : {
-              namespace : "request",
+            data: {
+              namespace: "request",
 
-              message   : (
+              message: (
                 "Got request error: " + (response.name || "Unknown")
               )
             }
@@ -860,17 +871,18 @@ class Crisp {
           let reasonMessage = this.readErrorResponseReason(
             method, response.statusCode, response
           );
-          let dataMessage   = ((response.body || {}).data || {}).message;
+
+          const dataMessage = (response?.body?.data?.message || "");
 
           return reject({
-            reason  : "error",
-            message : reasonMessage,
-            code    : response.statusCode,
+            reason: "error",
+            message: reasonMessage,
+            code: response.statusCode,
 
-            data    : {
-              namespace : "response",
+            data: {
+              namespace: "response",
 
-              message   : (
+              message: (
                 "Got response error: " + (dataMessage || reasonMessage)
               )
             }
@@ -879,7 +891,7 @@ class Crisp {
 
         // Regular response
         return resolve(
-          (response.body || {}).data || {}
+          (response?.body?.data || {})
         );
       });
   }
@@ -887,7 +899,7 @@ class Crisp {
   /**
    * Reads reason for error response
    */
-  private readErrorResponseReason(method: string, statusCode: number, response: any) {
+  private readErrorResponseReason(method: string, statusCode: number, response: object) {
     // HEAD method? As HEAD requests do not expect any response body, then we \
     //   cannot map a reason from the response.
     if (method === "head") {
@@ -904,7 +916,8 @@ class Crisp {
 
     // Other methods must hold a response body, therefore we can fallback on \
     //   an HTTP error if we fail to acquire any reason at all.
-    return ((response.body || {}).reason || "http_error");
+    // @ts-ignore
+    return ((response?.body?.reason || "http_error"));
   }
 
   /**
@@ -933,7 +946,6 @@ class Crisp {
     );
   }
 };
-
 
 export default Crisp;
 export { Crisp };

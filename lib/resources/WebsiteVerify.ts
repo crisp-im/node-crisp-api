@@ -5,6 +5,11 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
 export interface WebsiteVerifyKeyData {
@@ -22,7 +27,6 @@ export interface WebsiteVerifyKey {
 export interface WebsiteVerifySettingsUpdate {
   enabled?: boolean;
 }
-
 
 /**
  * Crisp WebsiteVerify Resource
@@ -68,6 +72,5 @@ class WebsiteVerify extends BaseResource {
     );
   };
 }
-
 
 export default WebsiteVerify;

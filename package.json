@@ -40,13 +40,18 @@
     "node": ">= 14.0.0"
   },
   "scripts": {
-    "test": "check-build",
+    "test": "eslint lib",
     "build": "npx tsc && npx tsc-alias && sed -i '' s/__PKG_VERSION_PLACEHOLDER__/$(npm pkg get version | tr -d '\"')/g dist/crisp.js",
     "generate:types": "rm -rf ./types/* && tsc"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "8.39.1",
     "tsc-alias": "1.8.16",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "eslint": "9.29.0",
+    "eslint-plugin-crisp": "1.1.13",
+    "eslint-plugin-jsdoc": "^54.1.0",
+    "globals": "15.15.0"
   },
   "dependencies": {
     "mitt": "3.0.1",

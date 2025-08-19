@@ -5,9 +5,18 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+/**************************************************************************
+ * IMPORTS
+ ***************************************************************************/
+
+// PROJECT: RESOURCES
 import BucketURL from "@/resources/BucketURL";
 
-export class BucketService {
+/**
+ * Bucket Service
+ */
+class BucketService {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   public __resources: any[] = [
     BucketURL
   ];
