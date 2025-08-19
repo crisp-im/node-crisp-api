@@ -16,7 +16,6 @@ import BaseResource from "./BaseResource";
  * TYPES
  ***************************************************************************/
 
-// Website mapping
 type Website = {
   website_id?:  string;
   name?:        string;

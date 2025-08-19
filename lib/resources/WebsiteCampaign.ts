@@ -17,7 +17,6 @@ import { WebsiteFilter } from "./WebsiteBase";
  * TYPES
  ***************************************************************************/
 
-// WebsiteCampaignExcerpt mapping
 type WebsiteCampaignExcerpt = {
   campaign_id?:  string;
   type?:         string;
@@ -66,7 +65,6 @@ type WebsiteCampaignItemSender = {
   user_id?:  string;
 }
 
-// WebsiteCampaignItemRecipients mapping
 type WebsiteCampaignItemRecipients = {
   type?:         string;
   segments?:     string[];
