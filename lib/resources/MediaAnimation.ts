@@ -5,17 +5,12 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 /**
  * Crisp MediaAnimation Resource
  */
-class MediaAnimation {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
+class MediaAnimation extends BaseResource {
   /**
    * List Animation Medias
    */

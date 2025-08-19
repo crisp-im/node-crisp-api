@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 export interface PeopleStatistics {
   total?: number;
@@ -173,13 +173,7 @@ export interface PeopleProfileImportSetupOptions {
  * @class
  * @classdesc This is the Crisp Website People Resource
  */
-class WebsitePeople {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsitePeople extends BaseResource {
   /**
    * Get People Statistics
    */

@@ -5,18 +5,12 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 /**
  * Crisp WebsiteAnalytics Resource
  */
-class WebsiteAnalytics {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteAnalytics extends BaseResource {
   /**
    * Generate Analytics
    */

@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 export interface WebsiteSettings {
   websiteID?: string;
@@ -163,13 +163,7 @@ export interface WebsiteSettingsUpdateChatbox {
 /**
  * Crisp WebsiteSettings Resource
  */
-class WebsiteSettingsService {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteSettingsService extends BaseResource {
   /**
    * Get Website Settings
    */

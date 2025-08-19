@@ -5,7 +5,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 export interface WebsiteVisitorCount {
   count?: number;
@@ -98,13 +98,7 @@ export interface WebsiteVisitorsBlocked {
 /**
  * Crisp WebsiteVisitors Resource
  */
-class WebsiteVisitors {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteVisitors extends BaseResource {
   /**
    * Count Visitors
    */

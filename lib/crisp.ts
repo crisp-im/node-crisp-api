@@ -158,7 +158,7 @@ const DEFAULT_RTM_EVENTS = [
 import Bucket from "@/services/bucket";
 import Media from "@/services/media";
 import Plugin from "@/services/plugin";
-import Website from "@/services/website";
+import Website, { WebsiteServiceInterface } from "@/services/website";
 
 import { Socket } from "socket.io-client";
 
@@ -189,7 +189,8 @@ class Crisp {
   public bucket: Bucket = new Bucket();
   public media: Media = new Media();
   public plugin: Plugin = new Plugin();
-  public website: Website = new Website();
+
+  public website: WebsiteServiceInterface = new Website() as unknown as WebsiteServiceInterface;
 
   public auth: CrispAuth = {
     tier       : "user",
@@ -229,10 +230,6 @@ class Crisp {
 
   /**
    * Sets the REST API host
-   * @public
-   * @method setRestHost
-   * @param {string} host - Hostname
-   * @return {undefined}
    */
   setRestHost(host: string) {
     if (typeof host === "string") {
@@ -244,7 +241,6 @@ class Crisp {
 
   /**
    * Sets the RTM API host
-   * @param {string} host - Hostname
    */
   setRtmHost(host: string) {
     if (typeof host === "string") {
@@ -308,7 +304,6 @@ class Crisp {
 
   /**
    * Method wrapper to GET a resource
-   * @return {Promise}
    */
   get(resource: string, query?: object): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -536,10 +531,6 @@ class Crisp {
 
   /**
    * Binds services to the main object
-   * @memberof Crisp
-   * @private
-   * @method _prepareServices
-   * @return {undefined}
    */
   _prepareServices() {
     // Bind services
@@ -574,12 +565,6 @@ class Crisp {
 
   /**
    * Binds resources to the service object
-   * @memberof Crisp
-   * @private
-   * @method _prepareResources
-   * @param {object} serviceMap
-   * @param {Array} resources
-   * @return {undefined}
    */
   private prepareResources(serviceMap: any, resources: any) {
     for (var i = 0; i < resources.length; i++) {

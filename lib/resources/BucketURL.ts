@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 // BucketURLRequestFile mapping
 export type BucketURLRequestFile = {
@@ -34,13 +34,7 @@ export type BucketURLRequest = {
  * @param {crisp} crisp
  * @classdesc This is the Crisp Bucket URL Resource
  */
-class BucketURL {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class BucketURL extends BaseResource {
   /**
    * Generate Bucket URL
    * @param {BucketURLRequest} data

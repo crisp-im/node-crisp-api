@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 type PluginSubscription = {
   id?:            string;
@@ -60,18 +60,13 @@ type PluginSubscriptionEventDispatch = {
 /**
  * Crisp PluginSubscription Resource
  */
-class PluginSubscriptionService {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
+class PluginSubscriptionService extends BaseResource {
   /**
    * List All Active Subscriptions
    */
   listAllActiveSubscriptions(): Promise<PluginSubscription[]> {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["plugins", "subscription"]), {}
+      this.crisp.prepareRestUrl(["plugins", "subscription"])
     );
   };
 
@@ -80,7 +75,7 @@ class PluginSubscriptionService {
    */
   listSubscriptionsForWebsite(websiteID: string) : Promise<PluginSubscription[]> {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["plugins", "subscription", websiteID]), {}
+      this.crisp.prepareRestUrl(["plugins", "subscription", websiteID])
     );
   };
 

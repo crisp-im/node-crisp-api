@@ -11,11 +11,16 @@ import PluginSubscription from "@/resources/PluginSubscription";
 /**
  * Crisp Plugin Service
  */
-class PluginService {
+export class PluginService {
   public __resources: any[] = [
     PluginConnect,
     PluginSubscription
   ];
+}
+
+export interface PluginServiceInterface extends
+  PluginConnect,
+  PluginSubscription {
 }
 
 export default PluginService;

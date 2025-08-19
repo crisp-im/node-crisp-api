@@ -5,7 +5,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 export interface Helpdesk {
   name?: string;
@@ -155,13 +155,7 @@ export interface HelpdeskDomain {
 /**
  * Crisp WebsiteHelpdesk Resource
  */
-class WebsiteHelpdesk {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteHelpdesk extends BaseResource {
   /**
    * Check If Helpdesk Exists
    */

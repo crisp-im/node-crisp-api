@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 // PluginConnectAccount mapping
 export type PluginConnectAccount = {
@@ -40,12 +40,7 @@ export type PluginConnectEndpointsSocket = {
 /**
  * Crisp PluginConnect Resource
  */
-class PluginConnect {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
+class PluginConnect extends BaseResource {
   /**
    * Get Connect Account
    */

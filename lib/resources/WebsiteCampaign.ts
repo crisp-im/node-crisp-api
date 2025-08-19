@@ -5,7 +5,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 import { WebsiteFilter } from "./WebsiteBase";
 
@@ -134,13 +134,7 @@ type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
 /**
  * Crisp WebsiteCampaign Resource
  */
-class WebsiteCampaign {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteCampaign extends BaseResource {
   /**
    * List Campaigns
    */

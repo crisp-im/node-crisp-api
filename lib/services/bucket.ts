@@ -7,10 +7,13 @@
 
 import BucketURL from "@/resources/BucketURL";
 
-class BucketService {
+export class BucketService {
   public __resources: any[] = [
     BucketURL
   ];
 }
+
+export interface BucketServiceInterface extends
+  BucketURL {}
 
 export default BucketService;

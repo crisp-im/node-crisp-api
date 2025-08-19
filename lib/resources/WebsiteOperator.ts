@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 export interface WebsiteOperatorListOne {
   type?: string;
@@ -53,13 +53,7 @@ export interface WebsiteOperatorEmailTarget {
 /**
  * Crisp WebsiteOperator Resource
  */
-class WebsiteOperatorService {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteOperatorService extends BaseResource {
   /**
    * List Website Operators
    */

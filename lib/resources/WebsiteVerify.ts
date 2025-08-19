@@ -5,7 +5,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 export interface WebsiteVerifyKeyData {
   data?: WebsiteVerifyKey;
@@ -27,13 +27,7 @@ export interface WebsiteVerifySettingsUpdate {
 /**
  * Crisp WebsiteVerify Resource
  */
-class WebsiteVerify {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteVerify extends BaseResource {
   /**
    * Get Verify Settings
    */

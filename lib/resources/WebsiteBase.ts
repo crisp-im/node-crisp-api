@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 // Website mapping
 type Website = {
@@ -35,13 +35,7 @@ export type WebsiteFilter = {
 /**
  * Crisp WebsiteBase Resource
  */
-class WebsiteBase {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteBase extends BaseResource {
   /**
    * Check If Website Exists
    * @memberof WebsiteBase

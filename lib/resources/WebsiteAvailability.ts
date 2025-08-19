@@ -5,7 +5,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 type WebsiteAvailabilityStatus = {
   status?:  string;
@@ -26,13 +26,7 @@ type WebsiteAvailabilityOperatorTime = {
 /**
  * Crisp WebsiteAvailability Resource
  */
-class WebsiteAvailability {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteAvailability extends BaseResource {
   /**
    * Get Website Availability Status
    */

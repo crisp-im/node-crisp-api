@@ -5,7 +5,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 type WebsiteBatchConversationsOperation = {
   inbox_id?:  string;
@@ -20,13 +20,7 @@ type WebsiteBatchPeopleOperationInner = {
 /**
  * Crisp WebsiteBatch Resource
  */
-class WebsiteBatch {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteBatch extends BaseResource {
   /**
    * Batch Resolve Conversations
    */

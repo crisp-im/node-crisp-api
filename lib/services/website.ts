@@ -18,7 +18,7 @@ import WebsiteSettings from "@/resources/WebsiteSettings";
 import WebsiteVerify from "@/resources/WebsiteVerify";
 import WebsiteVisitors from "@/resources/WebsiteVisitors";
 
-class WebsiteService {
+export class WebsiteService {
   public __resources: any[] = [
     WebsiteBase,
     WebsiteAnalytics,
@@ -33,6 +33,21 @@ class WebsiteService {
     WebsiteVerify,
     WebsiteVisitors
   ];
+}
+
+export interface WebsiteServiceInterface extends
+  WebsiteBase,
+  WebsiteAnalytics,
+  WebsiteAvailability,
+  WebsiteBatch,
+  WebsiteCampaign,
+  WebsiteConversation,
+  WebsiteOperator,
+  WebsitePeople,
+  WebsiteHelpdesk,
+  WebsiteSettings,
+  WebsiteVerify,
+  WebsiteVisitors {
 }
 
 export default WebsiteService;

@@ -1,4 +1,5 @@
 import typescript from "@rollup/plugin-typescript";
+import tscAlias from "rollup-plugin-tsc-alias";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
@@ -11,13 +12,20 @@ export default [
   {
     input: "lib/crisp.ts",
     output: {
-      file: "dist/crisp.cjs.js",
+      dir: "dist",
+      entryFileNames: "crisp.cjs.js",
       format: "cjs",
     },
     plugins: [
       nodeResolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ 
+        tsconfig: "./tsconfig.json",
+        declaration: true,
+        declarationDir: "dist",
+        rootDir: "lib"
+      }),
+      tscAlias(),
       replace({
         preventAssignment: true,
         __PKG_VERSION__: pkg.version,
@@ -29,13 +37,18 @@ export default [
   {
     input: "lib/crisp.ts",
     output: {
-      file: "dist/crisp.esm.js",
+      dir: "dist",
+      entryFileNames: "crisp.esm.js",
       format: "esm",
     },
     plugins: [
       nodeResolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ 
+        tsconfig: "./tsconfig.json",
+        declaration: false  // Only generate declarations once
+      }),
+      tscAlias(),
       replace({
         preventAssignment: true,
         __PKG_VERSION__: pkg.version,

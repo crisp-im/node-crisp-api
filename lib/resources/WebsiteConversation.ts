@@ -5,7 +5,7 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-import Crisp from "@/crisp";
+import BaseResource from "./BaseResource";
 
 export interface Conversation {
   session_id: string;
@@ -572,17 +572,11 @@ export interface ConversationCall {
  * Crisp WebsiteConversation Resource
  * @class
  */
-class WebsiteConversation {
-  private crisp: Crisp;
-
-  constructor(crisp: Crisp) {
-    this.crisp = crisp;
-  }
-
+class WebsiteConversation extends BaseResource {
   /**
    * List Conversations
    */
-  listConversations(websiteID: string, pageNumber: number) : Promise<Conversation[]> {
+  listConversations(websiteID: string, pageNumber: number = 1) : Promise<Conversation[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "conversations", String(pageNumber)])
     );
@@ -591,7 +585,7 @@ class WebsiteConversation {
   /**
    * List Suggested Conversation Segments
    */
-  listSuggestedConversationSegments(websiteID: string, pageNumber: number) : Promise<ConversationSuggestedSegment[]> {
+  listSuggestedConversationSegments(websiteID: string, pageNumber: number = 1) : Promise<ConversationSuggestedSegment[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversations", "suggest", "segments", String(pageNumber)
@@ -619,7 +613,7 @@ class WebsiteConversation {
   /**
    * List Suggested Conversation Data Keys
    */
-  listSuggestedConversationDataKeys(websiteID: string, pageNumber: number) : Promise<ConversationSuggestedData[]> {
+  listSuggestedConversationDataKeys(websiteID: string, pageNumber: number = 1) : Promise<ConversationSuggestedData[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversations", "suggest", "data", String(pageNumber)
@@ -647,7 +641,7 @@ class WebsiteConversation {
   /**
    * List Spam Conversations
    */
-  listSpamConversations(websiteID: string, pageNumber: number) : Promise<ConversationSpam[]> {
+  listSpamConversations(websiteID: string, pageNumber: number = 1) : Promise<ConversationSpam[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversations", "spams", String(pageNumber)
