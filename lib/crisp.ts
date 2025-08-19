@@ -24,6 +24,10 @@ import Media from "@/services/media";
 import Plugin from "@/services/plugin";
 import Website, { WebsiteServiceInterface } from "@/services/website";
 
+// PROJECT: MAIN
+// Export all types from resources
+export * from "@/resources";
+
 export type RTM_MODES = "websockets" | "webhooks";
 
 const AVAILABLE_RTM_MODES = [
