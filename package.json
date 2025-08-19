@@ -1,7 +1,7 @@
 {
   "name": "crisp-api",
   "description": "Crisp API wrapper for Node - official, maintained by Crisp",
-  "version": "9.13.0",
+  "version": "10.0.0",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
   "author": {
@@ -34,23 +34,29 @@
       "url": "https://github.com/crisp-im/node-crisp-api/blob/master/LICENSE"
     }
   ],
-  "main": "lib/crisp.js",
-  "types": "types/crisp.d.ts",
+  "main": "dist/crisp.js",
+  "types": "dist/crisp.d.ts",
   "engines": {
-    "node": ">= 10.19.0"
+    "node": ">= 14.0.0"
   },
   "scripts": {
-    "test": "check-build",
+    "test": "eslint lib",
+    "build": "npx tsc && npx tsc-alias && sed -i '' s/__PKG_VERSION_PLACEHOLDER__/$(npm pkg get version | tr -d '\"')/g dist/crisp.js",
     "generate:types": "rm -rf ./types/* && tsc"
   },
   "devDependencies": {
-    "check-build": "2.8.2",
-    "typescript": "5.1.6"
+    "@typescript-eslint/eslint-plugin": "8.39.1",
+    "tsc-alias": "1.8.16",
+    "typescript": "5.9.2",
+    "eslint": "9.29.0",
+    "eslint-plugin-crisp": "1.1.13",
+    "eslint-plugin-jsdoc": "^54.1.0",
+    "globals": "15.15.0"
   },
   "dependencies": {
-    "socket.io-client": "4.7.2",
-    "fbemitter": "github:crisp-dev/emitter#695f60594bdca0c876e5c232de57702ab3151b6f",
-    "got": "11.8.5"
+    "mitt": "3.0.1",
+    "got": "11.8.5",
+    "socket.io-client": "4.7.2"
   },
   "keywords": [
     "crisp",
