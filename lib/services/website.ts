@@ -23,7 +23,6 @@ import WebsiteSettings from "@/resources/WebsiteSettings";
 import WebsiteVerify from "@/resources/WebsiteVerify";
 import WebsiteVisitors from "@/resources/WebsiteVisitors";
 
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -48,7 +47,6 @@ class WebsiteService {
     WebsiteVisitors
   ];
 }
-
 
 /**************************************************************************
  * EXPORTS

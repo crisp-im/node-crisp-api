@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -26,7 +25,6 @@ type WebsiteBatchPeopleOperationInner = {
   profiles?:  string[];
   search?:    string;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -110,7 +108,6 @@ class WebsiteBatch extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

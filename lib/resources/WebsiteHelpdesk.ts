@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * INTERFACES
  ***************************************************************************/
@@ -160,7 +159,6 @@ export interface HelpdeskDomain {
   custom?: string;
   verified?: boolean;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -1016,7 +1014,6 @@ class WebsiteHelpdesk extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

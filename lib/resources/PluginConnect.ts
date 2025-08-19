@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -46,7 +45,6 @@ export type PluginConnectEndpoints = {
 export type PluginConnectEndpointsSocket = {
   app?: string;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -134,7 +132,6 @@ class PluginConnect extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

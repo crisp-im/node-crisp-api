@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * TYPES + INTERFACES
  ***************************************************************************/
@@ -575,7 +574,6 @@ export interface ConversationBrowsing {
 export interface ConversationCall {
   call_id?: string;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -1501,7 +1499,6 @@ class WebsiteConversation extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

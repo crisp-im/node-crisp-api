@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * INTERFACES
  ***************************************************************************/
@@ -176,7 +175,6 @@ export interface PeopleProfileImportSetupOptions {
   column_separator?: string;
   skip_header?: boolean;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -562,7 +560,6 @@ class WebsitePeople extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

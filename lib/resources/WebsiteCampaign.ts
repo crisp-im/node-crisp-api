@@ -13,7 +13,6 @@
 import BaseResource from "./BaseResource";
 import { WebsiteFilter } from "./WebsiteBase";
 
-
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -139,7 +138,6 @@ type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
   latitude?:  number;
   longitude?: number;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -406,7 +404,7 @@ class WebsiteCampaign extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaign", campaignID, "recipients",
-          String(pageNumber)
+        String(pageNumber)
       ])
     );
   };
@@ -423,12 +421,11 @@ class WebsiteCampaign extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaign", campaignID, "statistics", action,
-          String(pageNumber)
+        String(pageNumber)
       ])
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

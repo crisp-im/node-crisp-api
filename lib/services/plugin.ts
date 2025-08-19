@@ -13,7 +13,6 @@
 import PluginConnect from "@/resources/PluginConnect";
 import PluginSubscription from "@/resources/PluginSubscription";
 
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -28,7 +27,6 @@ class PluginService {
     PluginSubscription
   ];
 }
-
 
 /**************************************************************************
  * EXPORTS

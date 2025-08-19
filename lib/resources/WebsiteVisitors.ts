@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * INTERFACES
  ***************************************************************************/
@@ -104,7 +103,6 @@ export interface WebsiteVisitorsBlocked {
   rule?: string[];
   blocked?: number;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -213,7 +211,6 @@ class WebsiteVisitors extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

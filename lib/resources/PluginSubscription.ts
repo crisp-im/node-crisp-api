@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -66,7 +65,6 @@ type PluginSubscriptionEventDispatch = {
   name?:   string;
   data?:   object;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -230,7 +228,6 @@ class PluginSubscriptionService extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

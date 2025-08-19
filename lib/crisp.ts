@@ -5,7 +5,6 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-
 /**************************************************************************
  * IMPORTS
  ***************************************************************************/
@@ -25,7 +24,6 @@ import Media from "@/services/media";
 import Plugin from "@/services/plugin";
 import Website, { WebsiteServiceInterface } from "@/services/website";
 
-
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -33,7 +31,6 @@ import Website, { WebsiteServiceInterface } from "@/services/website";
 export type RTM_MODES = "websockets" | "webhooks";
 
 export type CrispTier = "user" | "plugin";
-
 
 /**************************************************************************
  * CONSTANTS
@@ -181,7 +178,6 @@ const services = {
   Website: Website
 };
 
-
 /**************************************************************************
  * INTERFACES
  ***************************************************************************/
@@ -193,11 +189,13 @@ interface CrispAuth {
   token: string | null;
 }
 
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
 
+/**
+ *
+ */
 export class Crisp {
   public bucket: Bucket = new Bucket();
   public media: Media = new Media();
@@ -628,7 +626,10 @@ export class Crisp {
   /**
    * Binds broker to the main object
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
+
+  /**
+   *
+   */
   private __prepareBroker(
     fnBindHook: (modeInstance: any, emitter: any) => void
   ) {
@@ -991,7 +992,6 @@ export class Crisp {
     );
   }
 };
-
 
 /**************************************************************************
  * EXPORTS

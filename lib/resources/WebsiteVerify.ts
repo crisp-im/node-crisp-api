@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * INTERFACES
  ***************************************************************************/
@@ -32,7 +31,6 @@ export interface WebsiteVerifyKey {
 export interface WebsiteVerifySettingsUpdate {
   enabled?: boolean;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -84,7 +82,6 @@ class WebsiteVerify extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

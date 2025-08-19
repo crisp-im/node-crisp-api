@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -41,7 +40,6 @@ export type WebsiteFilter = {
   operator?:   string;
   query?:      Record<string, unknown>;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -114,7 +112,6 @@ class WebsiteBase extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -32,7 +31,6 @@ type WebsiteAvailabilityOperatorTime = {
   for?:   number;
   since?: number;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -68,7 +66,6 @@ class WebsiteAvailability extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS

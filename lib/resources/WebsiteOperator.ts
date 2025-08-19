@@ -12,7 +12,6 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
-
 /**************************************************************************
  * INTERFACES
  ***************************************************************************/
@@ -59,7 +58,6 @@ export interface WebsiteOperatorEmailTarget {
   label?: string;
   url?: string;
 }
-
 
 /**************************************************************************
  * CLASSES
@@ -176,7 +174,6 @@ class WebsiteOperatorService extends BaseResource {
     );
   };
 }
-
 
 /**************************************************************************
  * EXPORTS
