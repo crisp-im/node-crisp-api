@@ -16,19 +16,16 @@ import BaseResource from "./BaseResource";
  * TYPES
  ***************************************************************************/
 
-// PluginConnectAccount mapping
 export type PluginConnectAccount = {
   plugin_id?: string;
 };
 
-// PluginConnectAllWebsites mapping
 export type PluginConnectAllWebsites = {
   website_id?: string;
   token?: string;
   settings?: object;
 }
 
-// PluginConnectWebsitesSince mapping
 export type PluginConnectWebsitesSince = {
   website_id?: string;
   token?: string;
@@ -36,12 +33,10 @@ export type PluginConnectWebsitesSince = {
   difference?: string;
 }
 
-// PluginConnectEndpoints mapping
 export type PluginConnectEndpoints = {
   socket?: PluginConnectEndpointsSocket;
 }
 
-// PluginConnectEndpointsSocket mapping
 export type PluginConnectEndpointsSocket = {
   app?: string;
 }
