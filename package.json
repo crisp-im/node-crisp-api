@@ -41,17 +41,11 @@
   },
   "scripts": {
     "test": "check-build",
-    "build": "npx tsc && npx tsc-alias",
+    "build": "npx tsc && npx tsc-alias && sed -i '' s/__PKG_VERSION_PLACEHOLDER__/$(npm pkg get version | tr -d '\"')/g dist/crisp.js",
     "generate:types": "rm -rf ./types/* && tsc"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.6",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-replace": "^6.0.2",
-    "@rollup/plugin-typescript": "^12.1.4",
-    "rollup-plugin-tsc-alias": "1.1.4",
-    "rollup": "4.46.3",
-    "tslib": "2.8.1",
+    "tsc-alias": "1.8.16",
     "typescript": "5.9.2"
   },
   "dependencies": {

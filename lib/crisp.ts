@@ -26,7 +26,7 @@ const AVAILABLE_RTM_MODES = [
   RTM_MODES.WebHooks
 ];
 
-const VERSION = "__PKG_VERSION__";
+const VERSION = "__PKG_VERSION_PLACEHOLDER__";
 
 // Base configuration
 const DEFAULT_REQUEST_TIMEOUT            = 10000;
