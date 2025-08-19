@@ -4,6 +4,7 @@
   "version": "9.13.0",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
+  "type": "module",
   "author": {
     "name": "Baptiste Jamin",
     "email": "baptiste@crisp.chat",
@@ -37,20 +38,26 @@
   "main": "lib/crisp.js",
   "types": "types/crisp.d.ts",
   "engines": {
-    "node": ">= 10.19.0"
+    "node": ">= 14.0.0"
   },
   "scripts": {
     "test": "check-build",
+    "build": "tsc",
     "generate:types": "rm -rf ./types/* && tsc"
   },
   "devDependencies": {
-    "check-build": "2.8.2",
-    "typescript": "5.1.6"
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "rollup": "4.46.3",
+    "tslib": "2.8.1",
+    "typescript": "5.9.2"
   },
   "dependencies": {
-    "socket.io-client": "4.7.2",
-    "fbemitter": "github:crisp-dev/emitter#695f60594bdca0c876e5c232de57702ab3151b6f",
-    "got": "11.8.5"
+    "mitt": "3.0.1",
+    "got": "11.8.5",
+    "socket.io-client": "4.7.2"
   },
   "keywords": [
     "crisp",

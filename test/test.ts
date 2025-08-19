@@ -5,6 +5,9 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+
+"use strict";
+
 const TOKEN = {
   identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
   key        : "<YOUR_API_TOKEN_KEY>"
@@ -13,7 +16,7 @@ const TOKEN = {
 const WEBSITE_ID = "<YOUR_WEBSITE_ID>";
 const SESSION_ID = "<YOUR_SESSION_ID>";
 
-import Crisp from "crisp-api";
+import Crisp from "../dist/crisp.esm.js";
 
 const CrispClient = new Crisp();
 
@@ -23,38 +26,21 @@ CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
 
 console.info("Sending message...");
 
+console.log(CrispClient);
+
 CrispClient.website.sendMessageInConversation(
   WEBSITE_ID, SESSION_ID,
 
   {
-    type    : "picker",
-
-    content : {
-      "id"   : "routing",
-      "text" : "What is your question about?",
-
-      "choices": [
-        {
-          "value"    : "sales",
-          "label"    : "Sales",
-          "selected" : false
-        },
-
-        {
-        "value"    : "tech",
-        "label"    : "Tech",
-        "selected" : false
-        }
-      ]
-    },
+    type    : "text",
+    content : "This is a message sent from node-crisp-api examples.",
+    from    : "operator",
+    origin  : "chat",
 
     user   : {
       nickname : "My Custom Bot"
       // avatar   : "https://PATH_TO_A_CUSTOM_AVATAR"
-    },
-
-    from   : "operator",
-    origin : "chat"
+    }
   }
 )
   .then((data) => {

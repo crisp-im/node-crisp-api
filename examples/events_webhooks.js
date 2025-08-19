@@ -5,13 +5,8 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-
-"use strict";
-
-
-var http  = require("http");
-var url   = require("url");
-
+import http from "http";
+import url from "url";
 
 const TOKEN = {
   identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
@@ -24,9 +19,8 @@ const HOOKS_SERVER = {
   path : "/"
 };
 
-
-var Crisp = require("../");
-var CrispClient = new Crisp();
+import Crisp from "crisp-api";
+const CrispClient = new Crisp();
 
 
 console.info("Authenticating...");
@@ -37,23 +31,23 @@ CrispClient.setRtmMode(Crisp.RTM_MODES.WebHooks);
 
 console.info("Listening for events...");
 
-CrispClient.on("message:send", function(message) {
+CrispClient.on("message:send", (message) => {
   console.info("[Web Hooks] Got 'message:send' event:", message);
 })
-  .then(function() {
+  .then(() => {
     console.error("[Web Hooks] Requested to listen to sent messages");
   })
-  .catch(function(error) {
+  .catch((error) => {
     console.error("[Web Hooks] Failed listening to sent messages:", error);
   });
 
-CrispClient.on("message:received", function(message) {
+CrispClient.on("message:received", (message) => {
   console.info("[Web Hooks] Got 'message:received' event:", message);
 })
-  .then(function() {
+  .then(() => {
     console.error("[Web Hooks] Requested to listen to received messages");
   })
-  .catch(function(error) {
+  .catch((error) => {
     console.error("[Web Hooks] Failed listening to received messages:", error);
   });
 
@@ -63,7 +57,7 @@ console.info(
     ("http://localhost:" + HOOKS_SERVER.port + "/")
 );
 
-var _processWebhooksEvent = function(request, body) {
+const _processWebhooksEvent = (request, body) => {
   var secret    = TOKEN.signSecret,
       timestamp = request.headers["x-crisp-request-timestamp"],
       signature = request.headers["x-crisp-signature"];
@@ -96,7 +90,7 @@ var _processWebhooksEvent = function(request, body) {
   return 200;
 };
 
-var _handleIncomingRequest = function(request, response, body) {
+const _handleIncomingRequest = (request, response, body) => {
   // Handle request?
   var responseStatus = 404,
       requestURL     = url.parse(request.url);
@@ -124,20 +118,20 @@ var _handleIncomingRequest = function(request, response, body) {
 };
 
 http
-  .createServer(function(request, response) {
+  .createServer((request, response) => {
     console.debug(
       "[Web Hooks] Received HTTP request: " + request.method + " " + request.url
     );
 
-    var bodyBuffer = "";
+    let bodyBuffer = "";
 
     request
-      .on("data", function(chunk) {
+      .on("data", (chunk) => {
         bodyBuffer += chunk;
       })
-      .on("end", function() {
+      .on("end", () => {
         // Attempt to parse body to JSON
-        var body = null;
+        let body = null;
 
         try {
           if (bodyBuffer) {
