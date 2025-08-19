@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v10.0.0
+
+* Typescript support (retrocompatible)
+
 ## v9.13.0
 
 ### New Features
