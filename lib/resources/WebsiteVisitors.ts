@@ -116,7 +116,7 @@ class WebsiteVisitors extends BaseResource {
   /**
    * List Visitors
    */
-  listVisitors(websiteID: string, pageNumber: number) : Promise<WebsiteVisitor[]> {
+  listVisitors(websiteID: string, pageNumber: number = 1) : Promise<WebsiteVisitor[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "visitors", "list", String(pageNumber)

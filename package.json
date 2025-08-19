@@ -37,12 +37,11 @@
   "main": "dist/crisp.js",
   "types": "dist/crisp.d.ts",
   "engines": {
-    "node": ">= 14.0.0"
+    "node": ">= 16.0.0"
   },
   "scripts": {
     "test": "eslint lib",
-    "build": "npx tsc && npx tsc-alias && sed -i '' s/__PKG_VERSION_PLACEHOLDER__/$(npm pkg get version | tr -d '\"')/g dist/crisp.js",
-    "generate:types": "rm -rf ./types/* && tsc"
+    "build": "npx tsc && npx tsc-alias && sed -i '' s/__PKG_VERSION_PLACEHOLDER__/$(npm pkg get version | tr -d '\"')/g dist/crisp.js"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "8.39.1",

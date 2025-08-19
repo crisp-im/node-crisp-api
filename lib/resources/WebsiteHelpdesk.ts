@@ -208,7 +208,7 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * List Helpdesk Locales
    */
-  listHelpdeskLocales(websiteID: string, pageNumber: number) {
+  listHelpdeskLocales(websiteID: string, pageNumber: number = 1) {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locales", String(pageNumber)
@@ -268,7 +268,7 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Articles
    */
   listHelpdeskLocaleArticles(
-    websiteID: string, locale: string, pageNumber: number, options: object = {}
+    websiteID: string, locale: string, pageNumber: number = 1, options: object = {}
   ) {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
@@ -534,7 +534,7 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Categories
    */
   listHelpdeskLocaleCategories(
-    websiteID: string, locale: string, pageNumber: number
+    websiteID: string, locale: string, pageNumber: number = 1
   ) : Promise<HelpdeskLocaleArticleCategory[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
@@ -638,7 +638,7 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Sections
    */
   listHelpdeskLocaleSections(
-    websiteID: string, locale: string, categoryId: string, pageNumber: number
+    websiteID: string, locale: string, categoryId: string, pageNumber: number = 1
   ) : Promise<HelpdeskLocaleSection[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
@@ -778,7 +778,7 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Feedbacks
    */
   listHelpdeskLocaleFeedbacks(
-    websiteID: string, locale: string, pageNumber: number, filterDateStart?: string | null, filterDateEnd?: string | null
+    websiteID: string, locale: string, pageNumber: number = 1, filterDateStart?: string | null, filterDateEnd?: string | null
   ) : Promise<HelpdeskLocaleFeedbackItem[]> {
     filterDateStart = (filterDateStart || null);
     filterDateEnd   = (filterDateEnd   || null);
@@ -843,7 +843,7 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * List Helpdesk Redirections
    */
-  listHelpdeskRedirections(websiteID: string, pageNumber: number) : Promise<HelpdeskRedirection[]> {
+  listHelpdeskRedirections(websiteID: string, pageNumber: number = 1) : Promise<HelpdeskRedirection[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "redirections", String(pageNumber)

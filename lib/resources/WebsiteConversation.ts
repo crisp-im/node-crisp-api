@@ -956,7 +956,7 @@ class WebsiteConversation extends BaseResource {
   /**
    * List Conversation Pages
    */
-  listConversationPages(websiteID: string, sessionID: string, pageNumber: number) : Promise<ConversationPage[]> {
+  listConversationPages(websiteID: string, sessionID: string, pageNumber: number = 1) : Promise<ConversationPage[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "pages", String(pageNumber)
@@ -967,7 +967,7 @@ class WebsiteConversation extends BaseResource {
   /**
    * List Conversation Events
    */
-  listConversationEvents(websiteID: string, sessionID: string, pageNumber: number) : Promise<ConversationEvent[]> {
+  listConversationEvents(websiteID: string, sessionID: string, pageNumber: number = 1) : Promise<ConversationEvent[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "events", String(pageNumber)
@@ -978,7 +978,7 @@ class WebsiteConversation extends BaseResource {
   /**
    * List Conversation Files
    */
-  listConversationFiles(websiteID: string, sessionID: string, pageNumber: number) : Promise<ConversationFile[]> {
+  listConversationFiles(websiteID: string, sessionID: string, pageNumber: number = 1) : Promise<ConversationFile[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "files", String(pageNumber)

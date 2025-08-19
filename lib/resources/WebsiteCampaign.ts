@@ -142,7 +142,7 @@ class WebsiteCampaign extends BaseResource {
   /**
    * List Campaigns
    */
-  listCampaigns(websiteID: string, pageNumber: number) : Promise<WebsiteCampaignExcerpt[]> {
+  listCampaigns(websiteID: string, pageNumber: number = 1) : Promise<WebsiteCampaignExcerpt[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "list", String(pageNumber)
@@ -162,7 +162,7 @@ class WebsiteCampaign extends BaseResource {
   /**
    * List Campaign Templates
    */
-  listCampaignTemplates(websiteID: string, pageNumber: number) : Promise<WebsiteCampaignTemplateExcerpt[]> {
+  listCampaignTemplates(websiteID: string, pageNumber: number = 1) : Promise<WebsiteCampaignTemplateExcerpt[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "templates", String(pageNumber)
@@ -370,7 +370,7 @@ class WebsiteCampaign extends BaseResource {
   /**
    * List Campaign Recipients
    */
-  listCampaignRecipients(websiteID: string, campaignID: string, pageNumber: number) : Promise<WebsiteCampaignRecipient[]> {
+  listCampaignRecipients(websiteID: string, campaignID: string, pageNumber: number = 1) : Promise<WebsiteCampaignRecipient[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaign", campaignID, "recipients", String(pageNumber)
@@ -385,7 +385,7 @@ class WebsiteCampaign extends BaseResource {
     websiteID: string,
     campaignID: string,
     action: string,
-    pageNumber: number
+    pageNumber: number = 1
   ) : Promise<WebsiteCampaignStatistic[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
