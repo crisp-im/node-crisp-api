@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * INTERFACES
+ ***************************************************************************/
+
 export interface WebsiteOperatorListOne {
   type?: string;
   details?: WebsiteOperator;
@@ -55,6 +60,11 @@ export interface WebsiteOperatorEmailTarget {
   url?: string;
 }
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp WebsiteOperator Resource
  */
@@ -73,7 +83,9 @@ class WebsiteOperatorService extends BaseResource {
   /**
    * List Last Active Website Operators
    */
-  listLastActiveWebsiteOperators(websiteID: string) : Promise<WebsiteOperatorsLastActiveListOne[]> {
+  listLastActiveWebsiteOperators(
+    websiteID: string
+  ) : Promise<WebsiteOperatorsLastActiveListOne[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "operators", "active"
@@ -95,7 +107,9 @@ class WebsiteOperatorService extends BaseResource {
   /**
    * Send Email To Website Operators
    */
-  sendEmailToWebsiteOperators(websiteID: string, emailData: WebsiteOperatorEmail) {
+  sendEmailToWebsiteOperators(
+    websiteID: string, emailData: WebsiteOperatorEmail
+  ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website", websiteID, "operators", "email"]),
 
@@ -106,7 +120,9 @@ class WebsiteOperatorService extends BaseResource {
   /**
    * Get A Website Operator
    */
-  getWebsiteOperator(websiteID: string, userID: string) : Promise<WebsiteOperator> {
+  getWebsiteOperator(
+    websiteID: string, userID: string
+  ) : Promise<WebsiteOperator> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "operator", userID
@@ -117,7 +133,9 @@ class WebsiteOperatorService extends BaseResource {
   /**
    * Invite A Website Operator
    */
-  inviteWebsiteOperator(websiteID: string, email: string, role: string, verify: boolean) {
+  inviteWebsiteOperator(
+    websiteID: string, email: string, role: string, verify: boolean
+  ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website", websiteID, "operator"]),
 
@@ -134,7 +152,9 @@ class WebsiteOperatorService extends BaseResource {
   /**
    * Change Operator Membership
    */
-  changeOperatorMembership(websiteID: string, userID: string, role: string, title: string) {
+  changeOperatorMembership(
+    websiteID: string, userID: string, role: string, title: string
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl(["website", websiteID, "operator", userID]),
 
@@ -156,6 +176,11 @@ class WebsiteOperatorService extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteOperatorService;
 

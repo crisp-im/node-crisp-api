@@ -13,6 +13,11 @@
 import PluginConnect from "@/resources/PluginConnect";
 import PluginSubscription from "@/resources/PluginSubscription";
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp Plugin Service
  */
@@ -23,6 +28,11 @@ class PluginService {
     PluginSubscription
   ];
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export interface PluginServiceInterface extends
   PluginConnect,

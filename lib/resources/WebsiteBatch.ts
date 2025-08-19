@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * TYPES
+ ***************************************************************************/
+
 type WebsiteBatchConversationsOperation = {
   inbox_id?:  string;
   sessions?:  string[];
@@ -22,6 +27,11 @@ type WebsiteBatchPeopleOperationInner = {
   search?:    string;
 }
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp WebsiteBatch Resource
  */
@@ -29,7 +39,9 @@ class WebsiteBatch extends BaseResource {
   /**
    * Batch Resolve Conversations
    */
-  batchResolveConversations(websiteID: string, operation: WebsiteBatchConversationsOperation) {
+  batchResolveConversations(
+    websiteID: string, operation: WebsiteBatchConversationsOperation
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl(["website", websiteID, "batch", "resolve"]),
 
@@ -46,7 +58,9 @@ class WebsiteBatch extends BaseResource {
    * @param {object} operation
    * @return {Promise}
    */
-  batchReadConversations(websiteID: string, operation: WebsiteBatchConversationsOperation) {
+  batchReadConversations(
+    websiteID: string, operation: WebsiteBatchConversationsOperation
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl(["website", websiteID, "batch", "read"]),
 
@@ -63,7 +77,9 @@ class WebsiteBatch extends BaseResource {
    * @param {object} operation
    * @return {Promise}
    */
-  batchRemoveConversations(websiteID: string, operation: WebsiteBatchConversationsOperation) {
+  batchRemoveConversations(
+    websiteID: string, operation: WebsiteBatchConversationsOperation
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl(["website", websiteID, "batch", "remove"]),
 
@@ -80,7 +96,9 @@ class WebsiteBatch extends BaseResource {
    * @param {object} people
    * @return {Promise}
    */
-  batchRemovePeople(websiteID: string, people: WebsiteBatchPeopleOperationInner) {
+  batchRemovePeople(
+    websiteID: string, people: WebsiteBatchPeopleOperationInner
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl(["website", websiteID, "batch", "remove"]),
 
@@ -92,5 +110,10 @@ class WebsiteBatch extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteBatch;

@@ -5,8 +5,12 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
+
 import http from "http";
 import url from "url";
+
+import Crisp from "crisp-api";
+
 
 const TOKEN = {
   identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
@@ -19,7 +23,7 @@ const HOOKS_SERVER = {
   path : "/"
 };
 
-import Crisp from "crisp-api";
+
 const CrispClient = new Crisp();
 
 

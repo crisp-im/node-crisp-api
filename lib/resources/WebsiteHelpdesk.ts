@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * INTERFACES
+ ***************************************************************************/
+
 export interface Helpdesk {
   name?: string;
   url?: string;
@@ -156,6 +161,11 @@ export interface HelpdeskDomain {
   verified?: boolean;
 }
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp WebsiteHelpdesk Resource
  */
@@ -245,7 +255,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Resolve Helpdesk Locale
    */
-  resolveHelpdeskLocale(websiteID: string, locale: string) : Promise<HelpdeskLocale> {
+  resolveHelpdeskLocale(
+    websiteID: string, locale: string
+  ) : Promise<HelpdeskLocale> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale
@@ -268,7 +280,8 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Articles
    */
   listHelpdeskLocaleArticles(
-    websiteID: string, locale: string, pageNumber: number = 1, options: object = {}
+    websiteID: string, locale: string, pageNumber: number = 1,
+      options: object = {}
   ) {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
@@ -283,7 +296,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Add A New Helpdesk Locale Article
    */
-  addNewHelpdeskLocaleArticle(websiteID: string, locale: string, title: string) {
+  addNewHelpdeskLocaleArticle(
+    websiteID: string, locale: string, title: string
+  ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article"
@@ -300,7 +315,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Check If Helpdesk Locale Article Exists
    */
-  checkHelpdeskLocaleArticleExists(websiteID: string, locale: string, articleId: string) {
+  checkHelpdeskLocaleArticleExists(
+    websiteID: string, locale: string, articleId: string
+  ) {
     return this.crisp.head(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article", articleId
@@ -311,7 +328,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Resolve Helpdesk Locale Article
    */
-  resolveHelpdeskLocaleArticle(websiteID: string, locale: string, articleId: string) : Promise<HelpdeskLocaleArticle> {
+  resolveHelpdeskLocaleArticle(
+    websiteID: string, locale: string, articleId: string
+  ) : Promise<HelpdeskLocaleArticle> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
@@ -324,7 +343,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Save Helpdesk Locale Article
    */
   saveHelpdeskLocaleArticle(
-    websiteID: string, locale: string, articleId: string, article: HelpdeskLocaleArticle
+    websiteID: string, locale: string, articleId: string,
+      article: HelpdeskLocaleArticle
   ) {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
@@ -340,7 +360,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Update Helpdesk Locale Article
    */
   updateHelpdeskLocaleArticle(
-    websiteID: string, locale: string, articleId: string, article: HelpdeskLocaleArticle
+    websiteID: string, locale: string, articleId: string,
+      article: HelpdeskLocaleArticle
   ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
@@ -355,7 +376,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Delete Helpdesk Locale Article
    */
-  deleteHelpdeskLocaleArticle(websiteID: string, locale: string, articleId: string) {
+  deleteHelpdeskLocaleArticle(
+    websiteID: string, locale: string, articleId: string
+  ) {
     return this.crisp.delete(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
@@ -396,7 +419,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Update Helpdesk Locale Article Category
    */
   updateHelpdeskLocaleArticleCategory(
-    websiteID: string, locale: string, articleId: string, categoryId: string, sectionId?: string
+    websiteID: string, locale: string, articleId: string, categoryId: string,
+      sectionId?: string
   ) {
     // Generate body
     let body = {
@@ -464,7 +488,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Save Helpdesk Locale Article Alternate
    */
   saveHelpdeskLocaleArticleAlternate(
-    websiteID: string, locale: string, articleId: string, localeLinked: string, articleIdLinked: string
+    websiteID: string, locale: string, articleId: string, localeLinked: string,
+      articleIdLinked: string
   ) {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
@@ -593,7 +618,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Save Helpdesk Locale Category
    */
   saveHelpdeskLocaleCategory(
-    websiteID: string, locale: string, categoryId: string, category: HelpdeskLocaleArticleCategory
+    websiteID: string, locale: string, categoryId: string,
+      category: HelpdeskLocaleArticleCategory
   ) {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
@@ -608,7 +634,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Update Helpdesk Locale Category
    */
   updateHelpdeskLocaleCategory(
-    websiteID: string, locale: string, categoryId: string, category: HelpdeskLocaleArticleCategory
+    websiteID: string, locale: string, categoryId: string,
+      category: HelpdeskLocaleArticleCategory
   ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
@@ -638,7 +665,8 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Sections
    */
   listHelpdeskLocaleSections(
-    websiteID: string, locale: string, categoryId: string, pageNumber: number = 1
+    websiteID: string, locale: string, categoryId: string,
+      pageNumber: number = 1
   ) : Promise<HelpdeskLocaleSection[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
@@ -700,7 +728,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Save Helpdesk Locale Section
   */
   saveHelpdeskLocaleSection(
-    websiteID: string, locale: string, categoryId: string, sectionId: string, section: HelpdeskLocaleSection
+    websiteID: string, locale: string, categoryId: string, sectionId: string,
+      section: HelpdeskLocaleSection
   ) {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
@@ -716,7 +745,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Update Helpdesk Locale Section
    */
   updateHelpdeskLocaleSection(
-    websiteID: string, locale: string, categoryId: string, sectionId: string, section: HelpdeskLocaleSection
+    websiteID: string, locale: string, categoryId: string, sectionId: string,
+      section: HelpdeskLocaleSection
   ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
@@ -746,7 +776,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Map Helpdesk Locale Feedback Ratings
    */
   mapHelpdeskLocaleFeedbackRatings(
-    websiteID: string, locale: string, filterDateStart?: string | null, filterDateEnd?: string | null
+    websiteID: string, locale: string, filterDateStart?: string | null,
+      filterDateEnd?: string | null
   ) : Promise<HelpdeskLocaleFeedbackRatings> {
     filterDateStart = (filterDateStart || null);
     filterDateEnd   = (filterDateEnd   || null);
@@ -778,7 +809,8 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Feedbacks
    */
   listHelpdeskLocaleFeedbacks(
-    websiteID: string, locale: string, pageNumber: number = 1, filterDateStart?: string | null, filterDateEnd?: string | null
+    websiteID: string, locale: string, pageNumber: number = 1,
+      filterDateStart?: string | null, filterDateEnd?: string | null
   ) : Promise<HelpdeskLocaleFeedbackItem[]> {
     filterDateStart = (filterDateStart || null);
     filterDateEnd   = (filterDateEnd   || null);
@@ -843,7 +875,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * List Helpdesk Redirections
    */
-  listHelpdeskRedirections(websiteID: string, pageNumber: number = 1) : Promise<HelpdeskRedirection[]> {
+  listHelpdeskRedirections(
+    websiteID: string, pageNumber: number = 1
+  ) : Promise<HelpdeskRedirection[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "redirections", String(pageNumber)
@@ -883,7 +917,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Resolve Helpdesk Redirection
    */
-  resolveHelpdeskRedirection(websiteID: string, redirectionId: string) : Promise<HelpdeskRedirection> {
+  resolveHelpdeskRedirection(
+    websiteID: string, redirectionId: string
+  ) : Promise<HelpdeskRedirection> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "redirection", redirectionId
@@ -934,7 +970,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Request Helpdesk Domain Change
    */
-  requestHelpdeskDomainChange(websiteID: string, basic: string, custom: string) {
+  requestHelpdeskDomainChange(
+    websiteID: string, basic: string, custom: string
+  ) {
     // Generate body
     let body = {};
 
@@ -978,5 +1016,10 @@ class WebsiteHelpdesk extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteHelpdesk;

@@ -5,19 +5,23 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+
+import Crisp from "crisp-api";
+
+
 const TOKEN = {
   identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
   key        : "<YOUR_API_TOKEN_KEY>"
 };
 
-import Crisp from "crisp-api";
-
 const CrispClient = new Crisp();
+
 
 console.info("Authenticating...");
 
 CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
 CrispClient.setRtmMode("websockets");
+
 
 console.info("Listening for events...");
 

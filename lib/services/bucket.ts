@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BucketURL from "@/resources/BucketURL";
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Bucket Service
  */
@@ -21,6 +26,11 @@ class BucketService {
     BucketURL
   ];
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export interface BucketServiceInterface extends
   BucketURL {}

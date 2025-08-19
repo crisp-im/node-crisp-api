@@ -23,6 +23,11 @@ import WebsiteSettings from "@/resources/WebsiteSettings";
 import WebsiteVerify from "@/resources/WebsiteVerify";
 import WebsiteVisitors from "@/resources/WebsiteVisitors";
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Website Service
  */
@@ -43,6 +48,11 @@ class WebsiteService {
     WebsiteVisitors
   ];
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export interface WebsiteServiceInterface extends
   WebsiteBase,

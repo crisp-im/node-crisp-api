@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import MediaAnimation from "@/resources/MediaAnimation";
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp Media Service
  */
@@ -21,6 +26,11 @@ class MediaService {
     MediaAnimation
   ];
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export interface MediaServiceInterface extends
   MediaAnimation {}

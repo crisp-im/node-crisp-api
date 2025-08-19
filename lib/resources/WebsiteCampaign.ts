@@ -13,6 +13,11 @@
 import BaseResource from "./BaseResource";
 import { WebsiteFilter } from "./WebsiteBase";
 
+
+/**************************************************************************
+ * TYPES
+ ***************************************************************************/
+
 // WebsiteCampaignExcerpt mapping
 type WebsiteCampaignExcerpt = {
   campaign_id?:  string;
@@ -135,6 +140,11 @@ type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
   longitude?: number;
 }
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp WebsiteCampaign Resource
  */
@@ -142,7 +152,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * List Campaigns
    */
-  listCampaigns(websiteID: string, pageNumber: number = 1) : Promise<WebsiteCampaignExcerpt[]> {
+  listCampaigns(
+    websiteID: string, pageNumber: number = 1
+  ) : Promise<WebsiteCampaignExcerpt[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "list", String(pageNumber)
@@ -162,7 +174,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * List Campaign Templates
    */
-  listCampaignTemplates(websiteID: string, pageNumber: number = 1) : Promise<WebsiteCampaignTemplateExcerpt[]> {
+  listCampaignTemplates(
+    websiteID: string, pageNumber: number = 1
+  ) : Promise<WebsiteCampaignTemplateExcerpt[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "templates", String(pageNumber)
@@ -173,7 +187,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Create A New Campaign Template
    */
-  createNewCampaignTemplate(websiteID: string, templateFormat: string, templateName: string) : Promise<WebsiteCampaignTemplateNew> {
+  createNewCampaignTemplate(
+    websiteID: string, templateFormat: string, templateName: string
+  ) : Promise<WebsiteCampaignTemplateNew> {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website", websiteID, "campaigns", "template"]),
 
@@ -200,7 +216,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Get A Campaign Template
    */
-  getCampaignTemplate(websiteID: string, templateID: string) : Promise<WebsiteCampaignTemplateItem> {
+  getCampaignTemplate(
+    websiteID: string, templateID: string
+  ) : Promise<WebsiteCampaignTemplateItem> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "template", templateID
@@ -211,7 +229,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Save A Campaign Template
    */
-  saveCampaignTemplate(websiteID: string, templateID: string, template: WebsiteCampaignTemplateItem) {
+  saveCampaignTemplate(
+    websiteID: string, templateID: string, template: WebsiteCampaignTemplateItem
+  ) {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "template", templateID
@@ -224,7 +244,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Update A Campaign Template
    */
-  updateCampaignTemplate(websiteID: string, templateID: string, template: WebsiteCampaignTemplateItem) {
+  updateCampaignTemplate(
+    websiteID: string, templateID: string, template: WebsiteCampaignTemplateItem
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "template", templateID
@@ -248,7 +270,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Create A New Campaign
    */
-  createNewCampaign(websiteID: string, campaignType: string, campaignName: string) {
+  createNewCampaign(
+    websiteID: string, campaignType: string, campaignName: string
+  ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website", websiteID, "campaign"]),
 
@@ -273,7 +297,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Get A Campaign
    */
-  getCampaign(websiteID: string, campaignID: string) : Promise<WebsiteCampaignItem> {
+  getCampaign(
+    websiteID: string, campaignID: string
+  ) : Promise<WebsiteCampaignItem> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID])
     );
@@ -282,7 +308,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Save A Campaign
    */
-  saveCampaign(websiteID: string, campaignID: string, campaign: WebsiteCampaignItem) {
+  saveCampaign(
+    websiteID: string, campaignID: string, campaign: WebsiteCampaignItem
+  ) {
     return this.crisp.put(
       this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID]),
 
@@ -293,7 +321,9 @@ class WebsiteCampaign extends BaseResource {
   /**
    * Update A Campaign
    */
-  updateCampaign(websiteID: string, campaignID: string, campaign: WebsiteCampaignItem) {
+  updateCampaign(
+    websiteID: string, campaignID: string, campaign: WebsiteCampaignItem
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID]),
 
@@ -370,10 +400,13 @@ class WebsiteCampaign extends BaseResource {
   /**
    * List Campaign Recipients
    */
-  listCampaignRecipients(websiteID: string, campaignID: string, pageNumber: number = 1) : Promise<WebsiteCampaignRecipient[]> {
+  listCampaignRecipients(
+    websiteID: string, campaignID: string, pageNumber: number = 1
+  ) : Promise<WebsiteCampaignRecipient[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
-        "website", websiteID, "campaign", campaignID, "recipients", String(pageNumber)
+        "website", websiteID, "campaign", campaignID, "recipients",
+          String(pageNumber)
       ])
     );
   };
@@ -390,10 +423,15 @@ class WebsiteCampaign extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaign", campaignID, "statistics", action,
-        String(pageNumber)
+          String(pageNumber)
       ])
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteCampaign;

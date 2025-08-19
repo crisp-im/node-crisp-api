@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp MediaAnimation Resource
  */
@@ -21,7 +26,9 @@ class MediaAnimation extends BaseResource {
    */
   listAnimationMedias(pageNumber: number, listID: string, searchQuery: object) {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["media", "animation", "list", String(pageNumber)]),
+      this.crisp.prepareRestUrl([
+        "media", "animation", "list", String(pageNumber)
+      ]),
 
       {
         list_id: listID,
@@ -30,5 +37,10 @@ class MediaAnimation extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default MediaAnimation;

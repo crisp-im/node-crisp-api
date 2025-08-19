@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp WebsiteAnalytics Resource
  */
@@ -21,11 +26,18 @@ class WebsiteAnalytics extends BaseResource {
    */
   generateAnalytics(websiteID: string, query: object) {
     return this.crisp.post(
-      this.crisp.prepareRestUrl(["website", websiteID, "analytics", "generate"]),
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "analytics", "generate"
+      ]),
 
       null, query
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteAnalytics;

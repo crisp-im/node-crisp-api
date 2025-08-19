@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * TYPES
+ ***************************************************************************/
+
 // Website mapping
 type Website = {
   website_id?:  string;
@@ -36,6 +41,11 @@ export type WebsiteFilter = {
   operator?:   string;
   query?:      Record<string, unknown>;
 }
+
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
 
 /**
  * Crisp WebsiteBase Resource
@@ -104,5 +114,10 @@ class WebsiteBase extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteBase;

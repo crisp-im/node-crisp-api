@@ -5,6 +5,10 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
+
+import Crisp from "crisp-api";
+
+
 const TOKEN = {
   identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
   key        : "<YOUR_API_TOKEN_KEY>"
@@ -13,13 +17,14 @@ const TOKEN = {
 const WEBSITE_ID = "<YOUR_WEBSITE_ID>";
 const SESSION_ID = "<YOUR_SESSION_ID>";
 
-import Crisp from "crisp-api";
 
 const CrispClient = new Crisp();
+
 
 console.info("Authenticating...");
 
 CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
+
 
 console.info("Sending message...");
 

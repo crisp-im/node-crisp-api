@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * INTERFACES
+ ***************************************************************************/
+
 export interface WebsiteSettings {
   websiteID?: string;
   name?: string;
@@ -165,6 +170,11 @@ export interface WebsiteSettingsUpdateChatbox {
   blocked_ips?: string[];
 }
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp WebsiteSettings Resource
  */
@@ -183,10 +193,18 @@ class WebsiteSettingsService extends BaseResource {
    */
   updateWebsiteSettings(websiteID: string, settings: WebsiteSettingsUpdate) {
     return this.crisp.patch(
-      this.crisp.prepareRestUrl(["website", websiteID, "settings"]), null, settings
+      this.crisp.prepareRestUrl(["website", websiteID, "settings"]),
+
+      null,
+      settings
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteSettingsService;
 

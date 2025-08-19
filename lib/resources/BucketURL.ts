@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * TYPES
+ ***************************************************************************/
+
 // BucketURLRequestFile mapping
 export type BucketURLRequestFile = {
   name?: string;
@@ -32,6 +37,11 @@ export type BucketURLRequest = {
   resource?: BucketURLRequestResource;
 };
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp BucketURL Resource
  */
@@ -45,5 +55,10 @@ class BucketURL extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default BucketURL;

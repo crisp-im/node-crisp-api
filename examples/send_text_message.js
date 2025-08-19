@@ -6,7 +6,8 @@
  */
 
 
-"use strict";
+import Crisp from "crisp-api";
+
 
 const TOKEN = {
   identifier : "<YOUR_API_TOKEN_IDENTIFIER>",
@@ -16,13 +17,14 @@ const TOKEN = {
 const WEBSITE_ID = "<YOUR_WEBSITE_ID>";
 const SESSION_ID = "<YOUR_SESSION_ID>";
 
-import Crisp from "crisp-api";
 
 const CrispClient = new Crisp();
+
 
 console.info("Authenticating...");
 
 CrispClient.authenticateTier("plugin", TOKEN.identifier, TOKEN.key);
+
 
 console.info("Sending message...");
 

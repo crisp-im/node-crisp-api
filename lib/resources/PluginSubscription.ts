@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * TYPES
+ ***************************************************************************/
+
 type PluginSubscription = {
   id?:            string;
   urn?:           string;
@@ -62,6 +67,11 @@ type PluginSubscriptionEventDispatch = {
   data?:   object;
 }
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp PluginSubscription Resource
  */
@@ -78,7 +88,9 @@ class PluginSubscriptionService extends BaseResource {
   /**
    * List Subscriptions For A Website
    */
-  listSubscriptionsForWebsite(websiteID: string) : Promise<PluginSubscription[]> {
+  listSubscriptionsForWebsite(
+    websiteID: string
+  ) : Promise<PluginSubscription[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["plugins", "subscription", websiteID])
     );
@@ -87,7 +99,9 @@ class PluginSubscriptionService extends BaseResource {
   /**
    * Get Subscription Details
    */
-  getSubscriptionDetails(websiteID: string, pluginID: string) : Promise<PluginSubscription> {
+  getSubscriptionDetails(
+    websiteID: string, pluginID: string
+  ) : Promise<PluginSubscription> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["plugins", "subscription", websiteID, pluginID])
     );
@@ -113,14 +127,18 @@ class PluginSubscriptionService extends BaseResource {
    */
   unsubscribePluginFromWebsite(websiteID: string, pluginID: string) {
     return this.crisp.delete(
-      this.crisp.prepareRestUrl(["plugins", "subscription", websiteID, pluginID])
+      this.crisp.prepareRestUrl([
+        "plugins", "subscription", websiteID, pluginID
+      ])
     );
   };
 
   /**
    * Get Subscription Settings
    */
-  getSubscriptionSettings(websiteID: string, pluginID: string) : Promise<PluginSubscriptionSettings> {
+  getSubscriptionSettings(
+    websiteID: string, pluginID: string
+  ) : Promise<PluginSubscriptionSettings> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "plugins", "subscription", websiteID, pluginID, "settings"
@@ -131,7 +149,9 @@ class PluginSubscriptionService extends BaseResource {
   /**
    * Save Subscription Settings
    */
-  saveSubscriptionSettings(websiteID: string, pluginID: string, settings: object) {
+  saveSubscriptionSettings(
+    websiteID: string, pluginID: string, settings: object
+  ) {
     return this.crisp.put(
       this.crisp.prepareRestUrl([
         "plugins", "subscription", websiteID, pluginID, "settings"
@@ -144,7 +164,9 @@ class PluginSubscriptionService extends BaseResource {
   /**
    * Update Subscription Settings
    */
-  updateSubscriptionSettings(websiteID: string, pluginID: string, settings: object) {
+  updateSubscriptionSettings(
+    websiteID: string, pluginID: string, settings: object
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "plugins", "subscription", websiteID, pluginID, "settings"
@@ -181,7 +203,9 @@ class PluginSubscriptionService extends BaseResource {
   /**
    * Forward Plugin Payload To Channel
    */
-  forwardPluginPayloadToChannel(websiteID: string, pluginID: string, payload: PluginSubscriptionChannelForward) {
+  forwardPluginPayloadToChannel(
+    websiteID: string, pluginID: string, payload: PluginSubscriptionChannelForward
+  ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "plugins", "subscription", websiteID, pluginID, "channel"
@@ -194,7 +218,9 @@ class PluginSubscriptionService extends BaseResource {
   /**
    * Dispatch Plugin Event
    */
-  dispatchPluginEvent(websiteID: string, pluginID: string, payload: PluginSubscriptionEventDispatch) {
+  dispatchPluginEvent(
+    websiteID: string, pluginID: string, payload: PluginSubscriptionEventDispatch
+  ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "plugins", "subscription", websiteID, pluginID, "event"
@@ -204,5 +230,10 @@ class PluginSubscriptionService extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default PluginSubscriptionService;

@@ -5,7 +5,11 @@
  * Author: Baptiste Jamin <baptiste@crisp.chat>
  */
 
-// Used to export all types
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
+
 export * from "./BaseResource";
 export * from "./BucketURL";
 export * from "./MediaAnimation";

@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * TYPES
+ ***************************************************************************/
+
 // PluginConnectAccount mapping
 export type PluginConnectAccount = {
   plugin_id?: string;
@@ -41,6 +46,11 @@ export type PluginConnectEndpoints = {
 export type PluginConnectEndpointsSocket = {
   app?: string;
 }
+
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
 
 /**
  * Crisp PluginConnect Resource
@@ -124,5 +134,10 @@ class PluginConnect extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default PluginConnect;

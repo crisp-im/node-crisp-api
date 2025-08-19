@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * INTERFACES
+ ***************************************************************************/
+
 export interface WebsiteVisitorCount {
   count?: number;
   active?: number;
@@ -100,6 +105,11 @@ export interface WebsiteVisitorsBlocked {
   blocked?: number;
 }
 
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
+
 /**
  * Crisp WebsiteVisitors Resource
  */
@@ -116,7 +126,9 @@ class WebsiteVisitors extends BaseResource {
   /**
    * List Visitors
    */
-  listVisitors(websiteID: string, pageNumber: number = 1) : Promise<WebsiteVisitor[]> {
+  listVisitors(
+    websiteID: string, pageNumber: number = 1
+  ) : Promise<WebsiteVisitor[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "visitors", "list", String(pageNumber)
@@ -128,7 +140,8 @@ class WebsiteVisitors extends BaseResource {
    * Pinpoint Visitors On A Map
    */
   pinpointVisitorsOnMap(
-    websiteID: string, centerLongitude: number, centerLatitude: number, centerRadius: number
+    websiteID: string, centerLongitude: number, centerLatitude: number,
+      centerRadius: number
   ) : Promise<WebsiteVisitorsMapPoint[]> {
     // Generate query
     const query: Record<string, string> = {};
@@ -157,7 +170,9 @@ class WebsiteVisitors extends BaseResource {
   /**
    * Get Session Identifier From Token
    */
-  getSessionIdentifierFromToken(websiteID: string, tokenID: string) : Promise<WebsiteVisitorsToken> {
+  getSessionIdentifierFromToken(
+    websiteID: string, tokenID: string
+  ) : Promise<WebsiteVisitorsToken> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "visitors", "token", tokenID
@@ -177,9 +192,13 @@ class WebsiteVisitors extends BaseResource {
   /**
    * Count Blocked Visitors In Rule
    */
-  countBlockedVisitorsInRule(websiteID: string, rule: string) : Promise<number> {
+  countBlockedVisitorsInRule(
+    websiteID: string, rule: string
+  ) : Promise<number> {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "visitors", "blocked", rule])
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "visitors", "blocked", rule
+      ])
     );
   };
 
@@ -188,9 +207,16 @@ class WebsiteVisitors extends BaseResource {
    */
   clearBlockedVisitorsInRule(websiteID: string, rule: string) {
     return this.crisp.delete(
-      this.crisp.prepareRestUrl(["website", websiteID, "visitors", "blocked", rule])
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "visitors", "blocked", rule
+      ])
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteVisitors;

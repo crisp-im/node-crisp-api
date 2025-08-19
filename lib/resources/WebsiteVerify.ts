@@ -12,6 +12,11 @@
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
 
+
+/**************************************************************************
+ * INTERFACES
+ ***************************************************************************/
+
 export interface WebsiteVerifyKeyData {
   data?: WebsiteVerifyKey;
 }
@@ -27,6 +32,11 @@ export interface WebsiteVerifyKey {
 export interface WebsiteVerifySettingsUpdate {
   enabled?: boolean;
 }
+
+
+/**************************************************************************
+ * CLASSES
+ ***************************************************************************/
 
 /**
  * Crisp WebsiteVerify Resource
@@ -44,7 +54,9 @@ class WebsiteVerify extends BaseResource {
   /**
    * Update Verify Settings
    */
-  updateVerifySettings(websiteID: string, settings: WebsiteVerifySettingsUpdate) {
+  updateVerifySettings(
+    websiteID: string, settings: WebsiteVerifySettingsUpdate
+  ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl(["website", websiteID, "verify", "settings"]),
 
@@ -72,5 +84,10 @@ class WebsiteVerify extends BaseResource {
     );
   };
 }
+
+
+/**************************************************************************
+ * EXPORTS
+ ***************************************************************************/
 
 export default WebsiteVerify;
