@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v10.0.3
+
+# Return missing type on website.listHelpdeskLocales
+
 ## v10.0.1
 
 * Routes supporting pagination can be used without a page argument (page is set to `1` by default).

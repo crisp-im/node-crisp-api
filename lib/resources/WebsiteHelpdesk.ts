@@ -216,7 +216,9 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * List Helpdesk Locales
    */
-  listHelpdeskLocales(websiteID: string, pageNumber: number = 1) {
+  listHelpdeskLocales(
+    websiteID: string, pageNumber: number = 1
+  ): Promise<HelpdeskLocale[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locales", String(pageNumber)
