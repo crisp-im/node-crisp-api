@@ -52,6 +52,11 @@ export interface HelpdeskLocaleArticleAlternate {
   article_id?: string;
 }
 
+export interface HelpdeskLocaleArticlePage {
+  title?: string;
+  url?: string;
+}
+
 export interface HelpdeskLocaleSection {
   section_id?: string;
   name?: string;
@@ -392,7 +397,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskLocaleArticlePage(
     websiteID: string, locale: string, articleId: string
-  ) {
+  ) : Promise<HelpdeskLocaleArticlePage> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
