@@ -88,7 +88,7 @@ class PluginSubscriptionService extends BaseResource {
    */
   listSubscriptionsForWebsite(
     websiteID: string
-  ) : Promise<PluginSubscription[]> {
+  ): Promise<PluginSubscription[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["plugins", "subscription", websiteID])
     );
@@ -99,7 +99,7 @@ class PluginSubscriptionService extends BaseResource {
    */
   getSubscriptionDetails(
     websiteID: string, pluginID: string
-  ) : Promise<PluginSubscription> {
+  ): Promise<PluginSubscription> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["plugins", "subscription", websiteID, pluginID])
     );
@@ -136,7 +136,7 @@ class PluginSubscriptionService extends BaseResource {
    */
   getSubscriptionSettings(
     websiteID: string, pluginID: string
-  ) : Promise<PluginSubscriptionSettings> {
+  ): Promise<PluginSubscriptionSettings> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "plugins", "subscription", websiteID, pluginID, "settings"

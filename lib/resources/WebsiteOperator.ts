@@ -70,7 +70,7 @@ class WebsiteOperatorService extends BaseResource {
   /**
    * List Website Operators
    */
-  listWebsiteOperators(websiteID: string) : Promise<WebsiteOperatorListOne[]> {
+  listWebsiteOperators(websiteID: string): Promise<WebsiteOperatorListOne[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "operators", "list"
@@ -83,7 +83,7 @@ class WebsiteOperatorService extends BaseResource {
    */
   listLastActiveWebsiteOperators(
     websiteID: string
-  ) : Promise<WebsiteOperatorsLastActiveListOne[]> {
+  ): Promise<WebsiteOperatorsLastActiveListOne[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "operators", "active"
@@ -120,7 +120,7 @@ class WebsiteOperatorService extends BaseResource {
    */
   getWebsiteOperator(
     websiteID: string, userID: string
-  ) : Promise<WebsiteOperator> {
+  ): Promise<WebsiteOperator> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "operator", userID

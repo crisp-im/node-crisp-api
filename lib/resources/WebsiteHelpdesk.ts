@@ -180,7 +180,7 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Resolve Helpdesk
    */
-  resolveHelpdesk(websiteID: string) : Promise<Helpdesk> {
+  resolveHelpdesk(websiteID: string): Promise<Helpdesk> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk"])
     );
@@ -255,7 +255,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskLocale(
     websiteID: string, locale: string
-  ) : Promise<HelpdeskLocale> {
+  ): Promise<HelpdeskLocale> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale
@@ -328,7 +328,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskLocaleArticle(
     websiteID: string, locale: string, articleId: string
-  ) : Promise<HelpdeskLocaleArticle> {
+  ): Promise<HelpdeskLocaleArticle> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
@@ -404,7 +404,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskLocaleArticleCategory(
     websiteID: string, locale: string, articleId: string
-  ) : Promise<HelpdeskLocaleArticleCategory> {
+  ): Promise<HelpdeskLocaleArticleCategory> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
@@ -445,7 +445,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   listHelpdeskLocaleArticleAlternates(
     websiteID: string, locale: string, articleId: string
-  ) : Promise<HelpdeskLocaleArticleAlternate[]> {
+  ): Promise<HelpdeskLocaleArticleAlternate[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
@@ -473,7 +473,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskLocaleArticleAlternate(
     websiteID: string, locale: string, articleId: string, localeLinked: string
-  ) : Promise<HelpdeskLocaleArticleAlternate> {
+  ): Promise<HelpdeskLocaleArticleAlternate> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "article",
@@ -558,7 +558,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   listHelpdeskLocaleCategories(
     websiteID: string, locale: string, pageNumber: number = 1
-  ) : Promise<HelpdeskLocaleArticleCategory[]> {
+  ): Promise<HelpdeskLocaleArticleCategory[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "categories",
@@ -603,7 +603,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskLocaleCategory(
     websiteID: string, locale: string, categoryId: string
-  ) : Promise<HelpdeskLocaleArticleCategory> {
+  ): Promise<HelpdeskLocaleArticleCategory> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
@@ -665,7 +665,7 @@ class WebsiteHelpdesk extends BaseResource {
   listHelpdeskLocaleSections(
     websiteID: string, locale: string, categoryId: string,
       pageNumber: number = 1
-  ) : Promise<HelpdeskLocaleSection[]> {
+  ): Promise<HelpdeskLocaleSection[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
@@ -713,7 +713,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskLocaleSection(
     websiteID: string, locale: string, categoryId: string, sectionId: string
-  ) : Promise<HelpdeskLocaleSection> {
+  ): Promise<HelpdeskLocaleSection> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale, "category",
@@ -776,7 +776,7 @@ class WebsiteHelpdesk extends BaseResource {
   mapHelpdeskLocaleFeedbackRatings(
     websiteID: string, locale: string, filterDateStart?: string | null,
       filterDateEnd?: string | null
-  ) : Promise<HelpdeskLocaleFeedbackRatings> {
+  ): Promise<HelpdeskLocaleFeedbackRatings> {
     filterDateStart = (filterDateStart || null);
     filterDateEnd   = (filterDateEnd   || null);
 
@@ -809,7 +809,7 @@ class WebsiteHelpdesk extends BaseResource {
   listHelpdeskLocaleFeedbacks(
     websiteID: string, locale: string, pageNumber: number = 1,
       filterDateStart?: string | null, filterDateEnd?: string | null
-  ) : Promise<HelpdeskLocaleFeedbackItem[]> {
+  ): Promise<HelpdeskLocaleFeedbackItem[]> {
     filterDateStart = (filterDateStart || null);
     filterDateEnd   = (filterDateEnd   || null);
 
@@ -875,7 +875,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   listHelpdeskRedirections(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<HelpdeskRedirection[]> {
+  ): Promise<HelpdeskRedirection[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "redirections", String(pageNumber)
@@ -917,7 +917,7 @@ class WebsiteHelpdesk extends BaseResource {
    */
   resolveHelpdeskRedirection(
     websiteID: string, redirectionId: string
-  ) : Promise<HelpdeskRedirection> {
+  ): Promise<HelpdeskRedirection> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "redirection", redirectionId
@@ -939,7 +939,7 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Resolve Helpdesk Settings
     */
-  resolveHelpdeskSettings(websiteID: string) : Promise<HelpdeskSettings> {
+  resolveHelpdeskSettings(websiteID: string): Promise<HelpdeskSettings> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk", "settings"])
     );
@@ -959,7 +959,7 @@ class WebsiteHelpdesk extends BaseResource {
   /**
    * Resolve Helpdesk Domain
    */
-  resolveHelpdeskDomain(websiteID: string) : Promise<HelpdeskDomain> {
+  resolveHelpdeskDomain(websiteID: string): Promise<HelpdeskDomain> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk", "domain"])
     );

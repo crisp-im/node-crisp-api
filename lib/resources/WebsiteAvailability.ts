@@ -45,7 +45,7 @@ class WebsiteAvailability extends BaseResource {
    */
   getWebsiteAvailabilityStatus(
     websiteID: string
-  ) : Promise<WebsiteAvailabilityStatus> {
+  ): Promise<WebsiteAvailabilityStatus> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "availability", "status"
@@ -58,7 +58,7 @@ class WebsiteAvailability extends BaseResource {
    */
   listWebsiteOperatorAvailabilities(
     websiteID: string
-  ) : Promise<WebsiteAvailabilityOperator[]> {
+  ): Promise<WebsiteAvailabilityOperator[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "availability", "operators"

@@ -69,7 +69,7 @@ class WebsiteBase extends BaseResource {
   /**
    * Create Website
    */
-  createWebsite(websiteData: WebsiteCreate) : Promise<Website> {
+  createWebsite(websiteData: WebsiteCreate): Promise<Website> {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website"]), null, websiteData
     );
@@ -83,7 +83,7 @@ class WebsiteBase extends BaseResource {
    * @param {string} websiteID
    * @return {Promise}
    */
-  getWebsite(websiteID: string) : Promise<Website> {
+  getWebsite(websiteID: string): Promise<Website> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID])
     );

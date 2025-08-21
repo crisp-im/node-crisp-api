@@ -180,7 +180,7 @@ class WebsiteSettingsService extends BaseResource {
   /**
    * Get Website Settings
    */
-  getWebsiteSettings(websiteID: string) : Promise<WebsiteSettings> {
+  getWebsiteSettings(websiteID: string): Promise<WebsiteSettings> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "settings"])
     );

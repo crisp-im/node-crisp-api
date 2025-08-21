@@ -115,7 +115,7 @@ class WebsiteVisitors extends BaseResource {
   /**
    * Count Visitors
    */
-  countVisitors(websiteID: string) : Promise<WebsiteVisitorCount> {
+  countVisitors(websiteID: string): Promise<WebsiteVisitorCount> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "visitors", "count"])
     );
@@ -126,7 +126,7 @@ class WebsiteVisitors extends BaseResource {
    */
   listVisitors(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<WebsiteVisitor[]> {
+  ): Promise<WebsiteVisitor[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "visitors", "list", String(pageNumber)
@@ -140,7 +140,7 @@ class WebsiteVisitors extends BaseResource {
   pinpointVisitorsOnMap(
     websiteID: string, centerLongitude: number, centerLatitude: number,
       centerRadius: number
-  ) : Promise<WebsiteVisitorsMapPoint[]> {
+  ): Promise<WebsiteVisitorsMapPoint[]> {
     // Generate query
     const query: Record<string, string> = {};
 
@@ -170,7 +170,7 @@ class WebsiteVisitors extends BaseResource {
    */
   getSessionIdentifierFromToken(
     websiteID: string, tokenID: string
-  ) : Promise<WebsiteVisitorsToken> {
+  ): Promise<WebsiteVisitorsToken> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "visitors", "token", tokenID
@@ -181,7 +181,7 @@ class WebsiteVisitors extends BaseResource {
   /**
    * Count Blocked Visitors
    */
-  countBlockedVisitors(websiteID: string) : Promise<WebsiteVisitorsBlocked> {
+  countBlockedVisitors(websiteID: string): Promise<WebsiteVisitorsBlocked> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "visitors", "blocked"])
     );
@@ -192,7 +192,7 @@ class WebsiteVisitors extends BaseResource {
    */
   countBlockedVisitorsInRule(
     websiteID: string, rule: string
-  ) : Promise<number> {
+  ): Promise<number> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "visitors", "blocked", rule

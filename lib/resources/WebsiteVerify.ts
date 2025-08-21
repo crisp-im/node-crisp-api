@@ -43,7 +43,7 @@ class WebsiteVerify extends BaseResource {
   /**
    * Get Verify Settings
    */
-  getVerifySettings(websiteID: string) : Promise<WebsiteVerifySettings> {
+  getVerifySettings(websiteID: string): Promise<WebsiteVerifySettings> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "verify", "settings"])
     );
@@ -65,7 +65,7 @@ class WebsiteVerify extends BaseResource {
   /**
    * Get Verify Key
    */
-  getVerifyKey(websiteID: string) : Promise<WebsiteVerifyKey> {
+  getVerifyKey(websiteID: string): Promise<WebsiteVerifyKey> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "verify", "key"])
     );
