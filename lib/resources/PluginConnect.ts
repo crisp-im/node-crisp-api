@@ -20,7 +20,7 @@ export type PluginConnectAccount = {
   plugin_id?: string;
 };
 
-export type PluginConnectAllWebsites = {
+export type PluginConnectAllWebsite = {
   website_id?: string;
   token?: string;
   settings?: object;
@@ -74,7 +74,7 @@ class PluginConnect extends BaseResource {
    */
   listAllConnectWebsites(
     pageNumber: number, filterConfigured: boolean
-  ): Promise<PluginConnectAllWebsites> {
+  ): Promise<PluginConnectAllWebsite[]> {
     // Generate query
     let query = {
       filter_configured: (

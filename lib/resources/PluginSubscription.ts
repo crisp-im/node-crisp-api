@@ -16,7 +16,7 @@ import BaseResource from "./BaseResource";
  * TYPES
  ***************************************************************************/
 
-type PluginSubscription = {
+export type PluginSubscription = {
   id?:            string;
   urn?:           string;
   type?:          string;
@@ -39,13 +39,13 @@ type PluginSubscription = {
   card_id?:       string;
 }
 
-type PluginSubscriptionPlan = {
+export type PluginSubscriptionPlan = {
   id?:     string;
   name?:   string;
   price?:  number;
 }
 
-type PluginSubscriptionSettings = {
+export type PluginSubscriptionSettings = {
   plugin_id?:       string;
   website_id?:      string;
   token?:           string;
@@ -55,13 +55,13 @@ type PluginSubscriptionSettings = {
   callback_url?:    string;
 }
 
-type PluginSubscriptionChannelForward = {
+export type PluginSubscriptionChannelForward = {
   namespace?:   string;
   identifier?:  string;
   payload?:     object;
 }
 
-type PluginSubscriptionEventDispatch = {
+export type PluginSubscriptionEventDispatch = {
   name?:   string;
   data?:   object;
 }
