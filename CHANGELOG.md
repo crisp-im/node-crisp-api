@@ -1,11 +1,21 @@
 Changelog
 =========
 
+## v10.0.2
+
+### Changes
+
+* No changes.
+
 ## v10.0.1
+
+### Changes
 
 * Routes supporting pagination can be used without a page argument (page is set to `1` by default).
 
 ## v10.0.0
+
+### New Features
 
 * Added TypeScript support (retro-compatible).
 
