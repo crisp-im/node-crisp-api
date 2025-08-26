@@ -19,9 +19,9 @@ import { Socket } from "socket.io-client";
 import mitt, { Emitter } from "mitt";
 
 // PROJECT: SERVICES
-import Bucket from "@/services/bucket";
-import Media from "@/services/media";
-import Plugin from "@/services/plugin";
+import Bucket, { BucketServiceInterface } from "@/services/bucket";
+import Media, { MediaServiceInterface } from "@/services/media";
+import Plugin, { PluginServiceInterface } from "@/services/plugin";
 import Website, { WebsiteServiceInterface } from "@/services/website";
 
 /**************************************************************************
@@ -197,9 +197,17 @@ interface CrispAuth {
  *
  */
 export class Crisp {
-  public bucket: Bucket = new Bucket();
-  public media: Media = new Media();
-  public plugin: Plugin = new Plugin();
+  public bucket: BucketServiceInterface = (
+    new Bucket() as unknown as BucketServiceInterface
+  );
+
+  public media: MediaServiceInterface = (
+    new Media() as unknown as MediaServiceInterface
+  );
+
+  public plugin: PluginServiceInterface = (
+    new Plugin() as unknown as PluginServiceInterface
+  );
 
   public website: WebsiteServiceInterface = (
     new Website() as unknown as WebsiteServiceInterface

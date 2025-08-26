@@ -16,19 +16,16 @@ import BaseResource from "./BaseResource";
  * TYPES
  ***************************************************************************/
 
-// BucketURLRequestFile mapping
 export type BucketURLRequestFile = {
   name?: string;
   type?: string;
 };
 
-// BucketURLRequestResource mapping
 export type BucketURLRequestResource = {
   type?: string;
   id?: string;
 };
 
-// BucketURLRequest mapping
 export type BucketURLRequest = {
   namespace?: string;
   id?: string;

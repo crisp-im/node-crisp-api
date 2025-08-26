@@ -589,7 +589,7 @@ class WebsiteConversation extends BaseResource {
    */
   listConversations(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<Conversation[]> {
+  ): Promise<Conversation[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "conversations", String(pageNumber)])
     );
@@ -600,7 +600,7 @@ class WebsiteConversation extends BaseResource {
    */
   listSuggestedConversationSegments(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<ConversationSuggestedSegment[]> {
+  ): Promise<ConversationSuggestedSegment[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversations", "suggest", "segments", String(pageNumber)
@@ -630,7 +630,7 @@ class WebsiteConversation extends BaseResource {
    */
   listSuggestedConversationDataKeys(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<ConversationSuggestedData[]> {
+  ): Promise<ConversationSuggestedData[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversations", "suggest", "data", String(pageNumber)
@@ -660,7 +660,7 @@ class WebsiteConversation extends BaseResource {
    */
   listSpamConversations(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<ConversationSpam[]> {
+  ): Promise<ConversationSpam[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversations", "spams", String(pageNumber)
@@ -673,7 +673,7 @@ class WebsiteConversation extends BaseResource {
    */
   resolveSpamConversationContent(
     websiteID: string, spamID: string
-  ) : Promise<ConversationSpamContent> {
+  ): Promise<ConversationSpamContent> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversations", "spam", spamID, "content"
@@ -703,7 +703,7 @@ class WebsiteConversation extends BaseResource {
   /**
    * Create A New Conversation
    */
-  createNewConversation(websiteID: string) : Promise<ConversationNew> {
+  createNewConversation(websiteID: string): Promise<ConversationNew> {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website", websiteID, "conversation"]),
 
@@ -727,7 +727,7 @@ class WebsiteConversation extends BaseResource {
   /**
    * Get A Conversation
    */
-  getConversation(websiteID: string, sessionID: string) : Promise<Conversation> {
+  getConversation(websiteID: string, sessionID: string): Promise<Conversation> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID
@@ -766,7 +766,7 @@ class WebsiteConversation extends BaseResource {
    */
   getMessagesInConversation(
     websiteID: string, sessionID: string, timestampBefore?: string|number
-  ) : Promise<ConversationMessage[]> {
+  ): Promise<ConversationMessage[]> {
     // Generate query
     let query = {};
 
@@ -804,7 +804,7 @@ class WebsiteConversation extends BaseResource {
    */
   getMessageInConversation(
     websiteID: string, sessionID: string, fingerprint: number
-  ) : Promise<ConversationMessage> {
+  ): Promise<ConversationMessage> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "message", String(fingerprint)
@@ -973,7 +973,7 @@ class WebsiteConversation extends BaseResource {
    */
   getConversationMetas(
     websiteID: string, sessionID: string
-  ) : Promise<ConversationMeta> {
+  ): Promise<ConversationMeta> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "meta"
@@ -1001,7 +1001,7 @@ class WebsiteConversation extends BaseResource {
    */
   getOriginalMessageInConversation(
     websiteID: string, sessionID: string, originalID: string
-  ) : Promise<ConversationOriginal> {
+  ): Promise<ConversationOriginal> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "original", originalID
@@ -1014,7 +1014,7 @@ class WebsiteConversation extends BaseResource {
    */
   listConversationPages(
     websiteID: string, sessionID: string, pageNumber: number = 1
-  ) : Promise<ConversationPage[]> {
+  ): Promise<ConversationPage[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "pages", String(pageNumber)
@@ -1027,7 +1027,7 @@ class WebsiteConversation extends BaseResource {
    */
   listConversationEvents(
     websiteID: string, sessionID: string, pageNumber: number = 1
-  ) : Promise<ConversationEvent[]> {
+  ): Promise<ConversationEvent[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "events", String(pageNumber)
@@ -1040,7 +1040,7 @@ class WebsiteConversation extends BaseResource {
    */
   listConversationFiles(
     websiteID: string, sessionID: string, pageNumber: number = 1
-  ) : Promise<ConversationFile[]> {
+  ): Promise<ConversationFile[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "files", String(pageNumber)
@@ -1053,7 +1053,7 @@ class WebsiteConversation extends BaseResource {
    */
   getConversationState(
     websiteID: string, sessionID: string
-  ) : Promise<ConversationStateData> {
+  ): Promise<ConversationStateData> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "state"
@@ -1085,7 +1085,7 @@ class WebsiteConversation extends BaseResource {
    */
   getConversationParticipants(
     websiteID: string, sessionID: string
-  ) : Promise<ConversationParticipant[]> {
+  ): Promise<ConversationParticipant[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "participants"
@@ -1113,7 +1113,7 @@ class WebsiteConversation extends BaseResource {
    */
   getBlockStatusForConversation(
     websiteID: string, sessionID: string
-  ) : Promise<ConversationBlock> {
+  ): Promise<ConversationBlock> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "block"
@@ -1145,7 +1145,7 @@ class WebsiteConversation extends BaseResource {
    */
   getVerifyStatusForConversation(
     websiteID: string, sessionID: string
-  ) : Promise<ConversationVerify> {
+  ): Promise<ConversationVerify> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "verify"
@@ -1267,7 +1267,7 @@ class WebsiteConversation extends BaseResource {
    */
   listBrowsingSessionsForConversation(
     websiteID: string, sessionID: string
-  ) : Promise<ConversationBrowsing[]> {
+  ): Promise<ConversationBrowsing[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "browsing"
@@ -1349,7 +1349,7 @@ class WebsiteConversation extends BaseResource {
    */
   getOngoingCallSessionForConversation(
     websiteID: string, sessionID: string
-  ) : Promise<ConversationCall> {
+  ): Promise<ConversationCall> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "call"

@@ -17,7 +17,6 @@ import { WebsiteFilter } from "./WebsiteBase";
  * TYPES
  ***************************************************************************/
 
-// WebsiteCampaignExcerpt mapping
 type WebsiteCampaignExcerpt = {
   campaign_id?:  string;
   type?:         string;
@@ -66,7 +65,6 @@ type WebsiteCampaignItemSender = {
   user_id?:  string;
 }
 
-// WebsiteCampaignItemRecipients mapping
 type WebsiteCampaignItemRecipients = {
   type?:         string;
   segments?:     string[];
@@ -152,7 +150,7 @@ class WebsiteCampaign extends BaseResource {
    */
   listCampaigns(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<WebsiteCampaignExcerpt[]> {
+  ): Promise<WebsiteCampaignExcerpt[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "list", String(pageNumber)
@@ -163,7 +161,7 @@ class WebsiteCampaign extends BaseResource {
   /**
    * List Campaign Tags
    */
-  listCampaignTags(websiteID: string) : Promise<string[]> {
+  listCampaignTags(websiteID: string): Promise<string[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "campaigns", "tags"])
     );
@@ -174,7 +172,7 @@ class WebsiteCampaign extends BaseResource {
    */
   listCampaignTemplates(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<WebsiteCampaignTemplateExcerpt[]> {
+  ): Promise<WebsiteCampaignTemplateExcerpt[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "templates", String(pageNumber)
@@ -187,7 +185,7 @@ class WebsiteCampaign extends BaseResource {
    */
   createNewCampaignTemplate(
     websiteID: string, templateFormat: string, templateName: string
-  ) : Promise<WebsiteCampaignTemplateNew> {
+  ): Promise<WebsiteCampaignTemplateNew> {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website", websiteID, "campaigns", "template"]),
 
@@ -216,7 +214,7 @@ class WebsiteCampaign extends BaseResource {
    */
   getCampaignTemplate(
     websiteID: string, templateID: string
-  ) : Promise<WebsiteCampaignTemplateItem> {
+  ): Promise<WebsiteCampaignTemplateItem> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaigns", "template", templateID
@@ -297,7 +295,7 @@ class WebsiteCampaign extends BaseResource {
    */
   getCampaign(
     websiteID: string, campaignID: string
-  ) : Promise<WebsiteCampaignItem> {
+  ): Promise<WebsiteCampaignItem> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID])
     );
@@ -400,7 +398,7 @@ class WebsiteCampaign extends BaseResource {
    */
   listCampaignRecipients(
     websiteID: string, campaignID: string, pageNumber: number = 1
-  ) : Promise<WebsiteCampaignRecipient[]> {
+  ): Promise<WebsiteCampaignRecipient[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaign", campaignID, "recipients",
@@ -417,7 +415,7 @@ class WebsiteCampaign extends BaseResource {
     campaignID: string,
     action: string,
     pageNumber: number = 1
-  ) : Promise<WebsiteCampaignStatistic[]> {
+  ): Promise<WebsiteCampaignStatistic[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "campaign", campaignID, "statistics", action,

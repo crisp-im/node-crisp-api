@@ -189,7 +189,7 @@ class WebsitePeople extends BaseResource {
   /**
    * Get People Statistics
    */
-  getPeopleStatistics(websiteID: string) : Promise<PeopleStatistics> {
+  getPeopleStatistics(websiteID: string): Promise<PeopleStatistics> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "people", "stats"])
     );
@@ -200,7 +200,7 @@ class WebsitePeople extends BaseResource {
    */
   listSuggestedPeopleSegments(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<PeopleSuggestedSegment[]> {
+  ): Promise<PeopleSuggestedSegment[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "suggest", "segments", String(pageNumber)
@@ -230,7 +230,7 @@ class WebsitePeople extends BaseResource {
    */
   listSuggestedPeopleDataKeys(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<PeopleSuggestedDataKey[]> {
+  ): Promise<PeopleSuggestedDataKey[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "suggest", "data", String(pageNumber)
@@ -260,7 +260,7 @@ class WebsitePeople extends BaseResource {
    */
   listSuggestedPeopleEvents(
     websiteID: string, pageNumber: number = 1
-  ) : Promise<PeopleSuggestedEvent[]> {
+  ): Promise<PeopleSuggestedEvent[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "suggest", "events", String(pageNumber)
@@ -292,7 +292,7 @@ class WebsitePeople extends BaseResource {
     websiteID: string, pageNumber: number = 1, searchField?: string,
       searchOrder?: string, searchOperator?: string, searchFilter?: string,
       searchText?: string
-  ) : Promise<PeopleProfile[]> {
+  ): Promise<PeopleProfile[]> {
     // Generate query
     let query = {};
 
@@ -409,7 +409,7 @@ class WebsitePeople extends BaseResource {
    */
   listPeopleConversations(
     websiteID: string, peopleID: string, pageNumber: number = 1
-  ) : Promise<string[]> {
+  ): Promise<string[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "conversations", peopleID, "list",
@@ -423,7 +423,7 @@ class WebsitePeople extends BaseResource {
    */
   listPeopleCampaigns(
     websiteID: string, peopleID: string, pageNumber: number = 1
-  ) : Promise<PeopleCampaign[]> {
+  ): Promise<PeopleCampaign[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "campaigns", peopleID, "list",
@@ -452,7 +452,7 @@ class WebsitePeople extends BaseResource {
    */
   listPeopleEvents(
     websiteID: string, peopleID: string, pageNumber: number = 1
-  ) : Promise<PeopleEvent[]> {
+  ): Promise<PeopleEvent[]> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "events", peopleID, "list",
@@ -464,7 +464,7 @@ class WebsitePeople extends BaseResource {
   /**
    * Get People Data
    */
-  getPeopleData(websiteID: string, peopleID: string) : Promise<PeopleData> {
+  getPeopleData(websiteID: string, peopleID: string): Promise<PeopleData> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "data", peopleID
@@ -508,7 +508,7 @@ class WebsitePeople extends BaseResource {
    */
   getPeopleSubscriptionStatus(
     websiteID: string, peopleID: string
-  ) : Promise<PeopleSubscription> {
+  ): Promise<PeopleSubscription> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "subscription", peopleID
