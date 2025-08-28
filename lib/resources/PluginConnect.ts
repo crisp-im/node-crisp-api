@@ -96,7 +96,7 @@ class PluginConnect extends BaseResource {
    */
   listConnectWebsitesSince(
     dateSince: string, filterConfigured: boolean
-  ): Promise<PluginConnectWebsitesSince> {
+  ): Promise<PluginConnectWebsitesSince[]> {
     // Generate query
     let query = {
       filter_configured: (

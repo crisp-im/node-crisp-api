@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.0.6
+
+### Changes
+
+* Provide more types.
+
 ## v10.0.5
 
 ### Changes
