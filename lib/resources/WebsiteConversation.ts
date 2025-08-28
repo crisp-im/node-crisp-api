@@ -115,6 +115,9 @@ export interface ConversationMeta {
   connection?: ConnectionInfo;
   device?: DeviceInfo;
   segments?: string[];
+  address?: string;
+  subject?: string;
+  origin?: string;
 }
 
 export interface ConnectionInfo {

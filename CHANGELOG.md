@@ -5,6 +5,12 @@ Changelog
 
 ### Changes
 
+* Support types for `address`, `subject` and `origin` on ConversationMeta
+
+## v10.0.6
+
+### Changes
+
 * Provide more types.
 
 ## v10.0.5
