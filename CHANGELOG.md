@@ -1,7 +1,13 @@
 Changelog
 =========
 
-## v10.0.6
+## v10.0.8
+
+### Changes
+
+* `nickname` is now optional on ConversationMeta
+
+## v10.0.7
 
 ### Changes
 

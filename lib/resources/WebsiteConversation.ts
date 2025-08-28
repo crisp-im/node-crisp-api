@@ -106,7 +106,7 @@ export interface ConversationParticipantsSave {
 }
 
 export interface ConversationMeta {
-  nickname: string;
+  nickname?: string;
   email?: string;
   phone?: string;
   ip?: string;
