@@ -16,19 +16,19 @@ import BaseResource from "./BaseResource";
  * TYPES
  ***************************************************************************/
 
-type Website = {
+export type Website = {
   website_id?:  string;
   name?:        string;
   domain?:      string;
   logo?:        string;
 }
 
-type WebsiteCreate = {
+export type WebsiteCreate = {
   name?:        string;
   domain?:      string;
 }
 
-type WebsiteRemoveVerify = {
+export type WebsiteRemoveVerify = {
   method?:  string;
   secret?:  string;
 }

@@ -16,18 +16,18 @@ import BaseResource from "./BaseResource";
  * TYPES
  ***************************************************************************/
 
-type WebsiteAvailabilityStatus = {
+export type WebsiteAvailabilityStatus = {
   status?:  string;
   since?:   number;
 }
 
-type WebsiteAvailabilityOperator = {
+export type WebsiteAvailabilityOperator = {
   user_id?:  string;
   type?:     string;
   time?:     WebsiteAvailabilityOperatorTime;
 }
 
-type WebsiteAvailabilityOperatorTime = {
+export type WebsiteAvailabilityOperatorTime = {
   for?:   number;
   since?: number;
 }

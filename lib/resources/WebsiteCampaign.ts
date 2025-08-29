@@ -17,7 +17,7 @@ import { WebsiteFilter } from "./WebsiteBase";
  * TYPES
  ***************************************************************************/
 
-type WebsiteCampaignExcerpt = {
+export type WebsiteCampaignExcerpt = {
   campaign_id?:  string;
   type?:         string;
   format?:       string;
@@ -35,7 +35,7 @@ type WebsiteCampaignExcerpt = {
   dispatched_at?: number;
 }
 
-type WebsiteCampaignTemplateExcerpt = {
+export type WebsiteCampaignTemplateExcerpt = {
   template_id?:  string;
   type?:         string;
   name?:         string;
@@ -44,15 +44,15 @@ type WebsiteCampaignTemplateExcerpt = {
   updated_at?:   number;
 }
 
-type WebsiteCampaignTemplateNew = {
+export type WebsiteCampaignTemplateNew = {
   template_id?:  string;
 }
 
-interface WebsiteCampaignTemplateItem extends WebsiteCampaignTemplateExcerpt {
+export interface WebsiteCampaignTemplateItem extends WebsiteCampaignTemplateExcerpt {
   content?:  string;
 }
 
-interface WebsiteCampaignItem extends WebsiteCampaignExcerpt {
+export interface WebsiteCampaignItem extends WebsiteCampaignExcerpt {
   sender?:      WebsiteCampaignItemSender;
   recipients?:  WebsiteCampaignItemRecipients;
   flow?:        WebsiteCampaignItemFlow;
@@ -61,18 +61,18 @@ interface WebsiteCampaignItem extends WebsiteCampaignExcerpt {
   statistics?:  WebsiteCampaignItemStatistics;
 }
 
-type WebsiteCampaignItemSender = {
+export type WebsiteCampaignItemSender = {
   user_id?:  string;
 }
 
-type WebsiteCampaignItemRecipients = {
+export type WebsiteCampaignItemRecipients = {
   type?:         string;
   segments?:     string[];
   people?:       string[];
   filter?:       WebsiteFilter[];
 }
 
-type WebsiteCampaignItemFlow = {
+export type WebsiteCampaignItemFlow = {
   launch_event?:   string;
   assert_filter?:  WebsiteFilter[];
   assert_delay?:   number;
@@ -80,7 +80,7 @@ type WebsiteCampaignItemFlow = {
   deliver_delay?:  number;
 }
 
-type WebsiteCampaignItemOptions = {
+export type WebsiteCampaignItemOptions = {
   deliver_to_chatbox?:  boolean;
   deliver_to_email?:    boolean;
   sender_name_website?:  boolean;
@@ -88,51 +88,51 @@ type WebsiteCampaignItemOptions = {
   tracking?:             boolean;
 }
 
-type WebsiteCampaignItemStatistics = {
+export type WebsiteCampaignItemStatistics = {
   opened?:        number;
   clicked?:       number;
   unsubscribed?:  number;
 }
 
-type WebsiteCampaignRecipient = {
+export type WebsiteCampaignRecipient = {
   people_id?:  string;
   email?:      string;
   person?:     WebsiteCampaignRecipientPerson;
   subscribed?:  boolean;
 }
 
-type WebsiteCampaignRecipientPerson = {
+export type WebsiteCampaignRecipientPerson = {
   nickname?:  string;
   avatar?:    string;
 }
 
-type WebsiteCampaignStatistic = {
+export type WebsiteCampaignStatistic = {
   profile?:    WebsiteCampaignStatisticProfile;
   data?:       Record<string, unknown>;
   created_at?:  number;
   updated_at?:  number;
 }
 
-type WebsiteCampaignStatisticProfile = {
+export type WebsiteCampaignStatisticProfile = {
   people_id?:  string;
   email?:      string;
   person?:     WebsiteCampaignStatisticProfilePerson;
 }
 
-type WebsiteCampaignStatisticProfilePerson = {
+export type WebsiteCampaignStatisticProfilePerson = {
   nickname?:  string;
   avatar?:    string;
   geolocation?:  WebsiteCampaignStatisticProfilePersonGeolocation;
 }
 
-type WebsiteCampaignStatisticProfilePersonGeolocation = {
+export type WebsiteCampaignStatisticProfilePersonGeolocation = {
   country?:      string;
   region?:      string;
   city?:        string;
   coordinates?:  WebsiteCampaignStatisticProfilePersonGeolocationCoordinates;
 }
 
-type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
+export type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
   latitude?:  number;
   longitude?: number;
 }
