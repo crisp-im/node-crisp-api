@@ -1,17 +1,23 @@
 Changelog
 =========
 
+## v10.0.9
+
+### Changes
+
+* Export missing types.
+
 ## v10.0.8
 
 ### Changes
 
-* `nickname` is now optional on ConversationMeta
+* `nickname` is now optional on ConversationMeta.
 
 ## v10.0.7
 
 ### Changes
 
-* Support types for `address`, `subject` and `origin` on ConversationMeta
+* Support types for `address`, `subject` and `origin` on ConversationMeta.
 
 ## v10.0.6
 
