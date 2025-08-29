@@ -1,7 +1,7 @@
 {
   "name": "crisp-api",
   "description": "Crisp API wrapper for Node - official, maintained by Crisp",
-  "version": "10.0.9",
+  "version": "10.0.10",
   "homepage": "https://github.com/crisp-im/node-crisp-api",
   "license": "MIT",
   "author": {
@@ -49,7 +49,7 @@
     "typescript": "5.9.2",
     "eslint": "9.29.0",
     "eslint-plugin-crisp": "1.1.13",
-    "eslint-plugin-jsdoc": "^54.1.0",
+    "eslint-plugin-jsdoc": "50.8.0",
     "globals": "15.15.0"
   },
   "dependencies": {

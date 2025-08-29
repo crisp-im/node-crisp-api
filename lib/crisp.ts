@@ -406,7 +406,7 @@ export class Crisp {
    * Binds RTM event
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
-  on(event: string, callback: (data: any) => void) {
+  on(event: string, callback: (data: any) => any) {
     // Ensure all input arguments are set
     if (typeof event !== "string") {
       throw new Error("[Crisp] on: parameter event should be a string");

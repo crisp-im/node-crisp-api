@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.0.10
+
+### Changes
+
+* Allow any as return type to the Websocket .on() callback.
+
 ## v10.0.9
 
 ### Changes
