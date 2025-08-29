@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.0.11
+
+### Changes
+
+* Fix Conversation Custom data type.
+
 ## v10.0.10
 
 ### Changes

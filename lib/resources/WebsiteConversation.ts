@@ -111,7 +111,7 @@ export interface ConversationMeta {
   phone?: string;
   ip?: string;
   avatar?: string;
-  data?: Record<string, unknown>;
+  data?: Record<string, string|boolean|number>;
   connection?: ConnectionInfo;
   device?: DeviceInfo;
   segments?: string[];
