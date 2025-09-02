@@ -5,13 +5,13 @@ Changelog
 
 ### Changes
 
-* Fix Conversation Custom data type.
+* Fix `Conversation` custom data type.
 
 ## v10.0.10
 
 ### Changes
 
-* Allow any as return type to the Websocket .on() callback.
+* Allow `any` as return type to the WebSocket `.on()` callback.
 
 ## v10.0.9
 
