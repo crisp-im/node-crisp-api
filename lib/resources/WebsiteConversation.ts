@@ -176,7 +176,8 @@ export type ConversationMessageType =
   | "carousel"
   | "note"
   | "picker"
-  | "field";
+  | "field"
+  | "event";
 
 export type ConversationState = "pending" | "unresolved" | "resolved";
 
@@ -316,24 +317,22 @@ export interface ConversationMessageOriginal {
   original_id?: string;
 }
 
-export type ConversationMessageNew = (
-  ConversationTextMessageNew |
-  ConversationFileMessageNew |
-  ConversationAnimationMessageNew |
-  ConversationAudioMessageNew |
-  ConversationPickerMessageNew |
-  ConversationFieldMessageNew |
-  ConversationCarouselMessageNew |
-  ConversationNoteMessageNew |
-  ConversationEventMessageNew
-)
+export type ConversationMessageNew  =
+  | ConversationTextMessageNew
+  | ConversationNoteMessageNew
+  | ConversationFileMessageNew
+  | ConversationAnimationMessageNew
+  | ConversationAudioMessageNew
+  | ConversationPickerMessageNew
+  | ConversationFieldMessageNew
+  | ConversationCarouselMessageNew
+  | ConversationEventMessageNew;
 
-export interface ConversationTextMessageNew {
-  type: "text" | "note";
+export interface ConversationMessageNewBase {
+  type: ConversationMessageType;
   from: string;
   origin: string;
   content: unknown;
-  mentions?: string[];
   fingerprint?: number;
   user?: ConversationMessageUser;
   references?: ConversationMessageReference[];
@@ -344,124 +343,53 @@ export interface ConversationTextMessageNew {
   automated?: boolean;
 }
 
-export interface ConversationFileMessageNew {
-  type: "file";
-  from?: string;
-  origin?: string;
-  content?: ConversationFileMessageContent;
-  mentions?: string[];
-  fingerprint?: number;
-  user?: ConversationMessageUser;
-  references?: ConversationMessageReference[];
-  original?: ConversationMessageOriginal;
-  timestamp?: number;
-  stealth?: boolean;
-  translated?: boolean;
-  automated?: boolean;
-}
-
-export interface ConversationAnimationMessageNew {
-  type: "animation";
-  from?: string;
-  origin?: string;
-  content?: ConversationAnimationMessageContent;
-  mentions?: string[];
-  fingerprint?: number;
-  user?: ConversationMessageUser;
-  references?: ConversationMessageReference[];
-  original?: ConversationMessageOriginal;
-  timestamp?: number;
-  stealth?: boolean;
-  translated?: boolean;
-  automated?: boolean;
-}
-
-export interface ConversationAudioMessageNew {
-  type: "audio";
-  from?: string;
-  origin?: string;
-  content?: ConversationAudioMessageContent;
-  mentions?: string[];
-  fingerprint?: number;
-  user?: ConversationMessageUser;
-  references?: ConversationMessageReference[];
-  original?: ConversationMessageOriginal;
-  timestamp?: number;
-  stealth?: boolean;
-  translated?: boolean;
-  automated?: boolean;
-}
-
-export interface ConversationPickerMessageNew {
-  type: "picker";
-  from?: string;
-  origin?: string;
-  content?: ConversationPickerMessageContent;
-  mentions?: string[];
-  fingerprint?: number;
-  user?: ConversationMessageUser;
-  references?: ConversationMessageReference[];
-  original?: ConversationMessageOriginal;
-  timestamp?: number;
-  stealth?: boolean;
-  translated?: boolean;
-  automated?: boolean;
-}
-
-export interface ConversationFieldMessageNew {
-  type: "field";
-  from?: string;
-  origin?: string;
-  content?: ConversationFieldMessageContent;
-  mentions?: string[];
-  fingerprint?: number;
-  user?: ConversationMessageUser;
-  references?: ConversationMessageReference[];
-  original?: ConversationMessageOriginal;
-  timestamp?: number;
-  stealth?: boolean;
-  translated?: boolean;
-  automated?: boolean;
-}
-
-export interface ConversationCarouselMessageNew {
-  type: "carousel";
-  from?: string;
-  origin?: string;
-  content?: ConversationCarouselMessageContent;
-  mentions?: string[];
-  fingerprint?: number;
-  user?: ConversationMessageUser;
-  references?: ConversationMessageReference[];
-  original?: ConversationMessageOriginal;
-  timestamp?: number;
-  stealth?: boolean;
-  translated?: boolean;
-  automated?: boolean;
+export interface ConversationTextMessageNew extends ConversationMessageNewBase {
+  type: "text" | "note";
+  content: string;
 }
 
 export interface ConversationNoteMessageNew extends ConversationTextMessageNew {
   type: "note";
+  mentions?: string[];
 }
 
-export interface ConversationEventMessageNew {
+export interface ConversationFileMessageNew extends ConversationMessageNewBase {
+  type: "file";
+  content: ConversationFileMessageContent;
+}
+
+export interface ConversationAnimationMessageNew extends ConversationMessageNewBase {
+  type: "animation";
+  content: ConversationAnimationMessageContent;
+}
+
+export interface ConversationAudioMessageNew extends ConversationMessageNewBase {
+  type: "audio";
+  content: ConversationAudioMessageContent;
+}
+
+export interface ConversationPickerMessageNew extends ConversationMessageNewBase {
+  type: "picker";
+  content: ConversationPickerMessageContent;
+}
+
+export interface ConversationFieldMessageNew extends ConversationMessageNewBase {
+  type: "field";
+  content: ConversationFieldMessageContent;
+}
+
+export interface ConversationCarouselMessageNew extends ConversationMessageNewBase {
+  type: "carousel";
+  content: ConversationCarouselMessageContent;
+}
+
+export interface ConversationEventMessageNew extends ConversationMessageNewBase {
   type: "event";
-  from?: string;
-  origin?: string;
-  content?: ConversationEventMessageContent;
-  mentions?: string[];
-  fingerprint?: number;
-  user?: ConversationMessageUser;
-  references?: ConversationMessageReference[];
-  original?: ConversationMessageOriginal;
-  timestamp?: number;
-  stealth?: boolean;
-  translated?: boolean;
-  automated?: boolean;
+  content: ConversationEventMessageContent;
 }
 
 export interface ConversationComposeMessageNew {
-  type: string;
+  type: "start" | "stop";
   from: string;
   excerpt?: string;
   stealth?: boolean;
