@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v10.0.12
+
+* Commonize `Message` types.
+
 ## v10.0.11
 
 ### Changes
