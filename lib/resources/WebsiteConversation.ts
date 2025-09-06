@@ -181,7 +181,7 @@ export type ConversationMessageType =
 
 export type ConversationState = "pending" | "unresolved" | "resolved";
 
-export type ConversationContent = (
+export type ConversationMessageContent = (
   string |
   ConversationFileMessageContent |
   ConversationAnimationMessageContent |
@@ -198,7 +198,7 @@ export interface ConversationMessage {
   type?: ConversationMessageType;
   from?: string;
   origin?: string;
-  content?: ConversationContent;
+  content?: ConversationMessageContent;
   preview?: ConversationMessagePreview[];
   mentions?: string[];
   read?: string;
@@ -747,7 +747,7 @@ class WebsiteConversation extends BaseResource {
    * Update A Message In Conversation
    */
   updateMessageInConversation(
-    websiteID: string, sessionID: string, fingerprint: number, content: ConversationContent
+    websiteID: string, sessionID: string, fingerprint: number, content: ConversationMessageContent
   ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
