@@ -3,7 +3,7 @@ Changelog
 
 ## v10.0.13
 
-Rename `ConversationContent` to `ConversationMessageContent`
+* Rename `ConversationContent` to `ConversationMessageContent`.
 
 ## v10.0.12
 
