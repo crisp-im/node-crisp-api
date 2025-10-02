@@ -3,13 +3,19 @@ Changelog
 
 ## v10.0.14
 
-* Provide exports using both cjs and esm modules.
+### Changes
+
+* Provide exports using both CJS and ESM modules.
 
 ## v10.0.13
+
+### Changes
 
 * Rename `ConversationContent` to `ConversationMessageContent`.
 
 ## v10.0.12
+
+### Changes
 
 * Commonize `Message` types.
 
