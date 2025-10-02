@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.0.15
+
+### Changes
+
+* Update `WebsiteSettingsChatbox` and `WebsiteSettingsUpdateChatbox` types.
+
 ## v10.0.14
 
 ### Changes
