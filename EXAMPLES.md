@@ -1714,6 +1714,7 @@ var settings = {
     "status_health_dead": true,
     "check_domain": false,
     "color_theme": "blue",
+    "layout_theme": "default",
     "text_theme": "default",
     "welcome_message": "default",
     "locale": "en",
