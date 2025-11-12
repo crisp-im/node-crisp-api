@@ -484,14 +484,18 @@ export interface ConversationVerify {
   verifications?: ConversationVerification[];
 }
 
+export type ConversationVerifyIdentity = "email" | "phone" | `urn:${string}`;
+
+export type ConversationVerifyMethod = "link";
+
 export interface ConversationVerifyIdentityRequest {
-  identity?: string;
-  method?: string;
+  identity?: ConversationVerifyIdentity;
+  method?: ConversationVerifyMethod;
   recipient?: string;
 }
 
 export interface ConversationVerifyIdentityRedeem {
-  identity?: string;
+  identity?: ConversationVerifyIdentity;
   token?: string;
   recipient?: string;
 }

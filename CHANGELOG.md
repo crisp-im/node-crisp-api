@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v10.0.16
+
+* Harden types on `ConversationVerifyIdentityRequest` and `ConversationVerifyIdentityRedeem`.
+
 ## v10.0.15
 
 ### Changes
