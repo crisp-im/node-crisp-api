@@ -207,6 +207,7 @@ export interface ConversationMessage {
   edited?: boolean;
   translated?: boolean;
   automated?: boolean;
+  stamped?: boolean;
   fingerprint?: number;
   timestamp?: number;
   user?: ConversationMessageUser;

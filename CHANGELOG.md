@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v10.0.17
+
+* Add `stamped` to `ConversationMessage`
+
 ## v10.0.16
 
 * Harden types on `ConversationVerifyIdentityRequest` and `ConversationVerifyIdentityRedeem`.
