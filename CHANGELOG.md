@@ -3,7 +3,7 @@ Changelog
 
 ## v10.0.17
 
-* Add `stamped` to `ConversationMessage`
+* Add `stamped` to `ConversationMessage`.
 
 ## v10.0.16
 
