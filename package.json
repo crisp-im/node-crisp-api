@@ -53,9 +53,9 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "8.39.1",
     "tsc-alias": "1.8.16",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "eslint": "9.29.0",
-    "eslint-plugin-crisp": "1.1.13",
+    "eslint-plugin-crisp": "1.2.12",
     "eslint-plugin-jsdoc": "50.8.0",
     "globals": "15.15.0"
   },
