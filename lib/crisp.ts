@@ -194,9 +194,9 @@ interface CrispAuth {
  ***************************************************************************/
 
 /**
- *
+ * Crisp
  */
-export class Crisp {
+class Crisp {
   public bucket: BucketServiceInterface = (
     new Bucket() as unknown as BucketServiceInterface
   );
@@ -1003,4 +1003,5 @@ export class Crisp {
  ***************************************************************************/
 
 export * from "@/resources";
+export { Crisp };
 export default Crisp;

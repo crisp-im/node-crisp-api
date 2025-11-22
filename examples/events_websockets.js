@@ -6,7 +6,7 @@
  */
 
 
-import Crisp from "crisp-api";
+import { Crisp } from "crisp-api";
 
 
 const TOKEN = {

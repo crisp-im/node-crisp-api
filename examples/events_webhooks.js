@@ -9,7 +9,7 @@
 import http from "http";
 import url from "url";
 
-import Crisp from "crisp-api";
+import { Crisp } from "crisp-api";
 
 
 const TOKEN = {
