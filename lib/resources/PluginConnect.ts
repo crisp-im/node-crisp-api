@@ -35,10 +35,15 @@ export type PluginConnectWebsitesSince = {
 
 export type PluginConnectEndpoints = {
   socket?: PluginConnectEndpointsSocket;
+  rescue?: PluginConnectEndpointsRescue;
 }
 
 export type PluginConnectEndpointsSocket = {
   app?: string;
+}
+
+export type PluginConnectEndpointsRescue = {
+  socket?: PluginConnectEndpointsSocket;
 }
 
 /**************************************************************************
