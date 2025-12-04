@@ -240,6 +240,8 @@ class Crisp {
 
   protected _useragent = (DEFAULT_USERAGENT_PREFIX + VERSION);
 
+  protected _customHeaders: Record<string, string> = {};
+
   protected _emitter = mitt();
 
   protected _socket: Socket | null = null;
@@ -294,6 +296,17 @@ class Crisp {
         "[Crisp] setRtmMode: parameter mode value should be one of: "  +
           AVAILABLE_RTM_MODES.join(", ")
       );
+    }
+  }
+
+  /**
+   * Sets custom headers to be included in all API requests
+   */
+  setCustomHeaders(headers: Record<string, string>) {
+    if (typeof headers === "object" && headers !== null) {
+      this._customHeaders = headers;
+    } else {
+      throw new Error("[Crisp] setCustomHeaders: parameter headers should be an object");
     }
   }
 
@@ -866,7 +879,8 @@ class Crisp {
 
       headers: {
         "User-Agent": this._useragent,
-        "X-Crisp-Tier": this.auth.tier
+        "X-Crisp-Tier": this.auth.tier,
+        ...this._customHeaders
       },
 
       throwHttpErrors: false
