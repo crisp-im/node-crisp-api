@@ -513,7 +513,7 @@ export interface ConversationCall {
 
 export interface ConversationsListOptions {
   per_page?: number;
-  search_query?: unknown;
+  search_query?: FilterSearchQuery[] | string;
   search_type?: "text" | "segment" | "filter";
   search_operator?: "and" | "or";
   include_empty?: 0 | 1;
@@ -529,6 +529,13 @@ export interface ConversationsListOptions {
   order_date_created?: 0 | 1;
   order_date_updated?: 0 | 1;
   order_date_waiting?: 0 | 1;
+}
+
+export interface FilterSearchQuery {
+  criterion: string;
+  query: string[];
+  model: string;
+  operator: string;
 }
 
 /**************************************************************************
