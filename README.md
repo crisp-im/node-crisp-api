@@ -168,15 +168,18 @@ All methods that you will most likely need when building a Crisp integration are
 
 * #### **Website Conversations**
   * **⭐ List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
-    * `CrispClient.website.listConversations(websiteID, pageNumber)`
+    * `CrispClient.website.listConversations(websiteID, pageNumber, options)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
+      var options = {
+        per_page: 50
+      }
 
-      CrispClient.website.listConversations(websiteID, pageNumber);
+      CrispClient.website.listConversations(websiteID, pageNumber, options);
       ```
       </details>
 

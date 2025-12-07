@@ -511,6 +511,26 @@ export interface ConversationCall {
   call_id?: string;
 }
 
+export interface ConversationsListOptions {
+  per_page?: number;
+  search_query?: unknown;
+  search_type?: "text" | "segment" | "filter";
+  search_operator?: "and" | "or";
+  include_empty?: 0 | 1;
+  filter_inbox_id?: string;
+  filter_unread?: 0 | 1;
+  filter_resolved?: 0 | 1;
+  filter_not_resolved?: 0 | 1;
+  filter_mention?: 0 | 1;
+  filter_assigned?: string;
+  filter_unassigned?: 0 | 1;
+  filter_date_start?: string;
+  filter_date_end?: string;
+  order_date_created?: 0 | 1;
+  order_date_updated?: 0 | 1;
+  order_date_waiting?: 0 | 1;
+}
+
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -524,10 +544,11 @@ class WebsiteConversation extends BaseResource {
    * List Conversations
    */
   listConversations(
-    websiteID: string, pageNumber: number = 1
+    websiteID: string, pageNumber: number = 1, options?: ConversationsListOptions
   ): Promise<Conversation[]> {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "conversations", String(pageNumber)])
+      this.crisp.prepareRestUrl(["website", websiteID, "conversations", String(pageNumber)]),
+      options
     );
   };
 
