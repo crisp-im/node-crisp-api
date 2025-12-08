@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v10.0.18
+
+* Added the new `CrispClient.setCustomHeaders` method to set custom headers for all API requests.
+
 ## v10.0.17
 
 * Add `stamped` to `ConversationMessage`.

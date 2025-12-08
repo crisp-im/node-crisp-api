@@ -1,8 +1,8 @@
 /*
- * node-crisp-api
+ * This file is part of node-crisp-api
  *
- * Copyright 2022, Crisp IM SAS
- * Author: Valerian Saliou <valerian@valeriansaliou.name>
+ * Copyright (c) 2025 Crisp IM SAS
+ * All rights belong to Crisp IM SAS
  */
 
 /**************************************************************************
