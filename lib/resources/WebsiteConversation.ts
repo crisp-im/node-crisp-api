@@ -511,11 +511,8 @@ export interface ConversationCall {
   call_id?: string;
 }
 
-export interface ConversationsListOptions {
+export interface BaseConversationsListOptions {
   per_page?: number;
-  search_query?: FilterSearchQuery[] | string;
-  search_type?: "text" | "segment" | "filter";
-  search_operator?: "and" | "or";
   include_empty?: 0 | 1;
   filter_inbox_id?: string;
   filter_unread?: 0 | 1;
@@ -531,12 +528,29 @@ export interface ConversationsListOptions {
   order_date_waiting?: 0 | 1;
 }
 
+export interface StandardSearchOptions extends BaseConversationsListOptions {
+  search_type: "text" | "segment";
+  search_query: string;
+  search_operator?: never;
+}
+
+export interface FilterSearchOptions extends BaseConversationsListOptions {
+  search_type: "filter";
+  search_query: FilterSearchQuery[];
+  search_operator?: "and" | "or";
+}
+
 export interface FilterSearchQuery {
   criterion: string;
   query: string[];
   model: string;
   operator: string;
 }
+
+export type ConversationsListOptions =
+  | BaseConversationsListOptions
+  | StandardSearchOptions
+  | FilterSearchOptions;
 
 /**************************************************************************
  * CLASSES
