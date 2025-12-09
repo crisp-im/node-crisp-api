@@ -900,8 +900,22 @@ class Crisp {
 
     // Add query?
     if (query) {
+      const params = new URLSearchParams();
+
+      Object.entries(query).forEach(([ key, value ]) => {
+        if (value === null || value === undefined) {
+          return;
+        }
+
+        if (typeof value === "object") {
+          params.append(key, JSON.stringify(value));
+        } else {
+          params.append(key, String(value));
+        }
+      });
+
       // @ts-ignore
-      requestParameters.searchParams = query;
+      requestParameters.searchParams = params;
     }
 
     // Proceed request
