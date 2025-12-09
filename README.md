@@ -175,6 +175,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
+
       var options = {
         per_page: 50
       }

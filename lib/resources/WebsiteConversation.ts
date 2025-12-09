@@ -568,7 +568,10 @@ class WebsiteConversation extends BaseResource {
     websiteID: string, pageNumber: number = 1, options?: ConversationsListOptions
   ): Promise<Conversation[]> {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "conversations", String(pageNumber)]),
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "conversations", String(pageNumber)
+      ]),
+
       options
     );
   };
