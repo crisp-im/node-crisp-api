@@ -1,15 +1,27 @@
 Changelog
 =========
 
+## v10.1.0
+
+### New Features
+
+* Added `options` to `CrispClient.website.listConversations`.
+
 ## v10.0.18
+
+### New Features
 
 * Added the new `CrispClient.setCustomHeaders` method to set custom headers for all API requests.
 
 ## v10.0.17
 
+### New Features
+
 * Add `stamped` to `ConversationMessage`.
 
 ## v10.0.16
+
+### Changes
 
 * Harden types on `ConversationVerifyIdentityRequest` and `ConversationVerifyIdentityRedeem`.
 
