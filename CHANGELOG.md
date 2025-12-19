@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.2.0
+
+### New Features
+
+* Added the new `CrispClient.plugin.getPluginAttestProvenance` method.
+
 ## v10.1.0
 
 ### New Features
