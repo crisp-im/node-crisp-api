@@ -2358,6 +2358,39 @@ CrispClient.plugin.updateSubscriptionSettings(websiteID, pluginID, settings);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#get-plugin-usage-bills
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
+
+CrispClient.plugin.getPluginUsageBills(websiteID, pluginID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#report-plugin-usage-to-bill
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
+
+var usage = {
+  "name": "Paid messages sent",
+  "units": 250,
+  "price": 0.10
+};
+
+CrispClient.plugin.reportPluginUsageToBill(websiteID, pluginID, usage);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-plugin-attest-provenance
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
+
+CrispClient.plugin.getPluginAttestProvenance(websiteID, pluginID);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#forward-plugin-payload-to-channel
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";

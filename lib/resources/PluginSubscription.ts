@@ -199,6 +199,17 @@ class PluginSubscriptionService extends BaseResource {
   };
 
   /**
+   * Get Plugin Attest Provenance
+   */
+  getPluginAttestProvenance(websiteID: string, pluginID: string) {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "plugins", "subscription", websiteID, pluginID, "attest", "provenance"
+      ])
+    );
+  };
+
+  /**
    * Forward Plugin Payload To Channel
    */
   forwardPluginPayloadToChannel(
