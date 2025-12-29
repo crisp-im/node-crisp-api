@@ -2476,6 +2476,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           "status_health_dead": true,
           "check_domain": false,
           "color_theme": "blue",
+          "color_mode": "auto",
           "layout_theme": "default",
           "text_theme": "default",
           "welcome_message": "default",

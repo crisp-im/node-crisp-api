@@ -83,6 +83,7 @@ export interface WebsiteSettingsChatbox {
   status_health_dead?: boolean;
   check_domain?: boolean;
   color_theme?: string;
+  color_mode?: string;
   layout_theme?: string;
   text_theme?: string;
   welcome_message?: string;
@@ -160,6 +161,7 @@ export interface WebsiteSettingsUpdateChatbox {
   status_health_dead?: boolean;
   check_domain?: boolean;
   color_theme?: string;
+  color_mode?: string;
   layout_theme?: string;
   text_theme?: string;
   welcome_message?: string;
