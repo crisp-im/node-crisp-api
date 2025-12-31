@@ -1711,7 +1711,7 @@ var settings = {
     "overlay_mode": false,
     "helpdesk_link": true,
     "helpdesk_only": false,
-    "helpdesk_navigation": "deep",
+    "helpdesk_navigate": "deep",
     "status_health_dead": true,
     "check_domain": false,
     "color_theme": "blue",

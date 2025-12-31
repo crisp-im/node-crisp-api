@@ -80,7 +80,7 @@ export interface WebsiteSettingsChatbox {
   overlay_mode?: boolean;
   helpdesk_link?: boolean;
   helpdesk_only?: boolean;
-  helpdesk_navigation?: string;
+  helpdesk_navigate?: string;
   status_health_dead?: boolean;
   check_domain?: boolean;
   color_theme?: string;
@@ -159,7 +159,7 @@ export interface WebsiteSettingsUpdateChatbox {
   overlay_mode?: boolean;
   helpdesk_link?: boolean;
   helpdesk_only?: boolean;
-  helpdesk_navigation?: string;
+  helpdesk_navigate?: string;
   status_health_dead?: boolean;
   check_domain?: boolean;
   color_theme?: string;
