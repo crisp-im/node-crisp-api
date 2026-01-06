@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.4.0
+
+### New Features
+
+* Added now-public `subscription` REST API routes for `CrispClient.plan` prefix.
+
 ## v10.3.0
 
 ### New Features
