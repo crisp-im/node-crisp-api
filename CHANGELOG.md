@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.3.0
+
+### New Features
+
+* Added a new `includePlan` parameter to `CrispClient.plugin.listAllConnectWebsites` and `CrispClient.plugin.listConnectWebsitesSince` methods.
+
 ## v10.2.0
 
 ### New Features
