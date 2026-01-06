@@ -127,6 +127,14 @@ All methods that you will most likely need when building a Crisp integration are
 </details>
 <details>
   <summary>
+  <a href="#plan">Plan</a>
+  </summary>
+  <ul>
+    <li><a href="#plan-subscription">Plan Subscription</a></li>
+  </ul>
+</details>
+<details>
+  <summary>
   <a href="#media">Media</a>
   </summary>
   <ul>
@@ -3457,6 +3465,96 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       };
 
       CrispClient.plugin.dispatchPluginEvent(websiteID, pluginID, payload);
+      ```
+      </details>
+
+
+### Plan
+
+* #### **Plan Subscription**
+  * **List All Active Plan Subscriptions** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-plan-subscriptions)
+    * `CrispClient.plan.listAllActiveSubscriptions()`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      CrispClient.plan.listAllActiveSubscriptions();
+      ```
+      </details>
+
+  * **Get Plan Subscription For A Website** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-plan-subscription-for-a-website)
+    * `CrispClient.plan.getPlanSubscriptionForWebsite(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.plan.getPlanSubscriptionForWebsite(websiteID);
+      ```
+      </details>
+
+  * **Subscribe Website To Plan** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plan)
+    * `CrispClient.plan.subscribeWebsiteToPlan(websiteID, planID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var planID = "d678dbc1-e49d-47d3-92f2-c436f5b0e4a5";
+
+      CrispClient.plan.subscribeWebsiteToPlan(websiteID, planID);
+      ```
+      </details>
+
+  * **Unsubscribe Plan From Website** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plan-from-website)
+    * `CrispClient.plan.unsubscribePlanFromWebsite(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.plan.unsubscribePlanFromWebsite(websiteID);
+      ```
+      </details>
+
+  * **Change Bill Period For Website Plan Subscription** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-bill-period-for-website-plan-subscription)
+    * `CrispClient.plan.changeBillPeriodForWebsitePlanSubscription(websiteID, period)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var period = "yearly";
+
+      CrispClient.plan.changeBillPeriodForWebsitePlanSubscription(websiteID, period);
+      ```
+      </details>
+
+  * **Check Coupon Availability For Website Plan Subscription** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-coupon-availability-for-website-plan-subscription)
+    * `CrispClient.plan.checkCouponAvailabilityForWebsitePlanSubscription(websiteID, code)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var code = "CRISP+AWESOME";
+
+      CrispClient.plan.checkCouponAvailabilityForWebsitePlanSubscription(websiteID, code);
+      ```
+      </details>
+
+  * **Redeem Coupon For Website Plan Subscription** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#redeem-coupon-for-website-plan-subscription)
+    * `CrispClient.plan.redeemCouponForWebsitePlanSubscription(websiteID, code)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var code = "CRISP+AWESOME";
+
+      CrispClient.plan.redeemCouponForWebsitePlanSubscription(websiteID, code);
       ```
       </details>
 

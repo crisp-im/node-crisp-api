@@ -22,6 +22,7 @@ import mitt, { Emitter } from "mitt";
 import Bucket, { BucketServiceInterface } from "@/services/bucket";
 import Media, { MediaServiceInterface } from "@/services/media";
 import Plugin, { PluginServiceInterface } from "@/services/plugin";
+import Plan, { PlanServiceInterface } from "@/services/plan";
 import Website, { WebsiteServiceInterface } from "@/services/website";
 
 /**************************************************************************
@@ -175,6 +176,7 @@ const services = {
   Bucket: Bucket,
   Media: Media,
   Plugin: Plugin,
+  Plan: Plan,
   Website: Website
 };
 
@@ -207,6 +209,10 @@ class Crisp {
 
   public plugin: PluginServiceInterface = (
     new Plugin() as unknown as PluginServiceInterface
+  );
+
+  public plan: PlanServiceInterface = (
+    new Plan() as unknown as PlanServiceInterface
   );
 
   public website: WebsiteServiceInterface = (

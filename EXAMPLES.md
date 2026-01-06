@@ -2426,6 +2426,66 @@ CrispClient.plugin.dispatchPluginEvent(websiteID, pluginID, payload);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#list-all-active-plan-subscriptions
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.plan.listAllActiveSubscriptions();
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-plan-subscription-for-a-website
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.plan.getPlanSubscriptionForWebsite(websiteID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plan
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var planID = "d678dbc1-e49d-47d3-92f2-c436f5b0e4a5";
+
+CrispClient.plan.subscribeWebsiteToPlan(websiteID, planID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plan-from-website
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.plan.unsubscribePlanFromWebsite(websiteID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#change-bill-period-for-website-plan-subscription
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var period = "yearly";
+
+CrispClient.plan.changeBillPeriodForWebsitePlanSubscription(websiteID, period);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-coupon-availability-for-website-plan-subscription
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var code = "CRISP+AWESOME";
+
+CrispClient.plan.checkCouponAvailabilityForWebsitePlanSubscription(websiteID, code);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#redeem-coupon-for-website-plan-subscription
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var code = "CRISP+AWESOME";
+
+CrispClient.plan.redeemCouponForWebsitePlanSubscription(websiteID, code);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#list-animation-medias
 
 var listID = "f7fb43da-1cd8-49c1-ade0-9f5b71d034e3";

@@ -14,6 +14,7 @@ export * from "./BucketURL";
 export * from "./MediaAnimation";
 export * from "./PluginConnect";
 export * from "./PluginSubscription";
+export * from "./PlanSubscription";
 export * from "./WebsiteAnalytics";
 export * from "./WebsiteAvailability";
 export * from "./WebsiteBase";
