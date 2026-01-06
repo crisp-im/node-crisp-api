@@ -17,18 +17,18 @@ import BaseResource from "./BaseResource";
  ***************************************************************************/
 
 export type WebsiteAvailabilityStatus = {
-  status?:  string;
-  since?:   number;
+  status?: string;
+  since?: number;
 }
 
 export type WebsiteAvailabilityOperator = {
-  user_id?:  string;
-  type?:     string;
-  time?:     WebsiteAvailabilityOperatorTime;
+  user_id?: string;
+  type?: string;
+  time?: WebsiteAvailabilityOperatorTime;
 }
 
 export type WebsiteAvailabilityOperatorTime = {
-  for?:   number;
+  for?: number;
   since?: number;
 }
 

@@ -17,13 +17,13 @@ import BaseResource from "./BaseResource";
  ***************************************************************************/
 
 export type WebsiteBatchConversationsOperation = {
-  inbox_id?:  string;
-  sessions?:  string[];
+  inbox_id?: string;
+  sessions?: string[];
 }
 
 export type WebsiteBatchPeopleOperationInner = {
-  profiles?:  string[];
-  search?:    string;
+  profiles?: string[];
+  search?: string;
 }
 
 /**************************************************************************

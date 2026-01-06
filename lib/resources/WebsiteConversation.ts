@@ -398,21 +398,21 @@ export interface ConversationComposeMessageNew {
 }
 
 export interface ConversationSuggestedSegment {
-  segment?:  string;
-  count?:    number;
+  segment?: string;
+  count?: number;
 }
 
 export interface ConversationSuggestedData {
-  key?:  string;
+  key?: string;
   count?: number;
 }
 
 export interface ConversationSpam {
-  spam_id?:   string;
-  type?:      string;
-  reason?:    string;
-  metadata?:  Record<string, unknown>;
-  headers?:   Record<string, unknown>;
+  spam_id?: string;
+  type?: string;
+  reason?: string;
+  metadata?: Record<string, unknown>;
+  headers?: Record<string, unknown>;
   timestamp?: number;
 }
 

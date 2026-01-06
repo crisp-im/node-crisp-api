@@ -18,122 +18,122 @@ import { WebsiteFilter } from "./WebsiteBase";
  ***************************************************************************/
 
 export type WebsiteCampaignExcerpt = {
-  campaign_id?:  string;
-  type?:         string;
-  format?:       string;
-  name?:         string;
-  subject?:      string;
-  tag?:          string;
-  ready?:        boolean;
-  dispatched?:   boolean;
-  running?:      boolean;
-  progress?:     number;
-  targets?:      number;
-  reached?:      number;
-  created_at:    number;
-  updated_at:    number;
+  campaign_id?: string;
+  type?: string;
+  format?: string;
+  name?: string;
+  subject?: string;
+  tag?: string;
+  ready?: boolean;
+  dispatched?: boolean;
+  running?: boolean;
+  progress?: number;
+  targets?: number;
+  reached?: number;
+  created_at: number;
+  updated_at: number;
   dispatched_at?: number;
 }
 
 export type WebsiteCampaignTemplateExcerpt = {
-  template_id?:  string;
-  type?:         string;
-  name?:         string;
-  format?:       string;
-  created_at?:   number;
-  updated_at?:   number;
+  template_id?: string;
+  type?: string;
+  name?: string;
+  format?: string;
+  created_at?: number;
+  updated_at?: number;
 }
 
 export type WebsiteCampaignTemplateNew = {
-  template_id?:  string;
+  template_id?: string;
 }
 
 export interface WebsiteCampaignTemplateItem extends WebsiteCampaignTemplateExcerpt {
-  content?:  string;
+  content?: string;
 }
 
 export interface WebsiteCampaignItem extends WebsiteCampaignExcerpt {
-  sender?:      WebsiteCampaignItemSender;
-  recipients?:  WebsiteCampaignItemRecipients;
-  flow?:        WebsiteCampaignItemFlow;
-  message?:     string;
-  options?:     WebsiteCampaignItemOptions;
-  statistics?:  WebsiteCampaignItemStatistics;
+  sender?: WebsiteCampaignItemSender;
+  recipients?: WebsiteCampaignItemRecipients;
+  flow?: WebsiteCampaignItemFlow;
+  message?: string;
+  options?: WebsiteCampaignItemOptions;
+  statistics?: WebsiteCampaignItemStatistics;
 }
 
 export type WebsiteCampaignItemSender = {
-  user_id?:  string;
+  user_id?: string;
 }
 
 export type WebsiteCampaignItemRecipients = {
-  type?:         string;
-  segments?:     string[];
-  people?:       string[];
-  filter?:       WebsiteFilter[];
+  type?: string;
+  segments?: string[];
+  people?: string[];
+  filter?: WebsiteFilter[];
 }
 
 export type WebsiteCampaignItemFlow = {
-  launch_event?:   string;
-  assert_filter?:  WebsiteFilter[];
-  assert_delay?:   number;
-  deliver_once?:   boolean;
-  deliver_delay?:  number;
+  launch_event?: string;
+  assert_filter?: WebsiteFilter[];
+  assert_delay?: number;
+  deliver_once?: boolean;
+  deliver_delay?: number;
 }
 
 export type WebsiteCampaignItemOptions = {
-  deliver_to_chatbox?:  boolean;
-  deliver_to_email?:    boolean;
-  sender_name_website?:  boolean;
-  sender_email_reply?:   boolean;
-  tracking?:             boolean;
+  deliver_to_chatbox?: boolean;
+  deliver_to_email?: boolean;
+  sender_name_website?: boolean;
+  sender_email_reply?: boolean;
+  tracking?: boolean;
 }
 
 export type WebsiteCampaignItemStatistics = {
-  opened?:        number;
-  clicked?:       number;
-  unsubscribed?:  number;
+  opened?: number;
+  clicked?: number;
+  unsubscribed?: number;
 }
 
 export type WebsiteCampaignRecipient = {
-  people_id?:  string;
-  email?:      string;
-  person?:     WebsiteCampaignRecipientPerson;
-  subscribed?:  boolean;
+  people_id?: string;
+  email?: string;
+  person?: WebsiteCampaignRecipientPerson;
+  subscribed?: boolean;
 }
 
 export type WebsiteCampaignRecipientPerson = {
-  nickname?:  string;
-  avatar?:    string;
+  nickname?: string;
+  avatar?: string;
 }
 
 export type WebsiteCampaignStatistic = {
-  profile?:    WebsiteCampaignStatisticProfile;
-  data?:       Record<string, unknown>;
-  created_at?:  number;
-  updated_at?:  number;
+  profile?: WebsiteCampaignStatisticProfile;
+  data?: Record<string, unknown>;
+  created_at?: number;
+  updated_at?: number;
 }
 
 export type WebsiteCampaignStatisticProfile = {
-  people_id?:  string;
-  email?:      string;
-  person?:     WebsiteCampaignStatisticProfilePerson;
+  people_id?: string;
+  email?: string;
+  person?: WebsiteCampaignStatisticProfilePerson;
 }
 
 export type WebsiteCampaignStatisticProfilePerson = {
-  nickname?:  string;
-  avatar?:    string;
-  geolocation?:  WebsiteCampaignStatisticProfilePersonGeolocation;
+  nickname?: string;
+  avatar?: string;
+  geolocation?: WebsiteCampaignStatisticProfilePersonGeolocation;
 }
 
 export type WebsiteCampaignStatisticProfilePersonGeolocation = {
-  country?:      string;
-  region?:      string;
-  city?:        string;
-  coordinates?:  WebsiteCampaignStatisticProfilePersonGeolocationCoordinates;
+  country?: string;
+  region?: string;
+  city?: string;
+  coordinates?: WebsiteCampaignStatisticProfilePersonGeolocationCoordinates;
 }
 
 export type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
-  latitude?:  number;
+  latitude?: number;
   longitude?: number;
 }
 

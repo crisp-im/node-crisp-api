@@ -17,53 +17,53 @@ import BaseResource from "./BaseResource";
  ***************************************************************************/
 
 export type PluginSubscription = {
-  id?:            string;
-  urn?:           string;
-  type?:          string;
-  category?:      string;
-  name?:          string;
-  summary?:       string;
-  price?:         number;
-  plans?:         PluginSubscriptionPlan[];
-  icon?:          string;
-  website_url?:   string;
-  contact_url?:   string;
-  terms_url?:     string;
-  privacy_url?:   string;
-  help_url?:      string;
-  video_url?:     string;
-  configurable?:  boolean;
-  since?:         string;
-  active?:        boolean;
-  website_id?:    string;
-  card_id?:       string;
+  id?: string;
+  urn?: string;
+  type?: string;
+  category?: string;
+  name?: string;
+  summary?: string;
+  price?: number;
+  plans?: PluginSubscriptionPlan[];
+  icon?: string;
+  website_url?: string;
+  contact_url?: string;
+  terms_url?: string;
+  privacy_url?: string;
+  help_url?: string;
+  video_url?: string;
+  configurable?: boolean;
+  since?: string;
+  active?: boolean;
+  website_id?: string;
+  card_id?: string;
 }
 
 export type PluginSubscriptionPlan = {
-  id?:     string;
-  name?:   string;
-  price?:  number;
+  id?: string;
+  name?: string;
+  price?: number;
 }
 
 export type PluginSubscriptionSettings = {
-  plugin_id?:       string;
-  website_id?:      string;
-  token?:           string;
-  schema?:          object;
-  settings?:        object;
+  plugin_id?: string;
+  website_id?: string;
+  token?: string;
+  schema?: object;
+  settings?: object;
   settings_form_url?: string;
-  callback_url?:    string;
+  callback_url?: string;
 }
 
 export type PluginSubscriptionChannelForward = {
-  namespace?:   string;
-  identifier?:  string;
-  payload?:     object;
+  namespace?: string;
+  identifier?: string;
+  payload?: object;
 }
 
 export type PluginSubscriptionEventDispatch = {
-  name?:   string;
-  data?:   object;
+  name?: string;
+  data?: object;
 }
 
 /**************************************************************************

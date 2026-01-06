@@ -17,27 +17,27 @@ import BaseResource from "./BaseResource";
  ***************************************************************************/
 
 export type Website = {
-  website_id?:  string;
-  name?:        string;
-  domain?:      string;
-  logo?:        string;
+  website_id?: string;
+  name?: string;
+  domain?: string;
+  logo?: string;
 }
 
 export type WebsiteCreate = {
-  name?:        string;
-  domain?:      string;
+  name?: string;
+  domain?: string;
 }
 
 export type WebsiteRemoveVerify = {
-  method?:  string;
-  secret?:  string;
+  method?: string;
+  secret?: string;
 }
 
 export type WebsiteFilter = {
-  model?:      string;
-  criterion?:  string;
-  operator?:   string;
-  query?:      Record<string, unknown>;
+  model?: string;
+  criterion?: string;
+  operator?: string;
+  query?: Record<string, unknown>;
 }
 
 /**************************************************************************
