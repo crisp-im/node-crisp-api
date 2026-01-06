@@ -78,12 +78,16 @@ class PluginConnect extends BaseResource {
    * List All Connect Websites
    */
   listAllConnectWebsites(
-    pageNumber: number, filterConfigured: boolean
+    pageNumber: number, filterConfigured: boolean, includePlan: boolean
   ): Promise<PluginConnectAllWebsite[]> {
     // Generate query
     let query = {
       filter_configured: (
         (filterConfigured === true) ? "1" : "0"
+      ),
+
+      include_plan: (
+        (includePlan === true) ? "1" : "0"
       )
     };
 
@@ -100,12 +104,16 @@ class PluginConnect extends BaseResource {
    * List Connect Websites Since
    */
   listConnectWebsitesSince(
-    dateSince: string, filterConfigured: boolean
+    dateSince: string, filterConfigured: boolean, includePlan: boolean
   ): Promise<PluginConnectWebsitesSince[]> {
     // Generate query
     let query = {
       filter_configured: (
         (filterConfigured === true) ? "1" : "0"
+      ),
+
+      include_plan: (
+        (includePlan === true) ? "1" : "0"
       )
     };
 

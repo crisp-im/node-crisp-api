@@ -4,9 +4,9 @@
 
 The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your JavaScript code.
 
-Copyright 2025 Crisp IM SAS. See LICENSE for copying information.
+Copyright 2026 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 22/11/2025
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 06/01/2026
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -3225,26 +3225,26 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
   * **⭐ List All Connect Websites** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-connect-websites)
-    * `CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured)`
+    * `CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, includePlan)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var pageNumber = 1;
 
-      CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured);
+      CrispClient.plugin.listAllConnectWebsites(pageNumber, filterConfigured, includePlan);
       ```
       </details>
 
   * **⭐ List Connect Websites Since** [`plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-connect-websites-since)
-    * `CrispClient.plugin.listConnectWebsitesSince(dateSince, filterConfigured)`
+    * `CrispClient.plugin.listConnectWebsitesSince(dateSince, filterConfigured, includePlan)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var dateSince = "2023-08-16T09:00:00Z";
 
-      CrispClient.plugin.listConnectWebsitesSince(dateSince, filterConfigured);
+      CrispClient.plugin.listConnectWebsitesSince(dateSince, filterConfigured, includePlan);
       ```
       </details>
 
