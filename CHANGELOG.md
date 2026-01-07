@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.5.0
+
+### New Features
+
+* Added support for the `plan:subscription:updated` RTM API event.
+
 ## v10.4.0
 
 ### New Features
