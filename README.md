@@ -3824,3 +3824,7 @@ Available events are listed below:
     * `plugin:event`
   * **Plugin Settings Saved** [`user`, `plugin`]:
     * `plugin:settings:saved`
+
+* #### **Plan Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#plan-events)
+  * **Plan Subscription Updated** [`user`, `plugin`]:
+    * `plan:subscription:updated`

@@ -168,7 +168,10 @@ const DEFAULT_RTM_EVENTS = [
   // Plugin Events
   "plugin:channel",
   "plugin:event",
-  "plugin:settings:saved"
+  "plugin:settings:saved",
+
+  // Plan Events
+  "plan:subscription:updated"
 ];
 
 // REST API services
