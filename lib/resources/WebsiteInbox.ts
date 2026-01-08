@@ -50,7 +50,7 @@ export type WebsiteInboxOrder = {
 /**
  * Crisp WebsiteInbox Resource
  */
-class WebsiteInbox extends BaseResource {
+class WebsiteInboxService extends BaseResource {
   /**
    * List Inboxes
    */
@@ -131,4 +131,4 @@ class WebsiteInbox extends BaseResource {
  * EXPORTS
  ***************************************************************************/
 
-export default WebsiteInbox;
+export default WebsiteInboxService;
