@@ -16,9 +16,10 @@ import WebsiteAvailability from "@/resources/WebsiteAvailability";
 import WebsiteBatch from "@/resources/WebsiteBatch";
 import WebsiteCampaign from "@/resources/WebsiteCampaign";
 import WebsiteConversation from "@/resources/WebsiteConversation";
+import WebsiteHelpdesk from "@/resources/WebsiteHelpdesk";
+import WebsiteInbox from "@/resources/WebsiteInbox";
 import WebsiteOperator from "@/resources/WebsiteOperator";
 import WebsitePeople from "@/resources/WebsitePeople";
-import WebsiteHelpdesk from "@/resources/WebsiteHelpdesk";
 import WebsiteSettings from "@/resources/WebsiteSettings";
 import WebsiteVerify from "@/resources/WebsiteVerify";
 import WebsiteVisitors from "@/resources/WebsiteVisitors";
@@ -39,9 +40,10 @@ class WebsiteService {
     WebsiteBatch,
     WebsiteCampaign,
     WebsiteConversation,
+    WebsiteHelpdesk,
+    WebsiteInbox,
     WebsiteOperator,
     WebsitePeople,
-    WebsiteHelpdesk,
     WebsiteSettings,
     WebsiteVerify,
     WebsiteVisitors
@@ -59,9 +61,10 @@ export interface WebsiteServiceInterface extends
   WebsiteBatch,
   WebsiteCampaign,
   WebsiteConversation,
+  WebsiteHelpdesk,
+  WebsiteInbox,
   WebsiteOperator,
   WebsitePeople,
-  WebsiteHelpdesk,
   WebsiteSettings,
   WebsiteVerify,
   WebsiteVisitors {

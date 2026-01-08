@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2026 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 06/01/2026
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 08/01/2026
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -111,6 +111,7 @@ All methods that you will most likely need when building a Crisp integration are
     <li><a href="#website-availability">Website Availability</a></li>
     <li><a href="#website-analytics">Website Analytics</a></li>
     <li><a href="#website-batch">Website Batch</a></li>
+    <li><a href="#website-inbox">Website Inbox</a></li>
     <li><a href="#website-verify">Website Verify</a></li>
     <li><a href="#website-campaigns">Website Campaigns</a></li>
     <li><a href="#website-campaign">Website Campaign</a></li>
@@ -2833,6 +2834,155 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ];
 
       CrispClient.website.batchRemoveConversations(websiteID, sessions);
+      ```
+      </details>
+
+
+* #### **Website Inbox**
+  * **List Inboxes** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-inboxes)
+    * `CrispClient.website.listInboxes(websiteID, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pageNumber = 1;
+
+      CrispClient.website.listInboxes(websiteID, pageNumber);
+      ```
+      </details>
+
+  * **Batch Order Inboxes** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-order-website-inboxes)
+    * `CrispClient.website.batchOrderInboxes(websiteID, orders)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var orders = [
+        {
+          "inbox_id": "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31",
+          "order": 1
+        },
+
+        {
+          "inbox_id": "c058abfe-2881-4ff4-8f6a-6eb73e55385e",
+          "order": 2
+        }
+      ];
+
+      CrispClient.website.batchOrderInboxes(websiteID, orders);
+      ```
+      </details>
+
+  * **Create A New Inbox** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-website-inbox)
+    * `CrispClient.website.createNewInbox(websiteID, inbox)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var inbox = {
+        "name": "VIP",
+        "emoji": "⭐️",
+        "order": 1,
+
+        "operators": [
+          "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
+          "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
+        ],
+
+        "conditions": [
+          {
+            "model": "session",
+            "criterion": "segments",
+            "operator": "eq",
+
+            "query": [
+              "vip"
+            ]
+          }
+        ]
+      };
+
+      CrispClient.website.createNewInbox(websiteID, inbox);
+      ```
+      </details>
+
+  * **Check If Inbox Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-website-inbox-exists)
+    * `CrispClient.website.checkInboxExists(websiteID, inboxID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+      CrispClient.website.checkInboxExists(websiteID, inboxID);
+      ```
+      </details>
+
+  * **Get Inbox** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-inbox)
+    * `CrispClient.website.getInbox(websiteID, inboxID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+      CrispClient.website.getInbox(websiteID, inboxID);
+      ```
+      </details>
+
+  * **Save Inbox** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-website-inbox)
+    * `CrispClient.website.saveInbox(websiteID, inboxID, inbox)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+      var inbox = {
+        "name": "VIP",
+        "emoji": "⭐️",
+        "order": 1,
+
+        "operators": [
+          "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
+          "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
+        ],
+
+        "conditions": [
+          {
+            "model": "session",
+            "criterion": "segments",
+            "operator": "eq",
+
+            "query": [
+              "vip"
+            ]
+          }
+        ]
+      };
+
+      CrispClient.website.saveInbox(websiteID, inboxID, inbox);
+      ```
+      </details>
+
+  * **Delete Inbox** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-website-inbox)
+    * `CrispClient.website.deleteInbox(websiteID, inboxID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+      CrispClient.website.deleteInbox(websiteID, inboxID);
       ```
       </details>
 

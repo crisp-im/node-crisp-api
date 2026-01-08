@@ -22,6 +22,7 @@ export * from "./WebsiteBatch";
 export * from "./WebsiteCampaign";
 export * from "./WebsiteConversation";
 export * from "./WebsiteHelpdesk";
+export * from "./WebsiteInbox";
 export * from "./WebsiteOperator";
 export * from "./WebsitePeople";
 export * from "./WebsiteSettings";

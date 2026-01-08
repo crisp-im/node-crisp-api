@@ -1978,6 +1978,125 @@ CrispClient.website.batchRemovePeople(websiteID, people);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#list-website-inboxes
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pageNumber = 1;
+
+CrispClient.website.listInboxes(websiteID, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#batch-order-website-inboxes
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var orders = [
+  {
+    "inbox_id": "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31",
+    "order": 1
+  },
+
+  {
+    "inbox_id": "c058abfe-2881-4ff4-8f6a-6eb73e55385e",
+    "order": 2
+  }
+];
+
+CrispClient.website.batchOrderInboxes(websiteID, orders);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#create-a-new-website-inbox
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var inbox = {
+  "name": "VIP",
+  "emoji": "⭐️",
+  "order": 1,
+
+  "operators": [
+    "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
+    "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
+  ],
+
+  "conditions": [
+    {
+      "model": "session",
+      "criterion": "segments",
+      "operator": "eq",
+
+      "query": [
+        "vip"
+      ]
+    }
+  ]
+};
+
+CrispClient.website.createNewInbox(websiteID, inbox);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-website-inbox-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+CrispClient.website.checkIfInboxExists(websiteID, inboxID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-website-inbox
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+CrispClient.website.getInbox(websiteID, inboxID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-website-inbox
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+var inbox = {
+  "name": "VIP",
+  "emoji": "⭐️",
+  "order": 1,
+
+  "operators": [
+    "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
+    "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
+  ],
+
+  "conditions": [
+    {
+      "model": "session",
+      "criterion": "segments",
+      "operator": "eq",
+
+      "query": [
+        "vip"
+      ]
+    }
+  ]
+};
+
+CrispClient.website.saveInbox(websiteID, inboxID, inbox);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#delete-website-inbox
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
+
+CrispClient.website.deleteInbox(websiteID, inboxID);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#get-verify-settings
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
