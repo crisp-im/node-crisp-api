@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.6.0
+
+### New Features
+
+* Added now-public `WebsiteInbox` service to the `CrispClient.website` prefix.
+
 ## v10.5.0
 
 ### New Features
