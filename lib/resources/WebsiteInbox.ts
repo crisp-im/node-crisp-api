@@ -34,6 +34,10 @@ export type WebsiteInboxCondition = {
   query?: string[];
 };
 
+export type WebsiteInboxNew = {
+  inbox_id?: string;
+};
+
 export type WebsiteInboxOrders = {
   orders?: WebsiteInboxOrder[];
 }
@@ -80,7 +84,9 @@ class WebsiteInboxService extends BaseResource {
   /**
    * Create A New Inbox
    */
-  createNewInbox(websiteID: string, inbox: WebsiteInbox) {
+  createNewInbox(
+    websiteID: string, inbox: WebsiteInbox
+  ): Promise<WebsiteInboxNew> {
     return this.crisp.post(
       this.crisp.prepareRestUrl(["website", websiteID, "inbox"]), null, inbox
     );
