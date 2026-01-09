@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.6.1
+
+### Changes
+
+* Added missing `PluginConnectWebsitePlan` type in the `PluginConnect` resource.
+
 ## v10.6.0
 
 ### New Features
