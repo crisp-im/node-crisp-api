@@ -20,18 +20,19 @@ export type PluginConnectAccount = {
   plugin_id?: string;
 };
 
-export type PluginConnectAllWebsite = {
+export type PluginConnectWebsite = {
   website_id?: string;
   token?: string;
   settings?: object;
-}
-
-export type PluginConnectWebsitesSince = {
-  website_id?: string;
-  token?: string;
-  settings?: object;
+  plan?: PluginConnectWebsitePlan;
   difference?: string;
 }
+
+export type PluginConnectWebsitePlan = {
+  id?: string;
+  name?: string;
+  trialing?: boolean;
+};
 
 export type PluginConnectEndpoints = {
   socket?: PluginConnectEndpointsSocket;
@@ -79,7 +80,7 @@ class PluginConnect extends BaseResource {
    */
   listAllConnectWebsites(
     pageNumber: number, filterConfigured: boolean, includePlan: boolean
-  ): Promise<PluginConnectAllWebsite[]> {
+  ): Promise<PluginConnectWebsite[]> {
     // Generate query
     let query = {
       filter_configured: (
@@ -105,7 +106,7 @@ class PluginConnect extends BaseResource {
    */
   listConnectWebsitesSince(
     dateSince: string, filterConfigured: boolean, includePlan: boolean
-  ): Promise<PluginConnectWebsitesSince[]> {
+  ): Promise<PluginConnectWebsite[]> {
     // Generate query
     let query = {
       filter_configured: (
