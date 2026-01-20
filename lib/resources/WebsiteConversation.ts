@@ -213,6 +213,7 @@ export interface ConversationMessage {
   user?: ConversationMessageUser;
   references?: ConversationMessageReference[];
   original?: ConversationMessageOriginal;
+  properties?: { [key: string]: string|number|boolean };
 }
 
 export interface ConversationFileMessageContent {
@@ -338,6 +339,7 @@ export interface ConversationMessageNewBase {
   user?: ConversationMessageUser;
   references?: ConversationMessageReference[];
   original?: ConversationMessageOriginal;
+  properties?: { [key: string]: string|number|boolean };
   timestamp?: number;
   stealth?: boolean;
   translated?: boolean;
