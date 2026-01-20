@@ -92,6 +92,15 @@ export interface ConversationVerification {
   annotation?: string;
 }
 
+export interface ConversationRelations {
+  conversations?: ConversationRelationsConversations;
+}
+
+export interface ConversationRelationsConversations {
+  parent?: string|null;
+  children?: string[];
+}
+
 export interface ConversationParticipant {
   type?: string;
   target?: string;
@@ -1060,6 +1069,19 @@ class WebsiteConversation extends BaseResource {
       {
         state: state
       }
+    );
+  };
+
+  /**
+   * Get Conversation Relations
+   */
+  getConversationRelations(
+    websiteID: string, sessionID: string
+  ): Promise<ConversationRelations> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "conversation", sessionID, "relations"
+      ])
     );
   };
 
