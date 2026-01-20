@@ -1,6 +1,16 @@
 Changelog
 =========
 
+## v10.7.0
+
+### New Features
+
+* Added the new `CrispClient.website.getConversationRelations` method.
+
+### Changes
+
+* Added optional `properties` on all message types.
+
 ## v10.6.1
 
 ### Changes
