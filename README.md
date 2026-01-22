@@ -3985,6 +3985,8 @@ Available events are listed below:
     * `plugin:channel`
   * **Plugin Event** [`user`, `plugin`]:
     * `plugin:event`
+  * **Plugin Subscription Updated** [`user`, `plugin`]:
+    * `plugin:subscription:updated`
   * **Plugin Settings Saved** [`user`, `plugin`]:
     * `plugin:settings:saved`
 

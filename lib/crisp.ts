@@ -168,6 +168,7 @@ const DEFAULT_RTM_EVENTS = [
   // Plugin Events
   "plugin:channel",
   "plugin:event",
+  "plugin:subscription:updated",
   "plugin:settings:saved",
 
   // Plan Events
