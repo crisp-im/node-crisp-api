@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.8.0
+
+### New Features
+
+* Added support for the `plugin:subscription:updated` RTM API event.
+
 ## v10.7.0
 
 ### New Features
