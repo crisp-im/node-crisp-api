@@ -1697,6 +1697,7 @@ var settings = {
   },
   "chatbox": {
     "tile": "default",
+    "conversations": true,
     "wait_game": false,
     "website_logo": true,
     "last_operator_face": false,
