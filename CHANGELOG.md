@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.8.1
+
+### Changes
+
+* Added `conversations` property on `chatbox` options in website settings.
+
 ## v10.8.0
 
 ### New Features
