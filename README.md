@@ -22,7 +22,7 @@ To authenticate against the API, obtain your authentication token keypair by fol
 Then, add authentication parameters to your `client` instance right after you create it:
 
 ```javascript
-var Crisp = require("crisp-api");
+var { Crisp } = require("crisp-api");
 var CrispClient = new Crisp();
 
 // Authenticate to API with your plugin token (identifier, key)
@@ -37,7 +37,7 @@ CrispClient.authenticateTier("plugin", identifier, key);
 You may follow the [REST API Quickstart](https://docs.crisp.chat/guides/rest-api/quickstart/) guide, which will get you running with the REST API in minutes.
 
 ```javascript
-var Crisp = require("crisp-api");
+var { Crisp } = require("crisp-api");
 var CrispClient = new Crisp();
 
 CrispClient.authenticateTier("plugin", identifier, key);
@@ -56,7 +56,7 @@ CrispClient.website.listConversations(websiteID, 1)
 ### Create your own bot!
 
 ```javascript
-var Crisp = require("crisp-api");
+var { Crisp } = require("crisp-api");
 var CrispClient = new Crisp();
 
 CrispClient.authenticateTier("plugin", identifier, key);
