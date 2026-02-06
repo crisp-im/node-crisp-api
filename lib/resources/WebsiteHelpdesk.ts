@@ -35,11 +35,19 @@ export interface HelpdeskLocale {
 }
 
 export interface HelpdeskLocaleArticle {
-  locale_id?: string;
-  locale?: string;
+  article_id?: string;
+  title?: string;
+  description?: string | null;
+  content?: string;
+  status?: "published" | "draft";
+  visibility?: "visible" | "hidden";
+  featured?: boolean;
+  visits?: number;
+  order?: number;
   url?: string;
-  articles?: number;
-  categories?: number;
+  created_at?: number;
+  updated_at?: number;
+  published_at?: number;
 }
 
 export interface HelpdeskLocaleArticleCategory {
