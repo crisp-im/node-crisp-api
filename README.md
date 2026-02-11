@@ -2492,6 +2492,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           "visitor_compose": false,
           "file_transfer": true,
           "audio_record": true,
+          "mode_initial": "chat",
+          "home": true,
           "overlay_search": true,
           "overlay_mode": false,
           "helpdesk_link": true,

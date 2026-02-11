@@ -77,6 +77,8 @@ export interface WebsiteSettingsChatbox {
   visitor_compose?: boolean;
   file_transfer?: boolean;
   audio_record?: boolean;
+  mode_initial?: string;
+  home?: boolean;
   overlay_search?: boolean;
   overlay_mode?: boolean;
   helpdesk_link?: boolean;
@@ -94,6 +96,7 @@ export interface WebsiteSettingsChatbox {
   blocked_pages?: string[];
   blocked_countries?: string[];
   blocked_locales?: string[];
+  blocked_ips?: string[];
 }
 
 export interface WebsiteSettingsUpdate {
@@ -157,6 +160,8 @@ export interface WebsiteSettingsUpdateChatbox {
   visitor_compose?: boolean;
   file_transfer?: boolean;
   audio_record?: boolean;
+  mode_initial?: string;
+  home?: boolean;
   overlay_search?: boolean;
   overlay_mode?: boolean;
   helpdesk_link?: boolean;
