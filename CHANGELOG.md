@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.8.2
+
+### Changes
+
+* Added `mode_initial` and `home` properties on `chatbox` options in website settings.
+
 ## v10.8.1
 
 ### Changes
