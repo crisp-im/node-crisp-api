@@ -112,6 +112,7 @@ export interface ConversationParticipants {
 
 export interface ConversationParticipantsSave {
   participants?: ConversationParticipant[];
+  user?: ConversationMessageUser;
 }
 
 export interface ConversationMeta {
@@ -1057,7 +1058,8 @@ class WebsiteConversation extends BaseResource {
    * Change Conversation State
    */
   changeConversationState(
-    websiteID: string, sessionID: string, state: ConversationState
+    websiteID: string, sessionID: string, state: ConversationState,
+      user?: ConversationMessageUser
   ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
@@ -1067,7 +1069,8 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        state: state
+        state: state,
+        user: user
       }
     );
   };
@@ -1130,7 +1133,8 @@ class WebsiteConversation extends BaseResource {
    * Block Incoming Messages For Conversation
    */
   blockIncomingMessagesForConversation(
-    websiteID: string, sessionID: string, blocked: boolean
+    websiteID: string, sessionID: string, blocked: boolean,
+      user?: ConversationMessageUser
   ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
@@ -1140,7 +1144,8 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        blocked: (blocked || false)
+        blocked: (blocked || false),
+        user: user
       }
     );
   };
@@ -1334,7 +1339,8 @@ class WebsiteConversation extends BaseResource {
    * Initiate New Call Session For Conversation
    */
   initiateNewCallSessionForConversation(
-    websiteID: string, sessionID: string, mode: string
+    websiteID: string, sessionID: string, mode: string,
+      user?: ConversationMessageUser
   ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
@@ -1344,7 +1350,8 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        mode: (mode || "audio")
+        mode: (mode || "audio"),
+        user: user
       }
     );
   };
@@ -1366,12 +1373,19 @@ class WebsiteConversation extends BaseResource {
    * Abort Ongoing Call Session For Conversation
    */
   abortOngoingCallSessionForConversation(
-    websiteID: string, sessionID: string, callID: string
+    websiteID: string, sessionID: string, callID: string,
+      user?: ConversationMessageUser
   ) {
     return this.crisp.delete(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "call", callID
-      ])
+      ]),
+
+      null,
+
+      {
+        user: user
+      }
     );
   };
 
@@ -1469,7 +1483,8 @@ class WebsiteConversation extends BaseResource {
    * Schedule A Reminder For Conversation
    */
   scheduleReminderForConversation(
-    websiteID: string, sessionID: string, date: string, note: string
+    websiteID: string, sessionID: string, date: string, note: string,
+      user?: ConversationMessageUser
   ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
@@ -1480,7 +1495,8 @@ class WebsiteConversation extends BaseResource {
 
       {
         date: date,
-        note: note
+        note: note,
+        user: user
       }
     );
   };
