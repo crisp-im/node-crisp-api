@@ -680,7 +680,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
   * **⭐ Change Conversation State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-conversation-state)
-    * `CrispClient.website.changeConversationState(websiteID, sessionID, state)`
+    * `CrispClient.website.changeConversationState(websiteID, sessionID, state, user)`
     * <details>
       <summary>See Example</summary>
 
@@ -756,7 +756,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
   * **Block Incoming Messages For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#block-incoming-messages-for-conversation)
-    * `CrispClient.website.blockIncomingMessagesForConversation(websiteID, sessionID, blocked)`
+    * `CrispClient.website.blockIncomingMessagesForConversation(websiteID, sessionID, blocked, user)`
     * <details>
       <summary>See Example</summary>
 
@@ -942,7 +942,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
   * **Initiate New Call Session For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initiate-new-call-session-for-conversation)
-    * `CrispClient.website.initiateNewCallSessionForConversation(websiteID, sessionID, mode)`
+    * `CrispClient.website.initiateNewCallSessionForConversation(websiteID, sessionID, mode, user)`
     * <details>
       <summary>See Example</summary>
 
@@ -970,7 +970,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
   * **Abort Ongoing Call Session For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#abort-ongoing-call-session-for-conversation)
-    * `CrispClient.website.abortOngoingCallSessionForConversation(websiteID, sessionID, callID)`
+    * `CrispClient.website.abortOngoingCallSessionForConversation(websiteID, sessionID, callID, user)`
     * <details>
       <summary>See Example</summary>
 
@@ -1073,7 +1073,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
   * **Schedule A Reminder For Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#schedule-a-reminder-for-conversation)
-    * `CrispClient.website.scheduleReminderForConversation(websiteID, sessionID, date, note)`
+    * `CrispClient.website.scheduleReminderForConversation(websiteID, sessionID, date, note, user)`
     * <details>
       <summary>See Example</summary>
 
