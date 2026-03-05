@@ -113,6 +113,7 @@ export interface ConversationParticipants {
 export interface ConversationParticipantsSave {
   participants?: ConversationParticipant[];
   user?: ConversationMessageUser;
+  origin?: string;
 }
 
 export interface ConversationMeta {
@@ -1059,19 +1060,25 @@ class WebsiteConversation extends BaseResource {
    */
   changeConversationState(
     websiteID: string, sessionID: string, state: ConversationState,
-      user?: ConversationMessageUser
+      user?: ConversationMessageUser, origin?: string
   ) {
+    // Generate body
+    let body = {
+      state: state,
+      user: user
+    };
+
+    if (origin) {
+      // @ts-ignore
+      body.origin = origin;
+    }
+
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "state"
       ]),
 
-      null,
-
-      {
-        state: state,
-        user: user
-      }
+      null, body
     );
   };
 
@@ -1134,19 +1141,25 @@ class WebsiteConversation extends BaseResource {
    */
   blockIncomingMessagesForConversation(
     websiteID: string, sessionID: string, blocked: boolean,
-      user?: ConversationMessageUser
+      user?: ConversationMessageUser, origin?: string
   ) {
+    // Generate body
+    let body = {
+      blocked: (blocked || false),
+      user: user
+    };
+
+    if (origin) {
+      // @ts-ignore
+      body.origin = origin;
+    }
+
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "block"
       ]),
 
-      null,
-
-      {
-        blocked: (blocked || false),
-        user: user
-      }
+      null, body
     );
   };
 
@@ -1340,19 +1353,25 @@ class WebsiteConversation extends BaseResource {
    */
   initiateNewCallSessionForConversation(
     websiteID: string, sessionID: string, mode: string,
-      user?: ConversationMessageUser
+      user?: ConversationMessageUser, origin?: string
   ) {
+    // Generate body
+    let body = {
+      mode: (mode || "audio"),
+      user: user
+    };
+
+    if (origin) {
+      // @ts-ignore
+      body.origin = origin;
+    }
+
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "call"
       ]),
 
-      null,
-
-      {
-        mode: (mode || "audio"),
-        user: user
-      }
+      null, body
     );
   };
 
@@ -1374,18 +1393,24 @@ class WebsiteConversation extends BaseResource {
    */
   abortOngoingCallSessionForConversation(
     websiteID: string, sessionID: string, callID: string,
-      user?: ConversationMessageUser
+      user?: ConversationMessageUser, origin?: string
   ) {
+    // Generate body
+    let body = {
+      user: user
+    };
+
+    if (origin) {
+      // @ts-ignore
+      body.origin = origin;
+    }
+
     return this.crisp.delete(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "call", callID
       ]),
 
-      null,
-
-      {
-        user: user
-      }
+      null, body
     );
   };
 
@@ -1484,20 +1509,26 @@ class WebsiteConversation extends BaseResource {
    */
   scheduleReminderForConversation(
     websiteID: string, sessionID: string, date: string, note: string,
-      user?: ConversationMessageUser
+      user?: ConversationMessageUser, origin?: string
   ) {
+    // Generate body
+    let body = {
+      date: date,
+      note: note,
+      user: user
+    };
+
+    if (origin) {
+      // @ts-ignore
+      body.origin = origin;
+    }
+
     return this.crisp.post(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "reminder"
       ]),
 
-      null,
-
-      {
-        date: date,
-        note: note,
-        user: user
-      }
+      null, body
     );
   };
 
