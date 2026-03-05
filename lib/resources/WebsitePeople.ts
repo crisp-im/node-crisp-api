@@ -355,7 +355,7 @@ class WebsitePeople extends BaseResource {
   /**
    * Save People Profile
    */
-  getPeopleProfile(websiteID: string, peopleID: string) {
+  getPeopleProfile(websiteID: string, peopleID: string): Promise<PeopleProfile> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "people", "profile", peopleID
