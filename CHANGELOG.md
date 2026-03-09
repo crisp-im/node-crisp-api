@@ -1,6 +1,30 @@
 Changelog
 =========
 
+## v10.8.6
+
+### Changes
+
+* Bumped package version.
+
+## v10.8.5
+
+### Changes
+
+* Added return type on the `CrispClient.website.getPeopleProfile` method.
+
+## v10.8.4
+
+### Changes
+
+* Added types for new `origin` field on some payloads.
+
+## v10.8.3
+
+### Changes
+
+* Added types for new `user` field on some payloads.
+
 ## v10.8.2
 
 ### Changes
