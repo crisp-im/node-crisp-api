@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.9.0
+
+### Changes
+
+* Removed support for the `bucket:url:crawler:generated` RTM API event.
+
 ## v10.8.6
 
 ### Changes
