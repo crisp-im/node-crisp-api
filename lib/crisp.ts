@@ -156,7 +156,6 @@ const DEFAULT_RTM_EVENTS = [
   "bucket:url:helpdesk:generated",
   "bucket:url:status:generated",
   "bucket:url:processing:generated",
-  "bucket:url:crawler:generated",
 
   // Media Events
   "media:animation:listed",

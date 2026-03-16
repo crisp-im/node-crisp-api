@@ -3970,8 +3970,6 @@ Available events are listed below:
     * `bucket:url:status:generated`
   * **Bucket URL Processing Generated** [`user`, `plugin`]:
     * `bucket:url:processing:generated`
-  * **Bucket URL Crawler Generated** [`user`, `plugin`]:
-    * `bucket:url:crawler:generated`
 
 * #### **Media Events**: [Reference](https://docs.crisp.chat/references/rtm-api/v1/#media-events)
   * **Media Animation Listed** [`user`]:
