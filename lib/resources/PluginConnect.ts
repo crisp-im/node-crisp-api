@@ -22,6 +22,7 @@ export type PluginConnectAccount = {
 
 export type PluginConnectWebsite = {
   website_id?: string;
+  price?: number;
   token?: string;
   settings?: object;
   plan?: PluginConnectWebsitePlan;
