@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.9.1
+
+### Changes
+
+* Added `price` property on the `PluginConnectWebsite` type.
+
 ## v10.9.0
 
 ### Changes
