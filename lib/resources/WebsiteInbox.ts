@@ -23,6 +23,7 @@ export type WebsiteInbox = {
   order?: number;
   operators?: string[];
   conditions?: WebsiteInboxCondition[];
+  operator?: string;
   created_at?: number;
   updated_at?: number;
 }

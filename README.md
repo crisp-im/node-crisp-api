@@ -2910,6 +2910,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
         ],
 
+        "operator": "and",
+
         "conditions": [
           {
             "model": "session",
@@ -2971,6 +2973,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
           "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
           "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
         ],
+
+        "operator": "and",
 
         "conditions": [
           {
