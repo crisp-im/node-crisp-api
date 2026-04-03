@@ -31,7 +31,7 @@ import Website, { WebsiteServiceInterface } from "@/services/website";
 
 export type RTM_MODES = "websockets" | "webhooks";
 
-export type CrispTier = "user" | "plugin";
+export type CrispTier = "user" | "website" | "plugin";
 
 /**************************************************************************
  * CONSTANTS
@@ -323,7 +323,7 @@ class Crisp {
   /**
    * Sets the authentication tier
    */
-  setTier(tier: "user" | "plugin") {
+  setTier(tier: "user" | "website" | "plugin") {
     this.auth.tier = (tier || "user");
   }
 
@@ -754,6 +754,12 @@ class Crisp {
         let restUrlSegments;
 
         switch (this.auth.tier) {
+          case "website": {
+            restUrlSegments = ["website", "connect", "endpoints"];
+
+            break;
+          }
+
           case "plugin": {
             restUrlSegments = ["plugin", "connect", "endpoints"];
 
