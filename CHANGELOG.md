@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.9.2
+
+### Changes
+
+* Fixed return type for `CrispClient.website.getConversationParticipants` method.
+
 ## v10.9.1
 
 ### Changes

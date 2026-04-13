@@ -1100,7 +1100,7 @@ class WebsiteConversation extends BaseResource {
    */
   getConversationParticipants(
     websiteID: string, sessionID: string
-  ): Promise<ConversationParticipant[]> {
+  ): Promise<ConversationParticipants> {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "participants"
