@@ -947,7 +947,7 @@ class WebsiteConversation extends BaseResource {
    * Update Conversation Inbox
    */
   updateConversationInbox(
-    websiteID: string, sessionID: string, inboxID: string
+    websiteID: string, sessionID: string, inboxID?: string | null
   ) {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
@@ -957,7 +957,7 @@ class WebsiteConversation extends BaseResource {
       null,
 
       {
-        inbox_id: inboxID
+        inbox_id: inboxID || null
       }
     );
   }
