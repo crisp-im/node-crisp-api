@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.9.3
+
+### Changes
+
+* Made `inbox_id` parameter optional on `CrispClient.website.updateConversationInbox` method.
+
 ## v10.9.2
 
 ### Changes
