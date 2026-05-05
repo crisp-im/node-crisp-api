@@ -15,6 +15,7 @@ import WebsiteAnalytics from "@/resources/WebsiteAnalytics";
 import WebsiteAvailability from "@/resources/WebsiteAvailability";
 import WebsiteBatch from "@/resources/WebsiteBatch";
 import WebsiteCampaign from "@/resources/WebsiteCampaign";
+import WebsiteConnect from "@/resources/WebsiteConnect";
 import WebsiteConversation from "@/resources/WebsiteConversation";
 import WebsiteHelpdesk from "@/resources/WebsiteHelpdesk";
 import WebsiteInbox from "@/resources/WebsiteInbox";
@@ -39,6 +40,7 @@ class WebsiteService {
     WebsiteAvailability,
     WebsiteBatch,
     WebsiteCampaign,
+    WebsiteConnect,
     WebsiteConversation,
     WebsiteHelpdesk,
     WebsiteInbox,
@@ -60,6 +62,7 @@ export interface WebsiteServiceInterface extends
   WebsiteAvailability,
   WebsiteBatch,
   WebsiteCampaign,
+  WebsiteConnect,
   WebsiteConversation,
   WebsiteHelpdesk,
   WebsiteInbox,

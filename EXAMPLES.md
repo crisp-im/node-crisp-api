@@ -2379,6 +2379,14 @@ CrispClient.website.listCampaignStatistics(websiteID, campaignID, action, pageNu
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#get-website-connect-endpoints
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient.website.getConnectEndpoints(websiteID);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#get-connect-account
 
 CrispClient.plugin.getConnectAccount();

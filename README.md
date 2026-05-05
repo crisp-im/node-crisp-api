@@ -115,6 +115,7 @@ All methods that you will most likely need when building a Crisp integration are
     <li><a href="#website-verify">Website Verify</a></li>
     <li><a href="#website-campaigns">Website Campaigns</a></li>
     <li><a href="#website-campaign">Website Campaign</a></li>
+    <li><a href="#website-connect">Website Connect</a></li>
   </ul>
 </details>
 <details>
@@ -3375,6 +3376,20 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var pageNumber = 1;
 
       CrispClient.website.listCampaignStatistics(websiteID, campaignID, action, pageNumber);
+      ```
+      </details>
+
+
+* #### **Website Connect**
+  * **Get Connect Endpoints**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-connect-endpoints)
+    * `CrispClient.website.getConnectEndpoints(websiteID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      CrispClient.website.getConnectEndpoints(websiteID);
       ```
       </details>
 

@@ -20,6 +20,7 @@ export * from "./WebsiteAvailability";
 export * from "./WebsiteBase";
 export * from "./WebsiteBatch";
 export * from "./WebsiteCampaign";
+export * from "./WebsiteConnect";
 export * from "./WebsiteConversation";
 export * from "./WebsiteHelpdesk";
 export * from "./WebsiteInbox";
