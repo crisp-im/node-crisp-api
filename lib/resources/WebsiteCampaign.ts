@@ -107,6 +107,7 @@ export type WebsiteCampaignRecipientPerson = {
 }
 
 export type WebsiteCampaignStatistic = {
+  type?: string;
   profile?: WebsiteCampaignStatisticProfile;
   data?: Record<string, unknown>;
   created_at?: number;
