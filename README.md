@@ -2795,6 +2795,25 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
+  * **Batch Unresolve Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-unresolve-items)
+    * `CrispClient.website.batchUnresolveConversations(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ]
+      };
+
+      CrispClient.website.batchUnresolveConversations(websiteID, operation);
+      ```
+      </details>
+
   * **Batch Read Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-read-items)
     * `CrispClient.website.batchReadConversations(websiteID, operation)`
     * <details>
@@ -2813,6 +2832,25 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       };
 
       CrispClient.website.batchReadConversations(websiteID, operation);
+      ```
+      </details>
+
+  * **Batch Unread Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-unread-items)
+    * `CrispClient.website.batchUnreadConversations(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ]
+      };
+
+      CrispClient.website.batchUnreadConversations(websiteID, operation);
       ```
       </details>
 
@@ -2851,6 +2889,92 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ];
 
       CrispClient.website.batchRemoveConversations(websiteID, sessions);
+      ```
+      </details>
+
+  * **Batch Report Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-report-items)
+    * `CrispClient.website.batchReportConversations(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+
+        "flag": "spam"
+      };
+
+      CrispClient.website.batchReportConversations(websiteID, operation);
+      ```
+      </details>
+
+  * **Batch Block Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-block-items)
+    * `CrispClient.website.batchBlockConversations(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+
+        "blocked": true
+      };
+
+      CrispClient.website.batchBlockConversations(websiteID, operation);
+      ```
+      </details>
+
+  * **Batch Routing Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-routing-items)
+    * `CrispClient.website.batchRoutingConversations(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+
+        "assigned": {
+          "user_id": "a4c32c68-be91-4e29-b97e-b3b6af886eaa"
+        }
+      };
+
+      CrispClient.website.batchRoutingConversations(websiteID, operation);
+      ```
+      </details>
+
+  * **Batch Inbox Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-inbox-items)
+    * `CrispClient.website.batchInboxConversations(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+
+        "inbox_id": "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31"
+      };
+
+      CrispClient.website.batchInboxConversations(websiteID, operation);
       ```
       </details>
 
