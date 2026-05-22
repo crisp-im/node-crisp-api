@@ -1692,7 +1692,6 @@ var settings = {
   "emails": {
     "rating": true,
     "transcript": true,
-    "enrich": true,
     "junk_filter": true
   },
   "chatbox": {
