@@ -2977,6 +2977,100 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
+  * **Batch Update Conversations Data**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-data-items)
+    * `CrispClient.website.batchUpdateConversationsData(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+
+        "data": {
+          "plan": "pro",
+          "subscribed": true
+        }
+      };
+
+      CrispClient.website.batchUpdateConversationsData(websiteID, operation);
+      ```
+      </details>
+
+  * **Batch Update People Data**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-data-items)
+    * `CrispClient.website.batchUpdatePeopleData(websiteID, people, data)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var people = {
+        "profiles": [
+          "eee8759d-52db-48e5-982d-3426e3566ce0"
+        ]
+      };
+
+      var data = {
+        "plan": "pro",
+        "subscribed": true
+      };
+
+      CrispClient.website.batchUpdatePeopleData(websiteID, people, data);
+      ```
+      </details>
+
+  * **Batch Update Conversations Segments**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-segments-items)
+    * `CrispClient.website.batchUpdateConversationsSegments(websiteID, operation)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var operation = {
+        "sessions": [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+
+        "segments": [
+          "vip",
+          "lead"
+        ]
+      };
+
+      CrispClient.website.batchUpdateConversationsSegments(websiteID, operation);
+      ```
+      </details>
+
+  * **Batch Update People Segments**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-segments-items)
+    * `CrispClient.website.batchUpdatePeopleSegments(websiteID, people, segments)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var people = {
+        "profiles": [
+          "eee8759d-52db-48e5-982d-3426e3566ce0"
+        ]
+      };
+
+      var segments = [
+        "vip",
+        "lead"
+      ];
+
+      CrispClient.website.batchUpdatePeopleSegments(websiteID, people, segments);
+      ```
+      </details>
+
 
 * #### **Website Inbox**
   * **List Inboxes**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-inboxes)

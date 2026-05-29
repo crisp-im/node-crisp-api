@@ -50,6 +50,18 @@ export type WebsiteBatchPeopleOperationInner = {
   search?: string;
 }
 
+export type WebsiteBatchDataPayload = Record<string, string | number | boolean>;
+
+export type WebsiteBatchConversationsDataOperation = {
+  sessions: string[];
+  data: WebsiteBatchDataPayload;
+}
+
+export type WebsiteBatchConversationsSegmentsOperation = {
+  sessions: string[];
+  segments: string[];
+}
+
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -207,6 +219,70 @@ class WebsiteBatch extends BaseResource {
       this.crisp.prepareRestUrl(["website", websiteID, "batch", "inbox"]),
 
       null, operation
+    );
+  };
+
+  /**
+   * Batch Update Conversations Data
+   */
+  batchUpdateConversationsData(
+    websiteID: string, operation: WebsiteBatchConversationsDataOperation
+  ) {
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl(["website", websiteID, "batch", "data"]),
+
+      null, operation
+    );
+  };
+
+  /**
+   * Batch Update People Data
+   */
+  batchUpdatePeopleData(
+    websiteID: string, people: WebsiteBatchPeopleOperationInner,
+      data: WebsiteBatchDataPayload
+  ) {
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl(["website", websiteID, "batch", "data"]),
+
+      null,
+
+      {
+        people: people,
+        data: data
+      }
+    );
+  };
+
+  /**
+   * Batch Update Conversations Segments
+   */
+  batchUpdateConversationsSegments(
+    websiteID: string, operation: WebsiteBatchConversationsSegmentsOperation
+  ) {
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl(["website", websiteID, "batch", "segments"]),
+
+      null, operation
+    );
+  };
+
+  /**
+   * Batch Update People Segments
+   */
+  batchUpdatePeopleSegments(
+    websiteID: string, people: WebsiteBatchPeopleOperationInner,
+      segments: string[]
+  ) {
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl(["website", websiteID, "batch", "segments"]),
+
+      null,
+
+      {
+        people: people,
+        segments: segments
+      }
     );
   };
 }

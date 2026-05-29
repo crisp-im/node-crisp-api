@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.10.1
+
+### Changes
+
+* Added `CrispClient.website.batchUpdateConversationsData`, `CrispClient.website.batchUpdatePeopleData`, `CrispClient.website.batchUpdateConversationsSegments` and `CrispClient.website.batchUpdatePeopleSegments` methods.
+
 ## v10.9.3
 
 ### Changes
