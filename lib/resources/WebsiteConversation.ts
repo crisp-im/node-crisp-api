@@ -1430,6 +1430,31 @@ class WebsiteConversation extends BaseResource {
   };
 
   /**
+   * Request Tool Call For Conversation
+   */
+  requestToolCallForConversation(
+    websiteID: string, sessionID: string, command: string, payload?: object
+  ) {
+    // Generate body
+    let body = {
+      command: command
+    };
+
+    if (payload) {
+      // @ts-ignore
+      body.payload = payload;
+    }
+
+    return this.crisp.post(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "conversation", sessionID, "tool"
+      ]),
+
+      null, body
+    );
+  };
+
+  /**
    * Deliver Widget Button Action For Conversation
    */
   deliverWidgetButtonActionForConversation(

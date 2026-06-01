@@ -1003,6 +1003,21 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
+  * **Request Tool Call For Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#request-tool-call-for-conversation)
+    * `CrispClient.website.requestToolCallForConversation(websiteID, sessionID, command, payload)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+      var command = "list_tools";
+
+      CrispClient.website.requestToolCallForConversation(websiteID, sessionID, command);
+      ```
+      </details>
+
   * **Deliver Widget Button Action For Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#deliver-widget-button-action-for-conversation)
     * `CrispClient.website.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value)`
     * <details>
