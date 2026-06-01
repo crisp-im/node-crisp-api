@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.10.2
+
+### Changes
+
+* Added `CrispClient.website.requestToolCallForConversation` method.
+
 ## v10.10.1
 
 ### Changes
