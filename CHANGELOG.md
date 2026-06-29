@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.10.3
+
+### Changes
+
+* Added types for new `verified` and `institutional` field on `Website` payload.
+
 ## v10.10.2
 
 ### Changes
