@@ -21,6 +21,8 @@ export type Website = {
   name?: string;
   domain?: string;
   logo?: string;
+  verified?: boolean;
+  institutional?: boolean;
 }
 
 export type WebsiteCreate = {
