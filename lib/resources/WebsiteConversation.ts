@@ -759,7 +759,8 @@ class WebsiteConversation extends BaseResource {
    * Get Messages In Conversation
    */
   getMessagesInConversation(
-    websiteID: string, sessionID: string, timestampBefore?: string|number
+    websiteID: string, sessionID: string, timestampBefore?: string|number,
+    timestampAfter?: string|number, timestampAround?: string|number
   ): Promise<ConversationMessage[]> {
     // Generate query
     let query = {};
@@ -767,6 +768,16 @@ class WebsiteConversation extends BaseResource {
     if (timestampBefore) {
       // @ts-ignore
       query.timestamp_before = String(timestampBefore);
+    }
+
+    if (timestampAfter) {
+      // @ts-ignore
+      query.timestamp_after = String(timestampAfter);
+    }
+
+    if (timestampAround) {
+      // @ts-ignore
+      query.timestamp_around = String(timestampAround);
     }
 
     return this.crisp.get(
