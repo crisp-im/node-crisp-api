@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.10.4
+
+### Changes
+
+* Added `timestampAfter` and `timestampAround` parameters on `CrispClient.website.getMessagesInConversation` method.
+
 ## v10.10.3
 
 ### Changes
