@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v10.10.5
+
+### Changes
+
+* Added typed RTM events, exposing an `EventsMap` of event name to payload type, and typing the `CrispClient.on` event listener accordingly.
+
 ## v10.10.4
 
 ### Changes
