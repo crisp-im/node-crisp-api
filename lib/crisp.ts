@@ -25,6 +25,9 @@ import Plugin, { PluginServiceInterface } from "@/services/plugin";
 import Plan, { PlanServiceInterface } from "@/services/plan";
 import Website, { WebsiteServiceInterface } from "@/services/website";
 
+// PROJECT: EVENTS
+import { EventsMap, EventName } from "@/events/Events";
+
 /**************************************************************************
  * TYPES
  ***************************************************************************/
@@ -423,6 +426,22 @@ class Crisp {
   }
 
   /* eslint-enable @typescript-eslint/no-explicit-any */
+
+  /**
+   * Binds RTM event (typed variant)
+   */
+  on<Name extends EventName>(
+    // eslint-disable-next-line no-unused-vars
+    event: Name, callback: (data: EventsMap[Name]) => unknown
+  ): Promise<unknown>;
+
+  /**
+   * Binds RTM event (loose variant)
+   */
+  on(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
+    event: string, callback: (data: any) => unknown
+  ): Promise<unknown>;
 
   /**
    * Binds RTM event
@@ -1046,5 +1065,6 @@ class Crisp {
  ***************************************************************************/
 
 export * from "@/resources";
+export * from "@/events/Events";
 export { Crisp };
 export default Crisp;
