@@ -70,6 +70,8 @@ export interface EventsSessionVerification {
 export interface EventsSessionUpdateVerify extends EventsSessionGeneric {
   is_verified: boolean;
   verifications: EventsSessionVerification[];
+  routing_ids?: string[];
+  error?: "unknown";
 }
 
 export type EventsSessionRequestInitiated = EventsSessionGeneric;
@@ -244,6 +246,7 @@ export interface EventsMessageGeneric extends EventsSessionGeneric {
   user: ConversationMessageUser;
   mentions?: string[];
   stamped?: boolean;
+  automated?: boolean;
 }
 
 export interface EventsMessageSendText extends EventsMessageGeneric {
@@ -609,6 +612,7 @@ export interface EventsEmailTrackView extends EventsWebsiteGeneric {
  ***************************************************************************/
 
 export interface EventsPluginChannel extends EventsWebsiteGeneric {
+  type?: string;
   plugin_id: string;
   identifier: string;
   namespace: string;

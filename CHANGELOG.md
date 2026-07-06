@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v10.10.6
+
+### Changes
+
+* Added missing `url` field on `PeopleProfileCardPersonProfile` type.
+* Adding missing fields on RTM events
+
+
 ## v10.10.5
 
 ### Changes
