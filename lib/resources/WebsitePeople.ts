@@ -82,6 +82,7 @@ export interface PeopleProfileCardPerson {
 export interface PeopleProfileCardPersonProfile {
   type?: string;
   handle?: string;
+  url?: string;
 }
 
 export interface PeopleProfileCardPersonEmployment {
