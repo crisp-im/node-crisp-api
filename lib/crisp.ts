@@ -263,7 +263,7 @@ class Crisp {
 
   protected _brokerScheduler: typeof setTimeout | null = null;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected _brokerBindHooks: ((modeInstance: any, emitter: any) => void)[] = [];
 
   protected _boundEvents = {};
@@ -431,7 +431,6 @@ class Crisp {
    * Binds RTM event (typed variant)
    */
   on<Name extends EventName>(
-    // eslint-disable-next-line no-unused-vars
     event: Name, callback: (data: EventsMap[Name]) => unknown
   ): Promise<unknown>;
 
@@ -439,14 +438,14 @@ class Crisp {
    * Binds RTM event (loose variant)
    */
   on(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     event: string, callback: (data: any) => unknown
   ): Promise<unknown>;
 
   /**
    * Binds RTM event
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   on(event: string, callback: (data: any) => any) {
     // Ensure all input arguments are set
     if (typeof event !== "string") {
@@ -481,7 +480,7 @@ class Crisp {
 
     // Subscribe event on the broker
     if (this._boundEvents[event] !== true) {
-      let rtmMode = this._rtm.mode;
+      const rtmMode = this._rtm.mode;
 
       // Mark event as bound
       this._boundEvents[event] = true;
@@ -676,7 +675,7 @@ class Crisp {
    * Binds broker to the main object
    */
   private __prepareBroker(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fnBindHook: (modeInstance: any, emitter: any) => void
   ) {
     return new Promise((resolve, reject) => {
@@ -698,7 +697,7 @@ class Crisp {
           );
         }
 
-        // @ts-ignore
+        // @ts-expect-error - rtmMode is a string
         this._brokerScheduler = setTimeout(() => {
           switch (rtmMode) {
             case "websockets": {
@@ -723,7 +722,7 @@ class Crisp {
             default: {
               const unsupportedError = new Error(
                 "[Crisp] prepareBroker: mode of RTM broker unsupported "  +
-                  "('" + rtmMode + "')"
+                  "('" + String(rtmMode) + "')"
               );
 
               reject(unsupportedError);
@@ -798,7 +797,6 @@ class Crisp {
           });
       })
       .then((endpoints) => {
-        // @ts-ignore
         const rtmHostAffinity = (endpoints?.socket?.app || null);
 
         // No RTM API host acquired?
@@ -813,7 +811,6 @@ class Crisp {
         const rtmHostUrl = new URL(rtmHostAffinity);
 
         // Connect to socket
-        // @ts-ignore
         this._socket = socketio(rtmHostUrl.origin, {
           path: (rtmHostUrl.pathname || "/"),
           transports: ["websocket"],
@@ -902,12 +899,10 @@ class Crisp {
     method: string,
     query: object,
     body: object | null,
-    // eslint-disable-next-line no-unused-vars
     resolve: (value: unknown) => void,
-    // eslint-disable-next-line no-unused-vars
     reject: (reason?: unknown) => void
   ) {
-    let requestParameters = {
+    const requestParameters = {
       responseType: "json",
       timeout: DEFAULT_REQUEST_TIMEOUT,
 
@@ -922,13 +917,13 @@ class Crisp {
 
     // Add authorization?
     if (this.auth.token) {
-      // @ts-ignore
+      // @ts-expect-error - requestParameters.headers is a Record<string, string>
       requestParameters.headers.Authorization = ("Basic " + this.auth.token);
     }
 
     // Add body?
     if (body) {
-      // @ts-ignore
+      // @ts-expect-error - requestParameters.json is a Record<string, unknown>
       requestParameters.json = body;
     }
 
@@ -948,7 +943,7 @@ class Crisp {
         }
       });
 
-      // @ts-ignore
+      // @ts-expect-error - requestParameters.searchParams is a URLSearchParams
       requestParameters.searchParams = params;
     }
 
@@ -977,7 +972,7 @@ class Crisp {
 
         // Response error?
         if (response.statusCode >= 400) {
-          let reasonMessage = this.__readErrorResponseReason(
+          const reasonMessage = this.__readErrorResponseReason(
             method, response.statusCode, response
           );
 
@@ -1009,7 +1004,8 @@ class Crisp {
    * Reads reason for error response
    */
   private __readErrorResponseReason(
-    method: string, statusCode: number, response: object
+    method: string, statusCode: number,
+      response: { body?: { reason?: string } }
   ) {
     // HEAD method? As HEAD requests do not expect any response body, then we \
     //   cannot map a reason from the response.
@@ -1027,7 +1023,6 @@ class Crisp {
 
     // Other methods must hold a response body, therefore we can fallback on \
     //   an HTTP error if we fail to acquire any reason at all.
-    // @ts-ignore
     return ((response?.body?.reason || "http_error"));
   }
 
@@ -1044,15 +1039,15 @@ class Crisp {
     }
 
     // Compute local trace
-    let localTrace = ("[" + timestamp + ";" + JSON.stringify(body) + "]");
+    const localTrace = ("[" + timestamp + ";" + JSON.stringify(body) + "]");
 
     // Create local HMAC
-    let localMac = Crypto.createHmac("sha256", secret);
+    const localMac = Crypto.createHmac("sha256", secret);
 
     localMac.update(localTrace);
 
     // Compute local signature, and compare
-    let localSignature = localMac.digest("hex");
+    const localSignature = localMac.digest("hex");
 
     return (
       (signature === localSignature) ? true : false

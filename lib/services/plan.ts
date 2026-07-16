@@ -30,6 +30,7 @@ class PlanService {
  * EXPORTS
  ***************************************************************************/
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface PlanServiceInterface extends PlanSubscription {
 }
 

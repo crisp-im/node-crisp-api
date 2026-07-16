@@ -436,12 +436,12 @@ class WebsiteHelpdesk extends BaseResource {
       sectionId?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       category_id: categoryId
     };
 
     if (sectionId !== undefined) {
-      // @ts-ignore
+      // @ts-expect-error - sectionId is a string
       body.section_id = sectionId;
     }
 
@@ -739,7 +739,7 @@ class WebsiteHelpdesk extends BaseResource {
 
   /**
    * Save Helpdesk Locale Section
-  */
+   */
   saveHelpdeskLocaleSection(
     websiteID: string, locale: string, categoryId: string, sectionId: string,
       section: HelpdeskLocaleSection
@@ -796,15 +796,13 @@ class WebsiteHelpdesk extends BaseResource {
     filterDateEnd   = (filterDateEnd   || null);
 
     // Generate query
-    let query = {};
+    const query: Record<string, unknown> = {};
 
     if (filterDateStart !== null) {
-      // @ts-ignore
       query.filter_date_start = filterDateStart;
     }
 
     if (filterDateEnd !== null) {
-      // @ts-ignore
       query.filter_date_end = filterDateEnd;
     }
 
@@ -829,15 +827,13 @@ class WebsiteHelpdesk extends BaseResource {
     filterDateEnd   = (filterDateEnd   || null);
 
     // Generate query
-    let query = {};
+    const query: Record<string, unknown> = {};
 
     if (filterDateStart !== null) {
-      // @ts-ignore
       query.filter_date_start = filterDateStart;
     }
 
     if (filterDateEnd !== null) {
-      // @ts-ignore
       query.filter_date_end = filterDateEnd;
     }
 
@@ -953,7 +949,7 @@ class WebsiteHelpdesk extends BaseResource {
 
   /**
    * Resolve Helpdesk Settings
-    */
+   */
   resolveHelpdeskSettings(websiteID: string): Promise<HelpdeskSettings> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk", "settings"])
@@ -987,15 +983,13 @@ class WebsiteHelpdesk extends BaseResource {
     websiteID: string, basic: string, custom: string
   ) {
     // Generate body
-    let body = {};
+    const body: Record<string, unknown> = {};
 
     if (basic !== undefined) {
-      // @ts-ignore
       body.basic = basic;
     }
 
     if (custom !== undefined) {
-      // @ts-ignore
       body.custom = custom;
     }
 
@@ -1013,10 +1007,9 @@ class WebsiteHelpdesk extends BaseResource {
     custom = (custom || null);
 
     // Generate query
-    let query = {};
+    const query: Record<string, unknown> = {};
 
     if (custom !== null) {
-      // @ts-ignore
       query.custom = custom;
     }
 

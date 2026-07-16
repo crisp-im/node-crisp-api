@@ -83,7 +83,7 @@ class PluginConnect extends BaseResource {
     pageNumber: number, filterConfigured: boolean, includePlan: boolean
   ): Promise<PluginConnectWebsite[]> {
     // Generate query
-    let query = {
+    const query = {
       filter_configured: (
         (filterConfigured === true) ? "1" : "0"
       ),
@@ -109,7 +109,7 @@ class PluginConnect extends BaseResource {
     dateSince: string, filterConfigured: boolean, includePlan: boolean
   ): Promise<PluginConnectWebsite[]> {
     // Generate query
-    let query = {
+    const query = {
       filter_configured: (
         (filterConfigured === true) ? "1" : "0"
       ),
@@ -120,7 +120,7 @@ class PluginConnect extends BaseResource {
     };
 
     if (dateSince) {
-      // @ts-ignore
+      // @ts-expect-error - dateSince is a string
       query.date_since = dateSince;
     }
 

@@ -763,20 +763,17 @@ class WebsiteConversation extends BaseResource {
     timestampAfter?: string|number, timestampAround?: string|number
   ): Promise<ConversationMessage[]> {
     // Generate query
-    let query = {};
+    const query: Record<string, unknown> = {};
 
     if (timestampBefore) {
-      // @ts-ignore
       query.timestamp_before = String(timestampBefore);
     }
 
     if (timestampAfter) {
-      // @ts-ignore
       query.timestamp_after = String(timestampAfter);
     }
 
     if (timestampAround) {
-      // @ts-ignore
       query.timestamp_around = String(timestampAround);
     }
 
@@ -1074,13 +1071,13 @@ class WebsiteConversation extends BaseResource {
       user?: ConversationMessageUser, origin?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       state: state,
       user: user
     };
 
     if (origin) {
-      // @ts-ignore
+      // @ts-expect-error - origin is a string
       body.origin = origin;
     }
 
@@ -1155,13 +1152,13 @@ class WebsiteConversation extends BaseResource {
       user?: ConversationMessageUser, origin?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       blocked: (blocked || false),
       user: user
     };
 
     if (origin) {
-      // @ts-ignore
+      // @ts-expect-error - body is a Record<string, unknown>
       body.origin = origin;
     }
 
@@ -1246,12 +1243,12 @@ class WebsiteConversation extends BaseResource {
     websiteID: string, sessionID: string, to: string, email?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       to: to
     };
 
     if (email) {
-      // @ts-ignore
+      // @ts-expect-error - email is a string
       body.email = email;
     }
 
@@ -1367,13 +1364,13 @@ class WebsiteConversation extends BaseResource {
       user?: ConversationMessageUser, origin?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       mode: (mode || "audio"),
       user: user
     };
 
     if (origin) {
-      // @ts-ignore
+      // @ts-expect-error - origin is a string
       body.origin = origin;
     }
 
@@ -1407,12 +1404,12 @@ class WebsiteConversation extends BaseResource {
       user?: ConversationMessageUser, origin?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       user: user
     };
 
     if (origin) {
-      // @ts-ignore
+      // @ts-expect-error - origin is a string
       body.origin = origin;
     }
 
@@ -1447,12 +1444,12 @@ class WebsiteConversation extends BaseResource {
     websiteID: string, sessionID: string, command: string, payload?: object
   ) {
     // Generate body
-    let body = {
+    const body = {
       command: command
     };
 
     if (payload) {
-      // @ts-ignore
+      // @ts-expect-error - payload is a Record<string, unknown>
       body.payload = payload;
     }
 
@@ -1473,14 +1470,14 @@ class WebsiteConversation extends BaseResource {
       itemID: string, data: object, value?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       section_id: sectionID,
       item_id: itemID,
       data: data
     };
 
     if (typeof value !== "undefined") {
-      // @ts-ignore
+      // @ts-expect-error - value is a string
       body.value = value;
     }
 
@@ -1548,14 +1545,14 @@ class WebsiteConversation extends BaseResource {
       user?: ConversationMessageUser, origin?: string
   ) {
     // Generate body
-    let body = {
+    const body = {
       date: date,
       note: note,
       user: user
     };
 
     if (origin) {
-      // @ts-ignore
+      // @ts-expect-error - origin is a string
       body.origin = origin;
     }
 

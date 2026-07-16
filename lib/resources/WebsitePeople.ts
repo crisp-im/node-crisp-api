@@ -295,30 +295,25 @@ class WebsitePeople extends BaseResource {
       searchText?: string
   ): Promise<PeopleProfile[]> {
     // Generate query
-    let query = {};
+    const query: Record<string, unknown> = {};
 
     if (searchField) {
-      // @ts-ignore
       query.sort_field = searchField;
     }
 
     if (searchOrder) {
-      // @ts-ignore
       query.sort_order = searchOrder;
     }
 
     if (searchOperator) {
-      // @ts-ignore
       query.search_operator = searchOperator;
     }
 
     if (searchFilter) {
-      // @ts-ignore
       query.search_filter = searchFilter;
     }
 
     if (searchText) {
-      // @ts-ignore
       query.search_text = searchText;
     }
 

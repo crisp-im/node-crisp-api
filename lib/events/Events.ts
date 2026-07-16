@@ -655,7 +655,7 @@ export interface EventsPlanSubscriptionUpdated extends EventsWebsiteGeneric {
  ***************************************************************************/
 
 /**
- * Maps each event name to the shape of the payload delivered to its listener,
+ * Maps each event name to the shape of the payload delivered to its listener, \
  *   whether received over WebSockets or Web Hooks.
  */
 export interface EventsMap {
@@ -780,7 +780,7 @@ export interface EventsMap {
 export type EventName = keyof EventsMap;
 
 /**
- * Shape of a Web Hook body, as received on the HTTP endpoint before being
+ * Shape of a Web Hook body, as received on the HTTP endpoint before being \
  *   dispatched with 'receiveHook'.
  */
 export type EventsWebHookBody<Name extends EventName = EventName> = {

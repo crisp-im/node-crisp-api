@@ -52,11 +52,6 @@ export type WebsiteFilter = {
 class WebsiteBase extends BaseResource {
   /**
    * Check If Website Exists
-   * @memberof WebsiteBase
-   * @public
-   * @method checkWebsiteExists
-   * @param {string} domain
-   * @return {Promise}
    */
   checkWebsiteExists(domain: string) {
     return this.crisp.head(
@@ -79,11 +74,6 @@ class WebsiteBase extends BaseResource {
 
   /**
    * Get A Website
-   * @memberof WebsiteBase
-   * @public
-   * @method getWebsite
-   * @param {string} websiteID
-   * @return {Promise}
    */
   getWebsite(websiteID: string): Promise<Website> {
     return this.crisp.get(

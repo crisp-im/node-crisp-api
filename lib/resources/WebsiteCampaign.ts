@@ -339,7 +339,6 @@ class WebsiteCampaign extends BaseResource {
 
   /**
    * Dispatch A Campaign
-   * @return {Promise}
    */
   dispatchCampaign(websiteID: string, campaignID: string) {
     return this.crisp.post(

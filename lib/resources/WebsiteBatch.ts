@@ -98,12 +98,6 @@ class WebsiteBatch extends BaseResource {
 
   /**
    * Batch Read Conversations
-   * @memberof WebsiteBatch
-   * @public
-   * @method batchReadConversations
-   * @param {string} websiteID
-   * @param {object} operation
-   * @return {Promise}
    */
   batchReadConversations(
     websiteID: string, operation: WebsiteBatchConversationsOperation
@@ -130,12 +124,6 @@ class WebsiteBatch extends BaseResource {
 
   /**
    * Batch Remove Conversations
-   * @memberof WebsiteBatch
-   * @public
-   * @method batchRemoveConversations
-   * @param {string} websiteID
-   * @param {object} operation
-   * @return {Promise}
    */
   batchRemoveConversations(
     websiteID: string, operation: WebsiteBatchConversationsOperation
@@ -149,12 +137,6 @@ class WebsiteBatch extends BaseResource {
 
   /**
    * Batch Remove People
-   * @memberof WebsiteBatch
-   * @public
-   * @method batchRemovePeople
-   * @param {string} websiteID
-   * @param {object} people
-   * @return {Promise}
    */
   batchRemovePeople(
     websiteID: string, people: WebsiteBatchPeopleOperationInner
