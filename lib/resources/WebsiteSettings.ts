@@ -51,6 +51,7 @@ export interface WebsiteSettingsInbox {
 export interface WebsiteSettingsEmails {
   rating?: boolean;
   transcript?: boolean;
+  trackers?: boolean;
   junk_filter?: boolean;
 }
 
@@ -133,6 +134,7 @@ export interface WebsiteSettingsUpdateInbox {
 export interface WebsiteSettingsUpdateEmails {
   rating?: boolean;
   transcript?: boolean;
+  trackers?: boolean;
   junk_filter?: boolean;
 }
 

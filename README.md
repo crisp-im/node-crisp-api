@@ -2485,6 +2485,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
         "emails": {
           "rating": true,
           "transcript": true,
+          "trackers": true,
           "junk_filter": true
         },
         "chatbox": {

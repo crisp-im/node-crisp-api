@@ -1705,6 +1705,7 @@ var settings = {
   "emails": {
     "rating": true,
     "transcript": true,
+    "trackers": true,
     "junk_filter": true
   },
   "chatbox": {
