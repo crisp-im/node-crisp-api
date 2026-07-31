@@ -22,6 +22,8 @@ export type WebsiteInbox = {
   emoji?: string;
   order?: number;
   operators?: string[];
+  teams?: string[];
+  team_operators?: string[];
   conditions?: WebsiteInboxCondition[];
   operator?: string;
   created_at?: number;
