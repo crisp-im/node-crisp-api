@@ -20,6 +20,7 @@ export interface WebsiteSettings {
   websiteID?: string;
   name?: string;
   domain?: string;
+  domain_alternates?: string[];
   logo?: string;
   audit?: WebsiteSettingsAudit;
   contact?: WebsiteSettingsContact;
@@ -77,6 +78,7 @@ export interface WebsiteSettingsChatbox {
   visitor_compose?: boolean;
   file_transfer?: boolean;
   audio_record?: boolean;
+  guard_level?: string;
   mode_initial?: string;
   home?: boolean;
   overlay_search?: boolean;
@@ -103,6 +105,7 @@ export interface WebsiteSettingsUpdate {
   websiteID?: string;
   name?: string;
   domain?: string;
+  domain_alternates?: string[];
   logo?: string;
   audit?: WebsiteSettingsUpdateAudit;
   contact?: WebsiteSettingsUpdateContact;
@@ -160,6 +163,7 @@ export interface WebsiteSettingsUpdateChatbox {
   visitor_compose?: boolean;
   file_transfer?: boolean;
   audio_record?: boolean;
+  guard_level?: string;
   mode_initial?: string;
   home?: boolean;
   overlay_search?: boolean;
