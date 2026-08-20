@@ -1,13 +1,18 @@
 Changelog
 =========
 
+## v10.11.0
+
+### Changes
+
+* Added now-public `WebsiteTeams` service to the `CrispClient.website` prefix.
+
 ## v10.10.6
 
 ### Changes
 
 * Added missing `url` field on `PeopleProfileCardPersonProfile` type.
 * Adding missing fields on RTM events
-
 
 ## v10.10.5
 
