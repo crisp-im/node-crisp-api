@@ -22,6 +22,7 @@ import WebsiteInbox from "@/resources/WebsiteInbox";
 import WebsiteOperator from "@/resources/WebsiteOperator";
 import WebsitePeople from "@/resources/WebsitePeople";
 import WebsiteSettings from "@/resources/WebsiteSettings";
+import WebsiteTeams from "@/resources/WebsiteTeams";
 import WebsiteVerify from "@/resources/WebsiteVerify";
 import WebsiteVisitors from "@/resources/WebsiteVisitors";
 
@@ -47,6 +48,7 @@ class WebsiteService {
     WebsiteOperator,
     WebsitePeople,
     WebsiteSettings,
+    WebsiteTeams,
     WebsiteVerify,
     WebsiteVisitors
   ];
@@ -69,6 +71,7 @@ export interface WebsiteServiceInterface extends
   WebsiteOperator,
   WebsitePeople,
   WebsiteSettings,
+  WebsiteTeams,
   WebsiteVerify,
   WebsiteVisitors {
 }

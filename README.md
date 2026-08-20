@@ -112,6 +112,7 @@ All methods that you will most likely need when building a Crisp integration are
     <li><a href="#website-analytics">Website Analytics</a></li>
     <li><a href="#website-batch">Website Batch</a></li>
     <li><a href="#website-inbox">Website Inbox</a></li>
+    <li><a href="#website-teams">Website Teams</a></li>
     <li><a href="#website-verify">Website Verify</a></li>
     <li><a href="#website-campaigns">Website Campaigns</a></li>
     <li><a href="#website-campaign">Website Campaign</a></li>
@@ -3241,6 +3242,103 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
 
       CrispClient.website.deleteInbox(websiteID, inboxID);
+      ```
+      </details>
+
+
+* #### **Website Teams**
+  * **List Teams**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-teams)
+    * `CrispClient.website.listTeams(websiteID, pageNumber)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var pageNumber = 1;
+
+      CrispClient.website.listTeams(websiteID, pageNumber);
+      ```
+      </details>
+
+  * **Create A New Team**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-team)
+    * `CrispClient.website.createNewTeam(websiteID, team)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      var team = {
+        "name": "Sales",
+        "emoji": "💰",
+
+        "operators": [
+          "a4c32c68-be91-4e29-8a05-976e93abbe3f"
+        ]
+      };
+
+      CrispClient.website.createNewTeam(websiteID, team);
+      ```
+      </details>
+
+  * **Check If Team Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-team-exists)
+    * `CrispClient.website.checkTeamExists(websiteID, teamID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+      CrispClient.website.checkTeamExists(websiteID, teamID);
+      ```
+      </details>
+
+  * **Get Team**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-team)
+    * `CrispClient.website.getTeam(websiteID, teamID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+      CrispClient.website.getTeam(websiteID, teamID);
+      ```
+      </details>
+
+  * **Save Team**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-a-team)
+    * `CrispClient.website.saveTeam(websiteID, teamID, team)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+      var team = {
+        "name": "Sales",
+        "emoji": "💰",
+
+        "operators": [
+          "a4c32c68-be91-4e29-8a05-976e93abbe3f"
+        ]
+      };
+
+      CrispClient.website.saveTeam(websiteID, teamID, team);
+      ```
+      </details>
+
+  * **Delete Team**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-team)
+    * `CrispClient.website.deleteTeam(websiteID, teamID)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+      CrispClient.website.deleteTeam(websiteID, teamID);
       ```
       </details>
 

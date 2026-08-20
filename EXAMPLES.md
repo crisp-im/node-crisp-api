@@ -2206,6 +2206,77 @@ CrispClient.website.deleteInbox(websiteID, inboxID);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#list-teams
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var pageNumber = 1;
+
+CrispClient.website.listTeams(websiteID, pageNumber);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#create-a-new-team
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+var team = {
+  "name": "Sales",
+  "emoji": "💰",
+
+  "operators": [
+    "a4c32c68-be91-4e29-8a05-976e93abbe3f"
+  ]
+};
+
+CrispClient.website.createNewTeam(websiteID, team);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#check-if-team-exists
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+CrispClient.website.checkTeamExists(websiteID, teamID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-a-team
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+CrispClient.website.getTeam(websiteID, teamID);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-a-team
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+var team = {
+  "name": "Sales",
+  "emoji": "💰",
+
+  "operators": [
+    "a4c32c68-be91-4e29-8a05-976e93abbe3f"
+  ]
+};
+
+CrispClient.website.saveTeam(websiteID, teamID, team);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#remove-a-team
+
+var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
+
+CrispClient.website.deleteTeam(websiteID, teamID);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#get-verify-settings
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";

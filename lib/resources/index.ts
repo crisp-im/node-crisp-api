@@ -27,5 +27,6 @@ export * from "./WebsiteInbox";
 export * from "./WebsiteOperator";
 export * from "./WebsitePeople";
 export * from "./WebsiteSettings";
+export * from "./WebsiteTeams";
 export * from "./WebsiteVerify";
 export * from "./WebsiteVisitors";
