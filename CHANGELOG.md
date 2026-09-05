@@ -1,6 +1,54 @@
 Changelog
 =========
 
+## Unreleased
+
+### New Features
+
+* Added methods for new Helpdesk content storage system.
+
+### Breaking Changes
+
+* Updated Helpdesk method parameters (method names unchanged):
+  * `CrispClient.website.mapHelpdeskLocaleFeedbackRatings`
+  * `CrispClient.website.listHelpdeskLocaleFeedbacks`
+  * `CrispClient.website.importExternalHelpdeskToLocale`
+  * `CrispClient.website.exportHelpdeskLocaleArticles`
+* Removed deprecated Helpdesk article methods:
+  * `CrispClient.website.listHelpdeskLocaleArticles`
+  * `CrispClient.website.addNewHelpdeskLocaleArticle`
+  * `CrispClient.website.checkHelpdeskLocaleArticleExists`
+  * `CrispClient.website.resolveHelpdeskLocaleArticle`
+  * `CrispClient.website.saveHelpdeskLocaleArticle`
+  * `CrispClient.website.updateHelpdeskLocaleArticle`
+  * `CrispClient.website.deleteHelpdeskLocaleArticle`
+  * `CrispClient.website.resolveHelpdeskLocaleArticlePage`
+  * `CrispClient.website.resolveHelpdeskLocaleArticleCategory`
+  * `CrispClient.website.updateHelpdeskLocaleArticleCategory`
+  * `CrispClient.website.listHelpdeskLocaleArticleAlternates`
+  * `CrispClient.website.checkHelpdeskLocaleArticleAlternateExists`
+  * `CrispClient.website.resolveHelpdeskLocaleArticleAlternate`
+  * `CrispClient.website.saveHelpdeskLocaleArticleAlternate`
+  * `CrispClient.website.deleteHelpdeskLocaleArticleAlternate`
+  * `CrispClient.website.publishHelpdeskLocaleArticle`
+  * `CrispClient.website.unpublishHelpdeskLocaleArticle`
+* Removed deprecated Helpdesk category methods:
+  * `CrispClient.website.listHelpdeskLocaleCategories`
+  * `CrispClient.website.addHelpdeskLocaleCategory`
+  * `CrispClient.website.checkHelpdeskLocaleCategoryExists`
+  * `CrispClient.website.resolveHelpdeskLocaleCategory`
+  * `CrispClient.website.saveHelpdeskLocaleCategory`
+  * `CrispClient.website.updateHelpdeskLocaleCategory`
+  * `CrispClient.website.deleteHelpdeskLocaleCategory`
+* Removed deprecated Helpdesk section methods:
+  * `CrispClient.website.listHelpdeskLocaleSections`
+  * `CrispClient.website.addHelpdeskLocaleSection`
+  * `CrispClient.website.checkHelpdeskLocaleSectionExists`
+  * `CrispClient.website.resolveHelpdeskLocaleSection`
+  * `CrispClient.website.saveHelpdeskLocaleSection`
+  * `CrispClient.website.updateHelpdeskLocaleSection`
+  * `CrispClient.website.deleteHelpdeskLocaleSection`
+
 ## v10.11.0
 
 ### Changes
