@@ -41,8 +41,19 @@ export interface HelpdeskLocale {
   locale_id?: string;
   locale?: string;
   url?: string;
-  articles?: number;
-  categories?: number;
+  statistics?: HelpdeskLocaleStatistics;
+}
+
+export interface HelpdeskLocaleStatistics {
+  articles?: HelpdeskLocaleStatisticsContent;
+  guides?: HelpdeskLocaleStatisticsContent;
+  references?: HelpdeskLocaleStatisticsContent;
+  news?: HelpdeskLocaleStatisticsContent;
+}
+
+export interface HelpdeskLocaleStatisticsContent {
+  entries?: number;
+  groups?: number;
 }
 
 export interface HelpdeskPage {
@@ -122,6 +133,12 @@ export interface HelpdeskTreePathUpdate {
 
 export interface HelpdeskTreePathUpdatePath {
   to: string;
+}
+
+export interface HelpdeskLocaleExternalImport {
+  helpdesk_url: string;
+  detect_locales?: boolean;
+  other_locales?: string[];
 }
 
 export interface HelpdeskLocaleArticle {
@@ -222,30 +239,62 @@ export interface HelpdeskRedirection {
 export interface HelpdeskSettings {
   name?: string;
   appearance?: HelpdeskSettingsAppearance;
+  localization?: HelpdeskSettingsLocalization;
+  section?: HelpdeskSettingsSection;
   behavior?: HelpdeskSettingsBehavior;
+  service?: HelpdeskSettingsService;
   include?: HelpdeskSettingsInclude;
   access?: HelpdeskSettingsAccess;
 }
 
 export interface HelpdeskSettingsAppearance {
+  color?: HelpdeskSettingsAppearanceColor;
   logos?: HelpdeskSettingsAppearanceLogos;
   banner?: string;
 }
 
+export interface HelpdeskSettingsAppearanceColor {
+  mode?: string;
+  mode_changeable?: boolean;
+}
+
 export interface HelpdeskSettingsAppearanceLogos {
+  favicon?: string;
   header?: string;
   footer?: string;
 }
 
+export interface HelpdeskSettingsLocalization {
+  writing_locale?: string;
+  translated_automatic?: boolean;
+  translated_locales_readonly?: boolean;
+}
+
+export interface HelpdeskSettingsSection {
+  articles?: string;
+  guides?: string;
+  references?: string;
+  news?: string;
+}
+
 export interface HelpdeskSettingsBehavior {
-  frequentlyRead?: boolean;
-  showCategoryImages?: boolean;
-  showChatbox?: boolean;
-  askFeedback?: boolean;
-  localePicker?: boolean;
-  referLink?: boolean;
-  forbidIndexing?: boolean;
-  statusHealthDead?: boolean;
+  frequently_read?: boolean;
+  show_category_images?: boolean;
+  show_chatbox?: boolean;
+  ask_feedback?: boolean;
+  report_incorrect?: boolean;
+  serve_markdown?: boolean;
+  agent_chat_bar?: boolean;
+  agent_copy_button?: boolean;
+  table_of_contents?: boolean;
+  locale_picker?: boolean;
+  refer_link?: boolean;
+  forbid_indexing?: boolean;
+  status_health_dead?: boolean;
+}
+
+export interface HelpdeskSettingsService {
+  mcp_server?: boolean;
 }
 
 export interface HelpdeskSettingsInclude {
@@ -253,7 +302,9 @@ export interface HelpdeskSettingsInclude {
 }
 
 export interface HelpdeskSettingsAccess {
+  restrict_mode?: string;
   password?: string;
+  jwt_secret?: string;
 }
 
 export interface HelpdeskDomain {
@@ -1159,8 +1210,8 @@ class WebsiteHelpdesk extends BaseResource {
    * Map Helpdesk Locale Feedback Ratings
    */
   mapHelpdeskLocaleFeedbackRatings(
-    websiteID: string, locale: string, filterDateStart?: string | null,
-      filterDateEnd?: string | null
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      filterDateStart?: string | null, filterDateEnd?: string | null
   ): Promise<HelpdeskLocaleFeedbackRatings> {
     filterDateStart = (filterDateStart || null);
     filterDateEnd   = (filterDateEnd   || null);
@@ -1178,8 +1229,8 @@ class WebsiteHelpdesk extends BaseResource {
 
     return this.crisp.get(
       this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "locale", locale, "feedback",
-        "ratings"
+        "website", websiteID, "helpdesk", "feedback", "ratings", locale,
+        contentType
       ]),
 
       query
@@ -1190,8 +1241,9 @@ class WebsiteHelpdesk extends BaseResource {
    * List Helpdesk Locale Feedbacks
    */
   listHelpdeskLocaleFeedbacks(
-    websiteID: string, locale: string, pageNumber: number = 1,
-      filterDateStart?: string | null, filterDateEnd?: string | null
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      pageNumber: number = 1, filterDateStart?: string | null,
+      filterDateEnd?: string | null
   ): Promise<HelpdeskLocaleFeedbackItem[]> {
     filterDateStart = (filterDateStart || null);
     filterDateEnd   = (filterDateEnd   || null);
@@ -1209,8 +1261,8 @@ class WebsiteHelpdesk extends BaseResource {
 
     return this.crisp.get(
       this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "locale", locale, "feedback", "list",
-        String(pageNumber)
+        "website", websiteID, "helpdesk", "feedback", "list", locale,
+        contentType, String(pageNumber)
       ]),
 
       query
@@ -1221,28 +1273,27 @@ class WebsiteHelpdesk extends BaseResource {
    * Import External Helpdesk To Locale
    */
   importExternalHelpdeskToLocale(
-    websiteID: string, locale: string, helpdeskUrl: string
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      externalImport: HelpdeskLocaleExternalImport
   ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "locale", locale, "import"
+        "website", websiteID, "helpdesk", "import", locale, contentType
       ]),
 
-      null,
-
-      {
-        helpdesk_url: helpdeskUrl
-      }
+      null, externalImport
     );
   };
 
   /**
    * Export Helpdesk Locale Articles
    */
-  exportHelpdeskLocaleArticles(websiteID: string, locale: string) {
+  exportHelpdeskLocaleArticles(
+    websiteID: string, locale: string, contentType: HelpdeskContentType
+  ) {
     return this.crisp.post(
       this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "locale", locale, "export"
+        "website", websiteID, "helpdesk", "export", locale, contentType
       ]),
 
       null,
