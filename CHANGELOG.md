@@ -9,12 +9,12 @@ Changelog
 
 ### Breaking Changes
 
-* Updated Helpdesk method parameters (method names unchanged):
+* ⚠️ Updated Helpdesk method parameters (method names are unchanged):
   * `CrispClient.website.mapHelpdeskLocaleFeedbackRatings`
   * `CrispClient.website.listHelpdeskLocaleFeedbacks`
   * `CrispClient.website.importExternalHelpdeskToLocale`
   * `CrispClient.website.exportHelpdeskLocaleArticles`
-* Removed deprecated Helpdesk article methods:
+* ⚠️ **Removed** deprecated Helpdesk article methods:
   * `CrispClient.website.listHelpdeskLocaleArticles`
   * `CrispClient.website.addNewHelpdeskLocaleArticle`
   * `CrispClient.website.checkHelpdeskLocaleArticleExists`
@@ -32,7 +32,7 @@ Changelog
   * `CrispClient.website.deleteHelpdeskLocaleArticleAlternate`
   * `CrispClient.website.publishHelpdeskLocaleArticle`
   * `CrispClient.website.unpublishHelpdeskLocaleArticle`
-* Removed deprecated Helpdesk category methods:
+* ⚠️ **Removed** deprecated Helpdesk category methods:
   * `CrispClient.website.listHelpdeskLocaleCategories`
   * `CrispClient.website.addHelpdeskLocaleCategory`
   * `CrispClient.website.checkHelpdeskLocaleCategoryExists`
@@ -40,7 +40,7 @@ Changelog
   * `CrispClient.website.saveHelpdeskLocaleCategory`
   * `CrispClient.website.updateHelpdeskLocaleCategory`
   * `CrispClient.website.deleteHelpdeskLocaleCategory`
-* Removed deprecated Helpdesk section methods:
+* ⚠️ **Removed** deprecated Helpdesk section methods:
   * `CrispClient.website.listHelpdeskLocaleSections`
   * `CrispClient.website.addHelpdeskLocaleSection`
   * `CrispClient.website.checkHelpdeskLocaleSectionExists`
