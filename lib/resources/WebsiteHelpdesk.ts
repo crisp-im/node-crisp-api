@@ -13,6 +13,17 @@
 import BaseResource from "./BaseResource";
 
 /**************************************************************************
+ * ENUMERATIONS
+ ***************************************************************************/
+
+export enum HelpdeskContentType {
+  Articles = "articles",
+  Guides = "guides",
+  References = "references",
+  News = "news"
+}
+
+/**************************************************************************
  * INTERFACES
  ***************************************************************************/
 
@@ -32,6 +43,85 @@ export interface HelpdeskLocale {
   url?: string;
   articles?: number;
   categories?: number;
+}
+
+export interface HelpdeskPage {
+  entity_id?: string;
+  title?: string;
+  url?: string;
+}
+
+export interface HelpdeskTreeEntry {
+  type?: string;
+  slug?: string;
+  title?: string;
+  state?: HelpdeskTreeState;
+  children?: HelpdeskTreeEntry[];
+}
+
+export interface HelpdeskTreeState {
+  published?: boolean;
+  hidden?: boolean;
+  featured?: boolean;
+}
+
+export interface HelpdeskTreeContent {
+  content?: string;
+}
+
+export interface HelpdeskTreeMetadata {
+  format?: string;
+  title?: string;
+  description?: string;
+  state?: HelpdeskTreeState;
+  author?: HelpdeskTreeMetadataAuthor;
+  color?: string;
+  image?: string;
+}
+
+export interface HelpdeskTreeMetadataAuthor {
+  user_id?: string;
+}
+
+export interface HelpdeskTreePage {
+  title?: string;
+  url?: string;
+}
+
+export interface HelpdeskHistoryChange {
+  change_id?: string;
+  message?: string;
+  author?: HelpdeskHistoryChangeAuthor;
+  edits?: HelpdeskHistoryChangeEdits;
+  created_at?: number;
+  files?: HelpdeskHistoryChangeFile[];
+}
+
+export interface HelpdeskHistoryChangeAuthor {
+  email?: string;
+  name?: string;
+}
+
+export interface HelpdeskHistoryChangeEdits {
+  insertions?: number;
+  deletions?: number;
+}
+
+export interface HelpdeskHistoryChangeFile {
+  change?: string;
+  path?: string;
+  metadata?: HelpdeskTreeMetadata;
+  content?: string;
+}
+
+export interface HelpdeskTreePathUpdate {
+  action: string;
+  path?: HelpdeskTreePathUpdatePath;
+  position?: number;
+}
+
+export interface HelpdeskTreePathUpdatePath {
+  to: string;
 }
 
 export interface HelpdeskLocaleArticle {
@@ -286,6 +376,288 @@ class WebsiteHelpdesk extends BaseResource {
       this.crisp.prepareRestUrl([
         "website", websiteID, "helpdesk", "locale", locale
       ])
+    );
+  };
+
+  /**
+   * List Helpdesk Pages
+   */
+  listHelpdeskPages(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      pageNumber: number = 1
+  ): Promise<HelpdeskPage[]> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "page", "list", locale,
+        contentType, String(pageNumber)
+      ])
+    );
+  };
+
+  /**
+   * List Helpdesk Tree
+   */
+  listHelpdeskTree(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      pageNumber: number = 1, subPath?: string | null,
+      searchTitle?: string | null, filterDateStart?: string | null,
+      filterDateEnd?: string | null
+  ): Promise<HelpdeskTreeEntry[]> {
+    const query: Record<string, unknown> = {};
+
+    if (subPath !== undefined && subPath !== null) {
+      query.sub_path = subPath;
+    }
+
+    if (searchTitle !== undefined && searchTitle !== null) {
+      query.search_title = searchTitle;
+    }
+
+    if (filterDateStart !== undefined && filterDateStart !== null) {
+      query.filter_date_start = filterDateStart;
+    }
+
+    if (filterDateEnd !== undefined && filterDateEnd !== null) {
+      query.filter_date_end = filterDateEnd;
+    }
+
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "list", locale,
+        contentType, String(pageNumber)
+      ]),
+
+      query
+    );
+  };
+
+  /**
+   * Create Helpdesk Tree Path
+   */
+  createHelpdeskTreePath(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string
+  ) {
+    return this.crisp.post(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "path", locale,
+        contentType, path
+      ]),
+
+      null,
+      null
+    );
+  };
+
+  /**
+   * Resolve Helpdesk Tree Path
+   */
+  resolveHelpdeskTreePath(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string
+  ): Promise<HelpdeskTreeEntry> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "path", locale,
+        contentType, path
+      ])
+    );
+  };
+
+  /**
+   * Update Helpdesk Tree Path
+   */
+  updateHelpdeskTreePath(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string,
+      update: HelpdeskTreePathUpdate
+  ) {
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "path", locale,
+        contentType, path
+      ]),
+
+      null, update
+    );
+  };
+
+  /**
+   * Delete Helpdesk Tree Path
+   */
+  deleteHelpdeskTreePath(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string
+  ) {
+    return this.crisp.delete(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "path", locale,
+        contentType, path
+      ])
+    );
+  };
+
+  /**
+   * Resolve Helpdesk Tree Content
+   */
+  resolveHelpdeskTreeContent(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string
+  ): Promise<HelpdeskTreeContent> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "content", locale,
+        contentType, path
+      ])
+    );
+  };
+
+  /**
+   * Save Helpdesk Tree Content
+   */
+  saveHelpdeskTreeContent(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string,
+      content: string
+  ) {
+    return this.crisp.put(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "content", locale,
+        contentType, path
+      ]),
+
+      null,
+
+      {
+        content: content
+      }
+    );
+  };
+
+  /**
+   * Resolve Helpdesk Tree Metadata
+   */
+  resolveHelpdeskTreeMetadata(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string
+  ): Promise<HelpdeskTreeMetadata> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "metadata", locale,
+        contentType, path
+      ])
+    );
+  };
+
+  /**
+   * Update Helpdesk Tree Metadata
+   */
+  updateHelpdeskTreeMetadata(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string,
+      metadata: HelpdeskTreeMetadata
+  ) {
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "metadata", locale,
+        contentType, path
+      ]),
+
+      null, metadata
+    );
+  };
+
+  /**
+   * Resolve Helpdesk Tree Page
+   */
+  resolveHelpdeskTreePage(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string
+  ): Promise<HelpdeskTreePage> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "page", locale,
+        contentType, path
+      ])
+    );
+  };
+
+  /**
+   * List Helpdesk History Changes
+   */
+  listHelpdeskHistoryChanges(
+    websiteID: string, pageNumber: number = 1, filterLocale?: string | null,
+      filterType?: string | null, filterTreePath?: string | null
+  ): Promise<HelpdeskHistoryChange[]> {
+    const query: Record<string, unknown> = {};
+
+    if (filterLocale !== undefined && filterLocale !== null) {
+      query.filter_locale = filterLocale;
+    }
+
+    if (filterType !== undefined && filterType !== null) {
+      query.filter_type = filterType;
+    }
+
+    if (filterTreePath !== undefined && filterTreePath !== null) {
+      query.filter_tree_path = filterTreePath;
+    }
+
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "history", "changes",
+        String(pageNumber)
+      ]),
+
+      query
+    );
+  };
+
+  /**
+   * Resolve Helpdesk History Change
+   */
+  resolveHelpdeskHistoryChange(
+    websiteID: string, changeId: string
+  ): Promise<HelpdeskHistoryChange> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "history", "change", changeId
+      ])
+    );
+  };
+
+  /**
+   * Cancel Helpdesk History Change
+   */
+  cancelHelpdeskHistoryChange(
+    websiteID: string, changeId: string, action: string
+  ) {
+    return this.crisp.delete(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "history", "change", changeId
+      ]),
+
+      null,
+
+      {
+        action: action
+      }
+    );
+  };
+
+  /**
+   * Request Helpdesk Content Refresh
+   */
+  requestHelpdeskContentRefresh(
+    websiteID: string, locale: string, contentType: HelpdeskContentType
+  ) {
+    return this.crisp.post(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "refresh", locale, contentType
+      ]),
+
+      null,
+      null
     );
   };
 
@@ -545,7 +917,6 @@ class WebsiteHelpdesk extends BaseResource {
       ]),
 
       null,
-
       null
     );
   };
@@ -563,7 +934,6 @@ class WebsiteHelpdesk extends BaseResource {
       ]),
 
       null,
-
       null
     );
   };
@@ -876,7 +1246,6 @@ class WebsiteHelpdesk extends BaseResource {
       ]),
 
       null,
-
       null
     );
   };
