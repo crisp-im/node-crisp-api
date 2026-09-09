@@ -1,7 +1,9 @@
 Changelog
 =========
 
-## Unreleased
+## v11.0.0
+
+**Do not upgrade yet if you have not been migrated to the new Crisp Knowledge Base administration UI in your Crisp dashboard!**
 
 ### New Features
 
