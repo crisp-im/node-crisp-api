@@ -3,7 +3,7 @@ Changelog
 
 ## v11.0.0
 
-**Do not upgrade yet if you have not been migrated to the new Crisp Knowledge Base administration UI in your Crisp dashboard!**
+**⚠️ Do not upgrade yet if you have not been migrated to the new Crisp Knowledge Base administration UI in your Crisp dashboard, and you make requests to the Helpdesk REST API routes with this library!**
 
 ### New Features
 
