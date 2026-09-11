@@ -44,7 +44,7 @@
     }
   },
   "engines": {
-    "node": ">= 16.0.0"
+    "node": ">= 18.0.0"
   },
   "scripts": {
     "test": "eslint lib",
@@ -61,8 +61,7 @@
   },
   "dependencies": {
     "mitt": "3.0.1",
-    "got": "11.8.5",
-    "socket.io-client": "4.7.2"
+    "socket.io-client": "4.8.3"
   },
   "keywords": [
     "crisp",
