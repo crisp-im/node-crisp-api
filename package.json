@@ -51,6 +51,7 @@
     "build": "npx tsc && npx tsc-alias && node -e \"const fs=require('fs');const f='dist/crisp.js';const v=require('./package.json').version;fs.writeFileSync(f, fs.readFileSync(f,'utf8').replace(/__PKG_VERSION_PLACEHOLDER__/g,v));\""
   },
   "devDependencies": {
+    "@types/node": "18.19.130",
     "@typescript-eslint/eslint-plugin": "8.39.1",
     "tsc-alias": "1.8.16",
     "typescript": "5.9.3",
