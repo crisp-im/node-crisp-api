@@ -1,6 +1,17 @@
 Changelog
 =========
 
+## v11.1.0
+
+### Breaking Changes
+
+* ⚠️ Support for NodeJS 16 has been removed. The minimum version is now NodeJS 18.
+
+### Changes
+
+* Replaced `got` with native `fetch` for REST API requests.
+* Updated `socket.io-client` dependency to latest.
+
 ## v11.0.0
 
 **⚠️ Do not upgrade yet if you have not been migrated to the new Crisp Knowledge Base administration UI in your Crisp dashboard, and you make requests to the Helpdesk REST API routes with this library!**

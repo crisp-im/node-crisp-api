@@ -13,7 +13,6 @@
 import { URL } from "url";
 import Crypto from "crypto";
 
-import got from "got";
 import { io as socketio } from "socket.io-client";
 import { Socket } from "socket.io-client";
 import mitt, { Emitter } from "mitt";
@@ -356,7 +355,7 @@ class Crisp {
    */
   head(resource: string, query?: object | null): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.__request(
+      void this.__request(
         resource, "head", (query || {}), null, resolve, reject
       );
     });
@@ -367,7 +366,7 @@ class Crisp {
    */
   get(resource: string, query?: object): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.__request(
+      void this.__request(
         resource, "get", (query || {}), null, resolve, reject
       );
     });
@@ -380,7 +379,7 @@ class Crisp {
     resource: string, query: object | null, body: object | null
   ): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.__request(
+      void this.__request(
         resource, "post", (query || {}), (body || {}), resolve, reject
       );
     });
@@ -393,7 +392,7 @@ class Crisp {
     resource: string, query: object | null, body: object | null
   ): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.__request(
+      void this.__request(
         resource, "patch", (query || {}), (body || {}), resolve, reject
       );
     });
@@ -406,7 +405,7 @@ class Crisp {
     resource: string, query: object | null, body: object | null
   ): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.__request(
+      void this.__request(
         resource, "put", (query || {}), (body || {}), resolve, reject
       );
     });
@@ -419,7 +418,7 @@ class Crisp {
     resource: string, query?: object | null, body?: object | null
   ): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.__request(
+      void this.__request(
         resource, "delete", (query || {}), (body || null), resolve, reject
       );
     });
@@ -902,53 +901,75 @@ class Crisp {
     resolve: (value: unknown) => void,
     reject: (reason?: unknown) => void
   ) {
-    const requestParameters = {
-      responseType: "json",
-      timeout: DEFAULT_REQUEST_TIMEOUT,
-
-      headers: {
-        "User-Agent": this._useragent,
-        "X-Crisp-Tier": this.auth.tier,
-        ...this._customHeaders
-      },
-
-      throwHttpErrors: false
+    const headers: Record<string, string> = {
+      "User-Agent": this._useragent,
+      "X-Crisp-Tier": this.auth.tier,
+      ...this._customHeaders
     };
 
     // Add authorization?
     if (this.auth.token) {
-      // @ts-expect-error - requestParameters.headers is a Record<string, string>
-      requestParameters.headers.Authorization = ("Basic " + this.auth.token);
+      headers.Authorization = ("Basic " + this.auth.token);
     }
 
     // Add body?
     if (body) {
-      // @ts-expect-error - requestParameters.json is a Record<string, unknown>
-      requestParameters.json = body;
+      headers["Content-Type"] = "application/json";
     }
+
+    const url = new URL(resource);
 
     // Add query?
-    if (query) {
-      const params = new URLSearchParams();
+    Object.entries(query || {}).forEach(([ key, value ]) => {
+      if (value === null || value === undefined) {
+        return;
+      }
 
-      Object.entries(query).forEach(([ key, value ]) => {
-        if (value === null || value === undefined) {
-          return;
-        }
-
-        if (typeof value === "object") {
-          params.append(key, JSON.stringify(value));
-        } else {
-          params.append(key, String(value));
-        }
-      });
-
-      // @ts-expect-error - requestParameters.searchParams is a URLSearchParams
-      requestParameters.searchParams = params;
-    }
+      url.searchParams.append(
+        key, ((typeof value === "object") ? JSON.stringify(value) : String(value))
+      );
+    });
 
     // Proceed request
-    got[method](resource, requestParameters)
+    return Promise.resolve()
+      .then(() => {
+        return fetch(url, {
+          method: method.toUpperCase(),
+          headers: headers,
+          body: (body ? JSON.stringify(body) : undefined),
+          signal: AbortSignal.timeout(DEFAULT_REQUEST_TIMEOUT)
+        });
+      })
+      .then((response) => {
+        // HEAD method? No response body is expected.
+        if (method === "head") {
+          return Promise.resolve({
+            statusCode: response.status,
+            body: null
+          });
+        }
+
+        // Body is expected to be JSON
+        return response.json()
+          .then((responseBody) => {
+            return {
+              statusCode: response.status,
+              body: responseBody
+            };
+          })
+          .catch((error) => {
+            // HTTP error with a non-JSON body: keep the status
+            if (response.status >= 400) {
+              return {
+                statusCode: response.status,
+                body: null
+              };
+            }
+
+            // Invalid JSON on a successful response: request error
+            throw error;
+          });
+      })
       .catch((error) => {
         return Promise.resolve(error);
       })
