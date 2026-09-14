@@ -59,6 +59,7 @@ export interface HelpdeskLocaleStatisticsContent {
 export interface HelpdeskPage {
   entity_id?: string;
   title?: string;
+  tree_path?: string;
   url?: string;
 }
 
