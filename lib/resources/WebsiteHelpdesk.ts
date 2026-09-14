@@ -408,6 +408,21 @@ class WebsiteHelpdesk extends BaseResource {
   };
 
   /**
+   * Resolve Helpdesk Page Entity
+   */
+  resolveHelpdeskPageEntity(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      entityID: string
+  ): Promise<HelpdeskPage> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "page", "entity", locale,
+        contentType, entityID
+      ])
+    );
+  };
+
+  /**
    * List Helpdesk Tree
    */
   listHelpdeskTree(
