@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v11.3.0
+
+### Changes
+
+* Added `CrispClient.website.resolveHelpdeskPageEntity`.
+
 ## v11.2.0
 
 ### Changes
