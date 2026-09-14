@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v11.2.0
+
+### Changes
+
+* Added `tree_path` in `CrispClient.website.listHelpdeskPages`.
+
 ## v11.1.0
 
 ### Breaking Changes
