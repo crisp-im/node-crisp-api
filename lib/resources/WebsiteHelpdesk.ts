@@ -244,9 +244,7 @@ export interface HelpdeskSettingsBehavior {
   show_category_images?: boolean;
   show_chatbox?: boolean;
   ask_feedback?: boolean;
-  report_incorrect?: boolean;
   serve_markdown?: boolean;
-  agent_chat_bar?: boolean;
   agent_copy_button?: boolean;
   table_of_contents?: boolean;
   locale_picker?: boolean;
