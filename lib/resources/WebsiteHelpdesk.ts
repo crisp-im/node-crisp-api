@@ -265,6 +265,7 @@ export interface HelpdeskSettingsAccess {
   restrict_mode?: string;
   password?: string;
   jwt_secret?: string;
+  jwt_auth_url?: string;
 }
 
 export interface HelpdeskDomain {
