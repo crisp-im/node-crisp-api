@@ -1553,9 +1553,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var name = "Valerian Helpdesk";
-      var domainBasic = "valerian";
+      var name = "My Helpdesk";
+      var domainBasic = "my-helpdesk";
 
       CrispClient.website.initializeHelpdesk(websiteID, name, domainBasic);
       ```
@@ -1568,18 +1567,14 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var verify = {
-        "method": "password",
-        "secret": "MySuperSecurePassword";
-      };
+      var verify = { method: "email", secret: "verification-secret" };
 
       CrispClient.website.deleteHelpdesk(websiteID, verify);
       ```
       </details>
 
   * **List Helpdesk Locales**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locales)
-    * `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber, options={})`
+    * `CrispClient.website.listHelpdeskLocales(websiteID, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
@@ -1587,9 +1582,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
 
-      CrispClient.website.listHelpdeskLocales(websiteID, pageNumber, {
-        order_visits : "1"
-      });
+      CrispClient.website.listHelpdeskLocales(websiteID, pageNumber);
       ```
       </details>
 
@@ -1600,7 +1593,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
 
       CrispClient.website.addHelpdeskLocale(websiteID, locale);
@@ -1614,7 +1606,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
 
       CrispClient.website.checkHelpdeskLocaleExists(websiteID, locale);
@@ -1628,7 +1619,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
 
       CrispClient.website.resolveHelpdeskLocale(websiteID, locale);
@@ -1642,580 +1632,346 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
 
       CrispClient.website.deleteHelpdeskLocale(websiteID, locale);
       ```
       </details>
 
-  * **List Helpdesk Locale Articles**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-articles)
-    * `CrispClient.website.listHelpdeskLocaleArticles(websiteID, locale, pageNumber)`
+  * **List Helpdesk Pages**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-pages)
+    * `CrispClient.website.listHelpdeskPages(websiteID, locale, contentType, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
+      var contentType = "articles";
       var pageNumber = 1;
 
-      CrispClient.website.listHelpdeskLocaleArticles(websiteID, locale, pageNumber);
+      CrispClient.website.listHelpdeskPages(websiteID, locale, contentType, pageNumber);
       ```
       </details>
 
-  * **Add A New Helpdesk Locale Article**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-new-helpdesk-locale-article)
-    * `CrispClient.website.addNewHelpdeskLocaleArticle(websiteID, locale, title)`
+  * **Resolve Helpdesk Page Entity**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-page-entity)
+    * `CrispClient.website.resolveHelpdeskPageEntity(websiteID, locale, contentType, entityID)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var title = "How to use $crisp JavaScript SDK?";
+      var contentType = "articles";
+      var entityID = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
 
-      CrispClient.website.addNewHelpdeskLocaleArticle(websiteID, locale, title);
+      CrispClient.website.resolveHelpdeskPageEntity(websiteID, locale, contentType, entityID);
       ```
       </details>
 
-  * **Check If Helpdesk Locale Article Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-article-exists)
-    * `CrispClient.website.checkHelpdeskLocaleArticleExists(websiteID, locale, articleId)`
+  * **List Helpdesk Tree**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-tree)
+    * `CrispClient.website.listHelpdeskTree(websiteID, locale, contentType, pageNumber, subPath, searchTitle, filterDateStart, filterDateEnd)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.checkHelpdeskLocaleArticleExists(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **Resolve Helpdesk Locale Article**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article)
-    * `CrispClient.website.resolveHelpdeskLocaleArticle(websiteID, locale, articleId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.resolveHelpdeskLocaleArticle(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **Save Helpdesk Locale Article**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-article)
-    * `CrispClient.website.saveHelpdeskLocaleArticle(websiteID, locale, articleId, article)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      var article = {
-        "title": "How to use $crisp JavaScript SDK?",
-        "description": null,
-        "content": "Crisp lets you create your customized chatbox easily. **It's easy to setup**.",
-        "featured": false,
-        "order": 1
-      };
-
-      CrispClient.website.saveHelpdeskLocaleArticle(websiteID, locale, articleId, article);
-      ```
-      </details>
-
-  * **Update Helpdesk Locale Article**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-article)
-    * `CrispClient.website.updateHelpdeskLocaleArticle(websiteID, locale, articleId, article)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      var article = {
-        "content": "Crisp lets you create your customized chatbox easily. **It's easy to setup**."
-      };
-
-      CrispClient.website.updateHelpdeskLocaleArticle(websiteID, locale, articleId, article);
-      ```
-      </details>
-
-  * **Delete Helpdesk Locale Article**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-article)
-    * `CrispClient.website.deleteHelpdeskLocaleArticle(websiteID, locale, articleId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.deleteHelpdeskLocaleArticle(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **Resolve Helpdesk Locale Article Page**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-page)
-    * `CrispClient.website.resolveHelpdeskLocaleArticlePage(websiteID, locale, articleId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.resolveHelpdeskLocaleArticlePage(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **Resolve Helpdesk Locale Article Category**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-category)
-    * `CrispClient.website.resolveHelpdeskLocaleArticleCategory(websiteID, locale, articleId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.resolveHelpdeskLocaleArticleCategory(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **Update Helpdesk Locale Article Category**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-article-category)
-    * `CrispClient.website.updateHelpdeskLocaleArticleCategory(websiteID, locale, articleId, categoryId, sectionId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-      var categoryId = "00d344a3-8948-45b5-9bc4-82ec249fcd44";
-
-      CrispClient.website.updateHelpdeskLocaleArticleCategory(websiteID, locale, articleId, categoryId);
-      ```
-      </details>
-
-  * **List Helpdesk Locale Article Alternates**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-article-alternates)
-    * `CrispClient.website.listHelpdeskLocaleArticleAlternates(websiteID, locale, articleId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.listHelpdeskLocaleArticleAlternates(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **Check If Helpdesk Locale Article Alternate Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-article-alternate-exists)
-    * `CrispClient.website.checkHelpdeskLocaleArticleAlternateExists(websiteID, locale, articleId, localeLinked)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-      var localeLinked = "fr";
-
-      CrispClient.website.checkHelpdeskLocaleArticleAlternateExists(websiteID, locale, articleId, localeLinked);
-      ```
-      </details>
-
-  * **Resolve Helpdesk Locale Article Alternate**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-article-alternate)
-    * `CrispClient.website.resolveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-      var localeLinked = "fr";
-
-      CrispClient.website.resolveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked);
-      ```
-      </details>
-
-  * **Save Helpdesk Locale Article Alternate**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-article-alternate)
-    * `CrispClient.website.saveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked, articleIdLinked)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-      var localeLinked = "fr";
-      var articleIdLinked = "9dc0e823-56b0-43ca-9ca3-47e25a8eb543";
-
-      CrispClient.website.saveHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked, articleIdLinked);
-      ```
-      </details>
-
-  * **Delete Helpdesk Locale Article Alternate**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-article-alternate)
-    * `CrispClient.website.deleteHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-      var localeLinked = "fr";
-
-      CrispClient.website.deleteHelpdeskLocaleArticleAlternate(websiteID, locale, articleId, localeLinked);
-      ```
-      </details>
-
-  * **Publish Helpdesk Locale Article**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#publish-helpdesk-locale-article)
-    * `CrispClient.website.publishHelpdeskLocaleArticle(websiteID, locale, articleId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.publishHelpdeskLocaleArticle(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **Unpublish Helpdesk Locale Article**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unpublish-helpdesk-locale-article)
-    * `CrispClient.website.unpublishHelpdeskLocaleArticle(websiteID, locale, articleId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var articleId = "fd036d68-c619-4c63-9deb-e2ce91733dd6";
-
-      CrispClient.website.unpublishHelpdeskLocaleArticle(websiteID, locale, articleId);
-      ```
-      </details>
-
-  * **List Helpdesk Locale Categories**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-categories)
-    * `CrispClient.website.listHelpdeskLocaleCategories(websiteID, locale, pageNumber)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
+      var contentType = "articles";
       var pageNumber = 1;
+      var subPath = "guides";
+      var searchTitle = "Getting started";
+      var filterDateStart = "2025-01-01";
+      var filterDateEnd = "2025-12-31";
 
-      CrispClient.website.listHelpdeskLocaleCategories(websiteID, locale, pageNumber);
+      CrispClient.website.listHelpdeskTree(websiteID, locale, contentType, pageNumber, subPath, searchTitle, filterDateStart, filterDateEnd);
       ```
       </details>
 
-  * **Add Helpdesk Locale Category**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-category)
-    * `CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale, name)`
+  * **Create Helpdesk Tree Path**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-helpdesk-tree-path)
+    * `CrispClient.website.createHelpdeskTreePath(websiteID, locale, contentType, path)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var name = "Chatbox";
+      var contentType = "articles";
+      var path = "getting-started";
 
-      CrispClient.website.addHelpdeskLocaleCategory(websiteID, locale, name);
+      CrispClient.website.createHelpdeskTreePath(websiteID, locale, contentType, path);
       ```
       </details>
 
-  * **Check If Helpdesk Locale Category Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-category-exists)
-    * `CrispClient.website.checkHelpdeskLocaleCategoryExists(websiteID, locale, categoryId)`
+  * **Resolve Helpdesk Tree Path**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-tree-path)
+    * `CrispClient.website.resolveHelpdeskTreePath(websiteID, locale, contentType, path)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var contentType = "articles";
+      var path = "getting-started";
 
-      CrispClient.website.checkHelpdeskLocaleCategoryExists(websiteID, locale, categoryId);
+      CrispClient.website.resolveHelpdeskTreePath(websiteID, locale, contentType, path);
       ```
       </details>
 
-  * **Resolve Helpdesk Locale Category**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-category)
-    * `CrispClient.website.resolveHelpdeskLocaleCategory(websiteID, locale, categoryId)`
+  * **Update Helpdesk Tree Path**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-tree-path)
+    * `CrispClient.website.updateHelpdeskTreePath(websiteID, locale, contentType, path, update)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var contentType = "articles";
+      var path = "getting-started";
+      var update = { action: "move", path: { to: "guides/getting-started" } };
 
-      CrispClient.website.resolveHelpdeskLocaleCategory(websiteID, locale, categoryId);
+      CrispClient.website.updateHelpdeskTreePath(websiteID, locale, contentType, path, update);
       ```
       </details>
 
-  * **Save Helpdesk Locale Category**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-category)
-    * `CrispClient.website.saveHelpdeskLocaleCategory(websiteID, locale, categoryId, category)`
+  * **Delete Helpdesk Tree Path**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-tree-path)
+    * `CrispClient.website.deleteHelpdeskTreePath(websiteID, locale, contentType, path)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var contentType = "articles";
+      var path = "getting-started";
 
-      var category = {
-        "name": "Chatbox",
-        "description": "Help on how to setup and use the Crisp chatbox.",
-        "color": "#377FEA",
-        "image": null,
-        "order": 1
-      };
-
-      CrispClient.website.saveHelpdeskLocaleCategory(websiteID, locale, categoryId, category);
+      CrispClient.website.deleteHelpdeskTreePath(websiteID, locale, contentType, path);
       ```
       </details>
 
-  * **Update Helpdesk Locale Category**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-category)
-    * `CrispClient.website.updateHelpdeskLocaleCategory(websiteID, locale, categoryId, category)`
+  * **Resolve Helpdesk Tree Content**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-tree-content)
+    * `CrispClient.website.resolveHelpdeskTreeContent(websiteID, locale, contentType, path)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var contentType = "articles";
+      var path = "getting-started";
 
-      var category = {
-        "color": "#377FEA"
-      };
-
-      CrispClient.website.updateHelpdeskLocaleCategory(websiteID, locale, categoryId, category);
+      CrispClient.website.resolveHelpdeskTreeContent(websiteID, locale, contentType, path);
       ```
       </details>
 
-  * **Delete Helpdesk Locale Category**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-category)
-    * `CrispClient.website.deleteHelpdeskLocaleCategory(websiteID, locale, categoryId)`
+  * **Save Helpdesk Tree Content**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-tree-content)
+    * `CrispClient.website.saveHelpdeskTreeContent(websiteID, locale, contentType, path, content)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var contentType = "articles";
+      var path = "getting-started";
+      var content = "# Getting started\n\nWelcome to our helpdesk.";
 
-      CrispClient.website.deleteHelpdeskLocaleCategory(websiteID, locale, categoryId);
+      CrispClient.website.saveHelpdeskTreeContent(websiteID, locale, contentType, path, content);
       ```
       </details>
 
-  * **List Helpdesk Locale Sections**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-sections)
-    * `CrispClient.website.listHelpdeskLocaleSections(websiteID, locale, categoryId, pageNumber)`
+  * **Resolve Helpdesk Tree Metadata**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-tree-metadata)
+    * `CrispClient.website.resolveHelpdeskTreeMetadata(websiteID, locale, contentType, path)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
+      var contentType = "articles";
+      var path = "getting-started";
+
+      CrispClient.website.resolveHelpdeskTreeMetadata(websiteID, locale, contentType, path);
+      ```
+      </details>
+
+  * **Update Helpdesk Tree Metadata**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-tree-metadata)
+    * `CrispClient.website.updateHelpdeskTreeMetadata(websiteID, locale, contentType, path, metadata)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var locale = "en";
+      var contentType = "articles";
+      var path = "getting-started";
+      var metadata = { title: "Getting started", state: { published: true } };
+
+      CrispClient.website.updateHelpdeskTreeMetadata(websiteID, locale, contentType, path, metadata);
+      ```
+      </details>
+
+  * **List Helpdesk Tree Alternates**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-tree-alternates)
+    * `CrispClient.website.listHelpdeskTreeAlternates(websiteID, locale, contentType, path)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var locale = "en";
+      var contentType = "articles";
+      var path = "getting-started";
+
+      CrispClient.website.listHelpdeskTreeAlternates(websiteID, locale, contentType, path);
+      ```
+      </details>
+
+  * **Update Helpdesk Tree Alternates**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-tree-alternates)
+    * `CrispClient.website.updateHelpdeskTreeAlternates(websiteID, locale, contentType, path, alternates)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var locale = "en";
+      var contentType = "articles";
+      var path = "getting-started";
+      var alternates = { fr: "demarrage" };
+
+      CrispClient.website.updateHelpdeskTreeAlternates(websiteID, locale, contentType, path, alternates);
+      ```
+      </details>
+
+  * **Resolve Helpdesk Tree Page**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-tree-page)
+    * `CrispClient.website.resolveHelpdeskTreePage(websiteID, locale, contentType, path)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var locale = "en";
+      var contentType = "articles";
+      var path = "getting-started";
+
+      CrispClient.website.resolveHelpdeskTreePage(websiteID, locale, contentType, path);
+      ```
+      </details>
+
+  * **List Helpdesk History Changes**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-history-changes)
+    * `CrispClient.website.listHelpdeskHistoryChanges(websiteID, pageNumber, filterLocale, filterType, filterTreePath)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```javascript
+      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       var pageNumber = 1;
+      var filterLocale = "en";
+      var filterType = "articles";
+      var filterTreePath = "getting-started";
 
-      CrispClient.website.listHelpdeskLocaleSections(websiteID, locale, categoryId, pageNumber);
+      CrispClient.website.listHelpdeskHistoryChanges(websiteID, pageNumber, filterLocale, filterType, filterTreePath);
       ```
       </details>
 
-  * **Add Helpdesk Locale Section**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-helpdesk-locale-section)
-    * `CrispClient.website.addHelpdeskLocaleSection(websiteID, locale, categoryId, name)`
+  * **Resolve Helpdesk History Change**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-history-change)
+    * `CrispClient.website.resolveHelpdeskHistoryChange(websiteID, changeId)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var changeId = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
 
-      var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
-      var name = "Integrate with our SDKs";
-
-      CrispClient.website.addHelpdeskLocaleSection(websiteID, locale, categoryId, name);
+      CrispClient.website.resolveHelpdeskHistoryChange(websiteID, changeId);
       ```
       </details>
 
-  * **Check If Helpdesk Locale Section Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-locale-section-exists)
-    * `CrispClient.website.checkHelpdeskLocaleSectionExists(websiteID, locale, categoryId, sectionId)`
+  * **Cancel Helpdesk History Change**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#cancel-helpdesk-history-change)
+    * `CrispClient.website.cancelHelpdeskHistoryChange(websiteID, changeId, action)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      var changeId = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
+      var action = "revert";
 
-      var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
-      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
-
-      CrispClient.website.checkHelpdeskLocaleSectionExists(websiteID, locale, categoryId, sectionId);
+      CrispClient.website.cancelHelpdeskHistoryChange(websiteID, changeId, action);
       ```
       </details>
 
-  * **Resolve Helpdesk Locale Section**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-locale-section)
-    * `CrispClient.website.resolveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId)`
+  * **Request Helpdesk Content Refresh**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#request-helpdesk-content-refresh)
+    * `CrispClient.website.requestHelpdeskContentRefresh(websiteID, locale, contentType)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
-      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
+      var contentType = "articles";
 
-      CrispClient.website.resolveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId);
-      ```
-      </details>
-
-  * **Save Helpdesk Locale Section**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-helpdesk-locale-section)
-    * `CrispClient.website.saveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
-      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
-
-      var section = {
-        "name": "Integrate with our SDKs",
-        "order": 1
-      };
-
-      CrispClient.website.saveHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section);
-      ```
-      </details>
-
-  * **Update Helpdesk Locale Section**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-helpdesk-locale-section)
-    * `CrispClient.website.updateHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
-      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
-
-      var section = {
-        "name": "Integrate with our SDKs",
-        "order": 1
-      };
-
-      CrispClient.website.updateHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId, section);
-      ```
-      </details>
-
-  * **Delete Helpdesk Locale Section**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk-locale-section)
-    * `CrispClient.website.deleteHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var locale = "en";
-      var categoryId = "33bc73b7-b7db-40a9-80fc-fcba8ebd1067";
-      var sectionID = "14886b8c-faf6-4967-af0a-2d90b3419263";
-
-      CrispClient.website.deleteHelpdeskLocaleSection(websiteID, locale, categoryId, sectionId);
+      CrispClient.website.requestHelpdeskContentRefresh(websiteID, locale, contentType);
       ```
       </details>
 
   * **Map Helpdesk Locale Feedback Ratings**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#map-helpdesk-locale-feedback-ratings)
-    * `CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale, filterDateStart, filterDateEnd)`
+    * `CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale, contentType, filterDateStart, filterDateEnd)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
+      var contentType = "articles";
+      var filterDateStart = "2025-01-01";
+      var filterDateEnd = "2025-12-31";
 
-      CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale);
+      CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale, contentType, filterDateStart, filterDateEnd);
       ```
       </details>
 
   * **List Helpdesk Locale Feedbacks**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-locale-feedbacks)
-    * `CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, pageNumber, filterDateStart, filterDateEnd)`
+    * `CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, contentType, pageNumber, filterDateStart, filterDateEnd)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
+      var contentType = "articles";
       var pageNumber = 1;
+      var filterDateStart = "2025-01-01";
+      var filterDateEnd = "2025-12-31";
 
-      CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, pageNumber);
+      CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, contentType, pageNumber, filterDateStart, filterDateEnd);
       ```
       </details>
 
   * **Import External Helpdesk To Locale**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#import-external-helpdesk-to-locale)
-    * `CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, helpdeskUrl)`
+    * `CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, contentType, externalImport)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
-      var helpdeskUrl = "https://docs.acme.com/";
+      var contentType = "articles";
+      var externalImport = { helpdesk_url: "https://docs.example.com/" };
 
-      CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, helpdeskUrl);
+      CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, contentType, externalImport);
       ```
       </details>
 
   * **Export Helpdesk Locale Articles**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#export-helpdesk-locale-articles)
-    * `CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale)`
+    * `CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale, contentType)`
     * <details>
       <summary>See Example</summary>
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
       var locale = "en";
+      var contentType = "articles";
 
-      CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale);
+      CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale, contentType);
       ```
       </details>
 
@@ -2239,9 +1995,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var redirectionPath = "/en/article/how-can-i-automatically-set-custom-user-data/";
-      var redirectionTarget = "/en/article/how-can-i-automatically-set-custom-user-data-1xh7pqk/";
+      var redirectionPath = "/old-page";
+      var redirectionTarget = "/new-page";
 
       CrispClient.website.addHelpdeskRedirection(websiteID, redirectionPath, redirectionTarget);
       ```
@@ -2254,7 +2009,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+      var redirectionId = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
 
       CrispClient.website.checkHelpdeskRedirectionExists(websiteID, redirectionId);
       ```
@@ -2267,7 +2022,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+      var redirectionId = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
 
       CrispClient.website.resolveHelpdeskRedirection(websiteID, redirectionId);
       ```
@@ -2280,7 +2035,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var redirectionId = "7ebf2e39-1780-45c9-aa81-fa7a7078cb25";
+      var redirectionId = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
 
       CrispClient.website.deleteHelpdeskRedirection(websiteID, redirectionId);
       ```
@@ -2305,38 +2060,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var settings = {
-        "name": "Valerian Helpdesk",
-
-        "appearance": {
-          "logos": {
-            "header": null,
-            "footer": null
-          },
-
-          "banner": null
-        },
-
-        "behavior": {
-          "frequently_read": true,
-          "show_category_images": true,
-          "show_chatbox": true,
-          "ask_feedback": false,
-          "locale_picker": false,
-          "refer_link": true,
-          "forbid_indexing": false,
-          "status_health_dead": true
-        },
-
-        "include": {
-          "html": null
-        },
-
-        "access": {
-          "password": null
-        }
-      };
+      var settings = { name: "My Helpdesk" };
 
       CrispClient.website.saveHelpdeskSettings(websiteID, settings);
       ```
@@ -2361,9 +2085,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var basic = "valerian";
-      var custom = "help.valeriansaliou.name";
+      var basic = "my-helpdesk";
+      var custom = "help.example.com";
 
       CrispClient.website.requestHelpdeskDomainChange(websiteID, basic, custom);
       ```
@@ -2376,8 +2099,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```javascript
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var custom = "help.valeriansaliou.name";
+      var custom = "help.example.com";
 
       CrispClient.website.generateHelpdeskDomainSetupFlow(websiteID, custom);
       ```
