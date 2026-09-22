@@ -95,6 +95,14 @@ export interface HelpdeskTreeMetadataAuthor {
   user_id?: string;
 }
 
+export interface HelpdeskTreeAlternates {
+  [locale: string]: string;
+}
+
+export interface HelpdeskTreeAlternatesUpdate {
+  [locale: string]: string | null;
+}
+
 export interface HelpdeskTreePage {
   title?: string;
   url?: string;
@@ -591,6 +599,38 @@ class WebsiteHelpdesk extends BaseResource {
       ]),
 
       null, metadata
+    );
+  };
+
+  /**
+   * List Helpdesk Tree Alternates
+   */
+  listHelpdeskTreeAlternates(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string
+  ): Promise<HelpdeskTreeAlternates> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "alternates", locale,
+        contentType, path
+      ])
+    );
+  };
+
+  /**
+   * Update Helpdesk Tree Alternates
+   */
+  updateHelpdeskTreeAlternates(
+    websiteID: string, locale: string, contentType: HelpdeskContentType,
+      path: string, alternates: HelpdeskTreeAlternatesUpdate
+  ) {
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "helpdesk", "tree", "alternates", locale,
+        contentType, path
+      ]),
+
+      null, alternates
     );
   };
 

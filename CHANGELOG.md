@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## Unreleased
+
+### Changes
+
+* Added `CrispClient.website.listHelpdeskTreeAlternates` and `CrispClient.website.updateHelpdeskTreeAlternates`.
+
 ## v11.3.0
 
 ### Changes
