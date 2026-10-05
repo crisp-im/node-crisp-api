@@ -66,6 +66,7 @@ export interface HelpdeskPage {
 export interface HelpdeskTreeEntry {
   type?: string;
   slug?: string;
+  order_indexed?: boolean;
   title?: string;
   state?: HelpdeskTreeState;
   children?: HelpdeskTreeEntry[];

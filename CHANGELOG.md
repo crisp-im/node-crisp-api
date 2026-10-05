@@ -1,11 +1,12 @@
 Changelog
 =========
 
-## Unreleased
+## v11.4.0
 
 ### Changes
 
 * Added `CrispClient.website.listHelpdeskTreeAlternates` and `CrispClient.website.updateHelpdeskTreeAlternates`.
+* Added `order_indexed` to `HelpdeskTreeEntry`.
 
 ## v11.3.0
 
