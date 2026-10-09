@@ -17,7 +17,7 @@ import BaseResource from "./BaseResource";
  ***************************************************************************/
 
 export interface WebsiteSettings {
-  websiteID?: string;
+  website_id?: string;
   name?: string;
   domain?: string;
   domain_alternates?: string[];
@@ -102,7 +102,6 @@ export interface WebsiteSettingsChatbox {
 }
 
 export interface WebsiteSettingsUpdate {
-  websiteID?: string;
   name?: string;
   domain?: string;
   domain_alternates?: string[];

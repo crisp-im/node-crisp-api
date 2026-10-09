@@ -84,7 +84,7 @@ export type WebsiteCampaignItemOptions = {
   deliver_to_chatbox?: boolean;
   deliver_to_email?: boolean;
   sender_name_website?: boolean;
-  sender_email_reply?: boolean;
+  sender_email_reply?: string | null;
   tracking?: boolean;
 }
 
