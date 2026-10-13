@@ -12,6 +12,7 @@
 // PROJECT: RESOURCES
 import WebsiteBase from "@/resources/WebsiteBase";
 import WebsiteAnalytics from "@/resources/WebsiteAnalytics";
+import WebsiteAudit from "@/resources/WebsiteAudit";
 import WebsiteAvailability from "@/resources/WebsiteAvailability";
 import WebsiteBatch from "@/resources/WebsiteBatch";
 import WebsiteCampaign from "@/resources/WebsiteCampaign";
@@ -38,6 +39,7 @@ class WebsiteService {
   public __resources: any[] = [
     WebsiteBase,
     WebsiteAnalytics,
+    WebsiteAudit,
     WebsiteAvailability,
     WebsiteBatch,
     WebsiteCampaign,
@@ -61,6 +63,7 @@ class WebsiteService {
 export interface WebsiteServiceInterface extends
   WebsiteBase,
   WebsiteAnalytics,
+  WebsiteAudit,
   WebsiteAvailability,
   WebsiteBatch,
   WebsiteCampaign,
