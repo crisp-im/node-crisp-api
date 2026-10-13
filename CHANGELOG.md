@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v11.4.1
+
+### Changes
+
+* Fixed `WebsiteSettings` type: `websiteID` is now `website_id`, as returned by the REST API.
+* Removed `websiteID` from `WebsiteSettingsUpdate` type, as it is not accepted by the REST API.
+* Fixed `WebsiteCampaignItemOptions` type: `sender_email_reply` is now `string | null` instead of `boolean`.
+
 ## v11.4.0
 
 ### Changes
