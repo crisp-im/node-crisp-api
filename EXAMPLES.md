@@ -1434,12 +1434,6 @@ CrispClient.website.checkWebsiteExists(domain);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#create-website
-
-CrispClient.website.createWebsite(websiteData);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#get-a-website
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";

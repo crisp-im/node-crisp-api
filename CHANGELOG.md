@@ -23,6 +23,7 @@ Changelog
   * Website Audit:
     * `CrispClient.website.listAuditLogs`
   * Website Base:
+    * `CrispClient.website.createWebsite`
     * `CrispClient.website.deleteWebsite`
     * `CrispClient.website.abortWebsiteDeletion`
   * Website Batch:
@@ -96,7 +97,7 @@ Changelog
     * `CrispClient.website.countBlockedVisitors`
     * `CrispClient.website.countBlockedVisitorsInRule`
     * `CrispClient.website.clearBlockedVisitorsInRule`
-* ⚠️ **Removed** the types that were only used by the removed methods (eg. `WebsiteBatch*`, `WebsiteCampaignItem*`, `WebsiteAuditLog`, `WebsiteFilter`).
+* ⚠️ **Removed** the types that were only used by the removed methods (eg. `WebsiteBatch*`, `WebsiteCampaignItem*`, `WebsiteAuditLog`, `WebsiteCreate`, `WebsiteFilter`).
 
 ## v11.4.1
 

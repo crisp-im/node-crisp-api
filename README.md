@@ -1788,16 +1788,6 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Create Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-website)
-    * `CrispClient.website.createWebsite(websiteData)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      CrispClient.website.createWebsite(websiteData);
-      ```
-      </details>
-
   * **Get A Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-website)
     * `CrispClient.website.getWebsite(websiteID)`
     * <details>

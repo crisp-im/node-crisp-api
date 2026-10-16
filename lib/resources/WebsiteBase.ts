@@ -25,11 +25,6 @@ export type Website = {
   institutional?: boolean;
 }
 
-export type WebsiteCreate = {
-  name?: string;
-  domain?: string;
-}
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -48,15 +43,6 @@ class WebsiteBase extends BaseResource {
       {
         domain: domain
       }
-    );
-  };
-
-  /**
-   * Create Website
-   */
-  createWebsite(websiteData: WebsiteCreate): Promise<Website> {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["website"]), null, websiteData
     );
   };
 
