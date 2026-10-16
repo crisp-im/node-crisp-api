@@ -98,6 +98,18 @@ Changelog
     * `CrispClient.website.countBlockedVisitorsInRule`
     * `CrispClient.website.clearBlockedVisitorsInRule`
 * ⚠️ **Removed** the types that were only used by the removed methods (eg. `WebsiteBatch*`, `WebsiteCampaignItem*`, `WebsiteAuditLog`, `WebsiteCreate`, `WebsiteFilter`).
+* ⚠️ **Removed** RTM and Web Hooks events that are only available to the `user` tier, and thus no longer part of the public references:
+  * `spam:message`
+  * `spam:decision`
+  * `people:import:progress`
+  * `people:import:done`
+  * `campaign:progress`
+  * `campaign:dispatched`
+  * `campaign:running`
+  * `widget:action:processed`
+  * `status:health:changed`
+  * `media:animation:listed`
+* ⚠️ **Removed** the types that were only used by the removed events (eg. `EventsSpamMessage`, `EventsCampaignProgress`, `EventsStatusHealthChanged`, `EventsMediaAnimationListed`).
 
 ## v11.4.1
 

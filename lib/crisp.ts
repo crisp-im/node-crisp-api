@@ -112,23 +112,12 @@ const DEFAULT_RTM_EVENTS = [
   "message:notify:unread:send",
   "message:notify:unread:received",
 
-  // Spam Events
-  "spam:message",
-  "spam:decision",
-
   // People Events
   "people:profile:created",
   "people:profile:updated",
   "people:profile:removed",
   "people:bind:session",
   "people:sync:profile",
-  "people:import:progress",
-  "people:import:done",
-
-  // Campaign Events
-  "campaign:progress",
-  "campaign:dispatched",
-  "campaign:running",
 
   // Browsing Events
   "browsing:request:initiated",
@@ -140,9 +129,6 @@ const DEFAULT_RTM_EVENTS = [
 
   // Identity Events
   "identity:verify:request",
-
-  // Status Events
-  "status:health:changed",
 
   // Website Event
   "website:update_visitors_count",
@@ -157,9 +143,6 @@ const DEFAULT_RTM_EVENTS = [
   "bucket:url:helpdesk:generated",
   "bucket:url:status:generated",
   "bucket:url:processing:generated",
-
-  // Media Events
-  "media:animation:listed",
 
   // Email Event
   "email:subscribe",

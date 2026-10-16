@@ -355,24 +355,6 @@ export interface EventsMessageAcknowledgeIgnored
 export type EventsMessageNotifyUnread = EventsSessionGeneric;
 
 /**************************************************************************
- * TYPES + INTERFACES (SPAM EVENTS)
- ***************************************************************************/
-
-export interface EventsSpamMessage extends EventsWebsiteGeneric {
-  spam_id: string;
-  type: string;
-  reason: string;
-  metadata?: Record<string, unknown>;
-  headers?: Record<string, string>;
-  timestamp: number;
-}
-
-export interface EventsSpamDecision extends EventsWebsiteGeneric {
-  spam_id: string;
-  action: string;
-}
-
-/**************************************************************************
  * TYPES + INTERFACES (PEOPLE EVENTS)
  ***************************************************************************/
 
@@ -435,44 +417,6 @@ export interface EventsPeopleSyncProfile extends EventsSessionGeneric {
   };
 }
 
-export interface EventsPeopleImportProgress extends EventsWebsiteGeneric {
-  people_id?: string;
-  progress: number;
-  count: {
-    skipped: number;
-    remaining: number;
-  };
-  items?: {
-    skipped?: Array<{
-      identifier: string | null;
-      reason: string;
-    }>;
-  };
-}
-
-export interface EventsPeopleImportDone extends EventsWebsiteGeneric {
-  people_id?: string;
-  error: boolean;
-}
-
-/**************************************************************************
- * TYPES + INTERFACES (CAMPAIGN EVENTS)
- ***************************************************************************/
-
-export interface EventsCampaignProgress extends EventsWebsiteGeneric {
-  campaign_id: string;
-  progress: number;
-}
-
-export interface EventsCampaignDispatched extends EventsWebsiteGeneric {
-  campaign_id: string;
-}
-
-export interface EventsCampaignRunning extends EventsWebsiteGeneric {
-  campaign_id: string;
-  running: boolean;
-}
-
 /**************************************************************************
  * TYPES + INTERFACES (BROWSING EVENTS)
  ***************************************************************************/
@@ -506,33 +450,6 @@ export interface EventsIdentityVerifyRequest extends EventsWebsiteGeneric {
   target: string;
   code: string;
   confirm_url: string;
-}
-
-/**************************************************************************
- * TYPES + INTERFACES (WIDGET EVENTS)
- ***************************************************************************/
-
-export interface EventsWidgetActionProcessed extends EventsSessionGeneric {
-  plugin_id: string;
-  correlation_id: string;
-  outcome: "success" | "failure";
-  result?: Record<string, unknown>;
-}
-
-/**************************************************************************
- * TYPES + INTERFACES (STATUS EVENTS)
- ***************************************************************************/
-
-export type EventsStatusHealth = "healthy" | "sick" | "dead";
-
-export interface EventsStatusNode {
-  label: string;
-  replica: string;
-}
-
-export interface EventsStatusHealthChanged extends EventsWebsiteGeneric {
-  health: EventsStatusHealth;
-  nodes: EventsStatusNode[];
 }
 
 /**************************************************************************
@@ -575,21 +492,6 @@ export interface EventsBucketURLGenerated {
     resource: string;
     signed: string;
   };
-}
-
-/**************************************************************************
- * TYPES + INTERFACES (MEDIA EVENTS)
- ***************************************************************************/
-
-export interface EventsMediaAnimationResult {
-  type: string;
-  url: string;
-}
-
-export interface EventsMediaAnimationListed {
-  id: number;
-  identifier: string;
-  results: EventsMediaAnimationResult[];
 }
 
 /**************************************************************************
@@ -708,23 +610,12 @@ export interface EventsMap {
   "message:notify:unread:send": EventsMessageNotifyUnread;
   "message:notify:unread:received": EventsMessageNotifyUnread;
 
-  // Spam Events
-  "spam:message": EventsSpamMessage;
-  "spam:decision": EventsSpamDecision;
-
   // People Events
   "people:profile:created": EventsPeopleProfileCreated;
   "people:profile:updated": EventsPeopleProfileUpdated;
   "people:profile:removed": EventsPeopleProfileRemoved;
   "people:bind:session": EventsPeopleBindSession;
   "people:sync:profile": EventsPeopleSyncProfile;
-  "people:import:progress": EventsPeopleImportProgress;
-  "people:import:done": EventsPeopleImportDone;
-
-  // Campaign Events
-  "campaign:progress": EventsCampaignProgress;
-  "campaign:dispatched": EventsCampaignDispatched;
-  "campaign:running": EventsCampaignRunning;
 
   // Browsing Events
   "browsing:request:initiated": EventsBrowsingRequestInitiated;
@@ -736,12 +627,6 @@ export interface EventsMap {
 
   // Identity Events
   "identity:verify:request": EventsIdentityVerifyRequest;
-
-  // Widget Events
-  "widget:action:processed": EventsWidgetActionProcessed;
-
-  // Status Events
-  "status:health:changed": EventsStatusHealthChanged;
 
   // Website Events
   "website:update_visitors_count": EventsWebsiteUpdateVisitorsCount;
@@ -756,9 +641,6 @@ export interface EventsMap {
   "bucket:url:helpdesk:generated": EventsBucketURLGenerated;
   "bucket:url:status:generated": EventsBucketURLGenerated;
   "bucket:url:processing:generated": EventsBucketURLGenerated;
-
-  // Media Events
-  "media:animation:listed": EventsMediaAnimationListed;
 
   // Email Events
   "email:subscribe": EventsEmailSubscribe;
