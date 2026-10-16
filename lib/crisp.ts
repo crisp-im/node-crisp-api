@@ -19,7 +19,6 @@ import mitt, { Emitter } from "mitt";
 
 // PROJECT: SERVICES
 import Bucket, { BucketServiceInterface } from "@/services/bucket";
-import Media, { MediaServiceInterface } from "@/services/media";
 import Plugin, { PluginServiceInterface } from "@/services/plugin";
 import Plan, { PlanServiceInterface } from "@/services/plan";
 import Website, { WebsiteServiceInterface } from "@/services/website";
@@ -179,7 +178,6 @@ const DEFAULT_RTM_EVENTS = [
 // REST API services
 const services = {
   Bucket: Bucket,
-  Media: Media,
   Plugin: Plugin,
   Plan: Plan,
   Website: Website
@@ -206,10 +204,6 @@ interface CrispAuth {
 class Crisp {
   public bucket: BucketServiceInterface = (
     new Bucket() as unknown as BucketServiceInterface
-  );
-
-  public media: MediaServiceInterface = (
-    new Media() as unknown as MediaServiceInterface
   );
 
   public plugin: PluginServiceInterface = (

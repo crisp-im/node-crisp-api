@@ -92,17 +92,6 @@ class WebsiteOperatorService extends BaseResource {
   };
 
   /**
-   * Flush Last Active Website Operators
-   */
-  flushLastActiveWebsiteOperators(websiteID: string) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "operators", "active"
-      ])
-    );
-  };
-
-  /**
    * Send Email To Website Operators
    */
   sendEmailToWebsiteOperators(
@@ -125,52 +114,6 @@ class WebsiteOperatorService extends BaseResource {
       this.crisp.prepareRestUrl([
         "website", websiteID, "operator", userID
       ])
-    );
-  };
-
-  /**
-   * Invite A Website Operator
-   */
-  inviteWebsiteOperator(
-    websiteID: string, email: string, role: string, verify: boolean
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["website", websiteID, "operator"]),
-
-      null,
-
-      {
-        email: email,
-        role: role,
-        verify: verify
-      }
-    );
-  };
-
-  /**
-   * Change Operator Membership
-   */
-  changeOperatorMembership(
-    websiteID: string, userID: string, role: string, title: string
-  ) {
-    return this.crisp.patch(
-      this.crisp.prepareRestUrl(["website", websiteID, "operator", userID]),
-
-      null,
-
-      {
-        role: role,
-        title: title
-      }
-    );
-  };
-
-  /**
-   * Unlink Operator From Website
-   */
-  unlinkOperatorFromWebsite(websiteID: string, userID: string) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl(["website", websiteID, "operator", userID])
     );
   };
 }

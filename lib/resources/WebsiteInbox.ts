@@ -37,19 +37,6 @@ export type WebsiteInboxCondition = {
   query?: string[];
 };
 
-export type WebsiteInboxNew = {
-  inbox_id?: string;
-};
-
-export type WebsiteInboxOrders = {
-  orders?: WebsiteInboxOrder[];
-}
-
-export type WebsiteInboxOrder = {
-  inbox_id?: string;
-  order?: number;
-}
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -72,30 +59,6 @@ class WebsiteInboxService extends BaseResource {
   }
 
   /**
-   * Batch Order Inboxes
-   */
-  batchOrderInboxes(websiteID: string, orders: WebsiteInboxOrders) {
-    return this.crisp.patch(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "inboxes", "batch", "order"
-      ]),
-
-      null, orders
-    );
-  };
-
-  /**
-   * Create A New Inbox
-   */
-  createNewInbox(
-    websiteID: string, inbox: WebsiteInbox
-  ): Promise<WebsiteInboxNew> {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["website", websiteID, "inbox"]), null, inbox
-    );
-  };
-
-  /**
    * Check If Inbox Exists
    */
   checkInboxExists(websiteID: string, inboxID: string) {
@@ -109,28 +72,6 @@ class WebsiteInboxService extends BaseResource {
    */
   getInbox(websiteID: string, inboxID: string): Promise<WebsiteInbox> {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "inbox", inboxID])
-    );
-  };
-
-  /**
-   * Save Inbox
-   */
-  saveInbox(websiteID: string, inboxID: string, inbox: WebsiteInbox) {
-    return this.crisp.put(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "inbox", inboxID
-      ]),
-
-      null, inbox
-    );
-  };
-
-  /**
-   * Delete Inbox
-   */
-  deleteInbox(websiteID: string, inboxID: string) {
-    return this.crisp.delete(
       this.crisp.prepareRestUrl(["website", websiteID, "inbox", inboxID])
     );
   };

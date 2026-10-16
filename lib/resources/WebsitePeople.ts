@@ -131,17 +131,6 @@ export interface PeopleProfileCardActive {
   last?: number;
 }
 
-export interface PeopleCampaign {
-  campaign_id?: string;
-  type?: string;
-  name?: string;
-  created_at?: number;
-  updated_at?: number;
-  dispatched_at?: number;
-  occurred_at?: number;
-  statistics?: string[];
-}
-
 export interface PeopleEvent {
   text?: string;
   data?: object;
@@ -159,22 +148,6 @@ export interface PeopleSubscription {
 
 export interface PeopleSubscriptionUpdate {
   email?: boolean;
-}
-
-export interface PeopleProfileImportSetup {
-  url?: string;
-  mapping?: PeopleProfileImportSetupMapping[];
-  options?: PeopleProfileImportSetupOptions;
-}
-
-export interface PeopleProfileImportSetupMapping {
-  column?: number;
-  field?: string;
-}
-
-export interface PeopleProfileImportSetupOptions {
-  column_separator?: string;
-  skip_header?: boolean;
 }
 
 /**************************************************************************
@@ -415,20 +388,6 @@ class WebsitePeople extends BaseResource {
   };
 
   /**
-   * List People Campaigns
-   */
-  listPeopleCampaigns(
-    websiteID: string, peopleID: string, pageNumber: number = 1
-  ): Promise<PeopleCampaign[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "people", "campaigns", peopleID, "list",
-        String(pageNumber)
-      ])
-    );
-  };
-
-  /**
    * Add A People Event
    */
   addPeopleEvent(
@@ -525,34 +484,6 @@ class WebsitePeople extends BaseResource {
       ]),
 
       null, peopleSubscription
-    );
-  };
-
-  /**
-   * Export People Profiles
-   */
-  exportPeopleProfiles(websiteID: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "people", "export", "profiles"
-      ]),
-
-      null, null
-    );
-  };
-
-  /**
-   * Import People Profiles
-   */
-  importPeopleProfiles(
-    websiteID: string, importSetup: PeopleProfileImportSetup
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "people", "import", "profiles"
-      ]),
-
-      null, importSetup
     );
   };
 }

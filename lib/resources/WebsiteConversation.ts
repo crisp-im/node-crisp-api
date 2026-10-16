@@ -420,19 +420,6 @@ export interface ConversationSuggestedData {
   count?: number;
 }
 
-export interface ConversationSpam {
-  spam_id?: string;
-  type?: string;
-  reason?: string;
-  metadata?: Record<string, unknown>;
-  headers?: Record<string, unknown>;
-  timestamp?: number;
-}
-
-export interface ConversationSpamContent extends ConversationSpam {
-  content?: Record<string, unknown>;
-}
-
 export interface ConversationReadMessageMark {
   from?: string;
   origin?: string;
@@ -645,51 +632,6 @@ class WebsiteConversation extends BaseResource {
 
       {
         key: key
-      }
-    );
-  };
-
-  /**
-   * List Spam Conversations
-   */
-  listSpamConversations(
-    websiteID: string, pageNumber: number = 1
-  ): Promise<ConversationSpam[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "conversations", "spams", String(pageNumber)
-      ])
-    );
-  };
-
-  /**
-   * Resolve Spam Conversation Content
-   */
-  resolveSpamConversationContent(
-    websiteID: string, spamID: string
-  ): Promise<ConversationSpamContent> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "conversations", "spam", spamID, "content"
-      ])
-    );
-  };
-
-  /**
-   * Submit Spam Conversation Decision
-   */
-  submitSpamConversationDecision(
-    websiteID: string, spamID: string, action: string
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "conversations", "spam", spamID, "decision"
-      ]),
-
-      null,
-
-      {
-        action: action
       }
     );
   };
@@ -1459,81 +1401,6 @@ class WebsiteConversation extends BaseResource {
       ]),
 
       null, body
-    );
-  };
-
-  /**
-   * Deliver Widget Button Action For Conversation
-   */
-  deliverWidgetButtonActionForConversation(
-    websiteID: string, sessionID: string, pluginID: string, sectionID: string,
-      itemID: string, data: object, value?: string
-  ) {
-    // Generate body
-    const body = {
-      section_id: sectionID,
-      item_id: itemID,
-      data: data
-    };
-
-    if (typeof value !== "undefined") {
-      // @ts-expect-error - value is a string
-      body.value = value;
-    }
-
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "conversation", sessionID, "widget", pluginID,
-        "button"
-      ]),
-
-      null, body
-    );
-  };
-
-  /**
-   * Deliver Widget Data Fetch Action For Conversation
-   */
-  deliverWidgetDataFetchActionForConversation(
-    websiteID: string, sessionID: string, pluginID: string, sectionID: string,
-      itemID: string, data: object
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "conversation", sessionID, "widget", pluginID,
-        "data"
-      ]),
-
-      null,
-
-      {
-        section_id: sectionID,
-        item_id: itemID,
-        data: data
-      }
-    );
-  };
-
-  /**
-   * Deliver Widget Data Edit Action For Conversation
-   */
-  deliverWidgetDataEditActionForConversation(
-    websiteID: string, sessionID: string, pluginID: string, sectionID: string,
-      itemID: string, value: string
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "conversation", sessionID, "widget", pluginID,
-        "data"
-      ]),
-
-      null,
-
-      {
-        section_id: sectionID,
-        item_id: itemID,
-        value: value
-      }
     );
   };
 

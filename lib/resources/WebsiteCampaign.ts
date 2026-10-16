@@ -11,29 +11,10 @@
 
 // PROJECT: RESOURCES
 import BaseResource from "./BaseResource";
-import { WebsiteFilter } from "./WebsiteBase";
 
 /**************************************************************************
  * TYPES
  ***************************************************************************/
-
-export type WebsiteCampaignExcerpt = {
-  campaign_id?: string;
-  type?: string;
-  format?: string;
-  name?: string;
-  subject?: string;
-  tag?: string;
-  ready?: boolean;
-  dispatched?: boolean;
-  running?: boolean;
-  progress?: number;
-  targets?: number;
-  reached?: number;
-  created_at: number;
-  updated_at: number;
-  dispatched_at?: number;
-}
 
 export type WebsiteCampaignTemplateExcerpt = {
   template_id?: string;
@@ -52,92 +33,6 @@ export interface WebsiteCampaignTemplateItem extends WebsiteCampaignTemplateExce
   content?: string;
 }
 
-export interface WebsiteCampaignItem extends WebsiteCampaignExcerpt {
-  sender?: WebsiteCampaignItemSender;
-  recipients?: WebsiteCampaignItemRecipients;
-  flow?: WebsiteCampaignItemFlow;
-  message?: string;
-  options?: WebsiteCampaignItemOptions;
-  statistics?: WebsiteCampaignItemStatistics;
-}
-
-export type WebsiteCampaignItemSender = {
-  user_id?: string;
-}
-
-export type WebsiteCampaignItemRecipients = {
-  type?: string;
-  segments?: string[];
-  people?: string[];
-  filter?: WebsiteFilter[];
-}
-
-export type WebsiteCampaignItemFlow = {
-  launch_event?: string;
-  assert_filter?: WebsiteFilter[];
-  assert_delay?: number;
-  deliver_once?: boolean;
-  deliver_delay?: number;
-}
-
-export type WebsiteCampaignItemOptions = {
-  deliver_to_chatbox?: boolean;
-  deliver_to_email?: boolean;
-  sender_name_website?: boolean;
-  sender_email_reply?: string | null;
-  tracking?: boolean;
-}
-
-export type WebsiteCampaignItemStatistics = {
-  opened?: number;
-  clicked?: number;
-  unsubscribed?: number;
-}
-
-export type WebsiteCampaignRecipient = {
-  people_id?: string;
-  email?: string;
-  person?: WebsiteCampaignRecipientPerson;
-  subscribed?: boolean;
-}
-
-export type WebsiteCampaignRecipientPerson = {
-  nickname?: string;
-  avatar?: string;
-}
-
-export type WebsiteCampaignStatistic = {
-  type?: string;
-  profile?: WebsiteCampaignStatisticProfile;
-  data?: Record<string, unknown>;
-  created_at?: number;
-  updated_at?: number;
-}
-
-export type WebsiteCampaignStatisticProfile = {
-  people_id?: string;
-  email?: string;
-  person?: WebsiteCampaignStatisticProfilePerson;
-}
-
-export type WebsiteCampaignStatisticProfilePerson = {
-  nickname?: string;
-  avatar?: string;
-  geolocation?: WebsiteCampaignStatisticProfilePersonGeolocation;
-}
-
-export type WebsiteCampaignStatisticProfilePersonGeolocation = {
-  country?: string;
-  region?: string;
-  city?: string;
-  coordinates?: WebsiteCampaignStatisticProfilePersonGeolocationCoordinates;
-}
-
-export type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
-  latitude?: number;
-  longitude?: number;
-}
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -146,28 +41,6 @@ export type WebsiteCampaignStatisticProfilePersonGeolocationCoordinates = {
  * Crisp WebsiteCampaign Resource
  */
 class WebsiteCampaign extends BaseResource {
-  /**
-   * List Campaigns
-   */
-  listCampaigns(
-    websiteID: string, pageNumber: number = 1
-  ): Promise<WebsiteCampaignExcerpt[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "campaigns", "list", String(pageNumber)
-      ])
-    );
-  }
-
-  /**
-   * List Campaign Tags
-   */
-  listCampaignTags(websiteID: string): Promise<string[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "campaigns", "tags"])
-    );
-  }
-
   /**
    * List Campaign Templates
    */
@@ -263,166 +136,6 @@ class WebsiteCampaign extends BaseResource {
       ])
     );
   }
-
-  /**
-   * Create A New Campaign
-   */
-  createNewCampaign(
-    websiteID: string, campaignType: string, campaignName: string
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["website", websiteID, "campaign"]),
-
-      null,
-
-      {
-        type: campaignType,
-        name: campaignName
-      }
-    );
-  };
-
-  /**
-   * Check If Campaign Exists
-   */
-  checkCampaignExists(websiteID: string, campaignID: string) {
-    return this.crisp.head(
-      this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID])
-    );
-  };
-
-  /**
-   * Get A Campaign
-   */
-  getCampaign(
-    websiteID: string, campaignID: string
-  ): Promise<WebsiteCampaignItem> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID])
-    );
-  };
-
-  /**
-   * Save A Campaign
-   */
-  saveCampaign(
-    websiteID: string, campaignID: string, campaign: WebsiteCampaignItem
-  ) {
-    return this.crisp.put(
-      this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID]),
-
-      null, campaign
-    );
-  };
-
-  /**
-   * Update A Campaign
-   */
-  updateCampaign(
-    websiteID: string, campaignID: string, campaign: WebsiteCampaignItem
-  ) {
-    return this.crisp.patch(
-      this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID]),
-
-      null, campaign
-    );
-  };
-
-  /**
-   * Remove A Campaign
-   */
-  removeCampaign(websiteID: string, campaignID: string) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl(["website", websiteID, "campaign", campaignID])
-    );
-  };
-
-  /**
-   * Dispatch A Campaign
-   */
-  dispatchCampaign(websiteID: string, campaignID: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "campaign", campaignID, "dispatch"
-      ]),
-
-      null,
-      null
-    );
-  };
-
-  /**
-   * Resume A Campaign
-   */
-  resumeCampaign(websiteID: string, campaignID: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "campaign", campaignID, "resume"
-      ]),
-
-      null,
-      null
-    );
-  };
-
-  /**
-   * Pause A Campaign
-   */
-  pauseCampaign(websiteID: string, campaignID: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "campaign", campaignID, "pause"
-      ]),
-
-      null,
-      null
-    );
-  };
-
-  /**
-   * Test A Campaign
-   */
-  testCampaign(websiteID: string, campaignID: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "campaign", campaignID, "test"
-      ]),
-
-      null,
-      null
-    );
-  };
-
-  /**
-   * List Campaign Recipients
-   */
-  listCampaignRecipients(
-    websiteID: string, campaignID: string, pageNumber: number = 1
-  ): Promise<WebsiteCampaignRecipient[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "campaign", campaignID, "recipients",
-        String(pageNumber)
-      ])
-    );
-  };
-
-  /**
-   * List Campaign Statistics
-   */
-  listCampaignStatistics(
-    websiteID: string,
-    campaignID: string,
-    action: string,
-    pageNumber: number = 1
-  ): Promise<WebsiteCampaignStatistic[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "campaign", campaignID, "statistics", action,
-        String(pageNumber)
-      ])
-    );
-  };
 }
 
 /**************************************************************************

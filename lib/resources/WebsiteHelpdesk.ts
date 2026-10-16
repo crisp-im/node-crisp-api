@@ -32,11 +32,6 @@ export interface Helpdesk {
   url?: string;
 }
 
-export interface HelpdeskRemoveVerify {
-  method: string;
-  secret: string;
-}
-
 export interface HelpdeskLocale {
   locale_id?: string;
   locale?: string;
@@ -109,32 +104,6 @@ export interface HelpdeskTreePage {
   url?: string;
 }
 
-export interface HelpdeskHistoryChange {
-  change_id?: string;
-  message?: string;
-  author?: HelpdeskHistoryChangeAuthor;
-  edits?: HelpdeskHistoryChangeEdits;
-  created_at?: number;
-  files?: HelpdeskHistoryChangeFile[];
-}
-
-export interface HelpdeskHistoryChangeAuthor {
-  email?: string;
-  name?: string;
-}
-
-export interface HelpdeskHistoryChangeEdits {
-  insertions?: number;
-  deletions?: number;
-}
-
-export interface HelpdeskHistoryChangeFile {
-  change?: string;
-  path?: string;
-  metadata?: HelpdeskTreeMetadata;
-  content?: string;
-}
-
 export interface HelpdeskTreePathUpdate {
   action: string;
   path?: HelpdeskTreePathUpdatePath;
@@ -143,12 +112,6 @@ export interface HelpdeskTreePathUpdate {
 
 export interface HelpdeskTreePathUpdatePath {
   to: string;
-}
-
-export interface HelpdeskLocaleExternalImport {
-  helpdesk_url: string;
-  detect_locales?: boolean;
-  other_locales?: string[];
 }
 
 export interface HelpdeskLocaleFeedbackRatings {
@@ -277,13 +240,6 @@ export interface HelpdeskSettingsAccess {
   jwt_auth_url?: string;
 }
 
-export interface HelpdeskDomain {
-  root?: string;
-  basic?: string;
-  custom?: string;
-  verified?: boolean;
-}
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -307,33 +263,6 @@ class WebsiteHelpdesk extends BaseResource {
   resolveHelpdesk(websiteID: string): Promise<Helpdesk> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk"])
-    );
-  };
-
-  /**
-   * Initialize Helpdesk
-   */
-  initializeHelpdesk(websiteID: string, name: string, domainBasic: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["website", websiteID, "helpdesk"]), null,
-
-      {
-        name: name,
-        domain_basic: domainBasic
-      }
-    );
-  };
-
-  /**
-   * Delete Helpdesk
-   */
-  deleteHelpdesk(websiteID: string, verify: HelpdeskRemoveVerify) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl(["website", websiteID, "helpdesk"]), null,
-
-      {
-        verify: verify
-      }
     );
   };
 
@@ -651,85 +580,6 @@ class WebsiteHelpdesk extends BaseResource {
   };
 
   /**
-   * List Helpdesk History Changes
-   */
-  listHelpdeskHistoryChanges(
-    websiteID: string, pageNumber: number = 1, filterLocale?: string | null,
-      filterType?: string | null, filterTreePath?: string | null
-  ): Promise<HelpdeskHistoryChange[]> {
-    const query: Record<string, unknown> = {};
-
-    if (filterLocale !== undefined && filterLocale !== null) {
-      query.filter_locale = filterLocale;
-    }
-
-    if (filterType !== undefined && filterType !== null) {
-      query.filter_type = filterType;
-    }
-
-    if (filterTreePath !== undefined && filterTreePath !== null) {
-      query.filter_tree_path = filterTreePath;
-    }
-
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "history", "changes",
-        String(pageNumber)
-      ]),
-
-      query
-    );
-  };
-
-  /**
-   * Resolve Helpdesk History Change
-   */
-  resolveHelpdeskHistoryChange(
-    websiteID: string, changeId: string
-  ): Promise<HelpdeskHistoryChange> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "history", "change", changeId
-      ])
-    );
-  };
-
-  /**
-   * Cancel Helpdesk History Change
-   */
-  cancelHelpdeskHistoryChange(
-    websiteID: string, changeId: string, action: string
-  ) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "history", "change", changeId
-      ]),
-
-      null,
-
-      {
-        action: action
-      }
-    );
-  };
-
-  /**
-   * Request Helpdesk Content Refresh
-   */
-  requestHelpdeskContentRefresh(
-    websiteID: string, locale: string, contentType: HelpdeskContentType
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "refresh", locale, contentType
-      ]),
-
-      null,
-      null
-    );
-  };
-
-  /**
    * Map Helpdesk Locale Feedback Ratings
    */
   mapHelpdeskLocaleFeedbackRatings(
@@ -789,38 +639,6 @@ class WebsiteHelpdesk extends BaseResource {
       ]),
 
       query
-    );
-  };
-
-  /**
-   * Import External Helpdesk To Locale
-   */
-  importExternalHelpdeskToLocale(
-    websiteID: string, locale: string, contentType: HelpdeskContentType,
-      externalImport: HelpdeskLocaleExternalImport
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "import", locale, contentType
-      ]),
-
-      null, externalImport
-    );
-  };
-
-  /**
-   * Export Helpdesk Locale Articles
-   */
-  exportHelpdeskLocaleArticles(
-    websiteID: string, locale: string, contentType: HelpdeskContentType
-  ) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "export", locale, contentType
-      ]),
-
-      null,
-      null
     );
   };
 
@@ -907,61 +725,6 @@ class WebsiteHelpdesk extends BaseResource {
       this.crisp.prepareRestUrl(["website", websiteID, "helpdesk", "settings"]),
 
       null, settings
-    );
-  };
-
-  /**
-   * Resolve Helpdesk Domain
-   */
-  resolveHelpdeskDomain(websiteID: string): Promise<HelpdeskDomain> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "helpdesk", "domain"])
-    );
-  };
-
-  /**
-   * Request Helpdesk Domain Change
-   */
-  requestHelpdeskDomainChange(
-    websiteID: string, basic: string, custom: string
-  ) {
-    // Generate body
-    const body: Record<string, unknown> = {};
-
-    if (basic !== undefined) {
-      body.basic = basic;
-    }
-
-    if (custom !== undefined) {
-      body.custom = custom;
-    }
-
-    return this.crisp.patch(
-      this.crisp.prepareRestUrl(["website", websiteID, "helpdesk", "domain"]),
-
-      null, body
-    );
-  };
-
-  /**
-   * Generate Helpdesk Domain Setup Flow
-   */
-  generateHelpdeskDomainSetupFlow(websiteID: string, custom?: string | null) {
-    custom = (custom || null);
-
-    // Generate query
-    const query: Record<string, unknown> = {};
-
-    if (custom !== null) {
-      query.custom = custom;
-    }
-
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "helpdesk", "domain", "setup"
-      ]),
-
-      query
     );
   };
 }

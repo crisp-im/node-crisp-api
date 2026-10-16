@@ -6,7 +6,7 @@ The Crisp API Node wrapper. Authenticate, send messages, fetch conversations, ac
 
 Copyright 2026 Crisp IM SAS. See LICENSE for copying information.
 
-* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 29/01/2026
+* **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 16/10/2026
 * **😘 Maintainers**: [@baptistejamin](https://github.com/baptistejamin), [@eliottvincent](https://github.com/eliottvincent), [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Installation
@@ -110,12 +110,10 @@ All methods that you will most likely need when building a Crisp integration are
     <li><a href="#website-operator">Website Operator</a></li>
     <li><a href="#website-availability">Website Availability</a></li>
     <li><a href="#website-analytics">Website Analytics</a></li>
-    <li><a href="#website-batch">Website Batch</a></li>
     <li><a href="#website-inbox">Website Inbox</a></li>
     <li><a href="#website-teams">Website Teams</a></li>
     <li><a href="#website-verify">Website Verify</a></li>
     <li><a href="#website-campaigns">Website Campaigns</a></li>
-    <li><a href="#website-campaign">Website Campaign</a></li>
     <li><a href="#website-connect">Website Connect</a></li>
   </ul>
 </details>
@@ -134,14 +132,6 @@ All methods that you will most likely need when building a Crisp integration are
   </summary>
   <ul>
     <li><a href="#plan-subscription">Plan Subscription</a></li>
-  </ul>
-</details>
-<details>
-  <summary>
-  <a href="#media">Media</a>
-  </summary>
-  <ul>
-    <li><a href="#media-animation">Media Animation</a></li>
   </ul>
 </details>
 <details>
@@ -175,7 +165,9 @@ All methods that you will most likely need when building a Crisp integration are
 
 ---
 
+
 ### Website
+
 
 * #### **Website Conversations**
   * **⭐ List Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
@@ -246,47 +238,6 @@ All methods that you will most likely need when building a Crisp integration are
       var key = "price";
 
       CrispClient.website.deleteSuggestedConversationDataKey(websiteID, key);
-      ```
-      </details>
-
-  * **List Spam Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-spam-conversations)
-    * `CrispClient.website.listSpamConversations(websiteID, pageNumber)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var pageNumber = 1;
-
-      CrispClient.website.listSpamConversations(websiteID, pageNumber);
-      ```
-      </details>
-
-  * **Resolve Spam Conversation Content**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-spam-conversation-content)
-    * `CrispClient.website.resolveSpamConversationContent(websiteID, spamID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
-
-      CrispClient.website.resolveSpamConversationContent(websiteID, spamID);
-      ```
-      </details>
-
-  * **Submit Spam Conversation Decision**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#submit-spam-conversation-decision)
-    * `CrispClient.website.submitSpamConversationDecision(websiteID, spamID, action)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
-
-      var action = "reject";
-
-      CrispClient.website.submitSpamConversationDecision(websiteID, spamID, action);
       ```
       </details>
 
@@ -1021,76 +972,6 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Deliver Widget Button Action For Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#deliver-widget-button-action-for-conversation)
-    * `CrispClient.website.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
-      var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-
-      var value = {
-        "section_id": "payments",
-        "item_id": "refund_on_stripe",
-        "data": {
-          "invoice": "D-1929-X"
-        }
-      };
-
-      CrispClient.website.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value);
-      ```
-      </details>
-
-  * **Deliver Widget Data Fetch Action For Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#deliver-widget-data-action-for-conversation)
-    * `CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
-      var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-
-      var data = {
-        "section_id": "payments",
-        "item_id": "unpaid_balance",
-        "action": "fetch",
-        "data": {}
-      };
-
-      CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data);
-      ```
-      </details>
-
-  * **Deliver Widget Data Edit Action For Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#deliver-widget-data-action-for-conversation)
-    * `CrispClient.website.deliverWidgetDataEditActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, value)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-      var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-      var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
-      var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-
-      var data = {
-        "section_id": "payments",
-        "item_id": "unpaid_balance",
-        "action": "fetch",
-        "data": {}
-      };
-
-      CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data);
-      ```
-      </details>
-
   * **Schedule A Reminder For Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#schedule-a-reminder-for-conversation)
     * `CrispClient.website.scheduleReminderForConversation(websiteID, sessionID, date, note, user, origin)`
     * <details>
@@ -1344,20 +1225,6 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **List People Campaigns**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-campaigns)
-    * `CrispClient.website.listPeopleCampaigns(websiteID, peopleID, pageNumber)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      var pageNumber = 1;
-
-      CrispClient.website.listPeopleCampaigns(websiteID, peopleID, pageNumber);
-      ```
-      </details>
-
   * **Add A People Event**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-people-event)
     * `CrispClient.website.addPeopleEvent(websiteID, peopleID, peopleEvent)`
     * <details>
@@ -1476,50 +1343,6 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Export People Profiles**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#export-people-profiles)
-    * `CrispClient.website.exportPeopleProfiles(websiteID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.website.exportPeopleProfiles(websiteID);
-      ```
-      </details>
-
-  * **Import People Profiles**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#import-people-profiles)
-    * `CrispClient.website.importPeopleProfiles(websiteID, profileImportSetup)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var profileImportSetup = {
-        "url": "https://storage.crisp.chat/users/processing/import/aa0b64dd-9fb4-4db9-80d6-5a49eb84087b/19d956c7-0294-45ad-89e1-58ce45e7008f.csv",
-        "mapping": [
-          {
-            "column": 1,
-            "field": "email"
-          },
-          {
-            "column": 2,
-            "field": "person.nickname"
-          }
-        ],
-        "options": {
-          "column_separator": ";",
-          "skip_header": true
-        }
-      };
-
-      CrispClient.website.importPeopleProfiles(websiteID, profileImportSetup);
-      ```
-      </details>
-
-
-_👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * #### **Website Helpdesk**
   * **Check If Helpdesk Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-exists)
@@ -1543,33 +1366,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
       CrispClient.website.resolveHelpdesk(websiteID);
-      ```
-      </details>
-
-  * **Initialize Helpdesk**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initialize-helpdesk)
-    * `CrispClient.website.initializeHelpdesk(websiteID, name, domainBasic)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var name = "My Helpdesk";
-      var domainBasic = "my-helpdesk";
-
-      CrispClient.website.initializeHelpdesk(websiteID, name, domainBasic);
-      ```
-      </details>
-
-  * **Delete Helpdesk**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk)
-    * `CrispClient.website.deleteHelpdesk(websiteID, verify)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var verify = { method: "email", secret: "verification-secret" };
-
-      CrispClient.website.deleteHelpdesk(websiteID, verify);
       ```
       </details>
 
@@ -1856,63 +1652,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **List Helpdesk History Changes**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-history-changes)
-    * `CrispClient.website.listHelpdeskHistoryChanges(websiteID, pageNumber, filterLocale, filterType, filterTreePath)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var pageNumber = 1;
-      var filterLocale = "en";
-      var filterType = "articles";
-      var filterTreePath = "getting-started";
-
-      CrispClient.website.listHelpdeskHistoryChanges(websiteID, pageNumber, filterLocale, filterType, filterTreePath);
-      ```
-      </details>
-
-  * **Resolve Helpdesk History Change**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-history-change)
-    * `CrispClient.website.resolveHelpdeskHistoryChange(websiteID, changeId)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var changeId = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
-
-      CrispClient.website.resolveHelpdeskHistoryChange(websiteID, changeId);
-      ```
-      </details>
-
-  * **Cancel Helpdesk History Change**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#cancel-helpdesk-history-change)
-    * `CrispClient.website.cancelHelpdeskHistoryChange(websiteID, changeId, action)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var changeId = "01959c8b-0c6e-7e4c-8dfb-6e0a420ac990";
-      var action = "revert";
-
-      CrispClient.website.cancelHelpdeskHistoryChange(websiteID, changeId, action);
-      ```
-      </details>
-
-  * **Request Helpdesk Content Refresh**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#request-helpdesk-content-refresh)
-    * `CrispClient.website.requestHelpdeskContentRefresh(websiteID, locale, contentType)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var locale = "en";
-      var contentType = "articles";
-
-      CrispClient.website.requestHelpdeskContentRefresh(websiteID, locale, contentType);
-      ```
-      </details>
-
   * **Map Helpdesk Locale Feedback Ratings**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#map-helpdesk-locale-feedback-ratings)
     * `CrispClient.website.mapHelpdeskLocaleFeedbackRatings(websiteID, locale, contentType, filterDateStart, filterDateEnd)`
     * <details>
@@ -1943,35 +1682,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var filterDateEnd = "2025-12-31";
 
       CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, contentType, pageNumber, filterDateStart, filterDateEnd);
-      ```
-      </details>
-
-  * **Import External Helpdesk To Locale**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#import-external-helpdesk-to-locale)
-    * `CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, contentType, externalImport)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var locale = "en";
-      var contentType = "articles";
-      var externalImport = { helpdesk_url: "https://docs.example.com/" };
-
-      CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, contentType, externalImport);
-      ```
-      </details>
-
-  * **Export Helpdesk Locale Articles**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#export-helpdesk-locale-articles)
-    * `CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale, contentType)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var locale = "en";
-      var contentType = "articles";
-
-      CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale, contentType);
       ```
       </details>
 
@@ -2066,44 +1776,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Resolve Helpdesk Domain**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-domain)
-    * `CrispClient.website.resolveHelpdeskDomain(websiteID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.website.resolveHelpdeskDomain(websiteID);
-      ```
-      </details>
-
-  * **Request Helpdesk Domain Change**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#request-helpdesk-domain-change)
-    * `CrispClient.website.requestHelpdeskDomainChange(websiteID, basic, custom)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var basic = "my-helpdesk";
-      var custom = "help.example.com";
-
-      CrispClient.website.requestHelpdeskDomainChange(websiteID, basic, custom);
-      ```
-      </details>
-
-  * **Generate Helpdesk Domain Setup Flow**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#generate-helpdesk-domain-setup-flow)
-    * `CrispClient.website.generateHelpdeskDomainSetupFlow(websiteID, custom)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var custom = "help.example.com";
-
-      CrispClient.website.generateHelpdeskDomainSetupFlow(websiteID, custom);
-      ```
-      </details>
 
 * #### **Website Base**
   * **Check If Website Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-website-exists)
@@ -2135,35 +1807,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
       CrispClient.website.getWebsite(websiteID);
-      ```
-      </details>
-
-  * **Delete A Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-a-website)
-    * `CrispClient.website.deleteWebsite(websiteID, verify)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var verify = {
-        "method": "password",
-        "secret": "MySuperSecurePassword";
-      };
-
-      CrispClient.website.deleteWebsite(websiteID, verify);
-      ```
-      </details>
-
-  * **Abort Website Deletion**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#abort-website-deletion)
-    * `CrispClient.website.abortWebsiteDeletion(websiteID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.website.abortWebsiteDeletion(websiteID);
       ```
       </details>
 
@@ -2302,18 +1945,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Flush Last Active Website Operators**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#flush-last-active-website-operators)
-    * `CrispClient.website.flushLastActiveWebsiteOperators(websiteID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.website.flushLastActiveWebsiteOperators(websiteID);
-      ```
-      </details>
-
   * **Send Email To Website Operators**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#send-email-to-website-operators)
     * `CrispClient.website.sendEmailToWebsiteOperators(websiteID, emailData)`
     * <details>
@@ -2342,57 +1973,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
 
       CrispClient.website.getWebsiteOperator(websiteID, userID);
-      ```
-      </details>
-
-  * **Invite A Website Operator**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#invite-a-website-operator)
-    * `CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var email = "julien@crisp.chat";
-      var role = "member";
-
-      var verify = {
-        "method": "password",
-        "secret": "MySuperSecurePassword";
-      };
-
-      CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify);
-      ```
-      </details>
-
-  * **Change Operator Membership**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-operator-membership)
-    * `CrispClient.website.changeOperatorMembership(websiteID, userID, role, title)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
-
-      var title = {
-        "role": "owner",
-        "title": "CTO"
-      };
-
-      CrispClient.website.changeOperatorMembership(websiteID, userID, role, title);
-      ```
-      </details>
-
-  * **Unlink Operator From Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unlink-operator-from-website)
-    * `CrispClient.website.unlinkOperatorFromWebsite(websiteID, userID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
-
-      CrispClient.website.unlinkOperatorFromWebsite(websiteID, userID);
       ```
       </details>
 
@@ -2448,32 +2028,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Count Blocked Visitors**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#count-blocked-visitors/)
-    * `CrispClient.website.countBlockedVisitors(websiteID)`
-  * **Count Blocked Visitors In Rule**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#count-blocked-visitors-in-rule)
-    * `CrispClient.website.countBlockedVisitorsInRule(websiteID, rule)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.website.countBlockedVisitorsInRule(websiteID, rule);
-      ```
-      </details>
-
-  * **Clear Blocked Visitors In Rule**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#clear-blocked-visitors-in-rule)
-    * `CrispClient.website.clearBlockedVisitorsInRule(websiteID, rule)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.website.clearBlockedVisitorsInRule(websiteID, rule);
-      ```
-      </details>
-
 
 * #### **Website Availability**
   * **Get Website Availability Status**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-availability-status)
@@ -2515,306 +2069,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* #### **Website Batch**
-  * **Batch Resolve Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-resolve-items)
-    * `CrispClient.website.batchResolveConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "inbox_id": null,
-
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ]
-      };
-
-      CrispClient.website.batchResolveConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Unresolve Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-unresolve-items)
-    * `CrispClient.website.batchUnresolveConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ]
-      };
-
-      CrispClient.website.batchUnresolveConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Read Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-read-items)
-    * `CrispClient.website.batchReadConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "inbox_id": null,
-
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ]
-      };
-
-      CrispClient.website.batchReadConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Unread Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-unread-items)
-    * `CrispClient.website.batchUnreadConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ]
-      };
-
-      CrispClient.website.batchUnreadConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Remove Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-remove-items)
-    * `CrispClient.website.batchRemoveConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "inbox_id": null,
-
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ]
-      };
-
-      CrispClient.website.batchRemoveConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Remove People**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-remove-items)
-    * `CrispClient.website.batchRemovePeople(websiteID, people)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var sessions = [
-        "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-        "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-      ];
-
-      CrispClient.website.batchRemoveConversations(websiteID, sessions);
-      ```
-      </details>
-
-  * **Batch Report Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-report-items)
-    * `CrispClient.website.batchReportConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ],
-
-        "flag": "spam"
-      };
-
-      CrispClient.website.batchReportConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Block Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-block-items)
-    * `CrispClient.website.batchBlockConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ],
-
-        "blocked": true
-      };
-
-      CrispClient.website.batchBlockConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Routing Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-routing-items)
-    * `CrispClient.website.batchRoutingConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ],
-
-        "assigned": {
-          "user_id": "a4c32c68-be91-4e29-b97e-b3b6af886eaa"
-        }
-      };
-
-      CrispClient.website.batchRoutingConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Inbox Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-inbox-items)
-    * `CrispClient.website.batchInboxConversations(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ],
-
-        "inbox_id": "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31"
-      };
-
-      CrispClient.website.batchInboxConversations(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Update Conversations Data**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-data-items)
-    * `CrispClient.website.batchUpdateConversationsData(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ],
-
-        "data": {
-          "plan": "pro",
-          "subscribed": true
-        }
-      };
-
-      CrispClient.website.batchUpdateConversationsData(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Update People Data**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-data-items)
-    * `CrispClient.website.batchUpdatePeopleData(websiteID, people, data)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var people = {
-        "profiles": [
-          "eee8759d-52db-48e5-982d-3426e3566ce0"
-        ]
-      };
-
-      var data = {
-        "plan": "pro",
-        "subscribed": true
-      };
-
-      CrispClient.website.batchUpdatePeopleData(websiteID, people, data);
-      ```
-      </details>
-
-  * **Batch Update Conversations Segments**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-segments-items)
-    * `CrispClient.website.batchUpdateConversationsSegments(websiteID, operation)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var operation = {
-        "sessions": [
-          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-        ],
-
-        "segments": [
-          "vip",
-          "lead"
-        ]
-      };
-
-      CrispClient.website.batchUpdateConversationsSegments(websiteID, operation);
-      ```
-      </details>
-
-  * **Batch Update People Segments**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-segments-items)
-    * `CrispClient.website.batchUpdatePeopleSegments(websiteID, people, segments)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var people = {
-        "profiles": [
-          "eee8759d-52db-48e5-982d-3426e3566ce0"
-        ]
-      };
-
-      var segments = [
-        "vip",
-        "lead"
-      ];
-
-      CrispClient.website.batchUpdatePeopleSegments(websiteID, people, segments);
-      ```
-      </details>
-
-
 * #### **Website Inbox**
   * **List Inboxes**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-inboxes)
     * `CrispClient.website.listInboxes(websiteID, pageNumber)`
@@ -2826,67 +2080,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var pageNumber = 1;
 
       CrispClient.website.listInboxes(websiteID, pageNumber);
-      ```
-      </details>
-
-  * **Batch Order Inboxes**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-order-website-inboxes)
-    * `CrispClient.website.batchOrderInboxes(websiteID, orders)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var orders = [
-        {
-          "inbox_id": "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31",
-          "order": 1
-        },
-
-        {
-          "inbox_id": "c058abfe-2881-4ff4-8f6a-6eb73e55385e",
-          "order": 2
-        }
-      ];
-
-      CrispClient.website.batchOrderInboxes(websiteID, orders);
-      ```
-      </details>
-
-  * **Create A New Inbox**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-website-inbox)
-    * `CrispClient.website.createNewInbox(websiteID, inbox)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var inbox = {
-        "name": "VIP",
-        "emoji": "⭐️",
-        "order": 1,
-
-        "operators": [
-          "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
-          "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
-        ],
-
-        "operator": "and",
-
-        "conditions": [
-          {
-            "model": "session",
-            "criterion": "segments",
-            "operator": "eq",
-
-            "query": [
-              "vip"
-            ]
-          }
-        ]
-      };
-
-      CrispClient.website.createNewInbox(websiteID, inbox);
       ```
       </details>
 
@@ -2916,57 +2109,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Save Inbox**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-website-inbox)
-    * `CrispClient.website.saveInbox(websiteID, inboxID, inbox)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
-
-      var inbox = {
-        "name": "VIP",
-        "emoji": "⭐️",
-        "order": 1,
-
-        "operators": [
-          "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
-          "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
-        ],
-
-        "operator": "and",
-
-        "conditions": [
-          {
-            "model": "session",
-            "criterion": "segments",
-            "operator": "eq",
-
-            "query": [
-              "vip"
-            ]
-          }
-        ]
-      };
-
-      CrispClient.website.saveInbox(websiteID, inboxID, inbox);
-      ```
-      </details>
-
-  * **Delete Inbox**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-website-inbox)
-    * `CrispClient.website.deleteInbox(websiteID, inboxID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
-
-      CrispClient.website.deleteInbox(websiteID, inboxID);
-      ```
-      </details>
-
 
 * #### **Website Teams**
   * **List Teams**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-teams)
@@ -2979,27 +2121,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var pageNumber = 1;
 
       CrispClient.website.listTeams(websiteID, pageNumber);
-      ```
-      </details>
-
-  * **Create A New Team**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-team)
-    * `CrispClient.website.createNewTeam(websiteID, team)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var team = {
-        "name": "Sales",
-        "emoji": "💰",
-
-        "operators": [
-          "a4c32c68-be91-4e29-8a05-976e93abbe3f"
-        ]
-      };
-
-      CrispClient.website.createNewTeam(websiteID, team);
       ```
       </details>
 
@@ -3026,41 +2147,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
 
       CrispClient.website.getTeam(websiteID, teamID);
-      ```
-      </details>
-
-  * **Save Team**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-a-team)
-    * `CrispClient.website.saveTeam(websiteID, teamID, team)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
-
-      var team = {
-        "name": "Sales",
-        "emoji": "💰",
-
-        "operators": [
-          "a4c32c68-be91-4e29-8a05-976e93abbe3f"
-        ]
-      };
-
-      CrispClient.website.saveTeam(websiteID, teamID, team);
-      ```
-      </details>
-
-  * **Delete Team**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-team)
-    * `CrispClient.website.deleteTeam(websiteID, teamID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
-
-      CrispClient.website.deleteTeam(websiteID, teamID);
       ```
       </details>
 
@@ -3120,31 +2206,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 
 * #### **Website Campaigns**
-  * **List Campaigns**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaigns)
-    * `CrispClient.website.listCampaigns(websiteID, pageNumber)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var pageNumber = 1;
-
-      CrispClient.website.listCampaigns(websiteID, pageNumber);
-      ```
-      </details>
-
-  * **List Campaign Tags**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaign-tags)
-    * `CrispClient.website.listCampaignTags(websiteID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.website.listCampaignTags(websiteID);
-      ```
-      </details>
-
   * **List Campaign Templates**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaign-templates)
     * `CrispClient.website.listCampaignTemplates(websiteID, pageNumber)`
     * <details>
@@ -3249,194 +2310,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       </details>
 
 
-* #### **Website Campaign**
-  * **Create A New Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-campaign)
-    * `CrispClient.website.createNewCampaign(websiteID, campaignType, campaignName)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      var campaignName = {
-        "type": "one-shot",
-        "name": "Welcome!"
-      };
-
-      CrispClient.website.createNewCampaign(websiteID, campaignType, campaignName);
-      ```
-      </details>
-
-  * **Check If Campaign Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-campaign-exists)
-    * `CrispClient.website.checkCampaignExists(websiteID, campaignID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      CrispClient.website.checkCampaignExists(websiteID, campaignID);
-      ```
-      </details>
-
-  * **Get A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-campaign)
-    * `CrispClient.website.getCampaign(websiteID, campaignID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      CrispClient.website.getCampaign(websiteID, campaignID);
-      ```
-      </details>
-
-  * **Save A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-a-campaign)
-    * `CrispClient.website.saveCampaign(websiteID, campaignID, campaign)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      var campaign = {
-        "type": "one-shot",
-        "format": "markdown",
-        "name": "Welcome!",
-        "sender": {
-          "user_id": "aa0b64dd-9fb4-4db9-80d6-5a49eb84087b"
-        },
-        "recipients": {
-          "type": "all"
-        },
-        "message": "*Hey there*, welcome on Crisp!",
-        "options": {
-          "deliver_to_chatbox": true,
-          "deliver_to_email": true,
-          "sender_name_website": false,
-          "sender_email_reply": null,
-          "tracking": true
-        }
-      };
-
-      CrispClient.website.saveCampaign(websiteID, campaignID, campaign);
-      ```
-      </details>
-
-  * **Update A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-a-campaign)
-    * `CrispClient.website.updateCampaign(websiteID, campaignID, campaign)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      var campaign = {
-        "message": "*Hey there*, welcome on Crisp folks!"
-      };
-
-      CrispClient.website.updateCampaign(websiteID, campaignID, campaign);
-      ```
-      </details>
-
-  * **Remove A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-campaign)
-    * `CrispClient.website.removeCampaign(websiteID, campaignID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      CrispClient.website.removeCampaign(websiteID, campaignID);
-      ```
-      </details>
-
-  * **Dispatch A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#dispatch-a-campaign)
-    * `CrispClient.website.dispatchCampaign(websiteID, campaignID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      CrispClient.website.dispatchCampaign(websiteID, campaignID);
-      ```
-      </details>
-
-  * **Resume A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#resume-a-campaign)
-    * `CrispClient.website.resumeCampaign(websiteID, campaignID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      CrispClient.website.resumeCampaign(websiteID, campaignID);
-      ```
-      </details>
-
-  * **Pause A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#pause-a-campaign)
-    * `CrispClient.website.pauseCampaign(websiteID, campaignID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      CrispClient.website.pauseCampaign(websiteID, campaignID);
-      ```
-      </details>
-
-  * **Test A Campaign**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#test-a-campaign)
-    * `CrispClient.website.testCampaign(websiteID, campaignID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-      CrispClient.website.testCampaign(websiteID, campaignID);
-      ```
-      </details>
-
-  * **List Campaign Recipients**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaign-recipients)
-    * `CrispClient.website.listCampaignRecipients(websiteID, campaignID, pageNumber)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      var pageNumber = 1;
-
-      CrispClient.website.listCampaignRecipients(websiteID, campaignID, pageNumber);
-      ```
-      </details>
-
-  * **List Campaign Statistics**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-campaign-statistics)
-    * `CrispClient.website.listCampaignStatistics(websiteID, campaignID, action, pageNumber)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-      var pageNumber = 1;
-
-      CrispClient.website.listCampaignStatistics(websiteID, campaignID, action, pageNumber);
-      ```
-      </details>
-
-
 * #### **Website Connect**
   * **Get Connect Endpoints**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-connect-endpoints)
     * `CrispClient.website.getConnectEndpoints(websiteID)`
@@ -3452,6 +2325,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 
 ### Plugin
+
 
 * #### **Plugin Connect**
   * **⭐ Get Connect Account**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-connect-account)
@@ -3510,28 +2384,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 
 * #### **Plugin Subscription**
-  * **List All Active Subscriptions**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions)
-    * `CrispClient.plugin.listAllActiveSubscriptions()`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      CrispClient.plugin.listAllActiveSubscriptions();
-      ```
-      </details>
-
-  * **List Subscriptions For A Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-subscriptions-for-a-website)
-    * `CrispClient.plugin.listSubscriptionsForWebsite(websiteID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.plugin.listSubscriptionsForWebsite(websiteID);
-      ```
-      </details>
-
   * **Get Subscription Details**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-details)
     * `CrispClient.plugin.getSubscriptionDetails(websiteID, pluginID)`
     * <details>
@@ -3542,34 +2394,6 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
 
       CrispClient.plugin.getSubscriptionDetails(websiteID, pluginID);
-      ```
-      </details>
-
-  * **Subscribe Website To Plugin**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plugin)
-    * `CrispClient.plugin.subscribeWebsiteToPlugin(websiteID, pluginID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-
-      var pluginID = "98454664-9f7d-4d95-a9ce-f37356f5e65a";
-
-      CrispClient.plugin.subscribeWebsiteToPlugin(websiteID, pluginID);
-      ```
-      </details>
-
-  * **Unsubscribe Plugin From Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plugin-from-website)
-    * `CrispClient.plugin.unsubscribePluginFromWebsite(websiteID, pluginID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-
-      CrispClient.plugin.unsubscribePluginFromWebsite(websiteID, pluginID);
       ```
       </details>
 
@@ -3713,17 +2537,8 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 ### Plan
 
+
 * #### **Plan Subscription**
-  * **List All Active Plan Subscriptions**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-plan-subscriptions)
-    * `CrispClient.plan.listAllActiveSubscriptions()`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      CrispClient.plan.listAllActiveSubscriptions();
-      ```
-      </details>
-
   * **Get Plan Subscription For A Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-plan-subscription-for-a-website)
     * `CrispClient.plan.getPlanSubscriptionForWebsite(websiteID)`
     * <details>
@@ -3736,89 +2551,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Subscribe Website To Plan**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plan)
-    * `CrispClient.plan.subscribeWebsiteToPlan(websiteID, planID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var planID = "d678dbc1-e49d-47d3-92f2-c436f5b0e4a5";
-
-      CrispClient.plan.subscribeWebsiteToPlan(websiteID, planID);
-      ```
-      </details>
-
-  * **Unsubscribe Plan From Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plan-from-website)
-    * `CrispClient.plan.unsubscribePlanFromWebsite(websiteID)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-      CrispClient.plan.unsubscribePlanFromWebsite(websiteID);
-      ```
-      </details>
-
-  * **Change Bill Period For Website Plan Subscription**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-bill-period-for-website-plan-subscription)
-    * `CrispClient.plan.changeBillPeriodForWebsitePlanSubscription(websiteID, period)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var period = "yearly";
-
-      CrispClient.plan.changeBillPeriodForWebsitePlanSubscription(websiteID, period);
-      ```
-      </details>
-
-  * **Check Coupon Availability For Website Plan Subscription**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-coupon-availability-for-website-plan-subscription)
-    * `CrispClient.plan.checkCouponAvailabilityForWebsitePlanSubscription(websiteID, code)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var code = "CRISP+AWESOME";
-
-      CrispClient.plan.checkCouponAvailabilityForWebsitePlanSubscription(websiteID, code);
-      ```
-      </details>
-
-  * **Redeem Coupon For Website Plan Subscription**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#redeem-coupon-for-website-plan-subscription)
-    * `CrispClient.plan.redeemCouponForWebsitePlanSubscription(websiteID, code)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      var code = "CRISP+AWESOME";
-
-      CrispClient.plan.redeemCouponForWebsitePlanSubscription(websiteID, code);
-      ```
-      </details>
-
-
-### Media
-
-* #### **Media Animation**
-  * **List Animation Medias**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-animation-medias)
-    * `CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery)`
-    * <details>
-      <summary>See Example</summary>
-
-      ```javascript
-      var listID = "f7fb43da-1cd8-49c1-ade0-9f5b71d034e3";
-      var pageNumber = 1;
-
-      CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery);
-      ```
-      </details>
-
 
 ### Bucket
+
 
 * #### **Bucket URL**
   * **Generate Bucket URL**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#bucket-url)

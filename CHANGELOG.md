@@ -1,6 +1,103 @@
 Changelog
 =========
 
+## v12.0.0
+
+### Breaking Changes
+
+* ⚠️ **Removed** methods for REST API routes that are only available to the `user` tier, and thus no longer part of the public [REST API Reference](https://docs.crisp.chat/references/rest-api/v1/). The `CrispClient.media` service, which only held `listAnimationMedias`, has been removed with them.
+  * Media Animation:
+    * `CrispClient.media.listAnimationMedias`
+  * Plan Subscription:
+    * `CrispClient.plan.listAllActiveSubscriptions`
+    * `CrispClient.plan.subscribeWebsiteToPlan`
+    * `CrispClient.plan.unsubscribePlanFromWebsite`
+    * `CrispClient.plan.changeBillPeriodForWebsitePlanSubscription`
+    * `CrispClient.plan.checkCouponAvailabilityForWebsitePlanSubscription`
+    * `CrispClient.plan.redeemCouponForWebsitePlanSubscription`
+  * Plugin Subscription:
+    * `CrispClient.plugin.listAllActiveSubscriptions`
+    * `CrispClient.plugin.listSubscriptionsForWebsite`
+    * `CrispClient.plugin.subscribeWebsiteToPlugin`
+    * `CrispClient.plugin.unsubscribePluginFromWebsite`
+  * Website Audit:
+    * `CrispClient.website.listAuditLogs`
+  * Website Base:
+    * `CrispClient.website.deleteWebsite`
+    * `CrispClient.website.abortWebsiteDeletion`
+  * Website Batch:
+    * `CrispClient.website.batchResolveConversations`
+    * `CrispClient.website.batchUnresolveConversations`
+    * `CrispClient.website.batchReadConversations`
+    * `CrispClient.website.batchUnreadConversations`
+    * `CrispClient.website.batchRemoveConversations`
+    * `CrispClient.website.batchRemovePeople`
+    * `CrispClient.website.batchReportConversations`
+    * `CrispClient.website.batchBlockConversations`
+    * `CrispClient.website.batchRoutingConversations`
+    * `CrispClient.website.batchInboxConversations`
+    * `CrispClient.website.batchUpdateConversationsData`
+    * `CrispClient.website.batchUpdatePeopleData`
+    * `CrispClient.website.batchUpdateConversationsSegments`
+    * `CrispClient.website.batchUpdatePeopleSegments`
+  * Website Campaign:
+    * `CrispClient.website.listCampaigns`
+    * `CrispClient.website.listCampaignTags`
+    * `CrispClient.website.createNewCampaign`
+    * `CrispClient.website.checkCampaignExists`
+    * `CrispClient.website.getCampaign`
+    * `CrispClient.website.saveCampaign`
+    * `CrispClient.website.updateCampaign`
+    * `CrispClient.website.removeCampaign`
+    * `CrispClient.website.dispatchCampaign`
+    * `CrispClient.website.resumeCampaign`
+    * `CrispClient.website.pauseCampaign`
+    * `CrispClient.website.testCampaign`
+    * `CrispClient.website.listCampaignRecipients`
+    * `CrispClient.website.listCampaignStatistics`
+  * Website Conversation:
+    * `CrispClient.website.listSpamConversations`
+    * `CrispClient.website.resolveSpamConversationContent`
+    * `CrispClient.website.submitSpamConversationDecision`
+    * `CrispClient.website.deliverWidgetButtonActionForConversation`
+    * `CrispClient.website.deliverWidgetDataFetchActionForConversation`
+    * `CrispClient.website.deliverWidgetDataEditActionForConversation`
+  * Website Helpdesk:
+    * `CrispClient.website.initializeHelpdesk`
+    * `CrispClient.website.deleteHelpdesk`
+    * `CrispClient.website.listHelpdeskHistoryChanges`
+    * `CrispClient.website.resolveHelpdeskHistoryChange`
+    * `CrispClient.website.cancelHelpdeskHistoryChange`
+    * `CrispClient.website.requestHelpdeskContentRefresh`
+    * `CrispClient.website.importExternalHelpdeskToLocale`
+    * `CrispClient.website.exportHelpdeskLocaleArticles`
+    * `CrispClient.website.resolveHelpdeskDomain`
+    * `CrispClient.website.requestHelpdeskDomainChange`
+    * `CrispClient.website.generateHelpdeskDomainSetupFlow`
+  * Website Inbox:
+    * `CrispClient.website.batchOrderInboxes`
+    * `CrispClient.website.createNewInbox`
+    * `CrispClient.website.saveInbox`
+    * `CrispClient.website.deleteInbox`
+  * Website Operator:
+    * `CrispClient.website.flushLastActiveWebsiteOperators`
+    * `CrispClient.website.inviteWebsiteOperator`
+    * `CrispClient.website.changeOperatorMembership`
+    * `CrispClient.website.unlinkOperatorFromWebsite`
+  * Website People:
+    * `CrispClient.website.listPeopleCampaigns`
+    * `CrispClient.website.exportPeopleProfiles`
+    * `CrispClient.website.importPeopleProfiles`
+  * Website Teams:
+    * `CrispClient.website.createNewTeam`
+    * `CrispClient.website.saveTeam`
+    * `CrispClient.website.deleteTeam`
+  * Website Visitors:
+    * `CrispClient.website.countBlockedVisitors`
+    * `CrispClient.website.countBlockedVisitorsInRule`
+    * `CrispClient.website.clearBlockedVisitorsInRule`
+* ⚠️ **Removed** the types that were only used by the removed methods (eg. `WebsiteBatch*`, `WebsiteCampaignItem*`, `WebsiteAuditLog`, `WebsiteFilter`).
+
 ## v11.4.1
 
 ### Changes

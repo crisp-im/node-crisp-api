@@ -25,10 +25,6 @@ export type WebsiteTeam = {
   updated_at?: number;
 }
 
-export type WebsiteTeamNew = {
-  team_id?: string;
-};
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -51,17 +47,6 @@ class WebsiteTeamsService extends BaseResource {
   }
 
   /**
-   * Create A New Team
-   */
-  createNewTeam(
-    websiteID: string, team: WebsiteTeam
-  ): Promise<WebsiteTeamNew> {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["website", websiteID, "team"]), null, team
-    );
-  };
-
-  /**
    * Check If Team Exists
    */
   checkTeamExists(websiteID: string, teamID: string) {
@@ -75,28 +60,6 @@ class WebsiteTeamsService extends BaseResource {
    */
   getTeam(websiteID: string, teamID: string): Promise<WebsiteTeam> {
     return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "team", teamID])
-    );
-  };
-
-  /**
-   * Save Team
-   */
-  saveTeam(websiteID: string, teamID: string, team: WebsiteTeam) {
-    return this.crisp.put(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "team", teamID
-      ]),
-
-      null, team
-    );
-  };
-
-  /**
-   * Delete Team
-   */
-  deleteTeam(websiteID: string, teamID: string) {
-    return this.crisp.delete(
       this.crisp.prepareRestUrl(["website", websiteID, "team", teamID])
     );
   };

@@ -75,26 +75,6 @@ export type PluginSubscriptionEventDispatch = {
  */
 class PluginSubscriptionService extends BaseResource {
   /**
-   * List All Active Subscriptions
-   */
-  listAllActiveSubscriptions(): Promise<PluginSubscription[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["plugins", "subscription"])
-    );
-  };
-
-  /**
-   * List Subscriptions For A Website
-   */
-  listSubscriptionsForWebsite(
-    websiteID: string
-  ): Promise<PluginSubscription[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["plugins", "subscription", websiteID])
-    );
-  };
-
-  /**
    * Get Subscription Details
    */
   getSubscriptionDetails(
@@ -102,32 +82,6 @@ class PluginSubscriptionService extends BaseResource {
   ): Promise<PluginSubscription> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["plugins", "subscription", websiteID, pluginID])
-    );
-  };
-
-  /**
-   * Subscribe Website To Plugin
-   */
-  subscribeWebsiteToPlugin(websiteID: string, pluginID: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["plugins", "subscription", websiteID]),
-
-      null,
-
-      {
-        plugin_id: pluginID
-      }
-    );
-  };
-
-  /**
-   * Unsubscribe Plugin From Website
-   */
-  unsubscribePluginFromWebsite(websiteID: string, pluginID: string) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl([
-        "plugins", "subscription", websiteID, pluginID
-      ])
     );
   };
 

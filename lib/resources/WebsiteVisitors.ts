@@ -99,11 +99,6 @@ export interface WebsiteVisitorsToken {
   session_id?: string;
 }
 
-export interface WebsiteVisitorsBlocked {
-  rule?: string[];
-  blocked?: number;
-}
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -174,39 +169,6 @@ class WebsiteVisitors extends BaseResource {
     return this.crisp.get(
       this.crisp.prepareRestUrl([
         "website", websiteID, "visitors", "token", tokenID
-      ])
-    );
-  };
-
-  /**
-   * Count Blocked Visitors
-   */
-  countBlockedVisitors(websiteID: string): Promise<WebsiteVisitorsBlocked> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["website", websiteID, "visitors", "blocked"])
-    );
-  };
-
-  /**
-   * Count Blocked Visitors In Rule
-   */
-  countBlockedVisitorsInRule(
-    websiteID: string, rule: string
-  ): Promise<number> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "visitors", "blocked", rule
-      ])
-    );
-  };
-
-  /**
-   * Clear Blocked Visitors In Rule
-   */
-  clearBlockedVisitorsInRule(websiteID: string, rule: string) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl([
-        "website", websiteID, "visitors", "blocked", rule
       ])
     );
   };

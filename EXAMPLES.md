@@ -45,35 +45,6 @@ CrispClient.website.deleteSuggestedConversationDataKey(websiteID, key);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#list-spam-conversations
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var pageNumber = 1;
-
-CrispClient.website.listSpamConversations(websiteID, pageNumber);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#resolve-spam-conversation-content
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
-
-CrispClient.website.resolveSpamConversationContent(websiteID, spamID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#submit-spam-conversation-decision
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var spamID = "b45e7d75-61ab-416c-858b-1919b5fcfd10";
-
-var action = "reject";
-
-CrispClient.website.submitSpamConversationDecision(websiteID, spamID, action);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -615,64 +586,6 @@ CrispClient.website.requestToolCallForConversation(websiteID, sessionID, command
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#deliver-widget-button-action-for-conversation
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
-var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-
-var value = {
-  "section_id": "payments",
-  "item_id": "refund_on_stripe",
-  "data": {
-    "invoice": "D-1929-X"
-  }
-};
-
-CrispClient.website.deliverWidgetButtonActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data, value);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#deliver-widget-data-action-for-conversation
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
-var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-
-var data = {
-  "section_id": "payments",
-  "item_id": "unpaid_balance",
-  "action": "fetch",
-  "data": {}
-};
-
-CrispClient.website.deliverWidgetDataFetchActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, data);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#deliver-widget-data-action-for-conversation
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var sessionID = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
-var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-var sectionID = "8f8d3041-6698-43b8-a559-ae93211e6292";
-var itemID = "7631d7d8-4fe7-4ef8-9a36-31183dcd4785";
-
-var value = {
-  "section_id": "payments",
-  "item_id": "unpaid_balance",
-  "action": "fetch",
-  "data": {}
-};
-
-CrispClient.website.deliverWidgetDataEditActionForConversation(websiteID, sessionID, pluginID, sectionID, itemID, value);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#report-conversation
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -856,16 +769,6 @@ CrispClient.website.listPeopleConversations(websiteID, peopleID, pageNumber);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#list-people-campaigns
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var peopleID = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-var pageNumber = 1;
-
-CrispClient.website.listPeopleCampaigns(websiteID, peopleID, pageNumber);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#add-a-people-event
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -956,40 +859,6 @@ CrispClient.website.updatePeopleSubscriptionStatus(websiteID, peopleID, peopleSu
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#export-people-profiles
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.exportPeopleProfiles(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#import-people-profiles
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var profileImportSetup = {
-  "url": "https://storage.crisp.chat/users/processing/import/aa0b64dd-9fb4-4db9-80d6-5a49eb84087b/19d956c7-0294-45ad-89e1-58ce45e7008f.csv",
-  "mapping": [
-    {
-      "column": 1,
-      "field": "email"
-    },
-    {
-      "column": 2,
-      "field": "person.nickname"
-    }
-  ],
-  "options": {
-    "column_separator": ";",
-    "skip_header": true
-  }
-};
-
-CrispClient.website.importPeopleProfiles(websiteID, profileImportSetup);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#check-if-helpdesk-exists
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -1003,30 +872,6 @@ https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
 CrispClient.website.resolveHelpdesk(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#initialize-helpdesk
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var name = "Valerian Helpdesk";
-var domainBasic = "valerian";
-
-CrispClient.website.initializeHelpdesk(websiteID, name, domainBasic);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#delete-helpdesk
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var verify = {
-  "method": "password",
-  "secret": "MySuperSecurePassword";
-};
-
-CrispClient.website.deleteHelpdesk(websiteID, verify);
 
 =========================
 
@@ -1488,27 +1333,6 @@ CrispClient.website.listHelpdeskLocaleFeedbacks(websiteID, locale, pageNumber);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#import-external-helpdesk-to-locale
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var locale = "en";
-var helpdeskUrl = "https://docs.acme.com/";
-
-CrispClient.website.importExternalHelpdeskToLocale(websiteID, locale, helpdeskUrl);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#export-helpdesk-locale-articles
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var locale = "en";
-
-CrispClient.website.exportHelpdeskLocaleArticles(websiteID, locale);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#list-helpdesk-redirections
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -1604,35 +1428,6 @@ CrispClient.website.saveHelpdeskSettings(websiteID, settings);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#resolve-helpdesk-domain
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.resolveHelpdeskDomain(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#request-helpdesk-domain-change
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var basic = "valerian";
-var custom = "help.valeriansaliou.name";
-
-CrispClient.website.requestHelpdeskDomainChange(websiteID, basic, custom);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#generate-helpdesk-domain-setup-flow
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var custom = "help.valeriansaliou.name";
-
-CrispClient.website.generateHelpdeskDomainSetupFlow(websiteID, custom);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#check-if-website-exists
 
 CrispClient.website.checkWebsiteExists(domain);
@@ -1650,27 +1445,6 @@ https://docs.crisp.chat/references/rest-api/v1/#get-a-website
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
 CrispClient.website.getWebsite(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#delete-a-website
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var verify = {
-  "method": "password",
-  "secret": "MySuperSecurePassword";
-};
-
-CrispClient.website.deleteWebsite(websiteID, verify);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#abort-website-deletion
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.abortWebsiteDeletion(websiteID);
 
 =========================
 
@@ -1789,14 +1563,6 @@ CrispClient.website.listLastActiveWebsiteOperators(websiteID);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#flush-last-active-website-operators
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.flushLastActiveWebsiteOperators(websiteID);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#send-email-to-website-operators
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -1817,45 +1583,6 @@ var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
 
 CrispClient.website.getWebsiteOperator(websiteID, userID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#invite-a-website-operator
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var email = "julien@crisp.chat";
-var role = "member";
-
-var verify = {
-  "method": "password",
-  "secret": "MySuperSecurePassword";
-};
-
-CrispClient.website.inviteWebsiteOperator(websiteID, email, role, verify);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#change-operator-membership
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
-
-var title = {
-  "role": "owner",
-  "title": "CTO"
-};
-
-CrispClient.website.changeOperatorMembership(websiteID, userID, role, title);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#unlink-operator-from-website
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var userID = "a4c32c68-be91-4e29-8a05-976e93abbe3f";
-
-CrispClient.website.unlinkOperatorFromWebsite(websiteID, userID);
 
 =========================
 
@@ -1893,30 +1620,6 @@ CrispClient.website.getSessionIdentifierFromToken(websiteID, tokenID);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#count-blocked-visitors/
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.countBlockedVisitors(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#count-blocked-visitors-in-rule
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.countBlockedVisitorsInRule(websiteID, rule);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#clear-blocked-visitors-in-rule
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.clearBlockedVisitorsInRule(websiteID, rule);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#get-website-availability-status
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -1941,207 +1644,12 @@ CrispClient.website.generateAnalytics(websiteID, query);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#batch-resolve-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var operation = {
-  "inbox_id": null,
-
-  "sessions": [
-    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-  ]
-};
-
-CrispClient.website.batchResolveConversations(websiteID, operation);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-read-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var operation = {
-  "inbox_id": null,
-
-  "sessions": [
-    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-  ]
-};
-
-CrispClient.website.batchReadConversations(websiteID, operation);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-remove-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var operation = {
-  "inbox_id": null,
-
-  "sessions": [
-    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-  ]
-};
-
-CrispClient.website.batchRemoveConversations(websiteID, operation);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-remove-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var people = [
-  "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-  "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-];
-
-CrispClient.website.batchRemovePeople(websiteID, people);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-data-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var operation = {
-  "sessions": [
-    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-  ],
-
-  "data": {
-    "plan": "pro",
-    "subscribed": true
-  }
-};
-
-CrispClient.website.batchUpdateConversationsData(websiteID, operation);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-data-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var people = {
-  "profiles": [
-    "eee8759d-52db-48e5-982d-3426e3566ce0"
-  ]
-};
-
-var data = {
-  "plan": "pro",
-  "subscribed": true
-};
-
-CrispClient.website.batchUpdatePeopleData(websiteID, people, data);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-segments-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var operation = {
-  "sessions": [
-    "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
-    "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
-  ],
-
-  "segments": [
-    "vip",
-    "lead"
-  ]
-};
-
-CrispClient.website.batchUpdateConversationsSegments(websiteID, operation);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-segments-items
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var people = {
-  "profiles": [
-    "eee8759d-52db-48e5-982d-3426e3566ce0"
-  ]
-};
-
-var segments = [
-  "vip",
-  "lead"
-];
-
-CrispClient.website.batchUpdatePeopleSegments(websiteID, people, segments);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#list-website-inboxes
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 var pageNumber = 1;
 
 CrispClient.website.listInboxes(websiteID, pageNumber);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#batch-order-website-inboxes
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var orders = [
-  {
-    "inbox_id": "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31",
-    "order": 1
-  },
-
-  {
-    "inbox_id": "c058abfe-2881-4ff4-8f6a-6eb73e55385e",
-    "order": 2
-  }
-];
-
-CrispClient.website.batchOrderInboxes(websiteID, orders);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#create-a-new-website-inbox
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var inbox = {
-  "name": "VIP",
-  "emoji": "⭐️",
-  "order": 1,
-
-  "operators": [
-    "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
-    "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
-  ],
-
-  "operator": "and",
-
-  "conditions": [
-    {
-      "model": "session",
-      "criterion": "segments",
-      "operator": "eq",
-
-      "query": [
-        "vip"
-      ]
-    }
-  ]
-};
-
-CrispClient.website.createNewInbox(websiteID, inbox);
 
 =========================
 
@@ -2163,72 +1671,12 @@ CrispClient.website.getInbox(websiteID, inboxID);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#save-website-inbox
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
-
-var inbox = {
-  "name": "VIP",
-  "emoji": "⭐️",
-  "order": 1,
-
-  "operators": [
-    "86a4fed0-2f5f-4713-a8ff-41d7f3e4a8f8",
-    "e5cd7aa6-998f-4b8e-b7c5-3b546af87d15"
-  ],
-
-  "operator": "and",
-
-  "conditions": [
-    {
-      "model": "session",
-      "criterion": "segments",
-      "operator": "eq",
-
-      "query": [
-        "vip"
-      ]
-    }
-  ]
-};
-
-CrispClient.website.saveInbox(websiteID, inboxID, inbox);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#delete-website-inbox
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var inboxID = "d42e8b3b-ea8f-4e79-a9f8-d0e467fc1c31";
-
-CrispClient.website.deleteInbox(websiteID, inboxID);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#list-teams
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 var pageNumber = 1;
 
 CrispClient.website.listTeams(websiteID, pageNumber);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#create-a-new-team
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var team = {
-  "name": "Sales",
-  "emoji": "💰",
-
-  "operators": [
-    "a4c32c68-be91-4e29-8a05-976e93abbe3f"
-  ]
-};
-
-CrispClient.website.createNewTeam(websiteID, team);
 
 =========================
 
@@ -2247,33 +1695,6 @@ var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
 
 CrispClient.website.getTeam(websiteID, teamID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#save-a-team
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
-
-var team = {
-  "name": "Sales",
-  "emoji": "💰",
-
-  "operators": [
-    "a4c32c68-be91-4e29-8a05-976e93abbe3f"
-  ]
-};
-
-CrispClient.website.saveTeam(websiteID, teamID, team);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#remove-a-team
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var teamID = "d09fbd42-e517-45a4-9776-ba8226e00ba8";
-
-CrispClient.website.deleteTeam(websiteID, teamID);
 
 =========================
 
@@ -2310,23 +1731,6 @@ https://docs.crisp.chat/references/rest-api/v1/#roll-verify-key
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
 CrispClient.website.rollVerifyKey(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-campaigns
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var pageNumber = 1;
-
-CrispClient.website.listCampaigns(websiteID, pageNumber);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-campaign-tags
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.website.listCampaignTags(websiteID);
 
 =========================
 
@@ -2405,144 +1809,6 @@ CrispClient.website.removeCampaignTemplate(websiteID, templateID);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#create-a-new-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-var campaignName = {
-  "type": "one-shot",
-  "name": "Welcome!"
-};
-
-CrispClient.website.createNewCampaign(websiteID, campaignType, campaignName);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#check-if-campaign-exists
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-CrispClient.website.checkCampaignExists(websiteID, campaignID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#get-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-CrispClient.website.getCampaign(websiteID, campaignID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#save-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-var campaign = {
-  "type": "one-shot",
-  "format": "markdown",
-  "name": "Welcome!",
-  "sender": {
-    "user_id": "aa0b64dd-9fb4-4db9-80d6-5a49eb84087b"
-  },
-  "recipients": {
-    "type": "all"
-  },
-  "message": "*Hey there*, welcome on Crisp!",
-  "options": {
-    "deliver_to_chatbox": true,
-    "deliver_to_email": true,
-    "sender_name_website": false,
-    "sender_email_reply": null,
-    "tracking": true
-  }
-};
-
-CrispClient.website.saveCampaign(websiteID, campaignID, campaign);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#update-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-var campaign = {
-  "message": "*Hey there*, welcome on Crisp folks!"
-};
-
-CrispClient.website.updateCampaign(websiteID, campaignID, campaign);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#remove-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-CrispClient.website.removeCampaign(websiteID, campaignID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#dispatch-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-CrispClient.website.dispatchCampaign(websiteID, campaignID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#resume-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-CrispClient.website.resumeCampaign(websiteID, campaignID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#pause-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-CrispClient.website.pauseCampaign(websiteID, campaignID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#test-a-campaign
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-
-CrispClient.website.testCampaign(websiteID, campaignID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-campaign-recipients
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-var pageNumber = 1;
-
-CrispClient.website.listCampaignRecipients(websiteID, campaignID, pageNumber);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-campaign-statistics
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var campaignID = "355d805f-a72f-457e-a3e5-5d01521f3cd8";
-var pageNumber = 1;
-
-CrispClient.website.listCampaignStatistics(websiteID, campaignID, action, pageNumber);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#get-website-connect-endpoints
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -2585,46 +1851,12 @@ CrispClient.plugin.getConnectEndpoints();
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions
-
-CrispClient.plugin.listAllActiveSubscriptions();
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-subscriptions-for-a-website
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.plugin.listSubscriptionsForWebsite(websiteID);
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#get-subscription-details
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
 
 CrispClient.plugin.getSubscriptionDetails(websiteID, pluginID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plugin
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-
-var pluginID = "98454664-9f7d-4d95-a9ce-f37356f5e65a";
-
-CrispClient.plugin.subscribeWebsiteToPlugin(websiteID, pluginID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plugin-from-website
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var pluginID = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
-
-CrispClient.plugin.unsubscribePluginFromWebsite(websiteID, pluginID);
 
 =========================
 
@@ -2733,72 +1965,11 @@ CrispClient.plugin.dispatchPluginEvent(websiteID, pluginID, payload);
 
 =========================
 
-https://docs.crisp.chat/references/rest-api/v1/#list-all-active-plan-subscriptions
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.plan.listAllActiveSubscriptions();
-
-=========================
-
 https://docs.crisp.chat/references/rest-api/v1/#get-plan-subscription-for-a-website
 
 var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 
 CrispClient.plan.getPlanSubscriptionForWebsite(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plan
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var planID = "d678dbc1-e49d-47d3-92f2-c436f5b0e4a5";
-
-CrispClient.plan.subscribeWebsiteToPlan(websiteID, planID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plan-from-website
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-
-CrispClient.plan.unsubscribePlanFromWebsite(websiteID);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#change-bill-period-for-website-plan-subscription
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var period = "yearly";
-
-CrispClient.plan.changeBillPeriodForWebsitePlanSubscription(websiteID, period);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#check-coupon-availability-for-website-plan-subscription
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var code = "CRISP+AWESOME";
-
-CrispClient.plan.checkCouponAvailabilityForWebsitePlanSubscription(websiteID, code);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#redeem-coupon-for-website-plan-subscription
-
-var websiteID = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-var code = "CRISP+AWESOME";
-
-CrispClient.plan.redeemCouponForWebsitePlanSubscription(websiteID, code);
-
-=========================
-
-https://docs.crisp.chat/references/rest-api/v1/#list-animation-medias
-
-var listID = "f7fb43da-1cd8-49c1-ade0-9f5b71d034e3";
-var pageNumber = 1;
-
-CrispClient.media.listAnimationMedias(pageNumber, listID, searchQuery);
 
 =========================
 

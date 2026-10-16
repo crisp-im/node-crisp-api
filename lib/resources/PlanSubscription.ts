@@ -50,18 +50,6 @@ export type PlanSubscriptionOwner = {
   last_name?: string;
 }
 
-export type PlanSubscriptionCoupon = {
-  code?: string;
-  policy?: PlanSubscriptionCouponPolicy;
-  redeem_limit?: number;
-  expire_at?: string;
-}
-
-export type PlanSubscriptionCouponPolicy = {
-  rebate_percent?: number;
-  trial_days?: number;
-}
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -71,95 +59,11 @@ export type PlanSubscriptionCouponPolicy = {
  */
 class PlanSubscriptionService extends BaseResource {
   /**
-   * List All Active Plan Subscriptions
-   */
-  listAllActiveSubscriptions(): Promise<PlanSubscription[]> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["plans", "subscription"])
-    );
-  };
-
-  /**
    * Get Plan Subscription For A Website
    */
   getPlanSubscriptionForWebsite(websiteID: string): Promise<PlanSubscription> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["plans", "subscription", websiteID])
-    );
-  };
-
-  /**
-   * Subscribe Website To Plan
-   */
-  subscribeWebsiteToPlan(websiteID: string, planID: string) {
-    return this.crisp.post(
-      this.crisp.prepareRestUrl(["plans", "subscription", websiteID]),
-
-      null,
-
-      {
-        plan_id: planID
-      }
-    );
-  };
-
-  /**
-   * Unsubscribe Plan From Website
-   */
-  unsubscribePlanFromWebsite(websiteID: string) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl(["plans", "subscription", websiteID])
-    );
-  };
-
-  /**
-   * Change Bill Period For Website Plan Subscription
-   */
-  changeBillPeriodForWebsitePlanSubscription(
-    websiteID: string,
-    period: PlanSubscriptionBillPeriod
-  ) {
-    return this.crisp.patch(
-      this.crisp.prepareRestUrl([
-        "plans", "subscription", websiteID, "bill", "period"
-      ]),
-
-      null,
-
-      {
-        period
-      }
-    );
-  };
-
-  /**
-   * Check Coupon Availability For Website Plan Subscription
-   */
-  checkCouponAvailabilityForWebsitePlanSubscription(
-    websiteID: string,
-    code: string
-  ): Promise<PlanSubscriptionCoupon> {
-    return this.crisp.get(
-      this.crisp.prepareRestUrl(["plans", "subscription", websiteID, "coupon"]),
-
-      {
-        code
-      }
-    );
-  };
-
-  /**
-   * Redeem Coupon For Website Plan Subscription
-   */
-  redeemCouponForWebsitePlanSubscription(websiteID: string, code: string) {
-    return this.crisp.patch(
-      this.crisp.prepareRestUrl(["plans", "subscription", websiteID, "coupon"]),
-
-      null,
-
-      {
-        code
-      }
     );
   };
 }

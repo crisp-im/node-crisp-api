@@ -30,18 +30,6 @@ export type WebsiteCreate = {
   domain?: string;
 }
 
-export type WebsiteRemoveVerify = {
-  method?: string;
-  secret?: string;
-}
-
-export type WebsiteFilter = {
-  model?: string;
-  criterion?: string;
-  operator?: string;
-  query?: Record<string, unknown>;
-}
-
 /**************************************************************************
  * CLASSES
  ***************************************************************************/
@@ -78,28 +66,6 @@ class WebsiteBase extends BaseResource {
   getWebsite(websiteID: string): Promise<Website> {
     return this.crisp.get(
       this.crisp.prepareRestUrl(["website", websiteID])
-    );
-  };
-
-  /**
-   * Delete A Website
-   */
-  deleteWebsite(websiteID: string, verify: WebsiteRemoveVerify) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl(["website", websiteID]), undefined,
-
-      {
-        verify: verify
-      }
-    );
-  };
-
-  /**
-   * Abort Website Deletion
-   */
-  abortWebsiteDeletion(websiteID: string) {
-    return this.crisp.delete(
-      this.crisp.prepareRestUrl(["website", websiteID, "expunge"])
     );
   };
 }
