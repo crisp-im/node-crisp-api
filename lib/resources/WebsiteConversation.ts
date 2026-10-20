@@ -464,6 +464,12 @@ export interface ConversationEvent {
   timestamp?: number;
 }
 
+export interface ConversationRating {
+  stars?: number;
+  comment?: string;
+  created_at?: number;
+}
+
 export interface ConversationFile {
   name?: string;
   type?: string;
