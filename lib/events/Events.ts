@@ -486,6 +486,7 @@ export interface EventsBucketURLGenerated {
   };
   policy: {
     size_limit: number;
+    retention_seconds?: number;
   };
   type: string;
   url: {
