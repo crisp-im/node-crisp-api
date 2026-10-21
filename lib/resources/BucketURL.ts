@@ -19,6 +19,7 @@ import BaseResource from "./BaseResource";
 export type BucketURLRequestFile = {
   name?: string;
   type?: string;
+  size?: number;
 };
 
 export type BucketURLRequestResource = {
