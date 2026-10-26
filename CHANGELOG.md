@@ -1,11 +1,17 @@
 Changelog
 =========
 
-## v12.0.1
+## v12.0.2
 
 ### Changes
 
 * Added `attachments` support on text and note messages (message types and `message:send` / `message:received` events).
+
+## v12.0.1
+
+### Changes
+
+* Added `ConversationRating` type.
 
 ## v12.0.0
 
