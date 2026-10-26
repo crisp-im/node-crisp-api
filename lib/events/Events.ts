@@ -13,6 +13,7 @@
 import {
   ConversationMessageType,
   ConversationMessageUser,
+  ConversationMessageAttachment,
   ConversationState,
   ConversationFileMessageContent,
   ConversationAnimationMessageContent,
@@ -252,6 +253,7 @@ export interface EventsMessageGeneric extends EventsSessionGeneric {
 export interface EventsMessageSendText extends EventsMessageGeneric {
   type: "text";
   content: string;
+  attachments?: ConversationMessageAttachment[];
 }
 
 export interface EventsMessageSendFile extends EventsMessageGeneric {
@@ -299,6 +301,7 @@ export type EventsMessageSend =
 export interface EventsMessageReceivedNote extends EventsMessageGeneric {
   type: "note";
   content: string;
+  attachments?: ConversationMessageAttachment[];
 }
 
 export interface EventsMessageReceivedEvent extends EventsMessageGeneric {

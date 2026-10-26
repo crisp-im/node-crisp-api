@@ -223,6 +223,7 @@ export interface ConversationMessage {
   timestamp?: number;
   user?: ConversationMessageUser;
   references?: ConversationMessageReference[];
+  attachments?: ConversationMessageAttachment[];
   original?: ConversationMessageOriginal;
   properties?: { [key: string]: string|number|boolean };
 }
@@ -326,6 +327,18 @@ export interface ConversationMessageReference {
   target?: string;
 }
 
+export interface ConversationMessageAttachment {
+  name?: string;
+  type?: string;
+  url?: string;
+}
+
+export interface ConversationMessageAttachmentNew {
+  name: string;
+  type: string;
+  url: string;
+}
+
 export interface ConversationMessageOriginal {
   original_id?: string;
 }
@@ -360,6 +373,7 @@ export interface ConversationMessageNewBase {
 export interface ConversationTextMessageNew extends ConversationMessageNewBase {
   type: "text" | "note";
   content: string;
+  attachments?: ConversationMessageAttachmentNew[];
 }
 
 export interface ConversationNoteMessageNew extends ConversationTextMessageNew {

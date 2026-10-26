@@ -115,6 +115,23 @@ var message = {
 
 CrispClient.website.sendMessageInConversation(websiteID, sessionID, message);
 
+// Text and note messages can also carry attachments
+var messageWithAttachments = {
+  "type": "text",
+  "from": "operator",
+  "origin": "chat",
+  "content": "Here is the invoice you asked for.",
+  "attachments": [
+    {
+      "name": "invoice.pdf",
+      "type": "application/pdf",
+      "url": "https://storage.crisp.chat/users/upload/operator/aa0b64dd-9fb4-4db9-80d6-5a49eb84087b/5ebd8c3e-1b02-4a4f-8d09-0f7b2b9d1a11.pdf"
+    }
+  ]
+};
+
+CrispClient.website.sendMessageInConversation(websiteID, sessionID, messageWithAttachments);
+
 =========================
 
 https://docs.crisp.chat/references/rest-api/v1/#get-a-message-in-conversation
