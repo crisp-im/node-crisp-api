@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v12.0.3
+
+### Changes
+
+* Added `operator_avatar`, `header_avatars`, `header_operators` and `availability_status` chatbox settings to website settings types.
+
 ## v12.0.2
 
 ### Changes
