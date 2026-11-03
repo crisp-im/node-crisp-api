@@ -182,6 +182,7 @@ export interface BrowserInfo {
 export type ConversationMessageType =
   | "text"
   | "file"
+  | "p2p-transfer"
   | "animation"
   | "audio"
   | "carousel"
@@ -195,6 +196,7 @@ export type ConversationState = "pending" | "unresolved" | "resolved";
 export type ConversationMessageContent = (
   string |
   ConversationFileMessageContent |
+  ConversationP2PTransferMessageContent |
   ConversationAnimationMessageContent |
   ConversationAudioMessageContent |
   ConversationPickerMessageContent |
@@ -232,6 +234,15 @@ export interface ConversationFileMessageContent {
   name?: string;
   url?: string;
   type?: string;
+}
+
+export interface ConversationP2PTransferMessageContent {
+  name?: string;
+  size?: number;
+  type?: string;
+  last_modified?: number;
+  status?: "offered" | "accepted" | "declined" | "cancelled" | "completed";
+  receiver_id?: string | null;
 }
 
 export interface ConversationAnimationMessageContent {
