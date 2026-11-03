@@ -16,6 +16,7 @@ import {
   ConversationMessageAttachment,
   ConversationState,
   ConversationFileMessageContent,
+  ConversationP2PTransferMessageContent,
   ConversationAnimationMessageContent,
   ConversationAudioMessageContent,
   ConversationPickerMessageContent,
@@ -232,7 +233,11 @@ export interface EventsSessionError extends EventsSessionGeneric {
 
 export interface EventsMessageUpdated extends EventsSessionGeneric {
   fingerprint: number;
-  content: string | ConversationPickerMessageContent;
+  content: (
+    string |
+    ConversationPickerMessageContent |
+    ConversationP2PTransferMessageContent
+  );
 }
 
 /**
@@ -259,6 +264,11 @@ export interface EventsMessageSendText extends EventsMessageGeneric {
 export interface EventsMessageSendFile extends EventsMessageGeneric {
   type: "file";
   content: ConversationFileMessageContent;
+}
+
+export interface EventsMessageSendP2PTransfer extends EventsMessageGeneric {
+  type: "p2p-transfer";
+  content: ConversationP2PTransferMessageContent;
 }
 
 export interface EventsMessageSendAnimation extends EventsMessageGeneric {
@@ -292,6 +302,7 @@ export interface EventsMessageSendCarousel extends EventsMessageGeneric {
 export type EventsMessageSend =
   | EventsMessageSendText
   | EventsMessageSendFile
+  | EventsMessageSendP2PTransfer
   | EventsMessageSendAnimation
   | EventsMessageSendAudio
   | EventsMessageSendPicker
@@ -316,6 +327,7 @@ export type EventsMessageReceived =
   | EventsMessageSendText
   | EventsMessageReceivedNote
   | EventsMessageSendFile
+  | EventsMessageSendP2PTransfer
   | EventsMessageSendAnimation
   | EventsMessageSendAudio
   | EventsMessageSendPicker
