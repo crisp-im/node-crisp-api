@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v12.0.3
+
+### Changes
+
+* Added the `p2p-transfer` message type, used for direct file transfers (message types and `message:send` / `message:received` / `message:updated` events).
+
 ## v12.0.2
 
 ### Changes
