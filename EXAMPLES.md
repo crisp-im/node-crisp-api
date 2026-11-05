@@ -1486,6 +1486,7 @@ var settings = {
   "inbox": {
     "lock_removal": false,
     "force_operator_token": false,
+    "link_previews": true,
     "locale": ""
   },
   "emails": {

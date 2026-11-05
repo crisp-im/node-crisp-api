@@ -46,6 +46,7 @@ export interface WebsiteSettingsContact {
 export interface WebsiteSettingsInbox {
   lock_removal?: boolean;
   force_operator_token?: boolean;
+  link_previews?: boolean;
   locale?: string;
 }
 
@@ -134,6 +135,7 @@ export interface WebsiteSettingsUpdateContact {
 export interface WebsiteSettingsUpdateInbox {
   lock_removal?: boolean;
   force_operator_token?: boolean;
+  link_previews?: boolean;
   locale?: string;
 }
 

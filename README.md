@@ -1833,6 +1833,7 @@ All methods that you will most likely need when building a Crisp integration are
         "inbox": {
           "lock_removal": false,
           "force_operator_token": false,
+          "link_previews": true,
           "locale": ""
         },
         "emails": {
