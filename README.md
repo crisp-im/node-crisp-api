@@ -1864,6 +1864,7 @@ All methods that you will most likely need when building a Crisp integration are
           "email_visitors": false,
           "phone_visitors": false,
           "force_identify": false,
+          "email_channel": true,
           "ignore_privacy": false,
           "visitor_compose": false,
           "file_transfer": true,
