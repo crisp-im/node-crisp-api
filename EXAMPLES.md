@@ -1517,6 +1517,7 @@ var settings = {
     "email_visitors": false,
     "phone_visitors": false,
     "force_identify": false,
+    "email_channel": true,
     "ignore_privacy": false,
     "visitor_compose": false,
     "file_transfer": true,
