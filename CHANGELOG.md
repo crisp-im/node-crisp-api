@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## v12.0.3
+
+### Changes
+
+* Added `getLockStatusForConversation` and `lockOrUnlockConversation` methods, and `is_locked` and `resolved_at` to conversation types.
+* Added `conversations_encouraged` and `conversations_lock` chatbox settings to website settings types.
+
 ## v12.0.2
 
 ### Changes

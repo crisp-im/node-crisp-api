@@ -60,6 +60,8 @@ export interface WebsiteSettingsEmails {
 export interface WebsiteSettingsChatbox {
   tile?: string;
   conversations?: boolean;
+  conversations_encouraged?: boolean;
+  conversations_lock?: "disabled" | "resolve_and_lock" | "resolve_or_lock";
   wait_game?: boolean;
   website_logo?: boolean;
   last_operator_face?: boolean;
@@ -149,6 +151,8 @@ export interface WebsiteSettingsUpdateEmails {
 export interface WebsiteSettingsUpdateChatbox {
   tile?: string;
   conversations?: boolean;
+  conversations_encouraged?: boolean;
+  conversations_lock?: "disabled" | "resolve_and_lock" | "resolve_or_lock";
   wait_game?: boolean;
   website_logo?: boolean;
   last_operator_face?: boolean;
