@@ -87,6 +87,7 @@ const DEFAULT_RTM_EVENTS = [
   "session:sync:topic",
   "session:set_state",
   "session:set_block",
+  "session:set_lock",
   "session:set_segments",
   "session:set_opened",
   "session:set_closed",

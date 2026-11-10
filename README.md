@@ -2678,6 +2678,8 @@ Available events are listed below:
     * `session:set_state`
   * **Session Set Block**:
     * `session:set_block`
+  * **Session Set Lock**:
+    * `session:set_lock`
   * **Session Set Segments**:
     * `session:set_segments`
   * **Session Set Opened**:
