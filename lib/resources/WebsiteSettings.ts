@@ -79,6 +79,7 @@ export interface WebsiteSettingsChatbox {
   email_visitors?: boolean;
   phone_visitors?: boolean;
   force_identify?: boolean;
+  email_channel?: boolean;
   ignore_privacy?: boolean;
   visitor_compose?: boolean;
   file_transfer?: boolean;
@@ -168,6 +169,7 @@ export interface WebsiteSettingsUpdateChatbox {
   email_visitors?: boolean;
   phone_visitors?: boolean;
   force_identify?: boolean;
+  email_channel?: boolean;
   ignore_privacy?: boolean;
   visitor_compose?: boolean;
   file_transfer?: boolean;
