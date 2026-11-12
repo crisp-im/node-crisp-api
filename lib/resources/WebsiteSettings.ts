@@ -62,6 +62,7 @@ export interface WebsiteSettingsChatbox {
   conversations?: boolean;
   conversations_encouraged?: boolean;
   conversations_lock?: "disabled" | "resolve_and_lock" | "resolve_or_lock";
+  conversations_lock_delay?: number;
   wait_game?: boolean;
   website_logo?: boolean;
   last_operator_face?: boolean;
@@ -153,6 +154,7 @@ export interface WebsiteSettingsUpdateChatbox {
   conversations?: boolean;
   conversations_encouraged?: boolean;
   conversations_lock?: "disabled" | "resolve_and_lock" | "resolve_or_lock";
+  conversations_lock_delay?: number;
   wait_game?: boolean;
   website_logo?: boolean;
   last_operator_face?: boolean;

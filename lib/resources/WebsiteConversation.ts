@@ -27,6 +27,7 @@ export interface Conversation {
   is_blocked?: boolean;
   is_locked?: boolean;
   resolved_at?: number;
+  locks_at?: number;
   availability?: string;
   active?: ConversationActive;
   last_message?: string;
@@ -504,6 +505,7 @@ export interface ConversationBlock {
 
 export interface ConversationLock {
   locked?: boolean;
+  locks_at?: number;
 }
 
 export interface ConversationVerify {
