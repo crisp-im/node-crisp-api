@@ -117,6 +117,10 @@ export interface EventsSessionSetBlock extends EventsSessionGeneric {
   is_blocked: boolean;
 }
 
+export interface EventsSessionSetLock extends EventsSessionGeneric {
+  is_locked: boolean;
+}
+
 export interface EventsSessionSetOpened extends EventsSessionGeneric {
   operator: EventsOperator;
 }
@@ -579,6 +583,7 @@ export interface EventsMap {
   "session:set_data": EventsSessionSetData;
   "session:set_segments": EventsSessionSetSegments;
   "session:set_block": EventsSessionSetBlock;
+  "session:set_lock": EventsSessionSetLock;
   "session:set_opened": EventsSessionSetOpened;
   "session:set_closed": EventsSessionSetClosed;
   "session:set_participants": EventsSessionSetParticipants;

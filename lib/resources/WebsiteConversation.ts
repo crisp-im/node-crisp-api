@@ -25,6 +25,8 @@ export interface Conversation {
   status?: number;
   is_verified?: boolean;
   is_blocked?: boolean;
+  is_locked?: boolean;
+  resolved_at?: number;
   availability?: string;
   active?: ConversationActive;
   last_message?: string;
@@ -498,6 +500,10 @@ export interface ConversationStateData {
 
 export interface ConversationBlock {
   blocked?: boolean;
+}
+
+export interface ConversationLock {
+  locked?: boolean;
 }
 
 export interface ConversationVerify {
@@ -1127,6 +1133,46 @@ class WebsiteConversation extends BaseResource {
     return this.crisp.patch(
       this.crisp.prepareRestUrl([
         "website", websiteID, "conversation", sessionID, "block"
+      ]),
+
+      null, body
+    );
+  };
+
+  /**
+   * Get Lock Status For Conversation
+   */
+  getLockStatusForConversation(
+    websiteID: string, sessionID: string
+  ): Promise<ConversationLock> {
+    return this.crisp.get(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "conversation", sessionID, "lock"
+      ])
+    );
+  };
+
+  /**
+   * Lock Or Unlock Conversation
+   */
+  lockOrUnlockConversation(
+    websiteID: string, sessionID: string, locked: boolean,
+      user?: ConversationMessageUser, origin?: string
+  ) {
+    // Generate body
+    const body = {
+      locked: (locked || false),
+      user: user
+    };
+
+    if (origin) {
+      // @ts-expect-error - body is a Record<string, unknown>
+      body.origin = origin;
+    }
+
+    return this.crisp.patch(
+      this.crisp.prepareRestUrl([
+        "website", websiteID, "conversation", sessionID, "lock"
       ]),
 
       null, body
