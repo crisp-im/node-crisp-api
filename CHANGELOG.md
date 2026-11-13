@@ -8,6 +8,7 @@ Changelog
 * Added `getLockStatusForConversation` and `lockOrUnlockConversation` methods, and `is_locked` and `resolved_at` to conversation types.
 * Added `conversations_encouraged` and `conversations_lock` chatbox settings to website settings types.
 * Added `session:set_lock` event.
+* Added `locks_at` to conversation and conversation lock types, and to the `session:set_lock` event, and `conversations_lock_delay` chatbox setting to website settings types.
 
 ## v12.0.2
 

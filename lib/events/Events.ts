@@ -119,6 +119,7 @@ export interface EventsSessionSetBlock extends EventsSessionGeneric {
 
 export interface EventsSessionSetLock extends EventsSessionGeneric {
   is_locked: boolean;
+  locks_at: number;
 }
 
 export interface EventsSessionSetOpened extends EventsSessionGeneric {
