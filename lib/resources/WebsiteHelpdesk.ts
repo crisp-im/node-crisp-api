@@ -85,6 +85,7 @@ export interface HelpdeskTreeMetadata {
   author?: HelpdeskTreeMetadataAuthor;
   color?: string;
   image?: string;
+  icon?: string;
 }
 
 export interface HelpdeskTreeMetadataAuthor {
