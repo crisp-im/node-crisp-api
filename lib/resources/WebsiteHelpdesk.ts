@@ -187,7 +187,13 @@ export interface HelpdeskSettingsAppearance {
   logos?: HelpdeskSettingsAppearanceLogos;
   banner?: string;
   legacy_design?: boolean;
+  categories?: HelpdeskSettingsAppearanceCategories;
   popular_searches?: Record<string, string[]>;
+}
+
+export interface HelpdeskSettingsAppearanceCategories {
+  visual?: string;
+  cards?: string;
 }
 
 export interface HelpdeskSettingsAppearanceColor {
@@ -216,7 +222,6 @@ export interface HelpdeskSettingsSection {
 
 export interface HelpdeskSettingsBehavior {
   frequently_read?: boolean;
-  show_category_images?: boolean;
   show_chatbox?: boolean;
   ask_feedback?: boolean;
   serve_markdown?: boolean;
