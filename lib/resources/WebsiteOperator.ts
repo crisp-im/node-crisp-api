@@ -26,21 +26,21 @@ export interface WebsiteOperatorData {
 }
 
 export interface WebsiteOperator {
-  userID?: string;
+  user_id?: string;
   email?: string;
   avatar?: string;
-  firstName?: string;
-  lastName?: string;
+  first_name?: string;
+  last_name?: string;
   role?: string;
   title?: string;
   availability?: string;
-  hasToken?: boolean;
+  has_token?: boolean;
   identifier?: string;
   key?: string;
 }
 
 export interface WebsiteOperatorsLastActiveListOne {
-  userID?: string;
+  user_id?: string;
   avatar?: string;
   nickname?: string;
   timestamp?: number;
@@ -48,7 +48,7 @@ export interface WebsiteOperatorsLastActiveListOne {
 
 export interface WebsiteOperatorEmail {
   recipient?: string;
-  userID?: string;
+  user_id?: string;
   subject?: string;
   message?: string;
   target?: WebsiteOperatorEmailTarget;
