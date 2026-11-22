@@ -1,6 +1,16 @@
 Changelog
 =========
 
+## v12.0.3
+
+### Changes
+
+* Added `email_channel` to the chatbox website settings (`WebsiteSettingsChatbox` and `WebsiteSettingsUpdateChatbox`).
+
+### Fixes
+
+* Fixed operator types to use the `snake_case` field names returned and expected by the REST API (`user_id`, `first_name`, `last_name`, `has_token`), instead of `camelCase` ones that were never populated or sent. Affects `WebsiteOperator`, `WebsiteOperatorsLastActiveListOne` and `WebsiteOperatorEmail` (used by `sendEmailToWebsiteOperators()`).
+
 ## v12.0.2
 
 ### Changes
