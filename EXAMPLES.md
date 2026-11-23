@@ -1423,6 +1423,8 @@ var settings = {
 
   "behavior": {
     "frequently_read": true,
+    "show_category_images": true,
+    "show_category_icons": false,
     "show_chatbox": true,
     "ask_feedback": false,
     "locale_picker": false,

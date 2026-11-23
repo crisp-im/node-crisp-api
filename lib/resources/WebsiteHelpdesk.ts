@@ -192,7 +192,6 @@ export interface HelpdeskSettingsAppearance {
 }
 
 export interface HelpdeskSettingsAppearanceCategories {
-  visual?: string;
   cards?: string;
 }
 
@@ -222,6 +221,8 @@ export interface HelpdeskSettingsSection {
 
 export interface HelpdeskSettingsBehavior {
   frequently_read?: boolean;
+  show_category_images?: boolean;
+  show_category_icons?: boolean;
   show_chatbox?: boolean;
   ask_feedback?: boolean;
   serve_markdown?: boolean;
