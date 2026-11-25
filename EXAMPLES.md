@@ -1518,7 +1518,7 @@ var settings = {
   "chatbox": {
     "tile": "default",
     "conversations": true,
-    "conversations_encouraged": false,
+    "conversations_nudge": false,
     "conversations_lock": "disabled",
     "wait_game": false,
     "website_logo": true,
