@@ -186,7 +186,7 @@ export interface HelpdeskSettingsAppearance {
   color?: HelpdeskSettingsAppearanceColor;
   logos?: HelpdeskSettingsAppearanceLogos;
   banner?: string;
-  legacy_design?: boolean;
+  design?: string;
   categories?: HelpdeskSettingsAppearanceCategories;
   popular_searches?: Record<string, string[]>;
 }
